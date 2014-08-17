@@ -3,8 +3,8 @@ layout: default
 single: true
 ---
 
-<div>
-<article class="hentry" role="article">
+<div class="row">
+<article class="hentry col-md-10" role="article">
   {% include article.html %}
   <footer>
     <p class="meta">
@@ -31,9 +31,8 @@ single: true
     <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
   </section>
 {% endif %}
-</div>
 {% unless page.sidebar == false %}
-<aside class="sidebar">
+<aside class="sidebar col-md-6">
   {% if site.post_asides.size %}
     {% include_array post_asides %}
   {% else %}
@@ -41,3 +40,4 @@ single: true
   {% endif %}
 </aside>
 {% endunless %}
+</div>
