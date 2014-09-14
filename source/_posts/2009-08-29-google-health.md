@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Google Health"
+date: 2009-08-29T10:42:00+05:30
+tags:
+ - Google
+categories:
+ - Google
+---
+
+Today I started using Google Health, which I found very innovative. Cool actually. You can store all you medical information at one place and could access any time anywhere. No need of carrying all those lab records and papers anymore.
+
+There are some Google Health partners who allow us to directly upload the lab results and diagnostics to our Health profile. Height, Weight, Medications every bits can be added.
+
+Using screen reader blind people can also use this service. And you know the service is free. I think this service can help a lot in today's medical scenarios. Today people travel across countries to special kinds of treatments. So with Google Health Profile you can forget carrying all those medical records and test results with you. You just have to update your health profile with latest information. That's all!
+
+You can add details about your medical insurance policies. Not only yours, you can maintain profiles of people you care for also. In addition you can browse through description, symptoms and treatments for different health conditions and diseases.
+
+[https://www.google.com/health/p/](https://www.google.com/health/p/)
+
+**Update:** This service is discontinued on ***January 1, 2012***. Users can import any data stored in this service until **January 1, 2013**. All data will be deleted forever from the servers starting **January 2, 2013**. Facility is provided for importing all data to [Microsoft HealthVault](http://www.microsoft.com/en-us/healthvault/).
