@@ -1,1 +1,25 @@
 {% include custom/footer.html %}
+
+<script>
+    var require = {
+        config: {
+            'app': { //This must match your module name
+                name: 'Sherlock',
+                {% if site.github_user %}
+                github: {
+                  user: '{{site.github_user}}',
+                  count: {{site.github_repo_count}},
+                  skip_forks: {{site.github_skip_forks}},
+                  target: '#gh_repos'
+                }
+                {% endif %}
+                {% if site.delicious_user %}
+                ,delicious: true,
+                {% endif %}
+            }
+        }
+    };
+</script>
+
+<!-- load scripts -->
+<script data-main="/tech/javascripts/main" src="//cdn.jsdelivr.net/requirejs/2.1.14/require.min.js"></script>
