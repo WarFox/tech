@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Emacs:: Show Line Numbers in the Left Margin - Deepu Mohan Puthrote</title>
+  <meta name="author" content="Deepu Mohan Puthrote">
+
+  
+  <meta name="description" content="So, I recently started using emacs as a text editor, instead of vi.
+It didn&rsquo;t seem easy to get things up straight at start.
+But gradually I &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://WarFox.github.io/tech/2013/06/14/emacs-show-line-number-in-margin">
+  <link href="/tech/favicon.png" rel="icon">
+  <link href="/tech/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <link href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="//cdn.jsdelivr.net/fontawesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="/atom.xml" rel="alternate" title="Deepu Mohan Puthrote" type="application/atom+xml">
+  <script src="//cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/tech/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header class='navbar navbar-inverse navbar-static-top' role="banner">  <nav role='navigation'>
+    <span class='circle'></span></span>
+    <div class='navbar-header'>
+      <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class="navbar-brand" href="/tech/" style="padding-left:100px;">Deepu Mohan Puthrote</a>
+    </div>
+    <div class='collapse navbar-collapse navbar-ex1-collapse'>
+  <ul class='nav navbar-nav'>
+    <li>
+      <a href='http://blog.deepumohan.com/'>Personal Blog</a>
+    </li>
+    <li class='active'>
+      <a href='http://tech.deepumohan.com/'>Technology Blog</a>
+    </li>
+    <li>
+      <a href='http://deepumohan.com/cv/'>CV</a>
+    </li>
+    <li>
+      <a href='http://blog.deepumohan.com/2004/07/privacy-policy.html'>Privacy Policy</a>
+    </li>
+  </ul>
+  <ul class='nav navbar-nav navbar-right' id='social'>
+    <li><a href='https://www.facebook.com/deepu.mohan.p'><i class='icon-facebook'></i></a></li>
+    <li><a href='https://www.twitter.com/deepumohanp'><i class='icon-twitter'></i></a></li>
+    <li><a href='https://plus.google.com/106447761403337564868'><i class='icon-google-plus'></i></a></li>
+    <li><a href='http://www.linkedin.com/in/deepumohanp'><i class='icon-linkedin'></i></a></li>
+    <li><a href='http://github.com/WarFox/'><i class='icon-github'></i></a></li>
+    <li><a href='http://deepumohanp.tumblr.com/'><i class='icon-tumblr'></i></a></li>
+    <li><a href='https://foursquare.com/deepumohanp/'><i class='icon-foursquare'></i></a></li>
+    <li><a href='http://instagram.com/deepumohanp/'><i class='icon-instagram'></i></a></li></ul>
+</div>
+
+  </nav>
+
+</header>
+  <div id="content" class="container">
+      <div class="row">
+<article class="hentry col-md-10" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Emacs:: Show Line Numbers in the Left Margin</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-14T11:09:00+05:30" pubdate data-updated="true">Jun 14<sup>th</sup>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>So, I recently started using <code>emacs</code> as a text editor, instead of <code>vi</code>.
+It didn&rsquo;t seem easy to get things up straight at start.
+But gradually I understood why many experienced developers prefer <code>emacs</code>: <em>
+it is highly customisable and extensible</em>.</p>
+
+<p><code>vi</code> gives you easy to use command to show line numbers, <code>:set nu</code> and you are done.
+That is not the case with <code>emacs</code>, and hence this blog post.
+You need to install linum package and enable <code>linum-mode</code> for this.</p>
+
+<p>Make sure you have the latest version of <code>emacs</code>, at the time of writing 24.3,
+so that you have emacs package manager ready. Add marmalade and melba to the package
+archive list by adding the following to your <code>~/.emacs.d/init.el</code>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='lisp'><span class='line'><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;package</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span><span class="o">&#39;</span>
+</span><span class='line'>    <span class="p">(</span><span class="s">&quot;marmalade&quot;</span> <span class="o">.</span> <span class="s">&quot;http://marmalade-repo.org/packages/&quot;</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span><span class="o">&#39;</span>
+</span><span class='line'>    <span class="p">(</span><span class="s">&quot;melpa&quot;</span> <span class="o">.</span> <span class="s">&quot;http://melpa.milkbox.net/packages/&quot;</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nv">package-initialize</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now list the packages using <code>M-x list-packages</code> command.</p>
+
+<p>image-name.gif</p>
+
+<p>You should get a list of packages like this.</p>
+
+<p>image-name.gif</p>
+
+<p>Next locate <code>linum</code> package using <code>Ctrl-s</code> command.
+You may have to repeatedly use <code>Ctrl-s</code> to get the right package.
+It would say <em>display line numbers in the left margin</em>.</p>
+
+<p><a href="http://WarFox.github.io/tech">http://WarFox.github.io/tech</a></p>
+
+<p><img src="http://1.bp.blogspot.com/-_4b9KgqIPI8/Ubqxfmw1-CI/AAAAAAAAECU/0UogSTSbDvk/s1600/Screen+Shot+2013-06-14+at+11.28.13+AM.png" alt="" /></p>
+
+<p>Select and install that using arrow keys and return key.
+You can enable linum-mode right away using <code>M-x linum-mode</code> command.</p>
+
+<p><img src="http://1.bp.blogspot.com/-a9FUTdLh8DM/Ubq3O7P_R8I/AAAAAAAAECk/6PU8WgocLVE/s1600/Screen+Shot+2013-06-14+at+11.54.24+AM.png" title="linum" alt="linum"></p>
+
+<h3>References:</h3>
+
+<ul>
+<li><a href="http://goo.gl/DlqUI" title="EmacsWiki:LineNumbers">EmacsWiki:LineNumbers</a></li>
+<li><a href="http://goo.gl/VhUc7" title="How do I display line numbers in emacs">SuperUser:How do I display line numbers in emacs (not in the mode line)?</a></li>
+<li><a href="http://goo.gl/w8Tqn" title="How to Set Emacs's User Interface to Modern Conventions">ErgoEmacs:How to Set Emacs&rsquo;s User Interface to Modern Conventions</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Deepu Mohan Puthrote</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-14T11:09:00+05:30" pubdate data-updated="true">Jun 14<sup>th</sup>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/tech/tech/categories/emacs/'>emacs</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://WarFox.github.io/tech/2013/06/14/emacs-show-line-number-in-margin/" data-via="deepumohanp" data-counturl="http://WarFox.github.io/tech/2013/06/14/emacs-show-line-number-in-margin/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/tech/2013/05/11/turn-off-unlimited-trailing-space-in-intellij-idea/" title="Previous Post: Turn off unlimited trailing whitespace in IntelliJ IDEA">&laquo; Turn off unlimited trailing whitespace in IntelliJ IDEA</a>
+      
+      
+        <a class="basic-alignment right" href="/tech/2013/06/24/java-print-hello-world-without-using/" title="Next Post: Java :: Print "Hello World" without using Semicolon (;)">Java :: Print "Hello World" without using Semicolon (;) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+<aside class="sidebar col-md-2">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/tech/2014/09/14/solid-design-principle/">SOLID Design Principle</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/03/30/closures/">Closures</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/02/02/sample-app-for-play-22-spring-data-jpa/">Sample App for Play! 2.2, Spring-data-jpa and Backbonejs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/20/backbonejs-in-jsfiddlenet/">Backbonejs in jsFiddle.net</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/09/jquery-populate-select-box-dynamically/">jQuery :: Populate Select Box Dynamically (Plugin Version)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/08/use-requirejs-to-load-scripts-from-cdn/">Use Requirejs to Load Scripts From Cdn Server Like Cdnjs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/05/jquery-populate-selet-box-options/">jQuery :: Populate Selet Box Options Dinamically</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/12/31/youtube-embed-video-html-code-without/">Youtube Embed Video Html Code Without Branding and Controls (Seekbar, Play/pause and Volume)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/11/30/get-last-date-of-month/">Java :: Get Last Date of a Month</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/10/14/how-to-change-extension-of-multiple/">How to Change Extension of Multiple Files (Bash Script)</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/WarFox">@WarFox</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        github.showRepos({
+            user: 'WarFox',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/tech/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+DeepuMohanPuthrote?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+</div>
+
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - <a href="http://deepumohan.com/">Deepu Mohan Puthrote</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

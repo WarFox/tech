@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>SOLID Design Principle - Deepu Mohan Puthrote</title>
+  <meta name="author" content="Deepu Mohan Puthrote">
+
+  
+  <meta name="description" content="When it comes to OO designing, it is a good idea to have a strategy to follow.
+A strategy allows you to think and organize ideas in a particular &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://WarFox.github.io/tech/2014/09/14/solid-design-principle">
+  <link href="/tech/favicon.png" rel="icon">
+  <link href="/tech/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <link href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="//cdn.jsdelivr.net/fontawesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="/atom.xml" rel="alternate" title="Deepu Mohan Puthrote" type="application/atom+xml">
+  <script src="//cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/tech/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header class='navbar navbar-inverse navbar-static-top' role="banner">  <nav role='navigation'>
+    <span class='circle'></span></span>
+    <div class='navbar-header'>
+      <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class="navbar-brand" href="/tech/" style="padding-left:100px;">Deepu Mohan Puthrote</a>
+    </div>
+    <div class='collapse navbar-collapse navbar-ex1-collapse'>
+  <ul class='nav navbar-nav'>
+    <li>
+      <a href='http://blog.deepumohan.com/'>Personal Blog</a>
+    </li>
+    <li class='active'>
+      <a href='http://tech.deepumohan.com/'>Technology Blog</a>
+    </li>
+    <li>
+      <a href='http://deepumohan.com/cv/'>CV</a>
+    </li>
+    <li>
+      <a href='http://blog.deepumohan.com/2004/07/privacy-policy.html'>Privacy Policy</a>
+    </li>
+  </ul>
+  <ul class='nav navbar-nav navbar-right' id='social'>
+    <li><a href='https://www.facebook.com/deepu.mohan.p'><i class='icon-facebook'></i></a></li>
+    <li><a href='https://www.twitter.com/deepumohanp'><i class='icon-twitter'></i></a></li>
+    <li><a href='https://plus.google.com/106447761403337564868'><i class='icon-google-plus'></i></a></li>
+    <li><a href='http://www.linkedin.com/in/deepumohanp'><i class='icon-linkedin'></i></a></li>
+    <li><a href='http://github.com/WarFox/'><i class='icon-github'></i></a></li>
+    <li><a href='http://deepumohanp.tumblr.com/'><i class='icon-tumblr'></i></a></li>
+    <li><a href='https://foursquare.com/deepumohanp/'><i class='icon-foursquare'></i></a></li>
+    <li><a href='http://instagram.com/deepumohanp/'><i class='icon-instagram'></i></a></li></ul>
+</div>
+
+  </nav>
+
+</header>
+  <div id="content" class="container">
+      <div class="row">
+<article class="hentry col-md-10" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">SOLID Design Principle</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-14T06:07:48+05:30" pubdate data-updated="true">Sep 14<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>When it comes to OO designing, it is a good idea to have a strategy to follow.
+A strategy allows you to think and organize ideas in a particular fashion that is comfortable to you.
+I&rsquo;ve found SOLID principle easy enough for beginners and experts to understand and practice.
+This  was originally put forward by <a href="http://en.wikipedia.org/wiki/Robert_C._Martin">Rober C. Martin</a>, who is a pioneer in agile software development and extreme programming.
+Checkout <a href="http://cleancoders.com/">Cleancoders</a> to know more.</p>
+
+<p>Chances are, you may be already using SOLID principle, just without giving it a name.</p>
+
+<h2>tl;dr</h2>
+
+<p>S &ndash; Single Responsibility Principle (SRP)</p>
+
+<p>O &ndash; Open/Closed Principle (OCP)</p>
+
+<p>L &ndash; Liskov Substitution Principle (LSP)</p>
+
+<p>I &ndash; Interface Segregation Principle (ISP)</p>
+
+<p>D &ndash; Dependency Inversion Principle (DIP)</p>
+
+<p>Thats right, SOLID stands for a bunch of other acronyms.</p>
+
+<h3>S &ndash; Single Responsibility Principle (SRP)</h3>
+
+<blockquote><p>The single responsibility principle states that every class should
+have a single responsibility, and that responsibility should be
+entirely encapsulated by the class. All its services should be
+narrowly aligned with that responsibility.</p></blockquote>
+
+<p>Fairly simple. A Student class should manipulate Student properties and not the the properties of School. Specification of the class remains mostly untouched unless there is a big change in requirement of your software.</p>
+
+<p>It is good to keep in mind that, there can be some exceptions to this. For example a utility class may provide methods for managing both Students and Schools.</p>
+
+<h3>O &ndash; Open/Closed Principle (OCP)</h3>
+
+<blockquote><p>Software entities should be open for extension, but closed for modification.</p></blockquote>
+
+<p>The idea is that once a class is implemented completely, it should not be modified for including new features. Bugs and error correction must be done as and when required. Adding a new feature will require new specification and release of newer version.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Open/closed_principle">http://en.wikipedia.org/wiki/Open/closed_principle</a></p>
+
+<h3>L &ndash; Liskov Substitution Principle (LSP)</h3>
+
+<blockquote><p>Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program. See also <a href="http://en.wikipedia.org/wiki/Design_by_contract">design by contract</a>.</p></blockquote>
+
+<p>That right there is the basic use of Dependency Injection, right? You define a parent interface and replace them by concrete implementation which are derivatives.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeNoise</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;noise&quot;</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeNoise</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">bark</span><span class="o">();</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">bark</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;bow bow bow&quot;</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Dog</span> <span class="n">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Animal</span><span class="o">();</span>
+</span><span class='line'><span class="n">dog</span><span class="o">.</span><span class="na">makeNoise</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@Inject</span>
+</span><span class='line'><span class="n">Animal</span> <span class="n">animal</span><span class="o">;</span> <span class="c1">// can be replaced by Dog</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://en.wikipedia.org/wiki/Liskov_substitution_principle">http://en.wikipedia.org/wiki/Liskov_substitution_principle</a></p>
+
+<h3>I &ndash; Interface Segregation Principle (ISP)</h3>
+
+<blockquote><p>Many client-specific interfaces are better than one general-purpose interface.</p></blockquote>
+
+<p>Interfaces provide abstraction no implementation. When developing client interfaces, it should be kept at minimum and should only expose those methods which are essential for that client.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Interface_segregation_principle">http://en.wikipedia.org/wiki/Interface_segregation_principle</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">interface</span> <span class="nc">Jumbable</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kt">void</span> <span class="nf">jump</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">interface</span> <span class="nc">Climbable</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kt">void</span> <span class="nf">climb</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Jumbable</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@override</span>
+</span><span class='line'>    <span class="kt">void</span> <span class="nf">jump</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="c1">//jump</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">class</span> <span class="nc">Monkey</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Jumbable</span><span class="o">,</span> <span class="n">Climbable</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@override</span>
+</span><span class='line'>    <span class="kt">void</span> <span class="nf">jump</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@override</span>
+</span><span class='line'>    <span class="kt">void</span> <span class="nf">climb</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>D &ndash; Dependency Inversion Principle (DIP)</h3>
+
+<blockquote><p>One should “Depend upon Abstractions. Do not depend upon concretions.”</p></blockquote>
+
+<p>Dependency injection is one method of following this principle.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">interface</span> <span class="nc">JumpringService</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">jump</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">JumpingServiceImpl</span> <span class="kd">implements</span> <span class="n">JumpingService</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Inject</span>
+</span><span class='line'>    <span class="kd">private</span> <span class="n">Jumpable</span> <span class="n">jumbable</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">jump</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">jumpable</span><span class="o">.</span><span class="na">jump</span><span class="o">();</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://en.wikipedia.org/wiki/Dependency_inversion_principle">http://en.wikipedia.org/wiki/Dependency_inversion_principle</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Deepu Mohan Puthrote</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-14T06:07:48+05:30" pubdate data-updated="true">Sep 14<sup>th</sup>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://WarFox.github.io/tech/2014/09/14/solid-design-principle/" data-via="deepumohanp" data-counturl="http://WarFox.github.io/tech/2014/09/14/solid-design-principle/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/tech/2014/03/30/closures/" title="Previous Post: Closures">&laquo; Closures</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+
+<aside class="sidebar col-md-2">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/tech/2014/09/14/solid-design-principle/">SOLID Design Principle</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/03/30/closures/">Closures</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/02/02/sample-app-for-play-22-spring-data-jpa/">Sample App for Play! 2.2, Spring-data-jpa and Backbonejs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/20/backbonejs-in-jsfiddlenet/">Backbonejs in jsFiddle.net</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/09/jquery-populate-select-box-dynamically/">jQuery :: Populate Select Box Dynamically (Plugin Version)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/08/use-requirejs-to-load-scripts-from-cdn/">Use Requirejs to Load Scripts From Cdn Server Like Cdnjs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/05/jquery-populate-selet-box-options/">jQuery :: Populate Selet Box Options Dinamically</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/12/31/youtube-embed-video-html-code-without/">Youtube Embed Video Html Code Without Branding and Controls (Seekbar, Play/pause and Volume)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/11/30/get-last-date-of-month/">Java :: Get Last Date of a Month</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/10/14/how-to-change-extension-of-multiple/">How to Change Extension of Multiple Files (Bash Script)</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/WarFox">@WarFox</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        github.showRepos({
+            user: 'WarFox',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/tech/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+DeepuMohanPuthrote?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+</div>
+
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - <a href="http://deepumohan.com/">Deepu Mohan Puthrote</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

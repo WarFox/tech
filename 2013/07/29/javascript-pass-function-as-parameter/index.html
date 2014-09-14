@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Javascript :: Pass Function as Parameter - Deepu Mohan Puthrote</title>
+  <meta name="author" content="Deepu Mohan Puthrote">
+
+  
+  <meta name="description" content="Javascript allows you to pass functions as parameter to another function and that makes Javascript super awesome!. Great things can be achieved from &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://WarFox.github.io/tech/2013/07/29/javascript-pass-function-as-parameter">
+  <link href="/tech/favicon.png" rel="icon">
+  <link href="/tech/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <link href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="//cdn.jsdelivr.net/fontawesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="/atom.xml" rel="alternate" title="Deepu Mohan Puthrote" type="application/atom+xml">
+  <script src="//cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/tech/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header class='navbar navbar-inverse navbar-static-top' role="banner">  <nav role='navigation'>
+    <span class='circle'></span></span>
+    <div class='navbar-header'>
+      <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class="navbar-brand" href="/tech/" style="padding-left:100px;">Deepu Mohan Puthrote</a>
+    </div>
+    <div class='collapse navbar-collapse navbar-ex1-collapse'>
+  <ul class='nav navbar-nav'>
+    <li>
+      <a href='http://blog.deepumohan.com/'>Personal Blog</a>
+    </li>
+    <li class='active'>
+      <a href='http://tech.deepumohan.com/'>Technology Blog</a>
+    </li>
+    <li>
+      <a href='http://deepumohan.com/cv/'>CV</a>
+    </li>
+    <li>
+      <a href='http://blog.deepumohan.com/2004/07/privacy-policy.html'>Privacy Policy</a>
+    </li>
+  </ul>
+  <ul class='nav navbar-nav navbar-right' id='social'>
+    <li><a href='https://www.facebook.com/deepu.mohan.p'><i class='icon-facebook'></i></a></li>
+    <li><a href='https://www.twitter.com/deepumohanp'><i class='icon-twitter'></i></a></li>
+    <li><a href='https://plus.google.com/106447761403337564868'><i class='icon-google-plus'></i></a></li>
+    <li><a href='http://www.linkedin.com/in/deepumohanp'><i class='icon-linkedin'></i></a></li>
+    <li><a href='http://github.com/WarFox/'><i class='icon-github'></i></a></li>
+    <li><a href='http://deepumohanp.tumblr.com/'><i class='icon-tumblr'></i></a></li>
+    <li><a href='https://foursquare.com/deepumohanp/'><i class='icon-foursquare'></i></a></li>
+    <li><a href='http://instagram.com/deepumohanp/'><i class='icon-instagram'></i></a></li></ul>
+</div>
+
+  </nav>
+
+</header>
+  <div id="content" class="container">
+      <div class="row">
+<article class="hentry col-md-10" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Javascript :: Pass Function as Parameter</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-29T23:19:00+05:30" pubdate data-updated="true">Jul 29<sup>th</sup>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Javascript allows you to pass functions as parameter to another function and that makes Javascript super awesome!. Great things can be achieved from this power.
+Quote from Mozilla developer website:</p>
+
+<blockquote>In JavaScript, functions are first-class objects, i.e. they are objects and can be manipulated and passed around just like any other object.</blockquote>
+
+
+<p>Every Javascript function is a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a> object. Hence we can pass them as arguments, like any other object.</p>
+
+<h3>How to do that?</h3>
+
+<p>Passing function as parameter is no different from passing any other object when it comes to syntax.</p>
+
+<p>I am gonna try and explain that with an example (hopefully, easy to understand)</p>
+
+<h3>The example problem</h3>
+
+<p>Bob wants to get sum of values [1, 2, 3, 4, 5, 6, 7, 8, 9]</p>
+
+<p>So we give him the following solution</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// find sum of values</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">total</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Bob is happy with the function. But now he wants to get sum of all even numbers in the list of values.</p>
+
+<p>So we copy-paste the above function, rename it and make slight changes.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// find sum of values</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">total</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// find sum of even numbers in list of values</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">totalEven</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span><span class="p">(</span> <span class="nx">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">)</span> <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Bob is happy again. But he wants more. Now he need sum of all odd numbers from the same list.</p>
+
+<p>As usual, we copy-paste, rename and make slight changes.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>    <span class="c1">// find sum of values</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">total</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// find sum of even numbers in list of values</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">totalEven</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span> <span class="nx">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">)</span> <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// find sum of odd numbers in list of values</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">totalOdd</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span> <span class="nx">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!==</span> <span class="mi">0</span> <span class="p">)</span> <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h3>The problem with that approach</h3>
+
+<ul>
+<li>Lot of duplicate code.</li>
+<li>Cluttered and ugly source code.</li>
+<li>Source file becomes unnecessarily lengthy.</li>
+<li>Not applying re-usabilty principle.</li>
+<li>Have to create separate function for each additional request.</li>
+</ul>
+
+
+<h3>Better code with passing function as argument</h3>
+
+<p>We can improve the above code a lot by passing the selection functionality as argument. In the above example, the basic operation is summation. Then, we need some kind of selection of values to sum. This selection can be anything, like even numbers, odd numbers etc. This is what we will pass an argument.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>    <span class="kd">var</span> <span class="nx">totalSelectValues</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="nx">selector</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span><span class="nx">selector</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span> <span class="nx">sum</span><span class="o">+=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <code>selector</code>, is function passed as parameter. Here we are expecting it to return a boolean value.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>    <span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// even numbers</span>
+</span><span class='line'>    <span class="nx">totalSelectValues</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// odd numbers</span>
+</span><span class='line'>    <span class="nx">totalSelectValues</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// greater than 5</span>
+</span><span class='line'>    <span class="nx">totalSelectValues</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">value</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Awesome! We just created functions on the fly and passed it as parameters, didn&rsquo;t even bother to name it! Neat eh? Also we have reduced the code base by far. Just a single function and no ugly repetition.</p>
+
+<h3>But that is not enough</h3>
+
+<p>We also need to make sure our little function works perfectly even if the second argument is not send.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>    <span class="kd">var</span> <span class="nx">totalSelectValues</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="nx">selector</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="c1">// handle undefined selector</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">selector</span> <span class="o">==</span> <span class="s1">&#39;undefined&#39;</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">selector</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="kc">true</span><span class="p">;};</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span><span class="nx">selector</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span> <span class="nx">sum</span><span class="o">+=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Now that should work.</p>
+
+<p>The complete example is available in the following jsFiddle. <a href="http://jsfiddle.net/deepumohanp/s2DBJ/"><a href="http://jsfiddle.net/deepumohanp/s2DBJ/">http://jsfiddle.net/deepumohanp/s2DBJ/</a></a></p>
+
+<iframe width="100%" height="876px" src="http://jsfiddle.net/deepumohanp/s2DBJ/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+<p></p>
+
+<h3>References</h3>
+
+<ol>
+<li><p>I got the example inspiration from Dr. Venkat Subramaniam&rsquo;s talk an Scala.</p>
+
+<ul>
+<li><a href="http://www.youtube.com/watch?v=LH75sJAR0hc">http://www.youtube.com/watch?v=LH75sJAR0hc</a></li>
+<li><a href="https://vimeo.com/57988159">https://vimeo.com/57988159</a></li>
+</ul>
+</li>
+<li><p><a href="http://www.joelonsoftware.com/items/2006/08/01.html">http://www.joelonsoftware.com/items/2006/08/01.html</a></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope</a></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function</a></p></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Deepu Mohan Puthrote</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-29T23:19:00+05:30" pubdate data-updated="true">Jul 29<sup>th</sup>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/tech/tech/categories/javascript/'>javascript</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://WarFox.github.io/tech/2013/07/29/javascript-pass-function-as-parameter/" data-via="deepumohanp" data-counturl="http://WarFox.github.io/tech/2013/07/29/javascript-pass-function-as-parameter/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/tech/2013/06/24/java-print-hello-world-without-using/" title="Previous Post: Java :: Print "Hello World" without using Semicolon (;)">&laquo; Java :: Print "Hello World" without using Semicolon (;)</a>
+      
+      
+        <a class="basic-alignment right" href="/tech/2013/08/31/blog-update-bootstrap-awesomeness/" title="Next Post: Blog Update :: Bootstrap awesomeness">Blog Update :: Bootstrap awesomeness &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+<aside class="sidebar col-md-2">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/tech/2014/09/14/solid-design-principle/">SOLID Design Principle</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/03/30/closures/">Closures</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/02/02/sample-app-for-play-22-spring-data-jpa/">Sample App for Play! 2.2, Spring-data-jpa and Backbonejs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/20/backbonejs-in-jsfiddlenet/">Backbonejs in jsFiddle.net</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/09/jquery-populate-select-box-dynamically/">jQuery :: Populate Select Box Dynamically (Plugin Version)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/08/use-requirejs-to-load-scripts-from-cdn/">Use Requirejs to Load Scripts From Cdn Server Like Cdnjs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/05/jquery-populate-selet-box-options/">jQuery :: Populate Selet Box Options Dinamically</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/12/31/youtube-embed-video-html-code-without/">Youtube Embed Video Html Code Without Branding and Controls (Seekbar, Play/pause and Volume)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/11/30/get-last-date-of-month/">Java :: Get Last Date of a Month</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/10/14/how-to-change-extension-of-multiple/">How to Change Extension of Multiple Files (Bash Script)</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/WarFox">@WarFox</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        github.showRepos({
+            user: 'WarFox',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/tech/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+DeepuMohanPuthrote?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+</div>
+
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - <a href="http://deepumohan.com/">Deepu Mohan Puthrote</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

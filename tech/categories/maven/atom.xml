@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Maven | Deepu Mohan Puthrote]]></title>
+  <link href="http://WarFox.github.io/tech/tech/categories/maven/atom.xml" rel="self"/>
+  <link href="http://WarFox.github.io/tech/"/>
+  <updated>2014-09-14T06:34:41+05:30</updated>
+  <id>http://WarFox.github.io/tech/</id>
+  <author>
+    <name><![CDATA[Deepu Mohan Puthrote]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Maven:: Invalid CEN (Bad Signature) Invalid LOC (Bad Signature)]]></title>
+    <link href="http://WarFox.github.io/tech/2012/07/27/maven-invalid-cen-bad-signature-invalid-loc/"/>
+    <updated>2012-07-27T11:16:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2012/07/27/maven-invalid-cen-bad-signature-invalid-loc</id>
+    <content type="html"><![CDATA[<p>So, you are here, and I guess you are having a tough time trying to figure out what that error is. I&rsquo;d spent almost three days trying to figure out what this crazy error is, but then decided to not waste time and deleted my Maven repository folder at <strong>~/.m2/repository</strong>.</p>
+
+<p>I assume that, this is some bug in maven, but this also pops up in several other projects like Apache Tomcat, Atlassian Confluence etc. The error comes up randomly and developers spent a great portion of their fruitful work time, just to figure out whats going wrong. And most of the time it is not their fault.</p>
+
+<p>This error comes up randomly and means that one of the jar file in the project class path is corrupt. A practical solution is to replace the jar files with new ones freshly downloaded.</p>
+
+<p>This crazy error show up when the JVM thinks that the jar file it is accessing is corrupt. So I assumed if I delete the dependency jar files and download them again, it might solve the problem.</p>
+
+<p>``` bash</p>
+
+<h1>delete repository</h1>
+
+<p>rm -rf ~/.m2/repository/*</p>
+
+<h1>use maven</h1>
+
+<p>mvn test
+```</p>
+
+<p>This deletes all files from ~/.m2/repository/ first and then, <code>mvn test</code> will download all dependent jar files before building the project and running junit tests. It took a while for Maven to download all my dependencies, but was worthwhile. The project is back in action!!!</p>
+
+<p>If you are not using Maven or any other dependency management tool, you may try downloading the required jar files again, may be from a different source, if the file in that source is corrupted.</p>
+
+<p>This error may also come up when <a href="http://stackoverflow.com/questions/3831217/cvs-checkout-on-windows-ant-build-invalid-cen-header-bad-signature">checking out from repository</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://WarFox.github.io/tech/sitemap.xml 

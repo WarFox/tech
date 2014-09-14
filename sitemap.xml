@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2014/09/14/solid-design-principle/</loc>
+    <lastmod>2014-09-14T06:07:48+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2014/03/30/closures/</loc>
+    <lastmod>2014-03-30T22:49:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2014/02/02/sample-app-for-play-22-spring-data-jpa/</loc>
+    <lastmod>2014-02-02T22:49:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2014/01/20/backbonejs-in-jsfiddlenet/</loc>
+    <lastmod>2014-01-20T12:57:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2014/01/09/jquery-populate-select-box-dynamically/</loc>
+    <lastmod>2014-01-09T00:03:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2014/01/08/use-requirejs-to-load-scripts-from-cdn/</loc>
+    <lastmod>2014-01-08T16:22:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2014/01/05/jquery-populate-selet-box-options/</loc>
+    <lastmod>2014-01-05T23:04:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/12/31/youtube-embed-video-html-code-without/</loc>
+    <lastmod>2013-12-31T15:12:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/11/30/get-last-date-of-month/</loc>
+    <lastmod>2013-11-30T23:48:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/10/14/how-to-change-extension-of-multiple/</loc>
+    <lastmod>2013-10-14T17:17:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/10/07/correct-way-of-embedding-flash-content/</loc>
+    <lastmod>2013-10-07T11:39:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/10/02/javamail-javaxmailnosuchproviderexcepti/</loc>
+    <lastmod>2013-10-02T11:33:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/09/08/get-content-from-ace-editor-to-textarea/</loc>
+    <lastmod>2013-09-08T14:53:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/09/02/javascript-ace-editor-positioning-bootstrap/</loc>
+    <lastmod>2013-09-02T21:54:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/08/31/blog-update-bootstrap-awesomeness/</loc>
+    <lastmod>2013-08-31T09:39:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/07/29/javascript-pass-function-as-parameter/</loc>
+    <lastmod>2013-07-29T23:19:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/06/24/java-print-hello-world-without-using/</loc>
+    <lastmod>2013-06-24T11:34:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/06/14/emacs-show-line-number-in-margin/</loc>
+    <lastmod>2013-06-14T11:09:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/05/11/turn-off-unlimited-trailing-space-in-intellij-idea/</loc>
+    <lastmod>2013-05-11T18:23:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/03/27/java-count-number-of-times-method-is-invoked/</loc>
+    <lastmod>2013-03-27T00:04:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/03/26/java-how-to-convert-primitive-char-to/</loc>
+    <lastmod>2013-03-26T14:35:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/03/21/java-check-whether-two-strings-are-same/</loc>
+    <lastmod>2013-03-21T15:40:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/03/07/spring-roo-adjust-text-box-sizewidth/</loc>
+    <lastmod>2013-03-07T12:05:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/02/20/spring-roo-adjusting-textarea-rows-and-cols/</loc>
+    <lastmod>2013-02-20T22:18:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/01/25/linux-port-is-in-use-but-pid-not-visible/</loc>
+    <lastmod>2013-01-25T20:48:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2013/01/16/when-to-use-interfaces-in-your/</loc>
+    <lastmod>2013-01-16T04:12:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/12/22/how-to-set-environment-variable-in/</loc>
+    <lastmod>2012-12-22T20:52:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/12/07/youtube-redesign-2012-more-focused-on-subscriptions/</loc>
+    <lastmod>2012-12-07T15:10:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/11/26/how-to-transfer-files-to-amazon-ec2-using-filezilla/</loc>
+    <lastmod>2012-11-26T07:19:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/11/21/disable-dashboard-on-startup-in-spring-tool-suite/</loc>
+    <lastmod>2012-11-21T00:39:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/11/16/jquery-getting-started-with-jquery/</loc>
+    <lastmod>2012-11-16T21:02:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/11/06/how-to-unlock-samsung-galaxy-ace-for-free/</loc>
+    <lastmod>2012-11-06T23:34:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/11/05/how-to-root-your-samsung-galaxy-ace/</loc>
+    <lastmod>2012-11-05T01:35:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/10/10/js-count-down-timer-in-pure-vanilla/</loc>
+    <lastmod>2012-10-10T04:35:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/09/26/c-paisa-to-rupees-converter/</loc>
+    <lastmod>2012-09-26T19:03:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/08/29/http-caching-explained/</loc>
+    <lastmod>2012-08-29T04:28:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/07/27/maven-invalid-cen-bad-signature-invalid-loc/</loc>
+    <lastmod>2012-07-27T11:16:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/07/16/ubuntu-how-to-change-computer-name/</loc>
+    <lastmod>2012-07-16T09:07:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/06/26/visualize-your-inbox-using-r/</loc>
+    <lastmod>2012-06-26T15:34:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/06/22/c-using-namespace-std-what-does-that/</loc>
+    <lastmod>2012-06-22T19:36:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/04/29/ati-radeon-hd-6600m-graphics-card-on/</loc>
+    <lastmod>2012-04-29T22:05:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/04/19/git-ignore-file-permission-change/</loc>
+    <lastmod>2012-04-19T01:03:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/04/17/java-how-to-convert-arrays-into-set-and/</loc>
+    <lastmod>2012-04-17T18:47:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/04/02/git-rename-branch/</loc>
+    <lastmod>2012-04-02T17:05:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/03/27/git-reset-single-file/</loc>
+    <lastmod>2012-03-27T20:20:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/03/07/how-to-take-screenshot-of-android/</loc>
+    <lastmod>2012-03-07T06:44:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2012/02/20/targeted-ads-and-privacy-in-cloud/</loc>
+    <lastmod>2012-02-20T18:07:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2011/12/23/word-count-using-javascript/</loc>
+    <lastmod>2011-12-23T21:07:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2011/12/21/oracle-sql-to-calculate-value-based-on/</loc>
+    <lastmod>2011-12-21T20:29:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2011/12/21/marshalling-in-java/</loc>
+    <lastmod>2011-12-21T19:59:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2011/09/07/windows-batch-script-to-create_07/</loc>
+    <lastmod>2011-09-07T17:54:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2011/09/07/windows-batch-script-to-create/</loc>
+    <lastmod>2011-09-07T14:55:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2011/08/21/cancel-form-submit-when-using/</loc>
+    <lastmod>2011-08-21T23:50:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2011/04/18/how-to-get-html-color-code-from-image/</loc>
+    <lastmod>2011-04-18T22:36:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2010/11/20/forgot-to-mention-subject/</loc>
+    <lastmod>2010-11-20T00:52:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2010/11/08/drive-is-not-accessible-parameters-are/</loc>
+    <lastmod>2010-11-08T22:54:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2010/07/17/export-oracle-database-with-auto-file/</loc>
+    <lastmod>2010-07-17T23:05:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2010/01/04/googl-googles-url-shortner/</loc>
+    <lastmod>2010-01-04T09:50:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2010/01/04/googl-googles-url-shortner/</loc>
+    <lastmod>2010-01-04T09:50:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2009/12/09/webservices-using-jdeveloper/</loc>
+    <lastmod>2009-12-09T14:30:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2009/12/09/webservices-using-jdeveloper/</loc>
+    <lastmod>2009-12-09T14:30:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2009/08/29/google-health/</loc>
+    <lastmod>2009-08-29T10:42:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2009/08/29/google-health/</loc>
+    <lastmod>2009-08-29T10:42:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2009/06/29/very-importatntpls-circulate/</loc>
+    <lastmod>2009-06-29T18:38:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2009/03/30/with-effect-from-01st-april-2009-atm/</loc>
+    <lastmod>2009-03-30T11:48:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2008/12/08/bsnl-cellone-gprs-for-prepaid-customers/</loc>
+    <lastmod>2008-12-08T12:58:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2008/07/08/missed-call-alert-in-bsnl-mobile/</loc>
+    <lastmod>2008-07-08T23:40:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/2008/07/08/bsnl-friends-and-family-plan/</loc>
+    <lastmod>2008-07-08T22:47:00+05:30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/blog/archives/</loc>
+    <lastmod>2014-09-14T06:34:41+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://WarFox.github.io/tech/</loc>
+    <lastmod>2014-09-14T06:34:41+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+</urlset>

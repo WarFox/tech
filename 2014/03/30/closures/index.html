@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Closures - Deepu Mohan Puthrote</title>
+  <meta name="author" content="Deepu Mohan Puthrote">
+
+  
+  <meta name="description" content="Test
+Closures are a bit hard to understand concept for someone from an Object Oriented programming background, mainly because popular OO programming &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://WarFox.github.io/tech/2014/03/30/closures">
+  <link href="/tech/favicon.png" rel="icon">
+  <link href="/tech/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <link href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="//cdn.jsdelivr.net/fontawesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="/atom.xml" rel="alternate" title="Deepu Mohan Puthrote" type="application/atom+xml">
+  <script src="//cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/tech/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header class='navbar navbar-inverse navbar-static-top' role="banner">  <nav role='navigation'>
+    <span class='circle'></span></span>
+    <div class='navbar-header'>
+      <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class="navbar-brand" href="/tech/" style="padding-left:100px;">Deepu Mohan Puthrote</a>
+    </div>
+    <div class='collapse navbar-collapse navbar-ex1-collapse'>
+  <ul class='nav navbar-nav'>
+    <li>
+      <a href='http://blog.deepumohan.com/'>Personal Blog</a>
+    </li>
+    <li class='active'>
+      <a href='http://tech.deepumohan.com/'>Technology Blog</a>
+    </li>
+    <li>
+      <a href='http://deepumohan.com/cv/'>CV</a>
+    </li>
+    <li>
+      <a href='http://blog.deepumohan.com/2004/07/privacy-policy.html'>Privacy Policy</a>
+    </li>
+  </ul>
+  <ul class='nav navbar-nav navbar-right' id='social'>
+    <li><a href='https://www.facebook.com/deepu.mohan.p'><i class='icon-facebook'></i></a></li>
+    <li><a href='https://www.twitter.com/deepumohanp'><i class='icon-twitter'></i></a></li>
+    <li><a href='https://plus.google.com/106447761403337564868'><i class='icon-google-plus'></i></a></li>
+    <li><a href='http://www.linkedin.com/in/deepumohanp'><i class='icon-linkedin'></i></a></li>
+    <li><a href='http://github.com/WarFox/'><i class='icon-github'></i></a></li>
+    <li><a href='http://deepumohanp.tumblr.com/'><i class='icon-tumblr'></i></a></li>
+    <li><a href='https://foursquare.com/deepumohanp/'><i class='icon-foursquare'></i></a></li>
+    <li><a href='http://instagram.com/deepumohanp/'><i class='icon-instagram'></i></a></li></ul>
+</div>
+
+  </nav>
+
+</header>
+  <div id="content" class="container">
+      <div class="row">
+<article class="hentry col-md-10" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Closures</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-30T22:49:00+05:30" pubdate data-updated="true">Mar 30<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Test
+Closures are a bit hard to understand concept for someone from an Object Oriented programming background, mainly because popular OO programming languages, <s>(Java/C++) does not have this feature</s> (As <a href="http://www.reddit.com/user/bjzaba">bjzaba</a> pointed out in <a href="http://www.reddit.com/r/programming/comments/223b7p/closures/cgiyg9o">reddit</a>, C++ 11 has Closures) haven&rsquo;t embraced or promoted this feature until recently. It is more of a functional programming concept, although many Object Oriented languages has started to support Closures through first class functions or higher order functions.</p>
+
+<p>I first heard about Closures while developing something in Javascript. If you have used the popular javascript library <a href="http://jquery.com" title="jQuery">jQuery</a>, you have already used closures, knowingly or unknowingly.</p>
+
+<p>Here is my attempt to explain Closures, through examples in few programming languages.</p>
+
+<p>From Wikipedia:</p>
+
+<blockquote><p>In programming languages, a closure (also lexical closure or function
+closure) is a function or reference to a function together with a
+referencing environment—a table storing a reference to each of the
+non-local variables (also called free variables or up values) of that
+function. A closure—unlike a plain function pointer—allows a
+function to access those non-local variables even when invoked outside
+its immediate lexical scope.</p></blockquote>
+
+<p>What that means:
+1. Closure is a function (or a reference to a function)
+2. You get a pointer to closure
+3. So you can pass it around like an object
+4. It knows about non-local variables
+5. It can access those non-local variables, even when invoked outside of its scope
+6. So we say, closures &lsquo;closes&rsquo; on its environment
+7. A function may create a closure and return it.</p>
+
+<h3>Few programming languages, that support Closures</h3>
+
+<ul>
+<li>Lisp</li>
+<li>Javascript</li>
+<li>Scala</li>
+<li>Clojure</li>
+<li>Ruby</li>
+<li>Python</li>
+<li>Haskell</li>
+<li>PHP</li>
+</ul>
+
+
+<p>In closures procedure/method/function contexts become first-class. That means, with closures you can create functions that return functions, although that is only an outcome. An important point to understand here is, the closure methods refer to the context in which it was created, not to the one it was called.</p>
+
+<p>To better understand closures one has to understand a variable&rsquo;s scope, the best read about that would be <a href="http://www.coolcoder.in/2014/03/everything-you-need-to-know-about.html" title="Everything you need to know about javascript variable scope">understanding javascript varialble scope</a>.</p>
+
+<p>Closures store references to the outer function’s variables; they do not store the actual value. So if we change the value of reference in closure it changes value outside of its scope.</p>
+
+<p>You may implement closures using Anonymous functions, but all anonymous functions need not be a closure, although many of them are.</p>
+
+<h3>Why would anyone use Closures?</h3>
+
+<ul>
+<li>Reusability</li>
+<li>Do more with less code</li>
+<li>Make functional code stateful</li>
+</ul>
+
+
+<p>Closures help us to write more expressive and concise code(once you get a hang of it!). We know objects have a state, using Closure we can give state to functions as well.</p>
+
+<p>Now, let us take a look at examples of how to use closures in a few programming languages.</p>
+
+<h3>Examples</h3>
+
+<p>All of the following examples do the same thing: Create a closure to increment a number by another number.</p>
+
+<h4>1. Closure example in Javascript</h4>
+
+<p>This would be the easiest to understand code.</p>
+
+<figure class='code'><figcaption><span>Closure example in Javascript  (increment.js)</span> <a href='/tech/downloads/code/closures/increment.js'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">incrementBy</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// this will remember the value of &#39;x&#39; forever</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">incrementBy2</span> <span class="o">=</span> <span class="nx">incrementBy</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">incrementBy3</span> <span class="o">=</span> <span class="nx">incrementBy</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">incrementBy2</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">incrementBy3</span><span class="p">(</span><span class="mi">8</span><span class="p">));</span>
+</span><span class='line'><span class="c1">// Here you are creating a closure and calling it immediately</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">incrementBy</span><span class="p">(</span><span class="mi">5</span><span class="p">)(</span><span class="mi">8</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In the Javascript example above, we define a function <code>incrementBy(x)</code>, which returns a function, that accepts parameter &lsquo;y&rsquo; and returns sum of x and y. Here the value of &lsquo;x&rsquo; will go into the closure of the returned function and will be accessible whenever the function is invoked.</p>
+
+<p>Note that when calling <code>incrementBy2(4)</code> our closure remembers the value 2 (i.e &lsquo;x&rsquo;) that was passed earlier when doing <code>var incrementBy2 = incrementBy(2);</code>. And when invoking <code>incrementBy2(4)</code> we are actually passing the value of <code>y</code> as 4. Hence the statement <code>return x+y</code> will transform to <code>return 2+4</code>. Cool right!!?</p>
+
+<br/>
+
+
+<h4>2. Closure example in <a href="http://scala-lang.org/" title="Scala">Scala</a></h4>
+
+<figure class='code'><figcaption><span>Closure example in Scala  (increment.scala)</span> <a href='/tech/downloads/code/closures/increment.scala'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">object</span> <span class="nc">Closure</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// define the closure using one line of code, power of Scala</span>
+</span><span class='line'>    <span class="k">def</span> <span class="n">incrementBy</span><span class="o">(</span><span class="n">x</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">(</span><span class="n">y</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span> <span class="n">main</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span> <span class="k">=</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">var</span> <span class="n">incrementBy3</span> <span class="k">=</span> <span class="n">incrementBy</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
+</span><span class='line'>        <span class="k">val</span> <span class="n">incrementBy5</span> <span class="k">=</span> <span class="n">incrementBy</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">println</span><span class="o">(</span><span class="n">incrementBy3</span><span class="o">(</span><span class="mi">5</span><span class="o">))</span>
+</span><span class='line'>        <span class="n">println</span><span class="o">(</span><span class="n">incrementBy5</span><span class="o">(</span><span class="mi">10</span><span class="o">))</span>
+</span><span class='line'>        <span class="n">println</span><span class="o">(</span><span class="n">incrementBy</span><span class="o">(</span><span class="mi">20</span><span class="o">)(</span><span class="mi">20</span><span class="o">))</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The example in Scala is similar to the example in Javascript except for Scala&rsquo;s awesome one liner syntax.</p>
+
+<br/>
+
+
+<h4>3. Closure example in Lisp (Clisp)</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='lisp'><span class='line'><span class="p">(</span><span class="nb">defun</span> <span class="nv">increment</span><span class="p">(</span><span class="nv">y</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">defun</span> <span class="nv">incrementBy</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span>
+</span><span class='line'>        <span class="p">(</span><span class="nb">+</span> <span class="nv">y</span> <span class="nv">x</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">)</span>
+</span><span class='line'><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nv">increment</span> <span class="mi">4</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nv">incrementBy</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">; 9</span>
+</span><span class='line'><span class="p">(</span><span class="nv">incrementBy</span> <span class="mi">10</span><span class="p">)</span> <span class="c1">; 14</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There are several ways of doing this is lisp. This is only one way of doing it. Here you are not getting a pointer to the closure function and will probably make it useless. See <a href="http://dunsmor.com/lisp/onlisp/onlisp_9.html">this link</a> to see how to return functions is Clisp.</p>
+
+<br/>
+
+
+<h4>4. Closure example in Clojure</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">increment</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">y</span><span class="p">]</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">def </span><span class="nv">incrementBy</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">x</span><span class="p">]</span>
+</span><span class='line'>      <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">))</span>
+</span><span class='line'><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">increment</span> <span class="mi">4</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nf">incrementBy</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">; 9</span>
+</span><span class='line'><span class="p">(</span><span class="nf">incrementBy</span> <span class="mi">10</span><span class="p">)</span> <span class="c1">; 14</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see, the syntax of clojure and lisp are extremely similar.</p>
+
+<br/>
+
+
+<h4>5. Closure example in Python</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">incrementBy</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">increment</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">incrementBy4</span> <span class="o">=</span> <span class="n">incrementBy</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span><span class='line'><span class="n">incrementBy6</span> <span class="o">=</span> <span class="n">incrementBy</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="n">incrementBy4</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c"># 9</span>
+</span><span class='line'><span class="k">print</span> <span class="n">incrementBy6</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c"># 16</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The above example in Python is pretty similar to the one in Javascript and is easy to understand. Here we define the closure function <code>increment(y)</code> and then return it. Just remember to take care of the tabs!</p>
+
+<br/>
+
+
+<h4>6. Closure example in Ruby</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Closure</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># Ruby example using Proc.new</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">incrementBy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">return</span> <span class="no">Proc</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span><span class="o">|</span><span class="n">y</span><span class="o">|</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># Ruby example using lambda</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">incrementByLambda</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span class='line'>    <span class="nb">lambda</span> <span class="p">{</span><span class="o">|</span><span class="n">y</span><span class="o">|</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">}</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">closure</span> <span class="o">=</span> <span class="no">Closure</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">increment5</span> <span class="o">=</span> <span class="n">closure</span><span class="o">.</span><span class="n">incrementBy</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span class='line'><span class="n">incrementByLambda7</span> <span class="o">=</span> <span class="n">closure</span><span class="o">.</span><span class="n">incrementByLambda</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="n">increment5</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">incrementByLambda7</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Ruby can do this is in two ways, using Proc and using lambda. The lambda functions in Ruby are similar to lambda&rsquo;s in lisp.</p>
+
+<br/>
+
+
+<p>So that was examples about closures. Hope that gives you at least some idea about Closures. If you know how do the same in any other languages, please feel free to share. Also checkout the references, they are good reads.</p>
+
+<h3>References:</h3>
+
+<ul>
+<li><a href="http://martinfowler.com/bliki/Lambda.html">Martin Fowler on Lambda</a></li>
+<li><a href="http://www.skorks.com/2010/05/closures-a-simple-explanation-using-ruby/">http://www.skorks.com/2010/05/closures-a-simple-explanation-using-ruby/</a></li>
+<li><a href="http://stackoverflow.com/questions/111102/how-do-javascript-closures-work">http://stackoverflow.com/questions/111102/how-do-javascript-closures-work</a></li>
+<li><a href="http://psg.com/~dlamkins/sl/chapter11.html#closures">http://psg.com/~dlamkins/sl/chapter11.html#closures</a></li>
+<li><a href="http://innig.net/software/ruby/closures-in-ruby">http://innig.net/software/ruby/closures-in-ruby</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Closure_">http://en.wikipedia.org/wiki/Closure_</a>(computer_programming)</li>
+<li><a href="http://learn.jquery.com/javascript-101/closures/">http://learn.jquery.com/javascript-101/closures/</a></li>
+<li><a href="http://javascriptissexy.com/understand-javascript-closures-with-ease/">http://javascriptissexy.com/understand-javascript-closures-with-ease/</a></li>
+<li><a href="http://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/">http://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/</a></li>
+<li><a href="http://csharpindepth.com/Articles/Chapter5/Closures.aspx">http://csharpindepth.com/Articles/Chapter5/Closures.aspx</a></li>
+</ul>
+
+
+<p><em>Thanks to Craig for sharing <a href="http://golang.org/" title="The Go Programming Language">Go</a> <a href="http://tech.deepumohan.com/2014/03/closures.html#comment-1316532644">snippet</a></em></p>
+
+<p>Reddit thread here: <a href="http://redd.it/223b7p">http://redd.it/223b7p</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Deepu Mohan Puthrote</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-30T22:49:00+05:30" pubdate data-updated="true">Mar 30<sup>th</sup>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/tech/tech/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://WarFox.github.io/tech/2014/03/30/closures/" data-via="deepumohanp" data-counturl="http://WarFox.github.io/tech/2014/03/30/closures/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/tech/2014/02/02/sample-app-for-play-22-spring-data-jpa/" title="Previous Post: Sample app for Play! 2.2, Spring-data-jpa and Backbonejs">&laquo; Sample app for Play! 2.2, Spring-data-jpa and Backbonejs</a>
+      
+      
+        <a class="basic-alignment right" href="/tech/2014/09/14/solid-design-principle/" title="Next Post: SOLID design principle">SOLID design principle &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+<aside class="sidebar col-md-2">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/tech/2014/09/14/solid-design-principle/">SOLID Design Principle</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/03/30/closures/">Closures</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/02/02/sample-app-for-play-22-spring-data-jpa/">Sample App for Play! 2.2, Spring-data-jpa and Backbonejs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/20/backbonejs-in-jsfiddlenet/">Backbonejs in jsFiddle.net</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/09/jquery-populate-select-box-dynamically/">jQuery :: Populate Select Box Dynamically (Plugin Version)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/08/use-requirejs-to-load-scripts-from-cdn/">Use Requirejs to Load Scripts From Cdn Server Like Cdnjs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/05/jquery-populate-selet-box-options/">jQuery :: Populate Selet Box Options Dinamically</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/12/31/youtube-embed-video-html-code-without/">Youtube Embed Video Html Code Without Branding and Controls (Seekbar, Play/pause and Volume)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/11/30/get-last-date-of-month/">Java :: Get Last Date of a Month</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/10/14/how-to-change-extension-of-multiple/">How to Change Extension of Multiple Files (Bash Script)</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/WarFox">@WarFox</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        github.showRepos({
+            user: 'WarFox',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/tech/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+DeepuMohanPuthrote?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+</div>
+
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - <a href="http://deepumohan.com/">Deepu Mohan Puthrote</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

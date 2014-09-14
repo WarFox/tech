@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Backbonejs | Deepu Mohan Puthrote]]></title>
+  <link href="http://WarFox.github.io/tech/tech/categories/backbonejs/atom.xml" rel="self"/>
+  <link href="http://WarFox.github.io/tech/"/>
+  <updated>2014-09-14T06:34:41+05:30</updated>
+  <id>http://WarFox.github.io/tech/</id>
+  <author>
+    <name><![CDATA[Deepu Mohan Puthrote]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Backbonejs in jsFiddle.net]]></title>
+    <link href="http://WarFox.github.io/tech/2014/01/20/backbonejs-in-jsfiddlenet/"/>
+    <updated>2014-01-20T12:57:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2014/01/20/backbonejs-in-jsfiddlenet</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"> <p><a href="http://jsfiddle.net/">jsFiddle</a> does not provide <a href="http://backbonejs.org/">backbonejs</a> library through its Frameworks & Extensions dropdown. Thankfully, it allows you to add any external resources via External Resources option. I have made this blank template for you guys to start playing with Backbonejs in jsFiddle. Feel free to use it directly or fork it.</p> <iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/6fLw6/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> <ul><li><a href="http://jsfiddle.net/deepumohanp/6fLw6/">Backbonejs Playground</a></li></ul></div></div>
+
+]]></content>
+  </entry>
+  
+</feed>

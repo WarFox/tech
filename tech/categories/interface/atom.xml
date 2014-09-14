@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Interface | Deepu Mohan Puthrote]]></title>
+  <link href="http://WarFox.github.io/tech/tech/categories/interface/atom.xml" rel="self"/>
+  <link href="http://WarFox.github.io/tech/"/>
+  <updated>2014-09-14T06:34:41+05:30</updated>
+  <id>http://WarFox.github.io/tech/</id>
+  <author>
+    <name><![CDATA[Deepu Mohan Puthrote]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Programming :: When to Use Interfaces in Your Application]]></title>
+    <link href="http://WarFox.github.io/tech/2013/01/16/when-to-use-interfaces-in-your/"/>
+    <updated>2013-01-16T04:12:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/01/16/when-to-use-interfaces-in-your</id>
+    <content type="html"><![CDATA[<p>There are several advantages in utilizing the features of Interfaces in general programming. As you may already know, interfaces define a set of functionality as a rule or a contract. When you implement an interface all of these functionality <strong>must</strong> be implemented in the concrete class.</p>
+
+<p>The ideas discussed here can be applied using any programming language that supports Interfaces. Java has been used in examples for simplicity.</p> <p>In general when one writes a simple program, one may not think about the need of using an <code>Interface</code>. But when you are building a larger system or a library which keeps evolving, it is a good idea to use <code>Interface</code>. A particular advantage of using interface in Java is that it allows multiple inheritance.</p>
+
+<p>The full power of <code>Interface</code> is utilized when dependency injection techniques is used to inject required implementation on run time. Using references to interfaces instead of their concrete implementation classes helps in minimizing <a href="http://www.javapractices.com/topic/Topic123.cjp">ripple effects</a>, as the user of an interface reference doesn&rsquo;t have to worry about the changes in the underlying concrete implementation.</p>
+
+<p>To give an example consider our application has a layered architecture with Controller layer on top then Service layer, Repository layer and domain layer in that order. Here controller layer interacts with service layer and service layer interacts with repository layer. Each layer is aware of the services provided by the layer below it. We expose this information using Interface and hide the concrete implementation.</p>
+
+<p>Let us say we have a <code>UserRegistrationService</code>, which registers a new user in our system. Our requirement is to save the user information in a relational database and also in xml files. If we were not using interface, the UserRegistrationService may be implemented with two functions <code>saveToXML()</code> and <code>saveToDatabase()</code>.</p>
+
+<p>``` java
+public class UserRegistrationService {</p>
+
+<pre><code>public void saveToXML(UserInfo userInfo) {
+    //save to xml using service exposed by Repository layer
+}
+
+public void saveToDatabase(UserInfo userInfo) {
+    //save to db using service exposed by Repository layer
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>In this case, the <code>UserRegistrationController</code> should be aware of the concrete implementation of these two functions in <code>UserRegistrationService</code> to use them.</p>
+
+<p>``` java</p>
+
+<p>//Controller becomes complicated when additional features are required</p>
+
+<p>public class UserRegistrationController {</p>
+
+<pre><code>//Controller should be aware of the implementation when no Interface is used
+UserRegistrationService userRegistrationService = new UserRegistrationService();
+
+public void processRequest(UserInfo userInfo) {
+    this.saveToXml(userInfo);
+}
+
+private void saveToXml(UserInfo userInfo) {
+    userRegistrationService.saveToXml(userInfo);
+}
+
+private void saveToDatabase(UserInfo userInfo) {
+    userRegistrationService.saveToDatabase();
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>If an additional functionality to save the information as JSON is required then you will have to add a new function <code>saveToJson()</code> in the Service class as well as make changes in the Controller. This adds lots of complication to maintenance of our huge application with hundreds of controllers and services.</p>
+
+<p>When using interface this becomes much simpler. We define our UserRegistrationService like this:</p>
+
+<p>``` java
+public interface UserRegistrationService {</p>
+
+<pre><code>public void save();
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<p>The controller layer is only aware of this interface, which has a save method.</p>
+
+<p>Let us say we have two implementations like the following:</p>
+
+<p>``` java</p>
+
+<p>public class UserRegistraionServiceXmlImpl implements UserRegistrationService {</p>
+
+<pre><code>@Override
+public void save(UserInfo userInfo) {
+    //save to xml using service exposed by Repository layer
+}
+</code></pre>
+
+<p>}</p>
+
+<p>public class UserRegistraionServiceRelDbImpl implements UserRegistrationService {</p>
+
+<pre><code>@Override
+public void save(UserInfo userInfo) {
+    //save to relational db using service exposed by Repository layer
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Here we can choose any of these two implementation on run time using dependency injection. One may use <code>@Inject</code> or <code>@Resource</code> annotation to mark an implementation is to be injected. If using <a href="http://goo.gl/g4PVl">Spring</a>, one may also use Xml bean definitions.</p>
+
+<p>``` java</p>
+
+<p>//Controller becomes much simpler when using Interfaces in the service layer<br />
+public class UserRegistrationController {</p>
+
+<pre><code>@Resource(name = "userRegistrationServiceXmlImpl")
+UserRegistrationService userRegistrationService;
+
+public void processRequest(UserInfo userInfo) {
+    userRegistrationService.save(userInfo);
+}
+
+public void setUserRegistrationService(UserRegistrationService userRegistrationService) {
+    this.userRegistrationService = userRegistrationService;
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Now when we need to add the additional functionality of saving to Json, we just add another implementation and select that implementation to be injected. (You may use an IOC{<a href="http://goo.gl/2YknD">Inversion Of Control</a>} container like <a href="http://goo.gl/g4PVl">Spring</a> to achieve this seamlessly.)</p>
+
+<p>``` java</p>
+
+<p>public class UserRegistraionServiceJsonImpl implements UserRegistrationService {</p>
+
+<pre><code>@Override
+public void save() {        
+    //save to json using service exposed by Repository layer
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>This highly reduces the software modification and extension cost. As changes in one layer does not effect other layer and new functionalities are made available to other layer immediately.</p>
+
+<p>Thus using interface gives you more power over extending and maintaining your application, utilize abstraction and implement good software development practices.</p>
+]]></content>
+  </entry>
+  
+</feed>

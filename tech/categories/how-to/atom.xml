@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: How To | Deepu Mohan Puthrote]]></title>
+  <link href="http://WarFox.github.io/tech/tech/categories/how-to/atom.xml" rel="self"/>
+  <link href="http://WarFox.github.io/tech/"/>
+  <updated>2014-09-14T06:34:41+05:30</updated>
+  <id>http://WarFox.github.io/tech/</id>
+  <author>
+    <name><![CDATA[Deepu Mohan Puthrote]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Turn Off Unlimited Trailing Whitespace in IntelliJ IDEA]]></title>
+    <link href="http://WarFox.github.io/tech/2013/05/11/turn-off-unlimited-trailing-space-in-intellij-idea/"/>
+    <updated>2013-05-11T18:23:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/05/11/turn-off-unlimited-trailing-space-in-intellij-idea</id>
+    <content type="html"><![CDATA[<p>By default, IntelliJ IDEA allows you to click any where on the editor and type. Some users find it annoying. If you are new to IntelliJ, you may find it a bit difficult to change the setting. This is available in the Virtual Space section of Editor Settings in IDEA preferences.</p>
+
+<p>Turn it of by going to File menu &ndash;&gt; Settings &ndash;&gt; Editor &ndash;&gt; Virtual Space and uncheck &lsquo;Allow placement of caret after end of line&rsquo;.</p>
+
+<p><img src="http://1.bp.blogspot.com/-0TweG1pBNgI/UY4vGJ-mWuI/AAAAAAAAEBg/MUTHKRLU6g0/s1600/Screen+Shot+2013-05-11+at+4.07.26+PM.png" width="640" height="393"/></p>
+
+<p>Peace of mind.</p>
+
+<p>Here is a bonus video of how it is done.</p>
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/GP5ZIGU6ufo" frameborder="0" allowfullscreen></iframe>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Unlock Samsung Galaxy Ace (for Free) From a Network]]></title>
+    <link href="http://WarFox.github.io/tech/2012/11/06/how-to-unlock-samsung-galaxy-ace-for-free/"/>
+    <updated>2012-11-06T23:34:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2012/11/06/how-to-unlock-samsung-galaxy-ace-for-free</id>
+    <content type="html"><![CDATA[<p>My phone was locked to 3 network here in UK and I badly needed to unlock it because my other phone got damaged and couldn&rsquo;t afford to get a new phone. You can get an unlock code from your service provider by making a payment of £15 (when writing this blog), in UK. I would rather spent my money on beer than on phone unlock codes. Any how, I got a solution for this and here I am sharing it with you.</p>
+
+<p>This method is recommended for Samsung Galaxy Ace (GT-S5830) only and when I did this my phone was running on Gingerbread version 2.3.6. However, the developer claims it may work in the following models too.</p>
+
+<ul>
+<li>Samsung 5 Europe (i5500)</li>
+<li>Samsung 551 Callisto (i5510)</li>
+<li>Samsung (i5700)</li>
+<li>Samsung 3 (i5800)</li>
+<li>Samsung Pro (i5510)</li>
+<li>Samsung Galaxy mini (S5570)</li>
+<li>Samsung Fit (S5670)</li>
+<li>Samsung Ace (S5830)</li>
+<li>Samsung Pro (B7510)</li>
+</ul>
+
+
+<p>I would also add, that the paid method is definitely risk free and safer than this method.</p>
+
+<p>Before proceeding check your phone lock status by dialing *#7465625#. The Network Lock should be [ON] now.</p>
+
+<p>First you need <a href="http://WarFox.github.io/tech/2012/11/how-to-root-your-samsung-galaxy-ace.html">to root your galaxy ace</a>. <a href="http://WarFox.github.io/tech/2012/11/how-to-root-your-samsung-galaxy-ace.html">Procedure for rooting the android</a> device can be found in my previous <a href="http://WarFox.github.io/tech/2012/11/how-to-root-your-samsung-galaxy-ace.html">post</a>.</p>
+
+<p>Secondly, you MUST install <a href="http://goo.gl/JOPF8">BusyBox</a>. Otherwise unlock codes wont be visible. {Thanks much to Asok and Ratty (commenters) for notifying this.}</p>
+
+<p>Then download and install <a href="http://goo.gl/lT2Yz">Galaxy Ace Unlock</a> by <a href="http://goo.gl/D5Cg4">Helroz</a></p>
+
+<p><a href="https://play.google.com/store/apps/details?id=com.helroz.galaxyaceunlock"><a href="https://play.google.com/store/apps/details?id=com.helroz.galaxyaceunlock">https://play.google.com/store/apps/details?id=com.helroz.galaxyaceunlock</a></a></p>
+
+<p>This app can be run only on a  rooted device. There are only 3 steps to get your phone unlock code</p>
+
+<h4>Getting the unlock key</h4>
+
+<ol>
+<li>Run the app</li>
+<li>Touch on the option given. <em>Unlock. See your sim unlock code</em></li>
+</ol>
+
+
+<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-WQ-bNPQ-ezI/UJlN9OcFnnI/AAAAAAAADxc/MUTiLahTtb8/s1600/SC20121106-174547.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="400" width="267" src="http://1.bp.blogspot.com/-WQ-bNPQ-ezI/UJlN9OcFnnI/AAAAAAAADxc/MUTiLahTtb8/s400/SC20121106-174547.png" /></a></div>
+
+
+<ul>
+<li>Confirm your choice by selecting Yes on the next screen.</li>
+</ul>
+
+
+<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-2uNbRETZnMs/UJlOEZtscsI/AAAAAAAADxo/-1gmRBihI-4/s1600/SC20121106-174600.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="400" width="267" src="http://1.bp.blogspot.com/-2uNbRETZnMs/UJlOEZtscsI/AAAAAAAADxo/-1gmRBihI-4/s400/SC20121106-174600.png" /></a></div>
+
+
+<ul>
+<li>Wait till the app shows the unlock codes.</li>
+</ul>
+
+
+<div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-jNFJf8ZiyqU/UJbK4pgwrjI/AAAAAAAADw8/qM4ws_1XMGE/s1600/SC20121013-235211.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="400" width="267" src="http://3.bp.blogspot.com/-jNFJf8ZiyqU/UJbK4pgwrjI/AAAAAAAADw8/qM4ws_1XMGE/s400/SC20121013-235211.png" /></a></div>
+
+
+<p></p>
+
+<p>The app extracts the network unlock code from the phone and shows it for you. It may give upto 4 different unlock codes. In my case all the four unlock codes were same. Note down the unlock codes.</p>
+
+<p>Once you have the unlock codes, switch off your phone and boot it with an unsupported sim card.</p>
+
+<p>When the phone boots it will ask for the unlock code.</p>
+
+<p>Key in the unlock code. Do not try the same unlock code more than once. Any one of the unlock code will have worked.</p>
+
+<p>If the unlock is successful it will display this message. <strong>Network unlock successful.</strong></p>
+
+<p>Now if you dial *#7465625#, the Network Lock will be [OFF].</p>
+
+<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-M6SxKa3Qa1Q/UJlNtvxnUoI/AAAAAAAADxQ/hv9O0fyrzjU/s1600/SC20121106-174519.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="400" width="267" src="http://1.bp.blogspot.com/-M6SxKa3Qa1Q/UJlNtvxnUoI/AAAAAAAADxQ/hv9O0fyrzjU/s400/SC20121106-174519.png" /></a></div>
+
+
+<p>That confirms you have successfully unlocked your phone from the network.</p>
+
+<h4>Here is a video for those who are too lazy to read&hellip; :P</h4>
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/o_J4mSBojCc" frameborder="0" allowfullscreen></iframe>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Root Your Samsung Galaxy Ace]]></title>
+    <link href="http://WarFox.github.io/tech/2012/11/05/how-to-root-your-samsung-galaxy-ace/"/>
+    <updated>2012-11-05T01:35:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2012/11/05/how-to-root-your-samsung-galaxy-ace</id>
+    <content type="html"><![CDATA[<p>Rooting an Android device allows the access to root user in the operating system. I needed to get root access in order to unlock my phone from the network. It is pretty simple procedure and I followed the instructions given at <a href="http://androidforums.com/ace-all-things-root/560469-how-root-your-galaxy-ace.html" title="How to root your galaxy ace">androidforums</a>. While rooting, my device was running Gingerbread 2.3.6</p>
+
+<p>Step by step instructions for rooting the device is clearly given in the Android forum post by victors1995. My device had no issues after rooting. You will see a new launcher called super user in your software list, which can be used to grant or revoke super user capabilities to other apps. I went ahead and installed <a href="http://goo.gl/JOPF8" title="Busy Box">Busybox free</a> and <a href="http://goo.gl/ok3kq" title="Root checker basic">Root checker basic</a>.</p>
+
+<div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-T13ZlIqbCPY/UJbJ4PrFuJI/AAAAAAAADww/zFZVrnbVLFA/s1600/SC20121104-195951.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="400" width="267" src="http://2.bp.blogspot.com/-T13ZlIqbCPY/UJbJ4PrFuJI/AAAAAAAADww/zFZVrnbVLFA/s400/SC20121104-195951.png" /></a></div>
+
+
+<p>After rooting I also <a href="/2012/11/06/how-to-unlock-samsung-galaxy-ace-for-free/" title="Unlock your phone from network for free">unlocked my phone from the network</a>.</p>
+
+<p><strong>NB: Do this at your own risk. Rooting may void the warranty of your device.</strong></p>
+
+<p><em>If it helped share it with your friends. Feel free to comment about your experience.</em></p>
+
+<h4>Here is an instructional video on how to do this</h4>
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/jIK7pAu4ddE" frameborder="0" allowfullscreen></iframe>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Oracle SQL to Calculate Value Based on Previous Row Value]]></title>
+    <link href="http://WarFox.github.io/tech/2011/12/21/oracle-sql-to-calculate-value-based-on/"/>
+    <updated>2011-12-21T20:29:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2011/12/21/oracle-sql-to-calculate-value-based-on</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on"><div dir="ltr" style="text-align: left;" trbidi="on">Oracle database allows you to use SQL to calculate value based on the values of the previous row in a query result set.&nbsp;Use LAG and LEAD analytic function to calculate based on previous rows values.<br /><br />Usage:<br />Both functions have the same usage, as shown below.<br />LAG  (value_expression [,offset] [,default]) OVER ([query_partition_clause] order_by_clause)<br />LEAD (value_expression [,offset] [,default]) OVER ([query_partition_clause] order_by_clause)<br /><br />Description:<br />value_expression - Can be a column or a built-in function, except for other analytic functions. <br />offset - The number of rows preceeding/following the current row, from which the data is to be retrieved. The default value is 1. <br />default - The value returned if the offset is outside the scope of the window. The default value is NULL.<br /><br />Example:<br /><code><br />select salary,lag(salary+300,1,0) over (order by salary) as new_sal,lag(salary+200,2,0) over (order by salary) as new_sal2 from employees;<br /></code></div><br /><br /><iframe align="left" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="http://rcm.amazon.com/e/cm?t=thelaccur-20&amp;o=1&amp;p=8&amp;l=bpl&amp;asins=0672325675&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr" style="align: left; height: 245px; padding-right: 10px; padding-top: 5px; width: 131px;"></iframe>&nbsp;<iframe align="left" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="http://rcm.amazon.com/e/cm?t=thelaccur-20&amp;o=1&amp;p=8&amp;l=bpl&amp;asins=0596520832&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr" style="align: left; height: 245px; padding-right: 10px; padding-top: 5px; width: 131px;"></iframe>&nbsp;<iframe align="left" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="http://rcm.amazon.com/e/cm?t=thelaccur-20&amp;o=1&amp;p=8&amp;l=bpl&amp;asins=0596526849&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr" style="align: left; height: 245px; padding-right: 10px; padding-top: 5px; width: 131px;"></iframe>&nbsp;<iframe align="left" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="http://rcm.amazon.com/e/cm?t=thelaccur-20&amp;o=1&amp;p=8&amp;l=bpl&amp;asins=0596009763&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr" style="align: left; height: 245px; padding-right: 10px; padding-top: 5px; width: 131px;"></iframe></div><div class="blogger-post-footer"><div style="border-top: 1px solid #efefef; margin-top: 5px;">
+Thank you for reading. This blog post was originally posted to <a href="http://tech.deepumohan.com/">Deepu's Technology Blog</a>.
+</div></div></div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Deepu Mohan Puthrote</div>
+<div class='content'>
+point noted!<br />I&#39;ll try to be more descriptive.<br />and for you, whoever you are, don&#39;t be anonymous<br />:)</div>
+</div>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+be more elaborative</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Get Html Color Code From an Image Using MS Paint]]></title>
+    <link href="http://WarFox.github.io/tech/2011/04/18/how-to-get-html-color-code-from-image/"/>
+    <updated>2011-04-18T22:36:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2011/04/18/how-to-get-html-color-code-from-image</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on">This is a quick tutorial for getting html color codes using MS Paint. The idea is to get RGB codes from MS Paint and then convert the RGB color code values to hexadecimal values. This tutorial is best suited for Windows 7 operators.<br /><br />Follow the instructions:<br /><br />1. Open the image in ms paint.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-LcD6ya5GM58/TzqDVxQvhvI/AAAAAAAACd4/s0AF2125lrc/s1600/1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://4.bp.blogspot.com/-LcD6ya5GM58/TzqDVxQvhvI/AAAAAAAACd4/s0AF2125lrc/s400/1.png" width="387" /></a></div><br /><br />2. Use color picker to select the color on image for which you want the html code for.<br />&nbsp;&nbsp;&nbsp; (Circled in red)<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-xUku0PwA_30/TzqEZq4Ju8I/AAAAAAAACeI/eSt3p0SD3KM/s1600/2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://4.bp.blogspot.com/-xUku0PwA_30/TzqEZq4Ju8I/AAAAAAAACeI/eSt3p0SD3KM/s320/2.png" width="310" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />3. Now that I have selected blue color note that 'Color 1' changes to blue. You should make sure the color you have selected and that shown in 'Color 1' are same.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-fV7Hz32nMK4/TzqE14yg4EI/AAAAAAAACeQ/2ckVhxWZuRs/s1600/3.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="115" src="http://4.bp.blogspot.com/-fV7Hz32nMK4/TzqE14yg4EI/AAAAAAAACeQ/2ckVhxWZuRs/s640/3.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: justify;"><br /></div><div class="separator" style="clear: both; text-align: justify;">4. Now we are ready to get the RGB code of the selected color.</div><div class="separator" style="clear: both; text-align: justify;">&nbsp; &nbsp; Click on the 'Edit Color's button to get the color palette.</div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-TVITK1D6RKw/TzqqZMjFpEI/AAAAAAAACeY/JhQx6lVxTHg/s1600/4.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="148" src="http://1.bp.blogspot.com/-TVITK1D6RKw/TzqqZMjFpEI/AAAAAAAACeY/JhQx6lVxTHg/s640/4.png" width="640" /></a></div><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-Ug7B7u37wxs/Tzqq6eQYReI/AAAAAAAACeg/zZpZCfXRDJs/s1600/5.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="512" src="http://4.bp.blogspot.com/-Ug7B7u37wxs/Tzqq6eQYReI/AAAAAAAACeg/zZpZCfXRDJs/s640/5.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: justify;"><br /></div><div class="separator" style="clear: both; text-align: justify;">5. That's it! Now we got the RGB values of the selected color.</div><div class="separator" style="clear: both; text-align: justify;">&nbsp; &nbsp;RGB(14,149,255) = the blue color we want.</div><div class="separator" style="clear: both; text-align: justify;"><br /></div><div class="separator" style="clear: both; text-align: justify;">6. To get the html color code convert each value to its hexadecimal notation.&nbsp;For those lazy people like me there are a lot of RGB to HTML converters available. The first result I got from <a href="http://lmgtfy.com/?q=rgb+to+html+code+converter" target="_blank">Google</a> is&nbsp;<a href="http://easycalculation.com/rgb-coder.php" style="text-align: left;">http://easycalculation.com/rgb-coder.php</a></div><div class="separator" style="clear: both; text-align: justify;"><br /></div><div class="separator" style="clear: both; text-align: justify;">7. Now for those who really want to convert RGB to html color code on their on, read the rest. Open Calculator. (Windows + R, calc)</div><div class="separator" style="clear: both; text-align: justify;"><br /></div><div class="separator" style="clear: both; text-align: justify;">8. Press Alt+3 or select 'Programmer' mode.</div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-BkHE7N2dJdM/Tzqvqk4hdTI/AAAAAAAACeo/gDMER4HO-lo/s1600/6.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-BkHE7N2dJdM/Tzqvqk4hdTI/AAAAAAAACeo/gDMER4HO-lo/s320/6.png" width="223" /></a></div><div class="separator" style="clear: both; text-align: justify;"><br /></div><div class="separator" style="clear: both; text-align: justify;">9. Now calculator must have expanded with some extra features. Radio button for 'Dec' is selected by default.</div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-cDB44Y49UQg/TzqzU7l9svI/AAAAAAAACew/5knwZdtVM9o/s1600/7.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="286" src="http://3.bp.blogspot.com/-cDB44Y49UQg/TzqzU7l9svI/AAAAAAAACew/5knwZdtVM9o/s320/7.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: justify;"><br /></div><div class="separator" style="clear: both; text-align: justify;"><br /></div><div class="separator" style="clear: both; text-align: justify;">10. Type in each of the RGB values and select Hex for converting to hexadecimal value.</div><div class="separator" style="clear: both; text-align: justify;"></div><ul><li>14 will be converted to E</li><li>149 will be converted to 95</li><li>255 will be converted to FF</li></ul>So RGB(14,149,255) ---&gt; #0E95FF.<br /><i>Note that html color code is either 6 digits or 3 digits. So if you get single digit hexadecimal just add a zero on left.</i><br /><br />Fiddle here: <a href="http://jsfiddle.net/deepumohanp/9AA33/">http://jsfiddle.net/deepumohanp/9AA33/</a><br /><br />Share this tutorial if it helped.<br />And feel free to tell your opinions in comments. I read them to improve.<br /><br /></div><div class="blogger-post-footer"><div style="border-top: 1px solid #efefef; margin-top: 5px;">
+Thank you for reading. This blog post was originally posted to <a href="http://tech.deepumohan.com/">Deepu's Technology Blog</a>.
+</div></div></div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+fantastіc ѕubmit, vеry informative.<br />I&#39;m wondering why the other experts of this sector don&#39;t <br />realize this. You should prοcеed уοur writing.<br /><br />I am confident, you&#39;ve a huge readers&#39; basе аlreаԁy!<br /><br /><br />Неre is my homepаge <a href="http://ullenboom.de/w/doku.php/ac-dc_energy_supplies_and_currents" rel="nofollow">resistor power</a></div>
+</div>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+Pretty! Τhiѕ was a reallу wonderful <br />ροst. Thаnk you fοr ѕupplying thіѕ infоrmation.<br /><br /><br />Alsο visit my websitе <a href="http://linedata.s258.xrea.com/wiki/%E5%88%A9%E7%94%A8%E8%80%85:QRUJolie" rel="nofollow">resistor code</a></div>
+</div>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+Тhis post will assist the internet peοplе for cгeating new blog оr even a blog <br />from start tо end.<br /><br />Mу homeρagе <a href="http://Hbr.cl/wiki/index.php?title=How_To_Set_up_A_Garage_Door_Opener_Method_At_House" rel="nofollow">http://hbr.cl/wiki/index.php?title=how_to_set_up_a_garage_door_opener_method_at_house</a></div>
+</div>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+I coulԁn&#39;t refrain from commenting. Very well written!<br /><br />Feel free to surf to my weblog: <a href="http://Wikiemprendedores.org/index.php?title=Positive_temperature_coefficient_thermistor--_what_are_the_uses" rel="nofollow">wikiemprendedores.org</a></div>
+</div>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+That is a good tip particularly to those new tο the blogosphere.<br /><br />Simple but veгy aсcurate information… Mаny thanks for shaгing this one.<br />A must reaԁ post!<br /><br />My pаge - <a href="http://Wiki.Ohalo.Ac.il/index.php?title=Exactly_what_is_the_application_of_thin_film_resistors" rel="nofollow">http://Wiki.Ohalo.Ac.il</a></div>
+</div>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+hey theгe and thanκ уou for youг info – I have ԁеfinitely ρіcκed <br />uρ something new from гight here.<br />I diԁ however expertise a few technical issues using this site, sincе I еxperіenced to rеload the site lots of timеs pгeviοus <br />to I сould get it to lоаd cοrrеctly.<br />I had been wondering if yоur ωeb hοst іs OK?<br /><br />Not that I&#39;m complaining, but slow loading instances times will sometimes affect your placement in google and can damage your high-quality score if advertising and marketing with Adwords. Anyway I&#39;m aԁding this RSЅ to mу emаil and could look out for a lot mοre of your respective intereѕtіng content.<br /><br />Ensuгe that уou uρdatе this again soоn.<br /><br /><br />Also visit my blog pοst :: <a href="http://sleekdirectory.com/submit-article.php" rel="nofollow">varistor</a></div>
+</div>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+I’m not that much of a onlіne reаdеr tо bе honеst but <br />уour sіtes гeаlly nice, κеep <br />it uρ! I&#39;ll go ahead and bookmark your site to come back later. All the best<br /><br />my weblog <a href="http://nl.gsnote.org/Gebruiker:Georgina9" rel="nofollow">Nl.Gsnote.Org</a></div>
+</div>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+For hottеѕt neωs you havе to go tο see world wide web and οn іnternet I founԁ <br />thіs wеb ρagе as а finеst ωeb sіte foг most up-to-ԁаte <br />updatеѕ.<br /><br />Look into my sіte - <a href="http://www.educacionfinancieraparatodos.com/portal/wiki/mediawiki-1.18.1/index.php?title=Usuario_discusi%C3%B3n:MelindaJM" rel="nofollow">ohms law</a></div>
+</div>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+Prettу seсtion of content. I just <br />stumblеԁ upon your site аnd in аcсеssion <br />capіtal tо assеrt that I aсquire in fact enjoyed acсount your blоg <br />posts. Any way Ι&#39;ll be subscribing to your feeds and even I achievement you access consistently fast.<br /><br />Here is my web page <a href="http://www.dilatua.com/mw/index.php?title=Colorpic_-_Get_Any_Color_Code_With_This_Tool" rel="nofollow">resistor color code</a></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

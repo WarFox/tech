@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Java | Deepu Mohan Puthrote]]></title>
+  <link href="http://WarFox.github.io/tech/tech/categories/java/atom.xml" rel="self"/>
+  <link href="http://WarFox.github.io/tech/"/>
+  <updated>2014-09-14T06:34:41+05:30</updated>
+  <id>http://WarFox.github.io/tech/</id>
+  <author>
+    <name><![CDATA[Deepu Mohan Puthrote]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Java :: Get Last Date of a Month]]></title>
+    <link href="http://WarFox.github.io/tech/2013/11/30/get-last-date-of-month/"/>
+    <updated>2013-11-30T23:48:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/11/30/get-last-date-of-month</id>
+    <content type="html"><![CDATA[<p>In Java we can use the Calendar class to get <tt>day_of_month</tt>, <tt>day_of_week</tt> etc.
+Last day of a month varies depending on the Month and on leap year we have extra day in February.
+So to figure out the last day of any given month in a year, we write some code which is apparently simple.</p>
+
+<p>Calendar object allows us to manipulate days, go forward or backward on the Calendar, add days, hours, minutes or seconds to any given time etc.
+We will use these capabilities of Calendar class to get our <tt>last_of_month</tt>.</p>
+
+<p><a name='more'></a>
+The idea here is to get the first day of next month and then reduce one day from it, which gives us the last day of the month relative to input date.</p>
+
+<p>```java
+/<em>*
+ * The trick is to add a month, set the date as 1st and then reduce a date.
+ *
+ * @param calendar
+ </em>/
+private static void setCalendarToLastDayOfMonth(Calendar calendar) {</p>
+
+<pre><code>calendar.add(Calendar.MONTH, 1);
+calendar.set(Calendar.DAY_OF_MONTH, 1);
+calendar.set(Calendar.HOUR, 0);
+calendar.set(Calendar.MINUTE, 0);
+calendar.set(Calendar.SECOND, 0);
+calendar.set(Calendar.MILLISECOND, 0);
+calendar.add(Calendar.DATE, -1);
+</code></pre>
+
+<p>}
+```</p>
+
+<p>But, Java Calendar has a better way of doing this, by using getActualMaximum() method which is far more convenient.</p>
+
+<p><code>java
+ private static void setCalendarToLastDayOfMonth(Calendar calendar) {
+   int lastDay = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+   calendar.set(Calendar.DAY_OF_MONTH, lastDay);
+   calendar.set(Calendar.HOUR, 0);
+   calendar.set(Calendar.MINUTE, 0);
+   calendar.set(Calendar.SECOND, 0);
+   calendar.set(Calendar.MILLISECOND, 0);
+}
+</code></p>
+
+<p>A sample calendar util class which gives you few convenient methods is given below.</p>
+
+<p>```java
+/<em>*
+ * Copyright &copy; 2013 Deepu Mohan Puthrote. All Rights Reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <a href="http://www.gnu.org/licenses/.">http://www.gnu.org/licenses/.</a>
+ </em>/
+ import java.util.Calendar;
+ import java.util.Date;
+ import java.text.SimpleDateFormat;
+ import java.util.Locale;
+ import java.text.ParseException;</p>
+
+<p>public class CalendarUtil {</p>
+
+<pre><code>public static void main(String[] args) throws Exception {
+    String string = "January 2, 2010";
+    CalendarUtil calendarUtil = new CalendarUtil();
+    System.out.println(calendarUtil.getLastDateOfMonth(string));
+    System.out.println(calendarUtil.getLastDateOfMonth());
+}
+
+public Date getLastDateOfMonth() {
+    return getLastDateOfMonth(new Date());
+}
+
+public Date getLastDateOfMonth(Date date) {
+    Calendar calendar = Calendar.getInstance();
+    calendar.setTime(date);
+    return getLastDateOfMonth(calendar);
+}
+
+public Date getLastDateOfMonth(Calendar calendar) {
+    setCalendarToLastDayOfMonth(calendar);
+    return calendar.getTime();
+}
+
+public Date getLastDateOfMonth(String date) throws ParseException {
+    return getLastDateOfMonth(date, "MMMM d, yyyy");
+}
+
+public Date getLastDateOfMonth(String date, String format) throws ParseException {
+    return getLastDateOfMonth(date, format, Locale.US);
+}
+
+public Date getLastDateOfMonth(String stringDate, String format, Locale locale) throws ParseException {
+    Date date = new SimpleDateFormat(format, locale).parse(stringDate);
+    return getLastDateOfMonth(date);
+}
+
+private static void setCalendarToLastDayOfMonth(Calendar calendar) {
+    int lastDay = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+    calendar.set(Calendar.DAY_OF_MONTH, lastDay);
+    calendar.set(Calendar.HOUR, 0);
+    calendar.set(Calendar.MINUTE, 0);
+    calendar.set(Calendar.SECOND, 0);
+    calendar.set(Calendar.MILLISECOND, 0);
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<h3>References</h3>
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/13624442/getting-last-day-of-the-month-in-given-string-date/">http://stackoverflow.com/questions/13624442/getting-last-day-of-the-month-in-given-string-date/</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html">http://docs.oracle.com/javase/7/docs/api/java/util/Date.html</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html">http://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html">http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JavaMail :: javax.mail.NoSuchProviderException: Smtp]]></title>
+    <link href="http://WarFox.github.io/tech/2013/10/02/javamail-javaxmailnosuchproviderexcepti/"/>
+    <updated>2013-10-02T11:33:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/10/02/javamail-javaxmailnosuchproviderexcepti</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"> <p>When you are using Java's <tt>mailapi.jar</tt>, it also expects supporting libraries like <tt>smtp.jar</tt>, <tt>imap.jar</tt>, <tt>pop3.jar</tt>, <tt>gimap.jar</tt>, <tt>dsn.jar</tt>. If you are using Java EE platform, then it is already included. But if you are getting the following error, you might have to include additional libraries, from <a href="https://java.net/projects/javamail/pages/Home/">Java mail API</a>.</p> <pre class="brush:java"><br />Exception in thread "main" javax.mail.NoSuchProviderException: smtp<br />at javax.mail.Session.getService(Session.java:746)<br />at javax.mail.Session.getTransport(Session.java:685)<br />at javax.mail.Session.getTransport(Session.java:628)<br />at javax.mail.Session.getTransport(Session.java:608)<br />at javax.mail.Session.getTransport(Session.java:663)<br />at javax.mail.Transport.send0(Transport.java:154)<br />at javax.mail.Transport.send(Transport.java:80)<br /></pre> <p>There are several forums and discussions happening on this same issue. Surprisingly, this is a small class path issue.</p> <p>To solve this error, make sure you have both <tt>mailapi.jar</tt> and <tt>smtp.jar</tt> in your classpath. Also, make sure you don't have duplicate jar files in your class path.</p> <p>Reading the FAQ on Oracle's documentation will give you a better idea. <a href="http://www.oracle.com/technetwork/java/javamail/faq/index.html">http://www.oracle.com/technetwork/java/javamail/faq/index.html</a></p> <h3>References</h3><ol> <li><a href="http://www.oracle.com/technetwork/java/javamail/javamail-138606.html">http://www.oracle.com/technetwork/java/javamail/javamail-138606.html</a></li> <li><a href="http://www.coderanch.com/t/601387/java/java/smtp-error/">http://www.coderanch.com/t/601387/java/java/smtp-error/</a></li> <li><a href="http://stackoverflow.com/questions/2980408/problem-with-java-mail-no-provider-for-smtp/">http://stackoverflow.com/questions/2980408/problem-with-java-mail-no-provider-for-smtp/</a></li> <li><a href="http://stackoverflow.com/questions/16861553/javax-mail-nosuchproviderexception-no-provider-for-smtps/">http://stackoverflow.com/questions/16861553/javax-mail-nosuchproviderexception-no-provider-for-smtps/</a></li> <li><a href="https://answers.atlassian.com/questions/167299/unable-to-send-email-and-error-as-javax-mail-nosuchproviderexception/">https://answers.atlassian.com/questions/167299/unable-to-send-email-and-error-as-javax-mail-nosuchproviderexception/</a></li></ol> </div></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java :: Print "Hello World" Without Using Semicolon (;)]]></title>
+    <link href="http://WarFox.github.io/tech/2013/06/24/java-print-hello-world-without-using/"/>
+    <updated>2013-06-24T11:34:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/06/24/java-print-hello-world-without-using</id>
+    <content type="html"><![CDATA[<p>This Gist shows how to print something in Java, without the use of Semicolon (;). The code is self explanatory.</p>
+
+<p><a href="https://gist.github.com/WarFox/5847999"><a href="https://gist.github.com/WarFox/5847999">https://gist.github.com/WarFox/5847999</a></a><br/><script src="https://gist.github.com/WarFox/5847999.js"></script></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java :: Count the Number of Times a Method Is Called]]></title>
+    <link href="http://WarFox.github.io/tech/2013/03/27/java-count-number-of-times-method-is-invoked/"/>
+    <updated>2013-03-27T00:04:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/03/27/java-count-number-of-times-method-is-invoked</id>
+    <content type="html"><![CDATA[<h2>How to find how many times a method is used?</h2>
+
+<p>A general answer to this question would be something like this:</p>
+
+<p>``` java</p>
+
+<p>public class MyClass {</p>
+
+<pre><code>static int count = 0;
+
+public void myMethod() {
+    count++;
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Using <code>static int</code> would seem a perfect solution. Static will share the instance variable <code>count</code> among all instances of MyClass.</p>
+
+<p>However, problem occurs in a multi threaded environment, as the count incrementation is not synchronised.</p>
+
+<p>``` java
+package com.deepumohan.tech.methodinvocationcount;</p>
+
+<p>public class MyClass {</p>
+
+<pre><code>static int count = 0;
+
+public void myMethod() {
+
+    synchronized(this) {
+        count++;
+    }
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Now this works perfect in a multi-threaded environment.</p>
+
+<p>Java provides a better option to use thread-safe increments through Atomic classes available in <code>java.util.concurrent.atomic</code> packag.</p>
+
+<p>``` java
+package com.deepumohan.tech.methodinvocationcount;</p>
+
+<p>import java.util.concurrent.atomic.AtomicInteger;</p>
+
+<p>public class MyClass {</p>
+
+<pre><code>AtomicInteger atomicInteger = new AtomicInteger(0);
+
+public int getMethodInvocationCount() {
+    return atomicInteger.incrementAndGet();
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Here is a good read about <code>AtomicInteger vs static int</code>: <a href="http://goo.gl/zSwHk" title="Java - using AtomicInteger vs Static int">Java &ndash; using AtomicInteger vs Static int</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java :: How to Convert Primitive Char to String in Java]]></title>
+    <link href="http://WarFox.github.io/tech/2013/03/26/java-how-to-convert-primitive-char-to/"/>
+    <updated>2013-03-26T14:35:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/03/26/java-how-to-convert-primitive-char-to</id>
+    <content type="html"><![CDATA[<p>Char is 16 bit unsigned data type in Java used to store characters and <code>String</code> is an immutable array of <code>char</code>. In Java you cannot cast a primitive <code>char</code> element to <code>String</code>.</p>
+
+<p>Below I have given five methods to convert a <code>char</code> to <code>String</code>. Also I have included common mistakes that gives compile time errors.</p>
+
+<p>``` java
+package com.deepumohan.tech.chartostring;</p>
+
+<p>public class CharToString {</p>
+
+<pre><code>public static void main(String[] args) {
+    char x = 'x';
+    System.out.println(concatBlankString(x));
+    System.out.println(stringValueOf(x));
+    System.out.println(characterToString(x));
+    System.out.println(characterObjectToString(x));
+    System.out.println(charArray(x));
+}
+
+// append a blank string
+public static String concatBlankString(char x) {
+    return x + "";
+}
+
+// use String.valueOf(char) static function
+public static String stringValueOf(char x) {
+    return String.valueOf(x);
+}
+
+// use Character.toString(char) static function
+public static String characterToString(char x) {
+    return Character.toString(x);
+}
+
+// create new Character object from the given char and
+// then use object's toString() method
+public static String characterObjectToString(char x) {
+    return new Character(x).toString();
+}
+
+// create new char[] array from the char and pass it to
+// String constructor
+public static String charArray(char x) {
+    return new String(new char[]{x});
+}
+
+/*
+// Compile time error
+// No suitable constructor found
+public static String noConstructor(char x) {
+    return new String(x);
+}
+// Compile time error
+// Inconvertible types
+public static String inconvertibleTypes(char x) {
+    return (String) x;
+}
+*/
+</code></pre>
+
+<p>}
+```</p>
+
+<p>I wonder why Java doesn&rsquo;t include <code>String</code> constructor that accept a single <code>char</code> as argument.</p>
+
+<h3>Also see</h3>
+
+<p><a href="http://goo.gl/E3aKf" title="How to convert Char to String in Java with Example">How to convert Char to String in Java with Example</a>
+<a href="http://goo.gl/BI05v" title="How to convert a char to a string in Java?">How to convert a char to a string in Java?</a></p>
+]]></content>
+  </entry>
+  
+</feed>

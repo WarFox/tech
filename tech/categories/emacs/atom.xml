@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Emacs | Deepu Mohan Puthrote]]></title>
+  <link href="http://WarFox.github.io/tech/tech/categories/emacs/atom.xml" rel="self"/>
+  <link href="http://WarFox.github.io/tech/"/>
+  <updated>2014-09-14T06:34:41+05:30</updated>
+  <id>http://WarFox.github.io/tech/</id>
+  <author>
+    <name><![CDATA[Deepu Mohan Puthrote]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Emacs:: Show Line Numbers in the Left Margin]]></title>
+    <link href="http://WarFox.github.io/tech/2013/06/14/emacs-show-line-number-in-margin/"/>
+    <updated>2013-06-14T11:09:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/06/14/emacs-show-line-number-in-margin</id>
+    <content type="html"><![CDATA[<p>So, I recently started using <code>emacs</code> as a text editor, instead of <code>vi</code>.
+It didn&rsquo;t seem easy to get things up straight at start.
+But gradually I understood why many experienced developers prefer <code>emacs</code>: <em>
+it is highly customisable and extensible</em>.</p>
+
+<p><code>vi</code> gives you easy to use command to show line numbers, <code>:set nu</code> and you are done.
+That is not the case with <code>emacs</code>, and hence this blog post.
+You need to install linum package and enable <code>linum-mode</code> for this.</p>
+
+<p>Make sure you have the latest version of <code>emacs</code>, at the time of writing 24.3,
+so that you have emacs package manager ready. Add marmalade and melba to the package
+archive list by adding the following to your <code>~/.emacs.d/init.el</code>.</p>
+
+<p>```lisp
+(require &lsquo;package)
+(add-to-list 'package-archives&rsquo;</p>
+
+<pre><code>("marmalade" . "http://marmalade-repo.org/packages/") t)
+</code></pre>
+
+<p>(add-to-list &lsquo;package-archives&rsquo;</p>
+
+<pre><code>("melpa" . "http://melpa.milkbox.net/packages/") t)
+</code></pre>
+
+<p>(package-initialize)                                                                                    <br/>
+```</p>
+
+<p>Now list the packages using <code>M-x list-packages</code> command.</p>
+
+<p></p>
+
+<p>You should get a list of packages like this.</p>
+
+<p></p>
+
+<p>Next locate <code>linum</code> package using <code>Ctrl-s</code> command.
+You may have to repeatedly use <code>Ctrl-s</code> to get the right package.
+It would say <em>display line numbers in the left margin</em>.</p>
+
+<p>http://WarFox.github.io/tech</p>
+
+<p><img src="http://1.bp.blogspot.com/-_4b9KgqIPI8/Ubqxfmw1-CI/AAAAAAAAECU/0UogSTSbDvk/s1600/Screen+Shot+2013-06-14+at+11.28.13+AM.png" alt="" /></p>
+
+<p>Select and install that using arrow keys and return key.
+You can enable linum-mode right away using <code>M-x linum-mode</code> command.</p>
+
+<p><img class="<a" src="href="http://1.bp.blogspot.com/-a9FUTdLh8DM/Ubq3O7P_R8I/AAAAAAAAECk/6PU8WgocLVE/s1600/Screen+Shot+2013-06-14+at+11.54.24+AM.png">http://1.bp.blogspot.com/-a9FUTdLh8DM/Ubq3O7P_R8I/AAAAAAAAECk/6PU8WgocLVE/s1600/Screen+Shot+2013-06-14+at+11.54.24+AM.png</a>" title="&ldquo;linum&rdquo; &ldquo;linum&rdquo;" ></p>
+
+<h3>References:</h3>
+
+<ul>
+<li><a href="http://goo.gl/DlqUI" title="EmacsWiki:LineNumbers">EmacsWiki:LineNumbers</a></li>
+<li><a href="http://goo.gl/VhUc7" title="How do I display line numbers in emacs">SuperUser:How do I display line numbers in emacs (not in the mode line)?</a></li>
+<li><a href="http://goo.gl/w8Tqn" title="How to Set Emacs's User Interface to Modern Conventions">ErgoEmacs:How to Set Emacs&rsquo;s User Interface to Modern Conventions</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

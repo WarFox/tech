@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ubuntu:: How to Change the Computer Name - Deepu Mohan Puthrote</title>
+  <meta name="author" content="Deepu Mohan Puthrote">
+
+  
+  <meta name="description" content="Changing computer name in Ubuntu is easy.In Linux computer name is represented as &#8216;hostname&#8217; and this name can be used to identify a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://WarFox.github.io/tech/2012/07/16/ubuntu-how-to-change-computer-name">
+  <link href="/tech/favicon.png" rel="icon">
+  <link href="/tech/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <link href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="//cdn.jsdelivr.net/fontawesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="/atom.xml" rel="alternate" title="Deepu Mohan Puthrote" type="application/atom+xml">
+  <script src="//cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/tech/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header class='navbar navbar-inverse navbar-static-top' role="banner">  <nav role='navigation'>
+    <span class='circle'></span></span>
+    <div class='navbar-header'>
+      <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class="navbar-brand" href="/tech/" style="padding-left:100px;">Deepu Mohan Puthrote</a>
+    </div>
+    <div class='collapse navbar-collapse navbar-ex1-collapse'>
+  <ul class='nav navbar-nav'>
+    <li>
+      <a href='http://blog.deepumohan.com/'>Personal Blog</a>
+    </li>
+    <li class='active'>
+      <a href='http://tech.deepumohan.com/'>Technology Blog</a>
+    </li>
+    <li>
+      <a href='http://deepumohan.com/cv/'>CV</a>
+    </li>
+    <li>
+      <a href='http://blog.deepumohan.com/2004/07/privacy-policy.html'>Privacy Policy</a>
+    </li>
+  </ul>
+  <ul class='nav navbar-nav navbar-right' id='social'>
+    <li><a href='https://www.facebook.com/deepu.mohan.p'><i class='icon-facebook'></i></a></li>
+    <li><a href='https://www.twitter.com/deepumohanp'><i class='icon-twitter'></i></a></li>
+    <li><a href='https://plus.google.com/106447761403337564868'><i class='icon-google-plus'></i></a></li>
+    <li><a href='http://www.linkedin.com/in/deepumohanp'><i class='icon-linkedin'></i></a></li>
+    <li><a href='http://github.com/WarFox/'><i class='icon-github'></i></a></li>
+    <li><a href='http://deepumohanp.tumblr.com/'><i class='icon-tumblr'></i></a></li>
+    <li><a href='https://foursquare.com/deepumohanp/'><i class='icon-foursquare'></i></a></li>
+    <li><a href='http://instagram.com/deepumohanp/'><i class='icon-instagram'></i></a></li></ul>
+</div>
+
+  </nav>
+
+</header>
+  <div id="content" class="container">
+      <div class="row">
+<article class="hentry col-md-10" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ubuntu:: How to Change the Computer Name</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-16T09:07:00+05:30" pubdate data-updated="true">Jul 16<sup>th</sup>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">Changing computer name in Ubuntu is easy.In Linux computer name is represented as &#8216;hostname&#8217; and this name can be used to identify a Linux box in a network. To display current hostname on your linux machine
+
+<pre>$ hostname</pre>
+    
+###To change hostname for current session
+<pre>$ hostname new_host_name.my_domain</pre>
+
+### To change hostname permanently
+<ol>
+    <li>Open /etc/hostname file as root</li>
+    <pre>
+        <br />$ sudo vi /etc/hostname<br />
+    </pre>
+    <li>Change the name and save the file</li>
+    <li>New hostname will take effect after the reboot.</li>
+    <li>You will also need to update the <code>/etc/hosts</code> file with the same computername</li>
+</ol>
+
+Note that, the new name will take effect after you restart the machine. If the same hostname is configured on any other machine in the network, system may fail to boot or won&#8217;t be available in the network.
+
+<div class="my-amazon-links"><h3>Books you might like:</h3>  <a href="http://www.amazon.com/gp/product/0131367366/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=0131367366&linkCode=as2&tag=thelaccur-20"><img border="0" src="http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&ASIN=0131367366&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=thelaccur-20" ></a><img src="http://www.assoc-amazon.com/e/ir?t=thelaccur-20&l=as2&o=1&a=0131367366" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> <a href="http://www.amazon.com/gp/product/B004RYVI0Q/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=B004RYVI0Q&linkCode=as2&tag=thelaccur-20"><img border="0" src="http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&ASIN=B004RYVI0Q&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=thelaccur-20" ></a><img src="http://www.assoc-amazon.com/e/ir?t=thelaccur-20&l=as2&o=1&a=B004RYVI0Q" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> <a href="http://www.amazon.com/gp/product/0470770198/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=0470770198&linkCode=as2&tag=thelaccur-20"><img border="0" src="http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&ASIN=0470770198&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=thelaccur-20" ></a><img src="http://www.assoc-amazon.com/e/ir?t=thelaccur-20&l=as2&o=1&a=0470770198" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> <a href="http://www.amazon.com/gp/product/1118004426/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=1118004426&linkCode=as2&tag=thelaccur-20"><img border="0" src="http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&ASIN=1118004426&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=thelaccur-20" ></a><img src="http://www.assoc-amazon.com/e/ir?t=thelaccur-20&l=as2&o=1&a=1118004426" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> <a href="http://www.amazon.com/gp/product/1593273894/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=1593273894&linkCode=as2&tag=thelaccur-20"><img border="0" src="http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&ASIN=1593273894&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=thelaccur-20" ></a><img src="http://www.assoc-amazon.com/e/ir?t=thelaccur-20&l=as2&o=1&a=1593273894" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> </div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Deepu Mohan Puthrote</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-16T09:07:00+05:30" pubdate data-updated="true">Jul 16<sup>th</sup>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/tech/tech/categories/linux/'>linux</a>, <a class='category' href='/tech/tech/categories/ubuntu/'>ubuntu</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://WarFox.github.io/tech/2012/07/16/ubuntu-how-to-change-computer-name/" data-via="deepumohanp" data-counturl="http://WarFox.github.io/tech/2012/07/16/ubuntu-how-to-change-computer-name/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/tech/2012/06/26/visualize-your-inbox-using-r/" title="Previous Post: R:: Visualize your inbox using R">&laquo; R:: Visualize your inbox using R</a>
+      
+      
+        <a class="basic-alignment right" href="/tech/2012/07/27/maven-invalid-cen-bad-signature-invalid-loc/" title="Next Post: Maven:: Invalid CEN (bad signature) Invalid LOC (bad signature)">Maven:: Invalid CEN (bad signature) Invalid LOC (bad signature) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+<aside class="sidebar col-md-2">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/tech/2014/09/14/solid-design-principle/">SOLID Design Principle</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/03/30/closures/">Closures</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/02/02/sample-app-for-play-22-spring-data-jpa/">Sample App for Play! 2.2, Spring-data-jpa and Backbonejs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/20/backbonejs-in-jsfiddlenet/">Backbonejs in jsFiddle.net</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/09/jquery-populate-select-box-dynamically/">jQuery :: Populate Select Box Dynamically (Plugin Version)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/08/use-requirejs-to-load-scripts-from-cdn/">Use Requirejs to Load Scripts From Cdn Server Like Cdnjs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/05/jquery-populate-selet-box-options/">jQuery :: Populate Selet Box Options Dinamically</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/12/31/youtube-embed-video-html-code-without/">Youtube Embed Video Html Code Without Branding and Controls (Seekbar, Play/pause and Volume)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/11/30/get-last-date-of-month/">Java :: Get Last Date of a Month</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/10/14/how-to-change-extension-of-multiple/">How to Change Extension of Multiple Files (Bash Script)</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/WarFox">@WarFox</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        github.showRepos({
+            user: 'WarFox',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/tech/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+DeepuMohanPuthrote?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+</div>
+
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - <a href="http://deepumohan.com/">Deepu Mohan Puthrote</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

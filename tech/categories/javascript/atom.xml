@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Javascript | Deepu Mohan Puthrote]]></title>
+  <link href="http://WarFox.github.io/tech/tech/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://WarFox.github.io/tech/"/>
+  <updated>2014-09-14T06:34:41+05:30</updated>
+  <id>http://WarFox.github.io/tech/</id>
+  <author>
+    <name><![CDATA[Deepu Mohan Puthrote]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Get Content From Ace Editor to a Textarea]]></title>
+    <link href="http://WarFox.github.io/tech/2013/09/08/get-content-from-ace-editor-to-textarea/"/>
+    <updated>2013-09-08T14:53:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/09/08/get-content-from-ace-editor-to-textarea</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"><p>Ace editor is awesome! We get to edit code with instant syntax highlighting. But often, we have to get the content from the editor, than just typing some with syntax highlighting. Ace editor have a function to get the value <tt>editor.getSession().getValue()</tt>.</p> <p>Here is a demo on getting value from the editor and setting it with <tt>textarea</tt>.</p> <p>Fiddle here: <a href="http://jsfiddle.net/deepumohanp/tGF6y/">http://jsfiddle.net/deepumohanp/tGF6y/</a></p> <iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/tGF6y/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> <h2>References</h2> <ol><li><a href="http://stackoverflow.com/questions/6440439/how-do-i-make-a-textarea-an-ace-editor/">How do I make a textarea an ace editor?</a></li></ol> </div></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Javascript :: Ace Editor Positioning With Bootstrap3]]></title>
+    <link href="http://WarFox.github.io/tech/2013/09/02/javascript-ace-editor-positioning-bootstrap/"/>
+    <updated>2013-09-02T21:54:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/09/02/javascript-ace-editor-positioning-bootstrap</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on" class="container"><p><a href="http://ace.c9.io/">Ace editor</a> is a fantastic option for live source code editor on the web. One problem you come across when using Ace Editor is with the default <tt>absolute</tt> positioning. Also <a href="https://github.com/ajaxorg/ace/issues/75">it doesn't fit inside a container div</a> by default. Here is how I overcame these issues.</p> <p>The <a href="http://ace.c9.io/#nav=embedding">example</a> from ace website uses absolute positioning by default, as show below. But luckily, ace can work perfectly with <tt>relative</tt> positioning</p> <a name='more'></a> <pre class="brush:html"><br />&lt;!DOCTYPE html><br />&lt;html lang="en"><br />&lt;head><br />&lt;title>ACE in Action</title><br />&lt;style type="text/css" media="screen"><br />    #editor { <br />        position: absolute;<br />        top: 0;<br />        right: 0;<br />        bottom: 0;<br />        left: 0;<br />    }<br />&lt;/style><br />&lt;/head><br />&lt;body><br /><br /><div id="editor">function foo(items) {<br />    var x = "All this is syntax highlighted";<br />    return x;<br />}</div><br />    <br />&lt;script src="http://WarFox.github.io/tech/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8">&lt;/script><br />&lt;script><br />    var editor = ace.edit("editor");<br />    editor.setTheme("ace/theme/monokai");<br />    editor.getSession().setMode("ace/mode/javascript");<br />&lt;/script><br />&lt;/body><br />&lt;/html><br /></pre> <p>In order to put ace-editor inside a container div, we can give relative positioning to the <code>editor</code> and remove the positioning attribs, like top, right, bottom and left.</p> <pre class="brush: css"><br />#editor { <br />    position: relative;<br />}<br /></pre> <p>We also need to give height, otherwise editor won't show up.</p> <pre class="brush: css"><br />#editor { <br />    position: relative;<br />    height: 300px;<br />}<br /></pre> <p>That said, when using Twitter Bootstrap, you can absolutely forget about relative positioning of ace. But we still need to set height, as ace does not fill. In the following jsfiddle, I have used Bootstrap's panel component for showing the editor.</p>  <script src="https://gist.github.com/WarFox/6473534.js"></script>  <p>Full Screen Result is available <a href="http://jsfiddle.net/deepumohanp/U5JtP/embedded/result/">here</a>. <a href="http://jsfiddle.net/deepumohanp/U5JtP/embedded/result/">http://jsfiddle.net/deepumohanp/U5JtP/embedded/result/</a></p> <p>Fiddle here: <a href="http://jsfiddle.net/deepumohanp/U5JtP/">http://jsfiddle.net/deepumohanp/U5JtP/</a> </p> <iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/U5JtP/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> <h3>References</h3><ol><li><a href="http://stackoverflow.com/questions/6440439/how-do-i-make-a-textarea-an-ace-editor/">How do I make a textarea an ace editor?</a></li><li><a href="https://github.com/ajaxorg/ace/issues/75/">Ace doesn't fit inside a container div</a></li></ol> </div></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Javascript :: Pass Function as Parameter]]></title>
+    <link href="http://WarFox.github.io/tech/2013/07/29/javascript-pass-function-as-parameter/"/>
+    <updated>2013-07-29T23:19:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/07/29/javascript-pass-function-as-parameter</id>
+    <content type="html"><![CDATA[<p>Javascript allows you to pass functions as parameter to another function and that makes Javascript super awesome!. Great things can be achieved from this power.
+Quote from Mozilla developer website:</p>
+
+<blockquote>In JavaScript, functions are first-class objects, i.e. they are objects and can be manipulated and passed around just like any other object.</blockquote>
+
+
+<p>Every Javascript function is a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a> object. Hence we can pass them as arguments, like any other object.</p>
+
+<h3>How to do that?</h3>
+
+<p>Passing function as parameter is no different from passing any other object when it comes to syntax.</p>
+
+<p>I am gonna try and explain that with an example (hopefully, easy to understand)</p>
+
+<h3>The example problem</h3>
+
+<p>Bob wants to get sum of values [1, 2, 3, 4, 5, 6, 7, 8, 9]</p>
+
+<p>So we give him the following solution</p>
+
+<p>``` javascript</p>
+
+<p>// find sum of values
+var total = function(values) {</p>
+
+<pre><code>var sum = 0;
+
+values.forEach( function(value) {
+    sum += value;
+});
+
+return sum;
+</code></pre>
+
+<p>};
+```</p>
+
+<p>Bob is happy with the function. But now he wants to get sum of all even numbers in the list of values.</p>
+
+<p>So we copy-paste the above function, rename it and make slight changes.</p>
+
+<p>``` javascript</p>
+
+<p>// find sum of values
+var total = function(values) {</p>
+
+<pre><code>var sum = 0;
+
+values.forEach( function(value) {
+    sum += value;
+});
+
+return sum;
+</code></pre>
+
+<p>};</p>
+
+<p>// find sum of even numbers in list of values
+var totalEven = function(values) {</p>
+
+<pre><code>var sum = 0;
+
+values.forEach( function(value) {
+    if( value % 2 === 0 ) sum += value;
+});
+
+return sum;
+</code></pre>
+
+<p>};
+```</p>
+
+<p>Bob is happy again. But he wants more. Now he need sum of all odd numbers from the same list.</p>
+
+<p>As usual, we copy-paste, rename and make slight changes.</p>
+
+<p>``` javascript</p>
+
+<pre><code>// find sum of values
+var total = function(values) {
+    var sum = 0;
+    values.forEach( function(value) {
+        sum += value;
+    });
+    return sum;
+};
+
+// find sum of even numbers in list of values
+var totalEven = function(values) {
+    var sum = 0;
+    values.forEach( function(value) {
+        if( value % 2 === 0 ) sum += value;
+    });
+    return sum;
+};
+
+// find sum of odd numbers in list of values
+var totalOdd = function(values) {
+    var sum = 0;
+    values.forEach( function(value) {
+        if( value % 2 !== 0 ) sum += value;
+    });
+    return sum;
+};
+</code></pre>
+
+<p>```</p>
+
+<h3>The problem with that approach</h3>
+
+<ul>
+<li>Lot of duplicate code.</li>
+<li>Cluttered and ugly source code.</li>
+<li>Source file becomes unnecessarily lengthy.</li>
+<li>Not applying re-usabilty principle.</li>
+<li>Have to create separate function for each additional request.</li>
+</ul>
+
+
+<h3>Better code with passing function as argument</h3>
+
+<p>We can improve the above code a lot by passing the selection functionality as argument. In the above example, the basic operation is summation. Then, we need some kind of selection of values to sum. This selection can be anything, like even numbers, odd numbers etc. This is what we will pass an argument.</p>
+
+<p>``` javascript</p>
+
+<pre><code>var totalSelectValues = function(values, selector) {
+    var sum = 0;
+    values.forEach(function(value) {
+        if(selector(value)) sum+= 0;
+    });
+    return sum;
+};
+</code></pre>
+
+<p>```</p>
+
+<p>The <code>selector</code>, is function passed as parameter. Here we are expecting it to return a boolean value.</p>
+
+<p>``` javascript</p>
+
+<pre><code>var values = [1,2,3,4,5,6,7,8,9];   
+
+// even numbers
+totalSelectValues(values, function(value) { return value % 2 === 0});
+
+// odd numbers
+totalSelectValues(values, function(value) { return value % 2 !== 0});
+
+// greater than 5
+totalSelectValues(values, function(value) { return value &gt; 5 });
+</code></pre>
+
+<p>```</p>
+
+<p>Awesome! We just created functions on the fly and passed it as parameters, didn&rsquo;t even bother to name it! Neat eh? Also we have reduced the code base by far. Just a single function and no ugly repetition.</p>
+
+<h3>But that is not enough</h3>
+
+<p>We also need to make sure our little function works perfectly even if the second argument is not send.</p>
+
+<p>``` javascript</p>
+
+<pre><code>var totalSelectValues = function(values, selector) {
+    // handle undefined selector
+    if (typeof selector == 'undefined' ) {
+        selector = function() {return true;};
+    }
+    var sum = 0;
+    values.forEach(function(value) {
+        if(selector(value)) sum+= 0;
+    });
+    return sum;
+};
+</code></pre>
+
+<p>```</p>
+
+<p>Now that should work.</p>
+
+<p>The complete example is available in the following jsFiddle. <a href="http://jsfiddle.net/deepumohanp/s2DBJ/"><a href="http://jsfiddle.net/deepumohanp/s2DBJ/">http://jsfiddle.net/deepumohanp/s2DBJ/</a></a></p>
+
+<iframe width="100%" height="876px" src="http://jsfiddle.net/deepumohanp/s2DBJ/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+<p></p>
+
+<h3>References</h3>
+
+<ol>
+<li><p>I got the example inspiration from Dr. Venkat Subramaniam&rsquo;s talk an Scala.</p>
+
+<ul>
+<li><a href="http://www.youtube.com/watch?v=LH75sJAR0hc">http://www.youtube.com/watch?v=LH75sJAR0hc</a></li>
+<li><a href="https://vimeo.com/57988159">https://vimeo.com/57988159</a></li>
+</ul>
+</li>
+<li><p><a href="http://www.joelonsoftware.com/items/2006/08/01.html">http://www.joelonsoftware.com/items/2006/08/01.html</a></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope</a></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function</a></p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery:: Getting Started With jQuery]]></title>
+    <link href="http://WarFox.github.io/tech/2012/11/16/jquery-getting-started-with-jquery/"/>
+    <updated>2012-11-16T21:02:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2012/11/16/jquery-getting-started-with-jquery</id>
+    <content type="html"><![CDATA[<p>This is a beginners guide and information to getting started with <a href="http://jquery.com/" title="jQuery">jQuery</a>. As you might know <a href="http://jquery.com/" title="jQuery">jQuery</a> is light weight and cross browser, and is a leading JavaScript library. It was created by <a href="http://ejohn.org/" title="John Resig">John Resig</a>, while he was working in Mozilla.</p>
+
+<blockquote cite="http://jquery.com/">[jQuery][1] is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. [jQuery][1] is designed to change the way that you write JavaScript. </blockquote>
+
+
+<h4>What is JavaScript library?</h4>
+
+<p>JavaScript libraries help you write more organised JavaScript code. These libraries are built on top of JavaScript and helps the programmer to write more maintainable cross-browser JavaScript.</p>
+
+<h4>Write less, do more</h4>
+
+<p>As it says on the home page, <a href="http://jquery.com/" title="jQuery">jQuery</a> helps you to reduce your JavaScript code with clever, short and easy to understand syntax.</p>
+
+<h4>Why do we need <a href="http://jquery.com/" title="jQuery">jQuery</a>? (or any other js framework)</h4>
+
+<p>In short, for faster development and better maintenance. If you have developed web application, you know the pain for writing vanilla JavaScript and hacking it to work as expected on all available browsers. The code base becomes huge and cluttered, which in turn effects the application maintenance. You could minimize it, by the clever use of JavaScript objects and prototyping. But a new developer may not be able to follow your code, unless it is properly documented and you are trying to re-invent the wheel.</p>
+
+<p>If you are using a js framework like <a href="http://jquery.com/" title="jQuery">jQuery</a>, then you can be sure that it is properly documented and there is a huge community out there to help you out.</p>
+
+<h4>Other JavaScript libraries?</h4>
+
+<p>There are lots of other js frameworks like <a href="http://mootools.net/" title="Mootools">Mootools</a>, <a href="http://dojotoolkit.org/" title="Dojo Toolkit">Dojo</a>, <a href="http://prototypejs.org">Prototype</a>, <a href="http://yuilibrary.com/">YUI</a> and many more. Deciding which one to select depends on various factors like the project requirement, resource available, deadline etc.</p>
+
+<p>What I liked about <a href="http://jquery.com/" title="jQuery">jQuery</a> is that is easy to get started and get cracking. They say <a href="http://mootools.net">Mootools</a> is great, I found their documentation poor. <a href="http://mootools.net">Mootools</a> is a great choice if you are going to develop a complex application with lots of custom objects in it. <a href="http://jquery.com/" title="jQuery">jQuery</a> is more focused on manipulating collections returned by the selectors.</p>
+
+<p>For example <a href="http://jsfiddle.net/">jsFiddle</a> is built on <a href="http://mootools.net">Mootools</a>, building that on <a href="http://jquery.com/" title="jQuery">jQuery</a> would have been harder.</p>
+
+<h4>How can <a href="http://jquery.com/" title="jQuery">jQuery</a> help?</h4>
+
+<ul>
+<li>Its fast &ndash; Test JavaScript framework selectors speed at <a href="http://mootools.net/slickspeed/">slickspeed</a></li>
+<li>Cross browser &ndash; Forget about writing js hacks for IE, same code works everywhere.</li>
+<li>Small size &ndash; just 55kb</li>
+<li>Easy animations and CSS3 selectors.</li>
+<li>Makes your REST client simple, with built in ajax support.</li>
+<li>Extremely simple to get started</li>
+</ul>
+
+
+<h4>Onload event</h4>
+
+<p>Most javascript developers use the <code>onload</code> event either in the body tag or window.onload in javascript. But when using <a href="http://jquery.com/" title="jQuery">jQuery</a> you don&rsquo;t do it like that.</p>
+
+<p>Instead, you load the <a href="http://jquery.com/" title="jQuery">jQuery</a>. file and use <code>$(document).ready();</code> function available. Most <a href="http://jquery.com/" title="jQuery">jQuery</a> functions allows callbacks. Callback functions are called up on an event.</p>
+
+<p>``` javascript
+$(document).ready(function () {</p>
+
+<pre><code>alert('loaded');
+</code></pre>
+
+<p>});</p>
+
+<p>```</p>
+
+<p>This will alert &lsquo;loaded&rsquo;, when the document is loaded. Here the callback function is defined as an anonymous JavaScript function, which <a href="http://jquery.com/" title="jQuery">jQuery</a> calls on the event of &lsquo;document ready&rsquo;. Read about the difference between onload &amp; document ready <a href="http://stackoverflow.com/questions/4395780/difference-bw-onload-and-document-readyfunction">here</a>.</p>
+
+<h4>Selector</h4>
+
+<p>To get started with jQuery you should need an understanding of selectors. Selectors always return us a collection of <a href="http://jquery.com/" title="jQuery">jQuery</a> objects, which we can manipulate. We may select an object using its id, class name, tag name or its combinations. The rules are similar to CSS rules. Id is referred using &lsquo;#&rsquo;, class is referred using &lsquo;.&rsquo; and tags are selected using the tag name.</p>
+
+<p>For example an element with id <code>myelement</code> is selected by:
+``` javascript</p>
+
+<p>$(&lsquo;#myelement&rsquo;)
+```</p>
+
+<p>All elements with class <code>myclass</code> is selected by
+``` javascript</p>
+
+<p>$(&lsquo;.myclass&rsquo;)
+```</p>
+
+<p>And all <code>p</code> elements can be selected by
+``` javascript</p>
+
+<p>$(&lsquo;p&rsquo;)</p>
+
+<p>```</p>
+
+<p>As you have figured out all <code>p</code> elements with class <code>myclass</code> is selected by
+``` javascript</p>
+
+<p>$(&lsquo;p .myclass&rsquo;)</p>
+
+<p>```</p>
+
+<p>After selecting an element or group of element, you can manipulate is using various functions available in <a href="http://jquery.com/" title="jQuery">jQuery</a> or in plugins. You may as well write your own <a href="http://jquery.com/" title="jQuery">jQuery</a> plugins.</p>
+
+<p>Now let us look at doing something with <a href="http://jquery.com/" title="jQuery">jQuery</a> and JavaScript. We will try a simple example of changing the text content in an html element. Here is the content we want to change:</p>
+
+<script src="https://gist.github.com/3775927.js?file=fiddle.html"></script>
+
+
+<p>We will change the &lsquo;Old Text&rsquo; to &lsquo;New Text&rsquo;</p>
+
+<h4>Change html text using JavaScript</h4>
+
+<script src="https://gist.github.com/3775927.js?file=fiddle.js"></script>
+
+
+<p>Fiddle here: <a href="http://jsfiddle.net/gh/gist/library/pure/3775927/"><a href="http://jsfiddle.net/gh/gist/library/pure/3775927/">http://jsfiddle.net/gh/gist/library/pure/3775927/</a></a></p>
+
+<p>Now the same stuff in <a href="http://jquery.com/" title="jQuery">jQuery</a>.</p>
+
+<h4>Change html text using <a href="http://jquery.com/" title="jQuery">jQuery</a></h4>
+
+<script src="https://gist.github.com/3776540.js?file=fiddle.js"> </script>
+
+
+<p>Fiddle here: <a href="http://jsfiddle.net/gh/gist/jquery/1.8/3776540/"><a href="http://jsfiddle.net/gh/gist/jquery/1.8/3776540/">http://jsfiddle.net/gh/gist/jquery/1.8/3776540/</a></a></p>
+
+<p>In <a href="http://jquery.com/" title="jQuery">jQuery</a> we did that in one line and the code is so much easy to understand. Also it processes fast as it doesn&rsquo;t wait for the complete all content to load, as soon as the DOM is available, <a href="http://jquery.com/" title="jQuery">jQuery</a> starts it job.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Js :: Count Down Timer in Vanilla Javascript]]></title>
+    <link href="http://WarFox.github.io/tech/2012/10/10/js-count-down-timer-in-pure-vanilla/"/>
+    <updated>2012-10-10T04:35:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2012/10/10/js-count-down-timer-in-pure-vanilla</id>
+    <content type="html"><![CDATA[<p>In this article I will take you through creating a Timer object in javascript. We will create a javascript object that can be easily used to create multiple timers on a window.</p>
+
+<p>A count down timer can be implemented in JavaScript using <code>setTimeout</code> or <code>setInterval</code> functions along with recursion. You may read this very good article on <a href="www.elated.com/articles/javascript-timers-with-settimeout-and-setinterval/">javascript timers with setTimeout and setInterval</a>. The important difference is setTimeout sets an execution time for a given function and setInterval calls the same function on given interval. Both work on milliseconds range.</p>
+
+<p>A simple example of count down timer using the <code>setTimeout</code> is shown in the jsfiddle below. Run the code from the <em>Result</em> tab.</p>
+
+<iframe style="width: 100%; height: 210px" src="http://jsfiddle.net/deepumohanp/hnt9P/120/embedded/" allowfullscreen="allowfullscreen" frameborder="1"></iframe>
+
+
+<p>All this above function does is to update the <code>span</code> content every 1000 milliseconds. As you can see here the <code>setTimeout</code> is applied to the <code>window</code> object. We also use a global variable to determine when to stop the timer. When the <code>countDown()</code> function is called timeout of 1000 milliseconds is set for countDown() function. If you repeatedly click on the start button, timeout of 1000 milliseconds is added at different times.</p>
+
+<p>Now that we understand the simplest timer function, we will go ahead and make improvements to it.</p>
+
+<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/deepumohanp/hnt9P/embedded/" allowfullscreen="allowfullscreen" frameborder="1"></iframe>
+
+
+<p><a href="http://jsfiddle.net/deepumohanp/hnt9P/"><a href="http://jsfiddle.net/deepumohanp/hnt9P/">http://jsfiddle.net/deepumohanp/hnt9P/</a></a><br /></p>
+
+<h4>References</h4>
+
+<ol>
+<li><a href="http://www.elated.com/articles/javascript-timers-with-settimeout-and-setinterval/" title="Javascript timers with settimeout and setinterval">http://www.elated.com/articles/javascript-timers-with-settimeout-and-setinterval/</a></li>
+<li><a href="http://ejohn.org/blog/how-javascript-timers-work/" title="How javascript timers work by John Resig">http://ejohn.org/blog/how-javascript-timers-work/</a></li>
+<li><a href="http://mckoss.com/jscript/object.htm" title="Javascript Objects">http://mckoss.com/jscript/object.htm</a></li>
+<li><a href="http://helephant.com/2008/04/26/objects-event-handlers-and-this-in-javascript/" title="Objects, even handlers and this in Javascript">http://helephant.com/2008/04/26/objects-event-handlers-and-this-in-javascript/</a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

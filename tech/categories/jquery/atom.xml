@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Jquery | Deepu Mohan Puthrote]]></title>
+  <link href="http://WarFox.github.io/tech/tech/categories/jquery/atom.xml" rel="self"/>
+  <link href="http://WarFox.github.io/tech/"/>
+  <updated>2014-09-14T06:34:41+05:30</updated>
+  <id>http://WarFox.github.io/tech/</id>
+  <author>
+    <name><![CDATA[Deepu Mohan Puthrote]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery :: Populate Select Box Dynamically (Plugin Version)]]></title>
+    <link href="http://WarFox.github.io/tech/2014/01/09/jquery-populate-select-box-dynamically/"/>
+    <updated>2014-01-09T00:03:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2014/01/09/jquery-populate-select-box-dynamically</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"> In my previous <a href="http://tech.deepumohan.com/2014/01/jquery-populate-selet-box-options.html">post</a>, I had shown how to populate a select box dynamically using jQurey. Here is the same thing as jQuery plugin.  <iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/kNQ6s/0/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> <p><a href="http://jsfiddle.net/deepumohanp/kNQ6s/">http://jsfiddle.net/deepumohanp/kNQ6s/</a> </p></div></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery :: Populate Selet Box Options Dinamically]]></title>
+    <link href="http://WarFox.github.io/tech/2014/01/05/jquery-populate-selet-box-options/"/>
+    <updated>2014-01-05T23:04:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2014/01/05/jquery-populate-selet-box-options</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"> <p>Here is an example code to populate select box options dynamically using <a href="http://jquery.com/">jQuery</a></p> <iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/8EQjY/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> <p><a href="http://jsfiddle.net/deepumohanp/8EQjY/">http://jsfiddle.net/deepumohanp/8EQjY/</a></p> </div></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery:: Getting Started With jQuery]]></title>
+    <link href="http://WarFox.github.io/tech/2012/11/16/jquery-getting-started-with-jquery/"/>
+    <updated>2012-11-16T21:02:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2012/11/16/jquery-getting-started-with-jquery</id>
+    <content type="html"><![CDATA[<p>This is a beginners guide and information to getting started with <a href="http://jquery.com/" title="jQuery">jQuery</a>. As you might know <a href="http://jquery.com/" title="jQuery">jQuery</a> is light weight and cross browser, and is a leading JavaScript library. It was created by <a href="http://ejohn.org/" title="John Resig">John Resig</a>, while he was working in Mozilla.</p>
+
+<blockquote cite="http://jquery.com/">[jQuery][1] is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. [jQuery][1] is designed to change the way that you write JavaScript. </blockquote>
+
+
+<h4>What is JavaScript library?</h4>
+
+<p>JavaScript libraries help you write more organised JavaScript code. These libraries are built on top of JavaScript and helps the programmer to write more maintainable cross-browser JavaScript.</p>
+
+<h4>Write less, do more</h4>
+
+<p>As it says on the home page, <a href="http://jquery.com/" title="jQuery">jQuery</a> helps you to reduce your JavaScript code with clever, short and easy to understand syntax.</p>
+
+<h4>Why do we need <a href="http://jquery.com/" title="jQuery">jQuery</a>? (or any other js framework)</h4>
+
+<p>In short, for faster development and better maintenance. If you have developed web application, you know the pain for writing vanilla JavaScript and hacking it to work as expected on all available browsers. The code base becomes huge and cluttered, which in turn effects the application maintenance. You could minimize it, by the clever use of JavaScript objects and prototyping. But a new developer may not be able to follow your code, unless it is properly documented and you are trying to re-invent the wheel.</p>
+
+<p>If you are using a js framework like <a href="http://jquery.com/" title="jQuery">jQuery</a>, then you can be sure that it is properly documented and there is a huge community out there to help you out.</p>
+
+<h4>Other JavaScript libraries?</h4>
+
+<p>There are lots of other js frameworks like <a href="http://mootools.net/" title="Mootools">Mootools</a>, <a href="http://dojotoolkit.org/" title="Dojo Toolkit">Dojo</a>, <a href="http://prototypejs.org">Prototype</a>, <a href="http://yuilibrary.com/">YUI</a> and many more. Deciding which one to select depends on various factors like the project requirement, resource available, deadline etc.</p>
+
+<p>What I liked about <a href="http://jquery.com/" title="jQuery">jQuery</a> is that is easy to get started and get cracking. They say <a href="http://mootools.net">Mootools</a> is great, I found their documentation poor. <a href="http://mootools.net">Mootools</a> is a great choice if you are going to develop a complex application with lots of custom objects in it. <a href="http://jquery.com/" title="jQuery">jQuery</a> is more focused on manipulating collections returned by the selectors.</p>
+
+<p>For example <a href="http://jsfiddle.net/">jsFiddle</a> is built on <a href="http://mootools.net">Mootools</a>, building that on <a href="http://jquery.com/" title="jQuery">jQuery</a> would have been harder.</p>
+
+<h4>How can <a href="http://jquery.com/" title="jQuery">jQuery</a> help?</h4>
+
+<ul>
+<li>Its fast &ndash; Test JavaScript framework selectors speed at <a href="http://mootools.net/slickspeed/">slickspeed</a></li>
+<li>Cross browser &ndash; Forget about writing js hacks for IE, same code works everywhere.</li>
+<li>Small size &ndash; just 55kb</li>
+<li>Easy animations and CSS3 selectors.</li>
+<li>Makes your REST client simple, with built in ajax support.</li>
+<li>Extremely simple to get started</li>
+</ul>
+
+
+<h4>Onload event</h4>
+
+<p>Most javascript developers use the <code>onload</code> event either in the body tag or window.onload in javascript. But when using <a href="http://jquery.com/" title="jQuery">jQuery</a> you don&rsquo;t do it like that.</p>
+
+<p>Instead, you load the <a href="http://jquery.com/" title="jQuery">jQuery</a>. file and use <code>$(document).ready();</code> function available. Most <a href="http://jquery.com/" title="jQuery">jQuery</a> functions allows callbacks. Callback functions are called up on an event.</p>
+
+<p>``` javascript
+$(document).ready(function () {</p>
+
+<pre><code>alert('loaded');
+</code></pre>
+
+<p>});</p>
+
+<p>```</p>
+
+<p>This will alert &lsquo;loaded&rsquo;, when the document is loaded. Here the callback function is defined as an anonymous JavaScript function, which <a href="http://jquery.com/" title="jQuery">jQuery</a> calls on the event of &lsquo;document ready&rsquo;. Read about the difference between onload &amp; document ready <a href="http://stackoverflow.com/questions/4395780/difference-bw-onload-and-document-readyfunction">here</a>.</p>
+
+<h4>Selector</h4>
+
+<p>To get started with jQuery you should need an understanding of selectors. Selectors always return us a collection of <a href="http://jquery.com/" title="jQuery">jQuery</a> objects, which we can manipulate. We may select an object using its id, class name, tag name or its combinations. The rules are similar to CSS rules. Id is referred using &lsquo;#&rsquo;, class is referred using &lsquo;.&rsquo; and tags are selected using the tag name.</p>
+
+<p>For example an element with id <code>myelement</code> is selected by:
+``` javascript</p>
+
+<p>$(&lsquo;#myelement&rsquo;)
+```</p>
+
+<p>All elements with class <code>myclass</code> is selected by
+``` javascript</p>
+
+<p>$(&lsquo;.myclass&rsquo;)
+```</p>
+
+<p>And all <code>p</code> elements can be selected by
+``` javascript</p>
+
+<p>$(&lsquo;p&rsquo;)</p>
+
+<p>```</p>
+
+<p>As you have figured out all <code>p</code> elements with class <code>myclass</code> is selected by
+``` javascript</p>
+
+<p>$(&lsquo;p .myclass&rsquo;)</p>
+
+<p>```</p>
+
+<p>After selecting an element or group of element, you can manipulate is using various functions available in <a href="http://jquery.com/" title="jQuery">jQuery</a> or in plugins. You may as well write your own <a href="http://jquery.com/" title="jQuery">jQuery</a> plugins.</p>
+
+<p>Now let us look at doing something with <a href="http://jquery.com/" title="jQuery">jQuery</a> and JavaScript. We will try a simple example of changing the text content in an html element. Here is the content we want to change:</p>
+
+<script src="https://gist.github.com/3775927.js?file=fiddle.html"></script>
+
+
+<p>We will change the &lsquo;Old Text&rsquo; to &lsquo;New Text&rsquo;</p>
+
+<h4>Change html text using JavaScript</h4>
+
+<script src="https://gist.github.com/3775927.js?file=fiddle.js"></script>
+
+
+<p>Fiddle here: <a href="http://jsfiddle.net/gh/gist/library/pure/3775927/"><a href="http://jsfiddle.net/gh/gist/library/pure/3775927/">http://jsfiddle.net/gh/gist/library/pure/3775927/</a></a></p>
+
+<p>Now the same stuff in <a href="http://jquery.com/" title="jQuery">jQuery</a>.</p>
+
+<h4>Change html text using <a href="http://jquery.com/" title="jQuery">jQuery</a></h4>
+
+<script src="https://gist.github.com/3776540.js?file=fiddle.js"> </script>
+
+
+<p>Fiddle here: <a href="http://jsfiddle.net/gh/gist/jquery/1.8/3776540/"><a href="http://jsfiddle.net/gh/gist/jquery/1.8/3776540/">http://jsfiddle.net/gh/gist/jquery/1.8/3776540/</a></a></p>
+
+<p>In <a href="http://jquery.com/" title="jQuery">jQuery</a> we did that in one line and the code is so much easy to understand. Also it processes fast as it doesn&rsquo;t wait for the complete all content to load, as soon as the DOM is available, <a href="http://jquery.com/" title="jQuery">jQuery</a> starts it job.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cancel Html Form Submission When Using jQuery.submit()]]></title>
+    <link href="http://WarFox.github.io/tech/2011/08/21/cancel-form-submit-when-using/"/>
+    <updated>2011-08-21T23:50:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2011/08/21/cancel-form-submit-when-using</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on">Most web developers might have come across this scenario - cancel the form submission after it is fired. This happens when form validation is fired on the <i>submit</i>&nbsp;event of form element. You may have to cancel the submission based on the validation.<br /><br />This post is on how to cancel an html form submission when using jQuery. The following 4 code snippets does the same the job. This can be used to prevent submit event being fired based on some validation.<br /><br /><div dir="ltr" style="text-align: left;" trbidi="on"><pre class="brush:js; ruler: true; gutter:true; toolbar: true; highlight: [1, 8, 15,22]">1. Cancel using event.preventDefault() method.<br />$('form').submit(submit_handler1);<br /><br />function submit_handler1(event) {<br />  event.preventDefault();<br />}<br /><br />2. Cancel by returning false from the submit handler.<br />$('form').submit(submit_handler2);<br /><br />function submit_handler2() {<br /> return false;<br />}<br /><br />3. Cancel by returning false from the submit handler.<br />$('form').submit(submit_handler3);<br /><br />submit_handler3 = function () {<br /> return false;<br />}<br /><br />4. Cancel by returning false from the submit handler.<br />$('form').submit(submit_handler4);<br /><br />$.submit_handler4 = function () {<br /> return false;<br />}</pre><br />In these examples I have used a submit handler function. It is always better to write submit handler function separately, for code maintainability. Here examples 2, 3 and 4 are same only difference is in the way submit handler function is attached to the <i>submit</i> event.<br /><br />To learn/improve jQuery skills, buy one of these book from Amazon.com.<br /><br /><iframe align="left" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="http://rcm.amazon.com/e/cm?t=thelaccur-20&amp;o=1&amp;p=8&amp;l=bpl&amp;asins=0980576857&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr" style="align: left; height: 245px; padding-right: 10px; padding-top: 5px; width: 131px;"></iframe> <iframe align="left" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="http://rcm.amazon.com/e/cm?t=thelaccur-20&amp;o=1&amp;p=8&amp;l=bpl&amp;asins=0596159773&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr" style="align: left; height: 245px; padding-right: 10px; padding-top: 5px; width: 131px;"></iframe> <iframe align="left" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="http://rcm.amazon.com/e/cm?t=thelaccur-20&amp;o=1&amp;p=8&amp;l=bpl&amp;asins=1847199720&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr" style="align: left; height: 245px; padding-right: 10px; padding-top: 5px; width: 131px;"></iframe> <iframe align="left" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="http://rcm.amazon.com/e/cm?t=thelaccur-20&amp;o=1&amp;p=8&amp;l=bpl&amp;asins=1935182323&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr" style="align: left; height: 245px; padding-right: 10px; padding-top: 5px; width: 131px;"></iframe></div></div><div class="blogger-post-footer"><div style="border-top: 1px solid #efefef; margin-top: 5px;">
+Thank you for reading. This blog post was originally posted to <a href="http://tech.deepumohan.com/">Deepu's Technology Blog</a>.
+</div></div></div>
+
+]]></content>
+  </entry>
+  
+</feed>

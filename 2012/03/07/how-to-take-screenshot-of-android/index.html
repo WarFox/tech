@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to Take Screenshot of Android Device (Developer Edition) - Deepu Mohan Puthrote</title>
+  <meta name="author" content="Deepu Mohan Puthrote">
+
+  
+  <meta name="description" content="Older versions of Andriod doesn&#8217;t give a simple option to take screen shot directly from the device. Apple&#8217;s iPhone has a handy feature &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://WarFox.github.io/tech/2012/03/07/how-to-take-screenshot-of-android">
+  <link href="/tech/favicon.png" rel="icon">
+  <link href="/tech/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <link href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="//cdn.jsdelivr.net/fontawesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="/atom.xml" rel="alternate" title="Deepu Mohan Puthrote" type="application/atom+xml">
+  <script src="//cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/tech/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header class='navbar navbar-inverse navbar-static-top' role="banner">  <nav role='navigation'>
+    <span class='circle'></span></span>
+    <div class='navbar-header'>
+      <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class="navbar-brand" href="/tech/" style="padding-left:100px;">Deepu Mohan Puthrote</a>
+    </div>
+    <div class='collapse navbar-collapse navbar-ex1-collapse'>
+  <ul class='nav navbar-nav'>
+    <li>
+      <a href='http://blog.deepumohan.com/'>Personal Blog</a>
+    </li>
+    <li class='active'>
+      <a href='http://tech.deepumohan.com/'>Technology Blog</a>
+    </li>
+    <li>
+      <a href='http://deepumohan.com/cv/'>CV</a>
+    </li>
+    <li>
+      <a href='http://blog.deepumohan.com/2004/07/privacy-policy.html'>Privacy Policy</a>
+    </li>
+  </ul>
+  <ul class='nav navbar-nav navbar-right' id='social'>
+    <li><a href='https://www.facebook.com/deepu.mohan.p'><i class='icon-facebook'></i></a></li>
+    <li><a href='https://www.twitter.com/deepumohanp'><i class='icon-twitter'></i></a></li>
+    <li><a href='https://plus.google.com/106447761403337564868'><i class='icon-google-plus'></i></a></li>
+    <li><a href='http://www.linkedin.com/in/deepumohanp'><i class='icon-linkedin'></i></a></li>
+    <li><a href='http://github.com/WarFox/'><i class='icon-github'></i></a></li>
+    <li><a href='http://deepumohanp.tumblr.com/'><i class='icon-tumblr'></i></a></li>
+    <li><a href='https://foursquare.com/deepumohanp/'><i class='icon-foursquare'></i></a></li>
+    <li><a href='http://instagram.com/deepumohanp/'><i class='icon-instagram'></i></a></li></ul>
+</div>
+
+  </nav>
+
+</header>
+  <div id="content" class="container">
+      <div class="row">
+<article class="hentry col-md-10" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How to Take Screenshot of Android Device (Developer Edition)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-07T06:44:00+05:30" pubdate data-updated="true">Mar 7<sup>th</sup>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on">Older versions of Andriod doesn&#8217;t give a simple option to take screen shot directly from the device. Apple&#8217;s iPhone has a handy feature which allows to take screen shots by pressing Power+Home button. From Android 2.2 (Froyo) onwards Android devices gives and option to take screenshot from the device itself by using Home + Power button combo. This post is android developers method for getting screen shot from Android devices. <br /><br />It took some time and searches to figure out how to take screen shots from Android device. You need to have a android development kit installed and configured to take screen shots using the official method.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-vsUHIXD3zIU/T1asFbGOnXI/AAAAAAAACoY/w1sjj8m9QKo/s1600/device-2012-03-06-223556.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://4.bp.blogspot.com/-vsUHIXD3zIU/T1asFbGOnXI/AAAAAAAACoY/w1sjj8m9QKo/s320/device-2012-03-06-223556.png" width="214" /></a></div>It was easy for me once I figured out the method, as I had already installed <a href="http://developer.android.com/sdk/index.html">android-sdk</a> in my machine. I am using <a href="http://www.springsource.com/developer/sts/">SpringSource Tool Suite</a> with <a href="http://developer.android.com/sdk/eclipse-adt.html">ADT</a> plugin for development which is a <a href="http://www.springsource.com/">Spring</a> flavoured <a href="http://www.eclipse.org/">Eclipse</a>. If you already have them installed great otherwise you might want to get these installed in your machine. Download and installation instructions can be found in the following links <br /><ul><li><a href="http://developer.android.com/sdk/index.html">Android SDK &amp; USB drivers</a></li><li><a href="http://www.eclipse.org/downloads/">Eclipse</a> or <a href="http://www.springsource.org/springsource-tool-suite-download/">SpringSource Tool Suite</a> (Optional)</li><li><a href="http://developer.android.com/sdk/eclipse-adt.html#installing">ADT plugin</a> for Eclipse or STS (Optional)</li></ul><i>By optional I mean, Eclipse and ADT is not required for taking the screen shot, which is the purpose of this blog post</i><br /><br />Once you have it ready follow these steps <br /><ol><li>Enable <b>USB debugging</b> in the android device, by going to <b>Settings</b> &gt; <b>Applications</b> &gt; <b>Development</b> &gt; and checking the check box that says <b>USB debugging</b>. </li><br /><li>Connect your Android device to your machine</li><br /><li>Start ddms(Dalvik Debug Monitor Server) either from <b>Android-SDK/tools</b> folder or from Eclipse</li><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-V51Zxx1Zz10/T1aws4UlF4I/AAAAAAAACo8/-gAV419ps7k/s1600/Screenshot%2Bat%2B2012-03-07%2B00%253A49%253A14.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="347" src="http://1.bp.blogspot.com/-V51Zxx1Zz10/T1aws4UlF4I/AAAAAAAACo8/-gAV419ps7k/s640/Screenshot%2Bat%2B2012-03-07%2B00%253A49%253A14.png" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-_ywKvPK84c8/T1avo9sG5CI/AAAAAAAACok/H3Ga0IxBqis/s1600/Screenshot%2Bat%2B2012-03-06%2B22%253A19%253A43.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="360" src="http://2.bp.blogspot.com/-_ywKvPK84c8/T1avo9sG5CI/AAAAAAAACok/H3Ga0IxBqis/s640/Screenshot%2Bat%2B2012-03-06%2B22%253A19%253A43.png" width="640" /></a></div><br /><li>That will open ddms screen like this</li><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-Sf0q1hUR3fY/T1av6kh9N5I/AAAAAAAACow/ZLU92_iluio/s1600/Screenshot%2Bat%2B2012-03-06%2B22%253A22%253A12.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="360" src="http://4.bp.blogspot.com/-Sf0q1hUR3fY/T1av6kh9N5I/AAAAAAAACow/ZLU92_iluio/s640/Screenshot%2Bat%2B2012-03-06%2B22%253A22%253A12.png" width="640" /></a></div><br />Here your will be able to see the device that you have connected. You can ignore the messages and warnings that are continuously updated at the bottom.<br /><br /><li>Click on the camera icon or screen capture option under the <b>Device</b> menu</li><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-8a5KnIB3x_s/T1azENhdsLI/AAAAAAAACpI/pR5RbgTVcR8/s1600/Screenshot%2Bat%2B2012-03-06%2B22%253A22%253A12.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="360" src="http://2.bp.blogspot.com/-8a5KnIB3x_s/T1azENhdsLI/AAAAAAAACpI/pR5RbgTVcR8/s640/Screenshot%2Bat%2B2012-03-06%2B22%253A22%253A12.png" width="640" /></a></div><br /><li>Now you will get the Device Screen Capture window.</li><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-uQS56mUZTyE/T1a1JtpzhcI/AAAAAAAACpU/Q1ycUrRRxlw/s1600/Screenshot%2Bat%2B2012-03-07%2B01%253A04%253A27.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="225" src="http://2.bp.blogspot.com/-uQS56mUZTyE/T1a1JtpzhcI/AAAAAAAACpU/Q1ycUrRRxlw/s400/Screenshot%2Bat%2B2012-03-07%2B01%253A04%253A27.png" width="400" /></a></div><br />You can directly save the screen shot from this. Go to a different screen or application and click &#8216;refresh&#8217; option to get a updated screenshot. It also gives rotate and copy to clipboard options. Click done to close the window. </ol><br />The images are saved in PNG format and are small in size. I have tried screenshots of Youtube videos being played and it worked very well. <br /> <div class="my-amazon-links"><h3>Related Products:</h3><iframe src="http://rcm.amazon.com/e/cm?t=thelaccur-20&o=1&p=8&l=as1&asins=B0061R2A1S&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazonwireless&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>  <iframe src="http://rcm.amazon.com/e/cm?t=thelaccur-20&o=1&p=8&l=as1&asins=1934356565&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe> <iframe src="http://rcm.amazon.com/e/cm?t=thelaccur-20&o=1&p=8&l=as1&asins=1449390501&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe> <iframe src="http://rcm.amazon.com/e/cm?t=thelaccur-20&o=1&p=8&l=as1&asins=1449389694&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe> <iframe src="http://rcm.amazon.com/e/cm?t=thelaccur-20&o=1&p=8&l=as1&asins=1118102274&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe> </div> </div><div class="blogger-post-footer"><div style="border-top: 1px solid #efefef; margin-top: 5px;">
+Thank you for reading. This blog post was originally posted to <a href="http://tech.deepumohan.com/">Deepu&#8217;s Technology Blog</a>.
+</div></div></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Deepu Mohan Puthrote</div>
+<div class='content'>
+Thank you&#8230;. :)</div>
+</div>
+<div class='comment'>
+<div class='author'>John Mann</div>
+<div class='content'>
+Hello webmaster good day. Superb post. You have gained a new fan. Please keep up the good work and I look forward to more of your great posts.<br /><a href="http://qlinkwireless.com" rel="nofollow">free cell phone</a></div>
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Deepu Mohan Puthrote</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-07T06:44:00+05:30" pubdate data-updated="true">Mar 7<sup>th</sup>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/tech/tech/categories/android/'>android</a>, <a class='category' href='/tech/tech/categories/google/'>google</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://WarFox.github.io/tech/2012/03/07/how-to-take-screenshot-of-android/" data-via="deepumohanp" data-counturl="http://WarFox.github.io/tech/2012/03/07/how-to-take-screenshot-of-android/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/tech/2012/02/20/targeted-ads-and-privacy-in-cloud/" title="Previous Post: Targeted ads and privacy in the cloud">&laquo; Targeted ads and privacy in the cloud</a>
+      
+      
+        <a class="basic-alignment right" href="/tech/2012/03/27/git-reset-single-file/" title="Next Post: git:: how to undo changes to a single file">git:: how to undo changes to a single file &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+<aside class="sidebar col-md-2">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/tech/2014/09/14/solid-design-principle/">SOLID Design Principle</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/03/30/closures/">Closures</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/02/02/sample-app-for-play-22-spring-data-jpa/">Sample App for Play! 2.2, Spring-data-jpa and Backbonejs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/20/backbonejs-in-jsfiddlenet/">Backbonejs in jsFiddle.net</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/09/jquery-populate-select-box-dynamically/">jQuery :: Populate Select Box Dynamically (Plugin Version)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/08/use-requirejs-to-load-scripts-from-cdn/">Use Requirejs to Load Scripts From Cdn Server Like Cdnjs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2014/01/05/jquery-populate-selet-box-options/">jQuery :: Populate Selet Box Options Dinamically</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/12/31/youtube-embed-video-html-code-without/">Youtube Embed Video Html Code Without Branding and Controls (Seekbar, Play/pause and Volume)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/11/30/get-last-date-of-month/">Java :: Get Last Date of a Month</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tech/2013/10/14/how-to-change-extension-of-multiple/">How to Change Extension of Multiple Files (Bash Script)</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/WarFox">@WarFox</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        github.showRepos({
+            user: 'WarFox',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/tech/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+DeepuMohanPuthrote?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+</div>
+
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - <a href="http://deepumohan.com/">Deepu Mohan Puthrote</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

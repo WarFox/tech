@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Spring Roo | Deepu Mohan Puthrote]]></title>
+  <link href="http://WarFox.github.io/tech/tech/categories/spring-roo/atom.xml" rel="self"/>
+  <link href="http://WarFox.github.io/tech/"/>
+  <updated>2014-09-14T06:34:41+05:30</updated>
+  <id>http://WarFox.github.io/tech/</id>
+  <author>
+    <name><![CDATA[Deepu Mohan Puthrote]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Spring Roo :: Adjust Text Box Size/width]]></title>
+    <link href="http://WarFox.github.io/tech/2013/03/07/spring-roo-adjust-text-box-sizewidth/"/>
+    <updated>2013-03-07T12:05:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/03/07/spring-roo-adjust-text-box-sizewidth</id>
+    <content type="html"><![CDATA[<p>Spring Roo uses Dojo&rsquo;s <code>dijit.form.ValidationTextbox</code> widget by default. This means only way to adjust textbox size is to adjust the width of widget. And this has to be done with widget attributes using Spring.addDecoration(); available in <code>spring-js</code>.</p>
+
+<p>``` javascript
+Spring.addDecoration(new Spring.ElementDecoration({</p>
+
+<pre><code>elementId : '_${sec_field}_id',
+widgetType : 'dijit.form.ValidationTextBox',
+widgetAttrs : {
+    promptMessage: '${sec_field_validation}',
+    invalidMessage: '${sec_field_invalid}',
+    required : ${required},
+    &lt;c:if test="${not empty width}"&gt;style: 'width: ${width}',&lt;/c:if&gt;
+    ${sec_validation_regex} missingMessage : '${sec_field_required}'
+}
+</code></pre>
+
+<p>}));
+```</p>
+
+<p>Here I have used a new attribute <code>width</code>, which is added to <code>input.tagx</code>.</p>
+
+<h3>Usage:</h3>
+
+<p><code>jsp
+&lt;field:input field="${field}" id="${id}" width="4em" z="u2Ah8NwmZxxKGJHNnTmYs2AL79o=" /&gt;
+</code></p>
+
+<h3>Spring Roo input.tagx with adjustable width attribute</h3>
+
+<script src="https://gist.github.com/WarFox/5105967.js"></script>
+
+
+<p>You may use the above gist as is or with modification, just don&rsquo;t forget to attribute.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Spring Roo :: Adjusting Textarea Rows and Cols (Width and Height)]]></title>
+    <link href="http://WarFox.github.io/tech/2013/02/20/spring-roo-adjusting-textarea-rows-and-cols/"/>
+    <updated>2013-02-20T22:18:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/02/20/spring-roo-adjusting-textarea-rows-and-cols</id>
+    <content type="html"><![CDATA[<p>If you have been using Spring Roo for rapid application development, you know how messy things can get when you need UI customization. You could try to override the default standard.css  for most cases. But things like adjusting the rows and columns in Textarea is not that easy.</p>
+
+<p>Spring Roo uses Apache Tiles, jspx, tagx and Dojo extensively for UI manipulation. So customization can be a a bit hard, when you are a beginner. I had to set rows and columns for textarea in the form as it always defaulted to <code>rows=&ldquo;3&rdquo;</code> and <code>cols=&ldquo;20&rdquo;</code>.</p>
+
+<p><code>textarea.tagx</code> can be found at the following location.</p>
+
+<p><code>html
+src/main/webapp/WEB-INF/tags/form/fields/textarea.tagx
+</code></p>
+
+<p>I tried editing the textarea.tagx file to add cols and rows attributes to the <code>form:textarea</code> tag.</p>
+
+<p><code>jsp
+&lt;form:textarea cols="${cols}" id="_${sec_field}_id" path="${sec_field}" disabled="${disabled}" rows="${rows}"/&gt;
+</code></p>
+
+<p>But this gets overridden when viewed in the browser. This behaviour is because <code>dijit.form.SimpleTextarea</code> widget is applied to the textarea after the DOM is loaded. So we have to set <code>cols</code> and <code>rows</code> as the <code>dijit.form.SimpleTextarea</code> widget&rsquo;s attributes.</p>
+
+<p>``` javascript
+Spring.addDecoration(new Spring.ElementDecoration({</p>
+
+<pre><code>elementId : '_${sec_field}_id',
+widgetType : 'dijit.form.SimpleTextarea',
+widgetAttrs : {
+    cols: ${cols},
+    disabled : ${disabled},
+    rows: ${rows}
+}
+</code></pre>
+
+<p>}));
+```</p>
+
+<p>I have done modification in <code>textarea.tagx</code> to include <code>cols</code> and <code>rows</code> as attributes. The full <code>textarea.tagx</code> can be found in the following gist.</p>
+
+<script src="https://gist.github.com/WarFox/4996682.js"></script>
+
+
+<p>
+<em>Please note: The file is given .jsp extension to enable formatting in the gist. You just need textarea.tagx.</em></p>
+
+<p>Copy and paste this code to your existing textarea.tagx to enjoy the benefits of <code>cols</code> and <code>rows</code> attributes.</p>
+
+<h2>Usage</h2></h2>
+
+<p>Use this tagx as you would use the shipped <code>textarea.tagx</code>, with the new attributes.
+<code>jsp
+&lt;field:textarea cols="10" field="field" id="c_id" required="true" rows="40" z="/vGKcV8LFnbjXO2Rf9V1g3MB35o="/&gt;
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

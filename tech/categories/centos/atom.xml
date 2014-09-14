@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Centos | Deepu Mohan Puthrote]]></title>
+  <link href="http://WarFox.github.io/tech/tech/categories/centos/atom.xml" rel="self"/>
+  <link href="http://WarFox.github.io/tech/"/>
+  <updated>2014-09-14T06:34:41+05:30</updated>
+  <id>http://WarFox.github.io/tech/</id>
+  <author>
+    <name><![CDATA[Deepu Mohan Puthrote]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Linux :: Port Is in Use but Pid Not Visible]]></title>
+    <link href="http://WarFox.github.io/tech/2013/01/25/linux-port-is-in-use-but-pid-not-visible/"/>
+    <updated>2013-01-25T20:48:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/01/25/linux-port-is-in-use-but-pid-not-visible</id>
+    <content type="html"><![CDATA[<h2>Problem:</h2>
+
+<p>A port is being used by some process but the pid of process is not visible</p>
+
+<h3>Reason:</h3>
+
+<p>When the process is started by <code>root</code>, other users not in the root group cannot view the process ids. So when you do:</p>
+
+<p><code>netstat -atnp</code></p>
+
+<p>process id will not be visible to normal user.</p>
+
+<p>You have to run <code>netstat</code> command with <code>sudo</code>, to view all process ids.</p>
+
+<p><code>bash
+sudo netstat -atnp
+</code></p>
+
+<p>A scenario I came across is when Apache tomcat was started as a Java service with jsvc command. The daemon.sh was run by the root user, so the process belonged to root.</p>
+
+<!-- it is used by root  jsvc.exec usses 8080  centos security  cannot see pid of process run by root -->
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

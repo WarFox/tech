@@ -1,0 +1,1398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Deepu Mohan Puthrote]]></title>
+  <link href="http://WarFox.github.io/tech/atom.xml" rel="self"/>
+  <link href="http://WarFox.github.io/tech/"/>
+  <updated>2014-09-14T06:34:41+05:30</updated>
+  <id>http://WarFox.github.io/tech/</id>
+  <author>
+    <name><![CDATA[Deepu Mohan Puthrote]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SOLID Design Principle]]></title>
+    <link href="http://WarFox.github.io/tech/2014/09/14/solid-design-principle/"/>
+    <updated>2014-09-14T06:07:48+05:30</updated>
+    <id>http://WarFox.github.io/tech/2014/09/14/solid-design-principle</id>
+    <content type="html"><![CDATA[<p>When it comes to OO designing, it is a good idea to have a strategy to follow.
+A strategy allows you to think and organize ideas in a particular fashion that is comfortable to you.
+I&rsquo;ve found SOLID principle easy enough for beginners and experts to understand and practice.
+This  was originally put forward by <a href="http://en.wikipedia.org/wiki/Robert_C._Martin">Rober C. Martin</a>, who is a pioneer in agile software development and extreme programming.
+Checkout <a href="http://cleancoders.com/">Cleancoders</a> to know more.</p>
+
+<p>Chances are, you may be already using SOLID principle, just without giving it a name.</p>
+
+<h2>tl;dr</h2>
+
+<p>S &ndash; Single Responsibility Principle (SRP)</p>
+
+<p>O &ndash; Open/Closed Principle (OCP)</p>
+
+<p>L &ndash; Liskov Substitution Principle (LSP)</p>
+
+<p>I &ndash; Interface Segregation Principle (ISP)</p>
+
+<p>D &ndash; Dependency Inversion Principle (DIP)</p>
+
+<p>Thats right, SOLID stands for a bunch of other acronyms.</p>
+
+<h3>S &ndash; Single Responsibility Principle (SRP)</h3>
+
+<blockquote><p>The single responsibility principle states that every class should
+have a single responsibility, and that responsibility should be
+entirely encapsulated by the class. All its services should be
+narrowly aligned with that responsibility.</p></blockquote>
+
+<p>Fairly simple. A Student class should manipulate Student properties and not the the properties of School. Specification of the class remains mostly untouched unless there is a big change in requirement of your software.</p>
+
+<p>It is good to keep in mind that, there can be some exceptions to this. For example a utility class may provide methods for managing both Students and Schools.</p>
+
+<h3>O &ndash; Open/Closed Principle (OCP)</h3>
+
+<blockquote><p>Software entities should be open for extension, but closed for modification.</p></blockquote>
+
+<p>The idea is that once a class is implemented completely, it should not be modified for including new features. Bugs and error correction must be done as and when required. Adding a new feature will require new specification and release of newer version.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Open/closed_principle">http://en.wikipedia.org/wiki/Open/closed_principle</a></p>
+
+<h3>L &ndash; Liskov Substitution Principle (LSP)</h3>
+
+<blockquote><p>Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program. See also <a href="http://en.wikipedia.org/wiki/Design_by_contract">design by contract</a>.</p></blockquote>
+
+<p>That right there is the basic use of Dependency Injection, right? You define a parent interface and replace them by concrete implementation which are derivatives.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeNoise</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;noise&quot;</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeNoise</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">bark</span><span class="o">();</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">bark</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;bow bow bow&quot;</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Dog</span> <span class="n">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Animal</span><span class="o">();</span>
+</span><span class='line'><span class="n">dog</span><span class="o">.</span><span class="na">makeNoise</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@Inject</span>
+</span><span class='line'><span class="n">Animal</span> <span class="n">animal</span><span class="o">;</span> <span class="c1">// can be replaced by Dog</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://en.wikipedia.org/wiki/Liskov_substitution_principle">http://en.wikipedia.org/wiki/Liskov_substitution_principle</a></p>
+
+<h3>I &ndash; Interface Segregation Principle (ISP)</h3>
+
+<blockquote><p>Many client-specific interfaces are better than one general-purpose interface.</p></blockquote>
+
+<p>Interfaces provide abstraction no implementation. When developing client interfaces, it should be kept at minimum and should only expose those methods which are essential for that client.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Interface_segregation_principle">http://en.wikipedia.org/wiki/Interface_segregation_principle</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">interface</span> <span class="nc">Jumbable</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kt">void</span> <span class="nf">jump</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">interface</span> <span class="nc">Climbable</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kt">void</span> <span class="nf">climb</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Jumbable</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@override</span>
+</span><span class='line'>    <span class="kt">void</span> <span class="nf">jump</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="c1">//jump</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">class</span> <span class="nc">Monkey</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Jumbable</span><span class="o">,</span> <span class="n">Climbable</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@override</span>
+</span><span class='line'>    <span class="kt">void</span> <span class="nf">jump</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@override</span>
+</span><span class='line'>    <span class="kt">void</span> <span class="nf">climb</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>D &ndash; Dependency Inversion Principle (DIP)</h3>
+
+<blockquote><p>One should “Depend upon Abstractions. Do not depend upon concretions.”</p></blockquote>
+
+<p>Dependency injection is one method of following this principle.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">interface</span> <span class="nc">JumpringService</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">jump</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">JumpingServiceImpl</span> <span class="kd">implements</span> <span class="n">JumpingService</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Inject</span>
+</span><span class='line'>    <span class="kd">private</span> <span class="n">Jumpable</span> <span class="n">jumbable</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">jump</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">jumpable</span><span class="o">.</span><span class="na">jump</span><span class="o">();</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://en.wikipedia.org/wiki/Dependency_inversion_principle">http://en.wikipedia.org/wiki/Dependency_inversion_principle</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Closures]]></title>
+    <link href="http://WarFox.github.io/tech/2014/03/30/closures/"/>
+    <updated>2014-03-30T22:49:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2014/03/30/closures</id>
+    <content type="html"><![CDATA[<p>Test
+Closures are a bit hard to understand concept for someone from an Object Oriented programming background, mainly because popular OO programming languages, <s>(Java/C++) does not have this feature</s> (As <a href="http://www.reddit.com/user/bjzaba">bjzaba</a> pointed out in <a href="http://www.reddit.com/r/programming/comments/223b7p/closures/cgiyg9o">reddit</a>, C++ 11 has Closures) haven&rsquo;t embraced or promoted this feature until recently. It is more of a functional programming concept, although many Object Oriented languages has started to support Closures through first class functions or higher order functions.</p>
+
+<p>I first heard about Closures while developing something in Javascript. If you have used the popular javascript library <a href="http://jquery.com" title="jQuery">jQuery</a>, you have already used closures, knowingly or unknowingly.</p>
+
+<p>Here is my attempt to explain Closures, through examples in few programming languages.</p>
+
+<p>From Wikipedia:</p>
+
+<blockquote><p>In programming languages, a closure (also lexical closure or function
+closure) is a function or reference to a function together with a
+referencing environment—a table storing a reference to each of the
+non-local variables (also called free variables or up values) of that
+function. A closure—unlike a plain function pointer—allows a
+function to access those non-local variables even when invoked outside
+its immediate lexical scope.</p></blockquote>
+
+<p>What that means:
+1. Closure is a function (or a reference to a function)
+2. You get a pointer to closure
+3. So you can pass it around like an object
+4. It knows about non-local variables
+5. It can access those non-local variables, even when invoked outside of its scope
+6. So we say, closures &lsquo;closes&rsquo; on its environment
+7. A function may create a closure and return it.</p>
+
+<h3>Few programming languages, that support Closures</h3>
+
+<ul>
+<li>Lisp</li>
+<li>Javascript</li>
+<li>Scala</li>
+<li>Clojure</li>
+<li>Ruby</li>
+<li>Python</li>
+<li>Haskell</li>
+<li>PHP</li>
+</ul>
+
+
+<p>In closures procedure/method/function contexts become first-class. That means, with closures you can create functions that return functions, although that is only an outcome. An important point to understand here is, the closure methods refer to the context in which it was created, not to the one it was called.</p>
+
+<p>To better understand closures one has to understand a variable&rsquo;s scope, the best read about that would be <a href="http://www.coolcoder.in/2014/03/everything-you-need-to-know-about.html" title="Everything you need to know about javascript variable scope">understanding javascript varialble scope</a>.</p>
+
+<p>Closures store references to the outer function’s variables; they do not store the actual value. So if we change the value of reference in closure it changes value outside of its scope.</p>
+
+<p>You may implement closures using Anonymous functions, but all anonymous functions need not be a closure, although many of them are.</p>
+
+<h3>Why would anyone use Closures?</h3>
+
+<ul>
+<li>Reusability</li>
+<li>Do more with less code</li>
+<li>Make functional code stateful</li>
+</ul>
+
+
+<p>Closures help us to write more expressive and concise code(once you get a hang of it!). We know objects have a state, using Closure we can give state to functions as well.</p>
+
+<p>Now, let us take a look at examples of how to use closures in a few programming languages.</p>
+
+<h3>Examples</h3>
+
+<p>All of the following examples do the same thing: Create a closure to increment a number by another number.</p>
+
+<h4>1. Closure example in Javascript</h4>
+
+<p>This would be the easiest to understand code.</p>
+
+<figure class='code'><figcaption><span>Closure example in Javascript  (increment.js)</span> <a href='http://WarFox.github.io/tech/downloads/code/closures/increment.js'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">incrementBy</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// this will remember the value of &#39;x&#39; forever</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">incrementBy2</span> <span class="o">=</span> <span class="nx">incrementBy</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">incrementBy3</span> <span class="o">=</span> <span class="nx">incrementBy</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">incrementBy2</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">incrementBy3</span><span class="p">(</span><span class="mi">8</span><span class="p">));</span>
+</span><span class='line'><span class="c1">// Here you are creating a closure and calling it immediately</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">incrementBy</span><span class="p">(</span><span class="mi">5</span><span class="p">)(</span><span class="mi">8</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In the Javascript example above, we define a function <code>incrementBy(x)</code>, which returns a function, that accepts parameter &lsquo;y&rsquo; and returns sum of x and y. Here the value of &lsquo;x&rsquo; will go into the closure of the returned function and will be accessible whenever the function is invoked.</p>
+
+<p>Note that when calling <code>incrementBy2(4)</code> our closure remembers the value 2 (i.e &lsquo;x&rsquo;) that was passed earlier when doing <code>var incrementBy2 = incrementBy(2);</code>. And when invoking <code>incrementBy2(4)</code> we are actually passing the value of <code>y</code> as 4. Hence the statement <code>return x+y</code> will transform to <code>return 2+4</code>. Cool right!!?</p>
+
+<br/>
+
+
+<h4>2. Closure example in <a href="http://scala-lang.org/" title="Scala">Scala</a></h4>
+
+<figure class='code'><figcaption><span>Closure example in Scala  (increment.scala)</span> <a href='http://WarFox.github.io/tech/downloads/code/closures/increment.scala'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">object</span> <span class="nc">Closure</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// define the closure using one line of code, power of Scala</span>
+</span><span class='line'>    <span class="k">def</span> <span class="n">incrementBy</span><span class="o">(</span><span class="n">x</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">(</span><span class="n">y</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span> <span class="n">main</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span> <span class="k">=</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">var</span> <span class="n">incrementBy3</span> <span class="k">=</span> <span class="n">incrementBy</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
+</span><span class='line'>        <span class="k">val</span> <span class="n">incrementBy5</span> <span class="k">=</span> <span class="n">incrementBy</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">println</span><span class="o">(</span><span class="n">incrementBy3</span><span class="o">(</span><span class="mi">5</span><span class="o">))</span>
+</span><span class='line'>        <span class="n">println</span><span class="o">(</span><span class="n">incrementBy5</span><span class="o">(</span><span class="mi">10</span><span class="o">))</span>
+</span><span class='line'>        <span class="n">println</span><span class="o">(</span><span class="n">incrementBy</span><span class="o">(</span><span class="mi">20</span><span class="o">)(</span><span class="mi">20</span><span class="o">))</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The example in Scala is similar to the example in Javascript except for Scala&rsquo;s awesome one liner syntax.</p>
+
+<br/>
+
+
+<h4>3. Closure example in Lisp (Clisp)</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='lisp'><span class='line'><span class="p">(</span><span class="nb">defun</span> <span class="nv">increment</span><span class="p">(</span><span class="nv">y</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">defun</span> <span class="nv">incrementBy</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span>
+</span><span class='line'>        <span class="p">(</span><span class="nb">+</span> <span class="nv">y</span> <span class="nv">x</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">)</span>
+</span><span class='line'><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nv">increment</span> <span class="mi">4</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nv">incrementBy</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">; 9</span>
+</span><span class='line'><span class="p">(</span><span class="nv">incrementBy</span> <span class="mi">10</span><span class="p">)</span> <span class="c1">; 14</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There are several ways of doing this is lisp. This is only one way of doing it. Here you are not getting a pointer to the closure function and will probably make it useless. See <a href="http://dunsmor.com/lisp/onlisp/onlisp_9.html">this link</a> to see how to return functions is Clisp.</p>
+
+<br/>
+
+
+<h4>4. Closure example in Clojure</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">increment</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">y</span><span class="p">]</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">def </span><span class="nv">incrementBy</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">x</span><span class="p">]</span>
+</span><span class='line'>      <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">))</span>
+</span><span class='line'><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">increment</span> <span class="mi">4</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nf">incrementBy</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">; 9</span>
+</span><span class='line'><span class="p">(</span><span class="nf">incrementBy</span> <span class="mi">10</span><span class="p">)</span> <span class="c1">; 14</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see, the syntax of clojure and lisp are extremely similar.</p>
+
+<br/>
+
+
+<h4>5. Closure example in Python</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">incrementBy</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">increment</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">incrementBy4</span> <span class="o">=</span> <span class="n">incrementBy</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span><span class='line'><span class="n">incrementBy6</span> <span class="o">=</span> <span class="n">incrementBy</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="n">incrementBy4</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c"># 9</span>
+</span><span class='line'><span class="k">print</span> <span class="n">incrementBy6</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c"># 16</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The above example in Python is pretty similar to the one in Javascript and is easy to understand. Here we define the closure function <code>increment(y)</code> and then return it. Just remember to take care of the tabs!</p>
+
+<br/>
+
+
+<h4>6. Closure example in Ruby</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Closure</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># Ruby example using Proc.new</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">incrementBy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">return</span> <span class="no">Proc</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span><span class="o">|</span><span class="n">y</span><span class="o">|</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># Ruby example using lambda</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">incrementByLambda</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span class='line'>    <span class="nb">lambda</span> <span class="p">{</span><span class="o">|</span><span class="n">y</span><span class="o">|</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">}</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">closure</span> <span class="o">=</span> <span class="no">Closure</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">increment5</span> <span class="o">=</span> <span class="n">closure</span><span class="o">.</span><span class="n">incrementBy</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span class='line'><span class="n">incrementByLambda7</span> <span class="o">=</span> <span class="n">closure</span><span class="o">.</span><span class="n">incrementByLambda</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="n">increment5</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">incrementByLambda7</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Ruby can do this is in two ways, using Proc and using lambda. The lambda functions in Ruby are similar to lambda&rsquo;s in lisp.</p>
+
+<br/>
+
+
+<p>So that was examples about closures. Hope that gives you at least some idea about Closures. If you know how do the same in any other languages, please feel free to share. Also checkout the references, they are good reads.</p>
+
+<h3>References:</h3>
+
+<ul>
+<li><a href="http://martinfowler.com/bliki/Lambda.html">Martin Fowler on Lambda</a></li>
+<li><a href="http://www.skorks.com/2010/05/closures-a-simple-explanation-using-ruby/">http://www.skorks.com/2010/05/closures-a-simple-explanation-using-ruby/</a></li>
+<li><a href="http://stackoverflow.com/questions/111102/how-do-javascript-closures-work">http://stackoverflow.com/questions/111102/how-do-javascript-closures-work</a></li>
+<li><a href="http://psg.com/~dlamkins/sl/chapter11.html#closures">http://psg.com/~dlamkins/sl/chapter11.html#closures</a></li>
+<li><a href="http://innig.net/software/ruby/closures-in-ruby">http://innig.net/software/ruby/closures-in-ruby</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Closure_">http://en.wikipedia.org/wiki/Closure_</a>(computer_programming)</li>
+<li><a href="http://learn.jquery.com/javascript-101/closures/">http://learn.jquery.com/javascript-101/closures/</a></li>
+<li><a href="http://javascriptissexy.com/understand-javascript-closures-with-ease/">http://javascriptissexy.com/understand-javascript-closures-with-ease/</a></li>
+<li><a href="http://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/">http://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/</a></li>
+<li><a href="http://csharpindepth.com/Articles/Chapter5/Closures.aspx">http://csharpindepth.com/Articles/Chapter5/Closures.aspx</a></li>
+</ul>
+
+
+<p><em>Thanks to Craig for sharing <a href="http://golang.org/" title="The Go Programming Language">Go</a> <a href="http://tech.deepumohan.com/2014/03/closures.html#comment-1316532644">snippet</a></em></p>
+
+<p>Reddit thread here: <a href="http://redd.it/223b7p">http://redd.it/223b7p</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sample App for Play! 2.2, Spring-data-jpa and Backbonejs]]></title>
+    <link href="http://WarFox.github.io/tech/2014/02/02/sample-app-for-play-22-spring-data-jpa/"/>
+    <updated>2014-02-02T22:49:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2014/02/02/sample-app-for-play-22-spring-data-jpa</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"> <p>I have made a sample application to demo Play! framework 2.2, Spring data jpa and Backbonejs.</p> <p>It is available at  <a href="https://github.com/WarFox/play-spring-data-jpa-backbonejs">https://github.com/WarFox/play-spring-data-jpa-backbonejs</a>.</p> <p>Also a demo app is hosted in Heroku at <a href="http://play-spring-data-jpa-backbone.herokuapp.com/">http://play-spring-data-jpa-backbone.herokuapp.com/</a></p> <p>It started as a fork from <a href="https://github.com/typesafehub/play-spring-data-jpa/">https://github.com/typesafehub/play-spring-data-jpa</a> and then created a separated repo to include backbonjs. </p> <p>Feel free to fork and play with it.</p> </div></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Backbonejs in jsFiddle.net]]></title>
+    <link href="http://WarFox.github.io/tech/2014/01/20/backbonejs-in-jsfiddlenet/"/>
+    <updated>2014-01-20T12:57:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2014/01/20/backbonejs-in-jsfiddlenet</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"> <p><a href="http://jsfiddle.net/">jsFiddle</a> does not provide <a href="http://backbonejs.org/">backbonejs</a> library through its Frameworks & Extensions dropdown. Thankfully, it allows you to add any external resources via External Resources option. I have made this blank template for you guys to start playing with Backbonejs in jsFiddle. Feel free to use it directly or fork it.</p> <iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/6fLw6/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> <ul><li><a href="http://jsfiddle.net/deepumohanp/6fLw6/">Backbonejs Playground</a></li></ul></div></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery :: Populate Select Box Dynamically (Plugin Version)]]></title>
+    <link href="http://WarFox.github.io/tech/2014/01/09/jquery-populate-select-box-dynamically/"/>
+    <updated>2014-01-09T00:03:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2014/01/09/jquery-populate-select-box-dynamically</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"> In my previous <a href="http://tech.deepumohan.com/2014/01/jquery-populate-selet-box-options.html">post</a>, I had shown how to populate a select box dynamically using jQurey. Here is the same thing as jQuery plugin.  <iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/kNQ6s/0/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> <p><a href="http://jsfiddle.net/deepumohanp/kNQ6s/">http://jsfiddle.net/deepumohanp/kNQ6s/</a> </p></div></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Use Requirejs to Load Scripts From Cdn Server Like Cdnjs]]></title>
+    <link href="http://WarFox.github.io/tech/2014/01/08/use-requirejs-to-load-scripts-from-cdn/"/>
+    <updated>2014-01-08T16:22:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2014/01/08/use-requirejs-to-load-scripts-from-cdn</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"> <p>Fiddle here.</p> <iframe width="100%" height="400" src="http://jsfiddle.net/deepumohanp/73xVu/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> <p><a href="http://jsfiddle.net/deepumohanp/73xVu/">http://jsfiddle.net/deepumohanp/73xVu/</a></p> <h3>References</h3><ul><li><a href="http://stackoverflow.com/questions/8131265/loading-backbone-and-underscore-using-requirejs">http://stackoverflow.com/questions/8131265/loading-backbone-and-underscore-using-requirejs</a></li> <li><a href="http://stackoverflow.com/questions/13464846/loading-bootstrap-from-cdn-with-require-js">http://stackoverflow.com/questions/13464846/loading-bootstrap-from-cdn-with-require-js</a></li></ul></div></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery :: Populate Selet Box Options Dinamically]]></title>
+    <link href="http://WarFox.github.io/tech/2014/01/05/jquery-populate-selet-box-options/"/>
+    <updated>2014-01-05T23:04:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2014/01/05/jquery-populate-selet-box-options</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"> <p>Here is an example code to populate select box options dynamically using <a href="http://jquery.com/">jQuery</a></p> <iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/8EQjY/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> <p><a href="http://jsfiddle.net/deepumohanp/8EQjY/">http://jsfiddle.net/deepumohanp/8EQjY/</a></p> </div></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Youtube Embed Video Html Code Without Branding and Controls (Seekbar, Play/pause and Volume)]]></title>
+    <link href="http://WarFox.github.io/tech/2013/12/31/youtube-embed-video-html-code-without/"/>
+    <updated>2013-12-31T15:12:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/12/31/youtube-embed-video-html-code-without</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"> <p>Youtube embedded player can be adjusted a lot using the parameters available here <a href="https://developers.google.com/youtube/player_parameters">https://developers.google.com/youtube/player_parameters</a>. Some parameters are available on both HTML5 and flash players and some are not.</p> <p>Check out <a href="https://developers.google.com/youtube/youtube_player_demo">https://developers.google.com/youtube/youtube_player_demo</a>, for all availabel configuration and play with it.</p> <p>For example you can hide the controllers in embedded video, <a name='more'></a> by setting parameter <code>controls</code> to 0</p> <pre class="brush:html"><br /><iframe <br />    src="http://www.youtube.com/embed/p09QlQQazo0?controls=0" <br />    width="640" height="360"><br /></iframe><br /></pre> <div class="container"><iframe src="http://www.youtube.com/embed/p09QlQQazo0?controls=0" width="640" height="360" ></iframe></div> <p>Default video quality can be set using <code>vq</code>.</p> <pre class="brush:html"><br /><iframe src="http://www.youtube.com/embed/p09QlQQazo0?vq=hd720" style="border: 5px solid #cccccc; overflow: hidden;" width="640" height="360" frameborder="0"<br />allowfullscreen></iframe><br /></pre> <div class="container"><iframe src="http://www.youtube.com/embed/p09QlQQazo0?vq=hd720" style="border: 5px solid #cccccc; overflow: hidden;" width="640" height="360" frameborder="0" allowfullscreen></iframe></div> <p>Youtube allows you to have its logo to be modest, by setting <code>modestbranding</code> to 1.</p> <pre class="brush:html"><br /><iframe src="http://www.youtube.com/embed/p09QlQQazo0?modestbranding=1" width="640" height="360" frameborder="0" allowfullscreen></iframe><br /></pre> <div class="container"><iframe src="http://www.youtube.com/embed/p09QlQQazo0?modestbranding=1" width="640" height="360" frameborder="0" allowfullscreen></iframe></div> <p>We can also set all of these values together</p> <pre class="brush:html"><br /><iframe src="http://www.youtube.com/embed/p09QlQQazo0?rel=0&amp;autoplay=0&amp;showinfo=0&amp;modestbranding=1&amp;controls=0&amp;vq=hd720" <br />style="border: 5px solid #cccccc; overflow: hidden;" width="640" height="360" <br />frameborder="0" allowfullscreen></iframe><br /></pre> <div class="container"><iframe src="http://www.youtube.com/embed/p09QlQQazo0?rel=0&amp;autoplay=0&amp;showinfo=0&amp;modestbranding=1&amp;controls=0&amp;vq=hd720"  style="border: 5px solid #cccccc; overflow: hidden;" width="640" height="360"  frameborder="0" allowfullscreen></iframe></div>  <h3>References</h3><ol><li><a href="https://developers.google.com/youtube/player_parameters/">https://developers.google.com/youtube/player_parameters/</a></li><li><a href="http://www.labnol.org/internet/embed-youtube-videos-logoless/19532/">http://www.labnol.org/internet/embed-youtube-videos-logoless/19532/</a></li><li><a href="https://developers.google.com/youtube/youtube_player_demo/">https://developers.google.com/youtube/youtube_player_demo/</a></li></ol> </div></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java :: Get Last Date of a Month]]></title>
+    <link href="http://WarFox.github.io/tech/2013/11/30/get-last-date-of-month/"/>
+    <updated>2013-11-30T23:48:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/11/30/get-last-date-of-month</id>
+    <content type="html"><![CDATA[<p>In Java we can use the Calendar class to get <tt>day_of_month</tt>, <tt>day_of_week</tt> etc.
+Last day of a month varies depending on the Month and on leap year we have extra day in February.
+So to figure out the last day of any given month in a year, we write some code which is apparently simple.</p>
+
+<p>Calendar object allows us to manipulate days, go forward or backward on the Calendar, add days, hours, minutes or seconds to any given time etc.
+We will use these capabilities of Calendar class to get our <tt>last_of_month</tt>.</p>
+
+<p><a name='more'></a>
+The idea here is to get the first day of next month and then reduce one day from it, which gives us the last day of the month relative to input date.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="cm">/**</span>
+</span><span class='line'><span class="cm"> * The trick is to add a month, set the date as 1st and then reduce a date.</span>
+</span><span class='line'><span class="cm"> *</span>
+</span><span class='line'><span class="cm"> * @param calendar</span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'><span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setCalendarToLastDayOfMonth</span><span class="o">(</span><span class="n">Calendar</span> <span class="n">calendar</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="n">calendar</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MONTH</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+</span><span class='line'>    <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_MONTH</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+</span><span class='line'>    <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">HOUR</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>    <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MINUTE</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>    <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">SECOND</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>    <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MILLISECOND</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>    <span class="n">calendar</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DATE</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">);</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But, Java Calendar has a better way of doing this, by using getActualMaximum() method which is far more convenient.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setCalendarToLastDayOfMonth</span><span class="o">(</span><span class="n">Calendar</span> <span class="n">calendar</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>   <span class="kt">int</span> <span class="n">lastDay</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">getActualMaximum</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_MONTH</span><span class="o">);</span>
+</span><span class='line'>   <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_MONTH</span><span class="o">,</span> <span class="n">lastDay</span><span class="o">);</span>
+</span><span class='line'>   <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">HOUR</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>   <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MINUTE</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>   <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">SECOND</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>   <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MILLISECOND</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A sample calendar util class which gives you few convenient methods is given below.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="cm">/**</span>
+</span><span class='line'><span class="cm"> * Copyright (C) 2013 Deepu Mohan Puthrote. All Rights Reserved.</span>
+</span><span class='line'><span class="cm"> * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.</span>
+</span><span class='line'><span class="cm"> *</span>
+</span><span class='line'><span class="cm"> * This program is free software: you can redistribute it and/or modify</span>
+</span><span class='line'><span class="cm"> * it under the terms of the GNU General Public License as published by</span>
+</span><span class='line'><span class="cm"> * the Free Software Foundation, either version 3 of the License, or</span>
+</span><span class='line'><span class="cm"> * (at your option) any later version.</span>
+</span><span class='line'><span class="cm"> *</span>
+</span><span class='line'><span class="cm"> * This program is distributed in the hope that it will be useful,</span>
+</span><span class='line'><span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+</span><span class='line'><span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+</span><span class='line'><span class="cm"> * GNU General Public License for more details.</span>
+</span><span class='line'><span class="cm"> *</span>
+</span><span class='line'><span class="cm"> * You should have received a copy of the GNU General Public License</span>
+</span><span class='line'><span class="cm"> * along with this program.  If not, see http://www.gnu.org/licenses/.</span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'> <span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="o">;</span>
+</span><span class='line'> <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+</span><span class='line'> <span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+</span><span class='line'> <span class="kn">import</span> <span class="nn">java.util.Locale</span><span class="o">;</span>
+</span><span class='line'> <span class="kn">import</span> <span class="nn">java.text.ParseException</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CalendarUtil</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">String</span> <span class="n">string</span> <span class="o">=</span> <span class="s">&quot;January 2, 2010&quot;</span><span class="o">;</span>
+</span><span class='line'>        <span class="n">CalendarUtil</span> <span class="n">calendarUtil</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CalendarUtil</span><span class="o">();</span>
+</span><span class='line'>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calendarUtil</span><span class="o">.</span><span class="na">getLastDateOfMonth</span><span class="o">(</span><span class="n">string</span><span class="o">));</span>
+</span><span class='line'>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calendarUtil</span><span class="o">.</span><span class="na">getLastDateOfMonth</span><span class="o">());</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="n">Date</span> <span class="nf">getLastDateOfMonth</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nf">getLastDateOfMonth</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">());</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="n">Date</span> <span class="nf">getLastDateOfMonth</span><span class="o">(</span><span class="n">Date</span> <span class="n">date</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">Calendar</span> <span class="n">calendar</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+</span><span class='line'>        <span class="n">calendar</span><span class="o">.</span><span class="na">setTime</span><span class="o">(</span><span class="n">date</span><span class="o">);</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nf">getLastDateOfMonth</span><span class="o">(</span><span class="n">calendar</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="n">Date</span> <span class="nf">getLastDateOfMonth</span><span class="o">(</span><span class="n">Calendar</span> <span class="n">calendar</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">setCalendarToLastDayOfMonth</span><span class="o">(</span><span class="n">calendar</span><span class="o">);</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">calendar</span><span class="o">.</span><span class="na">getTime</span><span class="o">();</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="n">Date</span> <span class="nf">getLastDateOfMonth</span><span class="o">(</span><span class="n">String</span> <span class="n">date</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ParseException</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nf">getLastDateOfMonth</span><span class="o">(</span><span class="n">date</span><span class="o">,</span> <span class="s">&quot;MMMM d, yyyy&quot;</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="n">Date</span> <span class="nf">getLastDateOfMonth</span><span class="o">(</span><span class="n">String</span> <span class="n">date</span><span class="o">,</span> <span class="n">String</span> <span class="n">format</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ParseException</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nf">getLastDateOfMonth</span><span class="o">(</span><span class="n">date</span><span class="o">,</span> <span class="n">format</span><span class="o">,</span> <span class="n">Locale</span><span class="o">.</span><span class="na">US</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="n">Date</span> <span class="nf">getLastDateOfMonth</span><span class="o">(</span><span class="n">String</span> <span class="n">stringDate</span><span class="o">,</span> <span class="n">String</span> <span class="n">format</span><span class="o">,</span> <span class="n">Locale</span> <span class="n">locale</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ParseException</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="n">format</span><span class="o">,</span> <span class="n">locale</span><span class="o">).</span><span class="na">parse</span><span class="o">(</span><span class="n">stringDate</span><span class="o">);</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nf">getLastDateOfMonth</span><span class="o">(</span><span class="n">date</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setCalendarToLastDayOfMonth</span><span class="o">(</span><span class="n">Calendar</span> <span class="n">calendar</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="kt">int</span> <span class="n">lastDay</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">getActualMaximum</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_MONTH</span><span class="o">);</span>
+</span><span class='line'>        <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_MONTH</span><span class="o">,</span> <span class="n">lastDay</span><span class="o">);</span>
+</span><span class='line'>        <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">HOUR</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>        <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MINUTE</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>        <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">SECOND</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>        <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MILLISECOND</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>References</h3>
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/13624442/getting-last-day-of-the-month-in-given-string-date/">http://stackoverflow.com/questions/13624442/getting-last-day-of-the-month-in-given-string-date/</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html">http://docs.oracle.com/javase/7/docs/api/java/util/Date.html</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html">http://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html">http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Change Extension of Multiple Files (Bash Script)]]></title>
+    <link href="http://WarFox.github.io/tech/2013/10/14/how-to-change-extension-of-multiple/"/>
+    <updated>2013-10-14T17:17:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/10/14/how-to-change-extension-of-multiple</id>
+    <content type="html"><![CDATA[<p>The following is the script I use in Macbook (Mountain Lion). It should work on most /*nix shell like <code>bash</code>, <code>csh</code>, <code>ksh</code> etc.
+However, I have tested it only in <code>bash</code>.</p>
+
+<figure class='code'><figcaption><span>Script to change extension for multiple files  (chext)</span> <a href='http://WarFox.github.io/tech/downloads/code/bash/chext'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'><span class="k">for </span>f in *.<span class="nv">$1</span><span class="p">;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="o">[[</span> -f <span class="s2">&quot;$f&quot;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> mv -v <span class="s2">&quot;$f&quot;</span> <span class="s2">&quot;${f%$1}$2&quot;</span>
+</span><span class='line'><span class="k">done</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Save this file as &ldquo;chext&rdquo;, make it executable <code>chmod +x chext</code> and add to your <code>$PATH</code>.</p>
+
+<p>Now you can use it like this:</p>
+
+<figure class='code'><figcaption><span>Usage</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd </span>path-to-dir
+</span><span class='line'>chext oldextension newextension
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Example</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>chext JPG jpg
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Reference:</h3>
+
+<ul>
+<li><a href="http://forums.appleinsider.com/t/106498/how-to-change-the-file-extension-of-multiple-files/">http://forums.appleinsider.com/t/106498/how-to-change-the-file-extension-of-multiple-files/</a></li>
+<li><a href="http://stackoverflow.com/questions/15829702/how-to-change-the-extension-of-multiple-files-using-bash-script">http://stackoverflow.com/questions/15829702/how-to-change-the-extension-of-multiple-files-using-bash-script/</a></li>
+<li><a href="http://kb.iu.edu/data/abec.html">http://kb.iu.edu/data/abec.html</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Correct Way to Embed Flash Content]]></title>
+    <link href="http://WarFox.github.io/tech/2013/10/07/correct-way-of-embedding-flash-content/"/>
+    <updated>2013-10-07T11:39:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/10/07/correct-way-of-embedding-flash-content</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"> <p>This <a href="http://alistapart.com/">A List Apart</a> <a href="http://alistapart.com/article/flashsatay/">article</a> discusses, a correct way of embedding Flash content in HTML, while following W3C standards.</p> <p>If you need <a href="http://validator.w3.org/docs/help.html">valid</a> HTML content, that passes <a href="http://validator.w3.org/">http://validator.w3.org/</a>, you must use <code>&lt;object&gt;</code> tag, instead of <code>&lt;embed&gt;</code> tag.</p> <p>Link: <a href="http://alistapart.com/article/flashsatay/">http://alistapart.com/article/flashsatay/</a></p> </div></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JavaMail :: javax.mail.NoSuchProviderException: Smtp]]></title>
+    <link href="http://WarFox.github.io/tech/2013/10/02/javamail-javaxmailnosuchproviderexcepti/"/>
+    <updated>2013-10-02T11:33:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/10/02/javamail-javaxmailnosuchproviderexcepti</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"> <p>When you are using Java&#8217;s <tt>mailapi.jar</tt>, it also expects supporting libraries like <tt>smtp.jar</tt>, <tt>imap.jar</tt>, <tt>pop3.jar</tt>, <tt>gimap.jar</tt>, <tt>dsn.jar</tt>. If you are using Java EE platform, then it is already included. But if you are getting the following error, you might have to include additional libraries, from <a href="https://java.net/projects/javamail/pages/Home/">Java mail API</a>.</p> <pre class="brush:java"><br />Exception in thread "main" javax.mail.NoSuchProviderException: smtp<br />at javax.mail.Session.getService(Session.java:746)<br />at javax.mail.Session.getTransport(Session.java:685)<br />at javax.mail.Session.getTransport(Session.java:628)<br />at javax.mail.Session.getTransport(Session.java:608)<br />at javax.mail.Session.getTransport(Session.java:663)<br />at javax.mail.Transport.send0(Transport.java:154)<br />at javax.mail.Transport.send(Transport.java:80)<br /></pre> <p>There are several forums and discussions happening on this same issue. Surprisingly, this is a small class path issue.</p> <p>To solve this error, make sure you have both <tt>mailapi.jar</tt> and <tt>smtp.jar</tt> in your classpath. Also, make sure you don&#8217;t have duplicate jar files in your class path.</p> <p>Reading the FAQ on Oracle&#8217;s documentation will give you a better idea. <a href="http://www.oracle.com/technetwork/java/javamail/faq/index.html">http://www.oracle.com/technetwork/java/javamail/faq/index.html</a></p> <h3>References</h3><ol> <li><a href="http://www.oracle.com/technetwork/java/javamail/javamail-138606.html">http://www.oracle.com/technetwork/java/javamail/javamail-138606.html</a></li> <li><a href="http://www.coderanch.com/t/601387/java/java/smtp-error/">http://www.coderanch.com/t/601387/java/java/smtp-error/</a></li> <li><a href="http://stackoverflow.com/questions/2980408/problem-with-java-mail-no-provider-for-smtp/">http://stackoverflow.com/questions/2980408/problem-with-java-mail-no-provider-for-smtp/</a></li> <li><a href="http://stackoverflow.com/questions/16861553/javax-mail-nosuchproviderexception-no-provider-for-smtps/">http://stackoverflow.com/questions/16861553/javax-mail-nosuchproviderexception-no-provider-for-smtps/</a></li> <li><a href="https://answers.atlassian.com/questions/167299/unable-to-send-email-and-error-as-javax-mail-nosuchproviderexception/">https://answers.atlassian.com/questions/167299/unable-to-send-email-and-error-as-javax-mail-nosuchproviderexception/</a></li></ol> </div></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Get Content From Ace Editor to a Textarea]]></title>
+    <link href="http://WarFox.github.io/tech/2013/09/08/get-content-from-ace-editor-to-textarea/"/>
+    <updated>2013-09-08T14:53:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/09/08/get-content-from-ace-editor-to-textarea</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"><p>Ace editor is awesome! We get to edit code with instant syntax highlighting. But often, we have to get the content from the editor, than just typing some with syntax highlighting. Ace editor have a function to get the value <tt>editor.getSession().getValue()</tt>.</p> <p>Here is a demo on getting value from the editor and setting it with <tt>textarea</tt>.</p> <p>Fiddle here: <a href="http://jsfiddle.net/deepumohanp/tGF6y/">http://jsfiddle.net/deepumohanp/tGF6y/</a></p> <iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/tGF6y/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> <h2>References</h2> <ol><li><a href="http://stackoverflow.com/questions/6440439/how-do-i-make-a-textarea-an-ace-editor/">How do I make a textarea an ace editor?</a></li></ol> </div></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Javascript :: Ace Editor Positioning With Bootstrap3]]></title>
+    <link href="http://WarFox.github.io/tech/2013/09/02/javascript-ace-editor-positioning-bootstrap/"/>
+    <updated>2013-09-02T21:54:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/09/02/javascript-ace-editor-positioning-bootstrap</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on" class="container"><p><a href="http://ace.c9.io/">Ace editor</a> is a fantastic option for live source code editor on the web. One problem you come across when using Ace Editor is with the default <tt>absolute</tt> positioning. Also <a href="https://github.com/ajaxorg/ace/issues/75">it doesn&#8217;t fit inside a container div</a> by default. Here is how I overcame these issues.</p> <p>The <a href="http://ace.c9.io/#nav=embedding">example</a> from ace website uses absolute positioning by default, as show below. But luckily, ace can work perfectly with <tt>relative</tt> positioning</p> <a name='more'></a> <pre class="brush:html"><br />&lt;!DOCTYPE html><br />&lt;html lang="en"><br />&lt;head><br />&lt;title>ACE in Action</title><br />&lt;style type="text/css" media="screen"><br />    #editor { <br />        position: absolute;<br />        top: 0;<br />        right: 0;<br />        bottom: 0;<br />        left: 0;<br />    }<br />&lt;/style><br />&lt;/head><br />&lt;body><br /><br /><div id="editor">function foo(items) {<br />    var x = "All this is syntax highlighted";<br />    return x;<br />}</div><br />    <br />&lt;script src="http://WarFox.github.io/tech/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8">&lt;/script><br />&lt;script><br />    var editor = ace.edit("editor");<br />    editor.setTheme("ace/theme/monokai");<br />    editor.getSession().setMode("ace/mode/javascript");<br />&lt;/script><br />&lt;/body><br />&lt;/html><br /></pre> <p>In order to put ace-editor inside a container div, we can give relative positioning to the <code>editor</code> and remove the positioning attribs, like top, right, bottom and left.</p> <pre class="brush: css"><br />#editor { <br />    position: relative;<br />}<br /></pre> <p>We also need to give height, otherwise editor won&#8217;t show up.</p> <pre class="brush: css"><br />#editor { <br />    position: relative;<br />    height: 300px;<br />}<br /></pre> <p>That said, when using Twitter Bootstrap, you can absolutely forget about relative positioning of ace. But we still need to set height, as ace does not fill. In the following jsfiddle, I have used Bootstrap&#8217;s panel component for showing the editor.</p>  <script src="https://gist.github.com/WarFox/6473534.js"></script>  <p>Full Screen Result is available <a href="http://jsfiddle.net/deepumohanp/U5JtP/embedded/result/">here</a>. <a href="http://jsfiddle.net/deepumohanp/U5JtP/embedded/result/">http://jsfiddle.net/deepumohanp/U5JtP/embedded/result/</a></p> <p>Fiddle here: <a href="http://jsfiddle.net/deepumohanp/U5JtP/">http://jsfiddle.net/deepumohanp/U5JtP/</a> </p> <iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/U5JtP/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> <h3>References</h3><ol><li><a href="http://stackoverflow.com/questions/6440439/how-do-i-make-a-textarea-an-ace-editor/">How do I make a textarea an ace editor?</a></li><li><a href="https://github.com/ajaxorg/ace/issues/75/">Ace doesn&#8217;t fit inside a container div</a></li></ol> </div></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Blog Update :: Bootstrap Awesomeness]]></title>
+    <link href="http://WarFox.github.io/tech/2013/08/31/blog-update-bootstrap-awesomeness/"/>
+    <updated>2013-08-31T09:39:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/08/31/blog-update-bootstrap-awesomeness</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: justify;" trbidi="on"><p>Yesterday, I spend some to change the blog template using <a href="http://getbootstrap.com/" rel="nofollow">Bootstrap</a>.</p> <p>Thanks to Blogger&#8217;s new template editor. Now it is much easier to understand the templates.</p> <div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-bh9axs527CE/UiA0rCh0EYI/AAAAAAAAEGU/BiubEPADblY/s1600/Screen+Shot+2013-08-30+at+11.28.05+AM.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-bh9axs527CE/UiA0rCh0EYI/AAAAAAAAEGU/BiubEPADblY/s640/Screen+Shot+2013-08-30+at+11.28.05+AM.png" /></a></div> <p>The template was built on top of my older template <tt>Simple</tt> by <a href="http://noaesthetic.com">Joshua Peterson</a>. The process was simple and straight forward.</p> <p>Blogger templates are mostly collection of widgets. I introduced few new divs with Bootstrap classes and removed few divs from older template. Bootstrap documentation has everything clearly explained along with examples.</p> <p>I haven&#8217;t tested this new template on all screens yet.</p> </div></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Javascript :: Pass Function as Parameter]]></title>
+    <link href="http://WarFox.github.io/tech/2013/07/29/javascript-pass-function-as-parameter/"/>
+    <updated>2013-07-29T23:19:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/07/29/javascript-pass-function-as-parameter</id>
+    <content type="html"><![CDATA[<p>Javascript allows you to pass functions as parameter to another function and that makes Javascript super awesome!. Great things can be achieved from this power.
+Quote from Mozilla developer website:</p>
+
+<blockquote>In JavaScript, functions are first-class objects, i.e. they are objects and can be manipulated and passed around just like any other object.</blockquote>
+
+
+<p>Every Javascript function is a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a> object. Hence we can pass them as arguments, like any other object.</p>
+
+<h3>How to do that?</h3>
+
+<p>Passing function as parameter is no different from passing any other object when it comes to syntax.</p>
+
+<p>I am gonna try and explain that with an example (hopefully, easy to understand)</p>
+
+<h3>The example problem</h3>
+
+<p>Bob wants to get sum of values [1, 2, 3, 4, 5, 6, 7, 8, 9]</p>
+
+<p>So we give him the following solution</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// find sum of values</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">total</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Bob is happy with the function. But now he wants to get sum of all even numbers in the list of values.</p>
+
+<p>So we copy-paste the above function, rename it and make slight changes.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// find sum of values</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">total</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// find sum of even numbers in list of values</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">totalEven</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span><span class="p">(</span> <span class="nx">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">)</span> <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Bob is happy again. But he wants more. Now he need sum of all odd numbers from the same list.</p>
+
+<p>As usual, we copy-paste, rename and make slight changes.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>    <span class="c1">// find sum of values</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">total</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// find sum of even numbers in list of values</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">totalEven</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span> <span class="nx">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">)</span> <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// find sum of odd numbers in list of values</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">totalOdd</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span> <span class="nx">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!==</span> <span class="mi">0</span> <span class="p">)</span> <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h3>The problem with that approach</h3>
+
+<ul>
+<li>Lot of duplicate code.</li>
+<li>Cluttered and ugly source code.</li>
+<li>Source file becomes unnecessarily lengthy.</li>
+<li>Not applying re-usabilty principle.</li>
+<li>Have to create separate function for each additional request.</li>
+</ul>
+
+
+<h3>Better code with passing function as argument</h3>
+
+<p>We can improve the above code a lot by passing the selection functionality as argument. In the above example, the basic operation is summation. Then, we need some kind of selection of values to sum. This selection can be anything, like even numbers, odd numbers etc. This is what we will pass an argument.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>    <span class="kd">var</span> <span class="nx">totalSelectValues</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="nx">selector</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span><span class="nx">selector</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span> <span class="nx">sum</span><span class="o">+=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <code>selector</code>, is function passed as parameter. Here we are expecting it to return a boolean value.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>    <span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// even numbers</span>
+</span><span class='line'>    <span class="nx">totalSelectValues</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// odd numbers</span>
+</span><span class='line'>    <span class="nx">totalSelectValues</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// greater than 5</span>
+</span><span class='line'>    <span class="nx">totalSelectValues</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">value</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Awesome! We just created functions on the fly and passed it as parameters, didn&rsquo;t even bother to name it! Neat eh? Also we have reduced the code base by far. Just a single function and no ugly repetition.</p>
+
+<h3>But that is not enough</h3>
+
+<p>We also need to make sure our little function works perfectly even if the second argument is not send.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>    <span class="kd">var</span> <span class="nx">totalSelectValues</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="nx">selector</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="c1">// handle undefined selector</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">selector</span> <span class="o">==</span> <span class="s1">&#39;undefined&#39;</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">selector</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="kc">true</span><span class="p">;};</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span><span class="nx">selector</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span> <span class="nx">sum</span><span class="o">+=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Now that should work.</p>
+
+<p>The complete example is available in the following jsFiddle. <a href="http://jsfiddle.net/deepumohanp/s2DBJ/"><a href="http://jsfiddle.net/deepumohanp/s2DBJ/">http://jsfiddle.net/deepumohanp/s2DBJ/</a></a></p>
+
+<iframe width="100%" height="876px" src="http://jsfiddle.net/deepumohanp/s2DBJ/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+<p></p>
+
+<h3>References</h3>
+
+<ol>
+<li><p>I got the example inspiration from Dr. Venkat Subramaniam&rsquo;s talk an Scala.</p>
+
+<ul>
+<li><a href="http://www.youtube.com/watch?v=LH75sJAR0hc">http://www.youtube.com/watch?v=LH75sJAR0hc</a></li>
+<li><a href="https://vimeo.com/57988159">https://vimeo.com/57988159</a></li>
+</ul>
+</li>
+<li><p><a href="http://www.joelonsoftware.com/items/2006/08/01.html">http://www.joelonsoftware.com/items/2006/08/01.html</a></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope</a></p></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function</a></p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java :: Print "Hello World" Without Using Semicolon (;)]]></title>
+    <link href="http://WarFox.github.io/tech/2013/06/24/java-print-hello-world-without-using/"/>
+    <updated>2013-06-24T11:34:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/06/24/java-print-hello-world-without-using</id>
+    <content type="html"><![CDATA[<p>This Gist shows how to print something in Java, without the use of Semicolon (;). The code is self explanatory.</p>
+
+<p><a href="https://gist.github.com/WarFox/5847999"><a href="https://gist.github.com/WarFox/5847999">https://gist.github.com/WarFox/5847999</a></a><br/><script src="https://gist.github.com/WarFox/5847999.js"></script></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Emacs:: Show Line Numbers in the Left Margin]]></title>
+    <link href="http://WarFox.github.io/tech/2013/06/14/emacs-show-line-number-in-margin/"/>
+    <updated>2013-06-14T11:09:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/06/14/emacs-show-line-number-in-margin</id>
+    <content type="html"><![CDATA[<p>So, I recently started using <code>emacs</code> as a text editor, instead of <code>vi</code>.
+It didn&rsquo;t seem easy to get things up straight at start.
+But gradually I understood why many experienced developers prefer <code>emacs</code>: <em>
+it is highly customisable and extensible</em>.</p>
+
+<p><code>vi</code> gives you easy to use command to show line numbers, <code>:set nu</code> and you are done.
+That is not the case with <code>emacs</code>, and hence this blog post.
+You need to install linum package and enable <code>linum-mode</code> for this.</p>
+
+<p>Make sure you have the latest version of <code>emacs</code>, at the time of writing 24.3,
+so that you have emacs package manager ready. Add marmalade and melba to the package
+archive list by adding the following to your <code>~/.emacs.d/init.el</code>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='lisp'><span class='line'><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;package</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span><span class="o">&#39;</span>
+</span><span class='line'>    <span class="p">(</span><span class="s">&quot;marmalade&quot;</span> <span class="o">.</span> <span class="s">&quot;http://marmalade-repo.org/packages/&quot;</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span><span class="o">&#39;</span>
+</span><span class='line'>    <span class="p">(</span><span class="s">&quot;melpa&quot;</span> <span class="o">.</span> <span class="s">&quot;http://melpa.milkbox.net/packages/&quot;</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nv">package-initialize</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now list the packages using <code>M-x list-packages</code> command.</p>
+
+<p>image-name.gif</p>
+
+<p>You should get a list of packages like this.</p>
+
+<p>image-name.gif</p>
+
+<p>Next locate <code>linum</code> package using <code>Ctrl-s</code> command.
+You may have to repeatedly use <code>Ctrl-s</code> to get the right package.
+It would say <em>display line numbers in the left margin</em>.</p>
+
+<p><a href="http://WarFox.github.io/tech">http://WarFox.github.io/tech</a></p>
+
+<p><img src="http://1.bp.blogspot.com/-_4b9KgqIPI8/Ubqxfmw1-CI/AAAAAAAAECU/0UogSTSbDvk/s1600/Screen+Shot+2013-06-14+at+11.28.13+AM.png" alt="" /></p>
+
+<p>Select and install that using arrow keys and return key.
+You can enable linum-mode right away using <code>M-x linum-mode</code> command.</p>
+
+<p><img src="http://1.bp.blogspot.com/-a9FUTdLh8DM/Ubq3O7P_R8I/AAAAAAAAECk/6PU8WgocLVE/s1600/Screen+Shot+2013-06-14+at+11.54.24+AM.png" title="linum" alt="linum"></p>
+
+<h3>References:</h3>
+
+<ul>
+<li><a href="http://goo.gl/DlqUI" title="EmacsWiki:LineNumbers">EmacsWiki:LineNumbers</a></li>
+<li><a href="http://goo.gl/VhUc7" title="How do I display line numbers in emacs">SuperUser:How do I display line numbers in emacs (not in the mode line)?</a></li>
+<li><a href="http://goo.gl/w8Tqn" title="How to Set Emacs's User Interface to Modern Conventions">ErgoEmacs:How to Set Emacs&rsquo;s User Interface to Modern Conventions</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Turn Off Unlimited Trailing Whitespace in IntelliJ IDEA]]></title>
+    <link href="http://WarFox.github.io/tech/2013/05/11/turn-off-unlimited-trailing-space-in-intellij-idea/"/>
+    <updated>2013-05-11T18:23:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/05/11/turn-off-unlimited-trailing-space-in-intellij-idea</id>
+    <content type="html"><![CDATA[<p>By default, IntelliJ IDEA allows you to click any where on the editor and type. Some users find it annoying. If you are new to IntelliJ, you may find it a bit difficult to change the setting. This is available in the Virtual Space section of Editor Settings in IDEA preferences.</p>
+
+<p>Turn it of by going to File menu &ndash;&gt; Settings &ndash;&gt; Editor &ndash;&gt; Virtual Space and uncheck &lsquo;Allow placement of caret after end of line&rsquo;.</p>
+
+<p><img src="http://1.bp.blogspot.com/-0TweG1pBNgI/UY4vGJ-mWuI/AAAAAAAAEBg/MUTHKRLU6g0/s1600/Screen+Shot+2013-05-11+at+4.07.26+PM.png" width="640" height="393"/></p>
+
+<p>Peace of mind.</p>
+
+<p>Here is a bonus video of how it is done.</p>
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/GP5ZIGU6ufo" frameborder="0" allowfullscreen></iframe>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java :: Count the Number of Times a Method Is Called]]></title>
+    <link href="http://WarFox.github.io/tech/2013/03/27/java-count-number-of-times-method-is-invoked/"/>
+    <updated>2013-03-27T00:04:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/03/27/java-count-number-of-times-method-is-invoked</id>
+    <content type="html"><![CDATA[<h2>How to find how many times a method is used?</h2>
+
+<p>A general answer to this question would be something like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">static</span> <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">myMethod</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">count</span><span class="o">++;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Using <code>static int</code> would seem a perfect solution. Static will share the instance variable <code>count</code> among all instances of MyClass.</p>
+
+<p>However, problem occurs in a multi threaded environment, as the count incrementation is not synchronised.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">deepumohan</span><span class="o">.</span><span class="na">tech</span><span class="o">.</span><span class="na">methodinvocationcount</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">static</span> <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">myMethod</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="kd">synchronized</span><span class="o">(</span><span class="k">this</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>            <span class="n">count</span><span class="o">++;</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now this works perfect in a multi-threaded environment.</p>
+
+<p>Java provides a better option to use thread-safe increments through Atomic classes available in <code>java.util.concurrent.atomic</code> packag.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">deepumohan</span><span class="o">.</span><span class="na">tech</span><span class="o">.</span><span class="na">methodinvocationcount</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.util.concurrent.atomic.AtomicInteger</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">AtomicInteger</span> <span class="n">atomicInteger</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getMethodInvocationCount</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">atomicInteger</span><span class="o">.</span><span class="na">incrementAndGet</span><span class="o">();</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Here is a good read about <code>AtomicInteger vs static int</code>: <a href="http://goo.gl/zSwHk" title="Java - using AtomicInteger vs Static int">Java &ndash; using AtomicInteger vs Static int</a></p>
+]]></content>
+  </entry>
+  
+</feed>

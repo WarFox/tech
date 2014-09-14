@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ide | Deepu Mohan Puthrote]]></title>
+  <link href="http://WarFox.github.io/tech/tech/categories/ide/atom.xml" rel="self"/>
+  <link href="http://WarFox.github.io/tech/"/>
+  <updated>2014-09-14T06:34:41+05:30</updated>
+  <id>http://WarFox.github.io/tech/</id>
+  <author>
+    <name><![CDATA[Deepu Mohan Puthrote]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Turn Off Unlimited Trailing Whitespace in IntelliJ IDEA]]></title>
+    <link href="http://WarFox.github.io/tech/2013/05/11/turn-off-unlimited-trailing-space-in-intellij-idea/"/>
+    <updated>2013-05-11T18:23:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2013/05/11/turn-off-unlimited-trailing-space-in-intellij-idea</id>
+    <content type="html"><![CDATA[<p>By default, IntelliJ IDEA allows you to click any where on the editor and type. Some users find it annoying. If you are new to IntelliJ, you may find it a bit difficult to change the setting. This is available in the Virtual Space section of Editor Settings in IDEA preferences.</p>
+
+<p>Turn it of by going to File menu &ndash;&gt; Settings &ndash;&gt; Editor &ndash;&gt; Virtual Space and uncheck &lsquo;Allow placement of caret after end of line&rsquo;.</p>
+
+<p><img src="http://1.bp.blogspot.com/-0TweG1pBNgI/UY4vGJ-mWuI/AAAAAAAAEBg/MUTHKRLU6g0/s1600/Screen+Shot+2013-05-11+at+4.07.26+PM.png" width="640" height="393"/></p>
+
+<p>Peace of mind.</p>
+
+<p>Here is a bonus video of how it is done.</p>
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/GP5ZIGU6ufo" frameborder="0" allowfullscreen></iframe>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Disable Dashboard on Startup in Spring Tool Suite]]></title>
+    <link href="http://WarFox.github.io/tech/2012/11/21/disable-dashboard-on-startup-in-spring-tool-suite/"/>
+    <updated>2012-11-21T00:39:00+05:30</updated>
+    <id>http://WarFox.github.io/tech/2012/11/21/disable-dashboard-on-startup-in-spring-tool-suite</id>
+    <content type="html"><![CDATA[<p>You can increase the startup speed of Spring Tool Suite by disabling the Dashboard which gives you a lot not so important new and updates at the startup. And yeah, if you disable it you don&rsquo;t have to close it every time you open STS.</p>
+
+<p>Option to disable the dashboard is available in the preferences.</p>
+
+<div align="center"><iframe width="560" height="315" src="http://www.youtube.com/embed/X9EnotrXdWQ" frameborder="0" allowfullscreen></iframe></div>
+
+
+<ul>
+<li>Close the dashboard if it is already open</li>
+<li>Goto Window &gt;&gt; Preferences</li>
+<li>Locate SpringSource &gt;&gt; Dashboard</li>
+<li>Uncheck the option that says Show dashboard on startup.</li>
+</ul>
+
+
+<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-kbtUeTKsj-I/UKvT8Z8OVvI/AAAAAAAADx8/xJKrNe8zJNg/s1600/Screenshot%2Bfrom%2B2012-11-20%2B18%253A52%253A58.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="Spring tool Suite disable dashboard" border="0" height="225" src="http://1.bp.blogspot.com/-kbtUeTKsj-I/UKvT8Z8OVvI/AAAAAAAADx8/xJKrNe8zJNg/s400/Screenshot%2Bfrom%2B2012-11-20%2B18%253A52%253A58.png" width="400" /></a></div>
+
+
+
+
+<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-u8XRgoJ-vAw/UKvUHeSCjgI/AAAAAAAADyI/jIik6EIFkCY/s1600/Screenshot%2Bfrom%2B2012-11-20%2B19%253A03%253A30.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="Spring tool Suite disable dashboard" border="0" height="400" src="http://1.bp.blogspot.com/-u8XRgoJ-vAw/UKvUHeSCjgI/AAAAAAAADyI/jIik6EIFkCY/s400/Screenshot%2Bfrom%2B2012-11-20%2B19%253A03%253A30.png" width="346" /></a></div>
+
+
+<p>Next time you open Spring Tool Suite, no more annoying dashboard.</p>
+
+<p>By any chance if you want to enable it again, just enable the checkbox again.</p>
+]]></content>
+  </entry>
+  
+</feed>
