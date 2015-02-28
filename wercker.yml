@@ -16,6 +16,10 @@ build:
 
 deploy:
     steps:
+        - add-to-known_hosts:
+            hostname: direct.deepumohan.com
+            fingerprint: 56:b3:fd:7f:57:4c:78:1e:ff:b0:3c:3f:21:6a:0d:57
+
         - script:
             name: scp files
             code: scp -v -P $PORT -r public/* warfox@direct.deepumohan.com:~/public_html/deepumohan.com/tech
