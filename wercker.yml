@@ -1,20 +1,21 @@
 # our build should run within a Ruby box
 box: wercker/ruby
-    build:
-        steps:
-            # Run a smart version of bundle install
-            # which improves build execution time of
-            # future builds
-            - bundle-install
 
-            # A custom script step
-            # that actually builds the jekyll site
-            - script:
-                name: generate site
-                code: bundle exec jekyll build --trace
+build:
+    steps:
+        # Run a smart version of bundle install
+        # which improves build execution time of
+        # future builds
+        - bundle-install
 
-    deploy:
-        steps:
-            - script:
-                name: scp files
-                code: scp -v -P $PORT -r public/* warfox@direct.deepumohan.com:~/public_html/deepumohan.com/tech
+        # A custom script step
+        # that actually builds the jekyll site
+        - script:
+            name: generate site
+            code: bundle exec jekyll build --trace
+
+deploy:
+    steps:
+        - script:
+            name: scp files
+            code: scp -v -P $PORT -r public/* warfox@direct.deepumohan.com:~/public_html/deepumohan.com/tech
