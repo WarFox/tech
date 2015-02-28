@@ -22,4 +22,4 @@ deploy:
 
         - script:
             name: scp files
-            code: scp -v -P $PORT -r public/* warfox@direct.deepumohan.com:~/public_html/deepumohan.com/tech
+            code: scp -oStrictHostKeyChecking=no -v -P $PORT -r public/* warfox@direct.deepumohan.com:~/public_html/deepumohan.com/tech
