@@ -12,3 +12,9 @@
         - script:
             name: generate site
             code: bundle exec jekyll build --trace
+
+    deploy:
+    	steps:
+    		- script:
+    			name: scp files
+            	code: scp -v -P 2222 -r public/* warfox@direct.deepumohan.com:~/public_html/deepumohan.com/tech
