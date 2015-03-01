@@ -31,4 +31,4 @@ deploy:
             code: |
                 pwd
                 ls -la
-                rsync -avzr -e 'ssh -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=no -P $PORT' --progress public/* warfox@direct.deepumohan.com:~/public_html/deepumohan.com/tech
+                scp -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=no -P $PORT -v -r public/* warfox@direct.deepumohan.com:~/public_html/deepumohan.com/tech
