@@ -18,8 +18,18 @@ deploy:
     steps:
         - add-to-known_hosts:
             hostname: direct.deepumohan.com
-            fingerprint: 56:b3:fd:7f:57:4c:78:1e:ff:b0:3c:3f:21:6a:0d:57
-
+        - mktemp:
+            envvar: PRIVATEKEY_PATH
+        - create-file:
+            name: write key
+            filename: $PRIVATEKEY_PATH
+            content: $PRODUCTION_PRIVATE
+            overwrite: true
+            hide-from-log: true
         - script:
-            name: scp files
-            code: scp -oStrictHostKeyChecking=no -v -P $PORT -r public/* warfox@direct.deepumohan.com:~/public_html/deepumohan.com/tech
+            name: transfer files
+            code: |
+                pwd
+                ls -la
+                scp -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=no -P $PORT -v -r public/* warfox@direct.deepumohan.com:~/public_html/deepumohan.com/tech
+
