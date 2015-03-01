@@ -1,10 +1,11 @@
 ---
-layout: post
+author: "Deepu Mohan Puthrote"
 title: "A pattern to use RequireJS config in a separate file"
-date: 2014-12-23 11:48:47 +0000
+date: 2014-12-23T11:48:47+00:00
 comments: true
 categories:
 ---
+
 If you have used RequireJS, you most definitely have come across this: Repeatation of requirejs configuration.
 
 You end up repeating the shims and paths in multiple locations. We can minimise this by using `requirejs.config(config)` method.

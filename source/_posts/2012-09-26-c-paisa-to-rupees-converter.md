@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "c++:: Paisa to Rupees converter"
 date: 2012-09-26T19:03:00+05:30
 ---

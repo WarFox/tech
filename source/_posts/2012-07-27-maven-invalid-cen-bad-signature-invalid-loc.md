@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Maven:: Invalid CEN (bad signature) Invalid LOC (bad signature)"
 date: 2012-07-27T11:16:00+05:30
 categories:
@@ -15,10 +15,9 @@ This error comes up randomly and means that one of the jar file in the project c
 
 This crazy error show up when the JVM thinks that the jar file it is accessing is corrupt. So I assumed if I delete the dependency jar files and download them again, it might solve the problem.
 
-``` bash
+```sh
 #delete repository
 rm -rf ~/.m2/repository/*
-
 #use maven
 mvn test
 ```
