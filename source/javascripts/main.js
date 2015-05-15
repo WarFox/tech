@@ -28,7 +28,6 @@
   });
 
   requirejs(["jquery", 'app', "modernizer", 'octopress', 'bootstrap'], function ($, app) {
-    console.log(bootstrap);
     app.github();
   });
 

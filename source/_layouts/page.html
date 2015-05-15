@@ -2,8 +2,8 @@
 layout: default
 ---
 
-<div class="row">
-<article role="article" class="col-md-10">
+<div>
+<article role="article">
   {% if page.title %}
   <header>
     <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
@@ -30,8 +30,9 @@ layout: default
     <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
   </section>
 {% endif %}
+</div>
 {% unless page.sidebar == false %}
-<aside class="sidebar col-md-2">
+<aside class="sidebar">
   {% if site.page_asides.size %}
     {% include_array page_asides %}
   {% else %}
@@ -39,4 +40,3 @@ layout: default
   {% endif %}
 </aside>
 {% endunless %}
-</div>
