@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "HTTP Caching explained"
 date: 2012-08-29T04:28:00+05:30
 categories:

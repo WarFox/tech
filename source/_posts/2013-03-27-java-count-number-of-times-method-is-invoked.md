@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Java :: Count the number of times a method is called"
 date: 2013-03-27T00:04:00+05:30
 categories:

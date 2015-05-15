@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Java: Marshalling in Java"
 date: 2011-12-21T19:59:00+05:30
 categories:

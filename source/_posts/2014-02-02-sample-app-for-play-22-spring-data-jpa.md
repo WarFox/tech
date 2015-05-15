@@ -1,12 +1,10 @@
 ---
-
+layout: post
 title: "Sample app for Play! 2.2, Spring-data-jpa and Backbonejs"
 date: 2014-02-02T22:49:00+05:30
 categories:
  - Play!
 ---
-
-
  
 I have made a sample application to demo Play! framework 2.2, Spring data jpa and Backbonejs.
  

@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Youtube embed video html code without branding and controls (seekbar, play/pause and volume)"
 date: 2013-12-31T15:12:00+05:30
 categories:

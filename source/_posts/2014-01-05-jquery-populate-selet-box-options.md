@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "jQuery :: Populate Selet box options dinamically"
 date: 2014-01-05T23:04:00+05:30
 categories:

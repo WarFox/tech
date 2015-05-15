@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "git:: ignore file permission (mode,chmod) change"
 date: 2012-04-19T01:03:00+05:30
 categories:

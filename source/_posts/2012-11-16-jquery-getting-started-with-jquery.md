@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "jQuery:: Getting started with jQuery"
 date: 2012-11-16T21:02:00+05:30
 categories:

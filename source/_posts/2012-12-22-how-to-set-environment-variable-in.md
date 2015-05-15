@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "How to set environment variable in Ubuntu "
 date: 2012-12-22T20:52:00+05:30
 categories:

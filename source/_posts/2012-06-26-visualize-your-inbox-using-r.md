@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "R:: Visualize your inbox using R"
 date: 2012-06-26T15:34:00+05:30
 categories:

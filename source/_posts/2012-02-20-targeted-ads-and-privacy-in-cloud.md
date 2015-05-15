@@ -1,9 +1,8 @@
 ---
-
+layout: post
 title: "Targeted ads and privacy in the cloud"
 date: 2012-02-20T18:07:00+05:30
 ---
-
 
 
 I have been thinking of writing about Privacy concerns in the web for almost two months now. Last December when I was doing my research for business plan that we had to create as part of our course work, I landed into two sites: <a href="http://goo.gl/GB1RP" target="_blank">Wonga</a> and <a href="http://goo.gl/CTEpc" target="_blank">Business In a Box</a>. Afterwards it so happened that which ever website I visited, ads of these two businesses were displayed and it remained so for more than a week until I cleaned my cache and <a href="http://goo.gl/tIgNZ" target="_blank">opted out of targeted ads</a>. Although it took some time to notice that I am getting the same ads on every page I visited, I got irritated as soon as I realised it. That's why I did a small search about targeted ads and privacy issues that browsers bring about.

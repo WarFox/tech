@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Windows batch script to create directory name DDMMYYYY"
 date: 2011-09-07T14:55:00+05:30
 categories:

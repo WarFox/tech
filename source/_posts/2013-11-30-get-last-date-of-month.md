@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Java :: Get last date of a month"
 date: 2013-11-30T23:48:00+05:30
 categories:

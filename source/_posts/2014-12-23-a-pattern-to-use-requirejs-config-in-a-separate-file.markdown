@@ -1,4 +1,5 @@
 ---
+layout: post
 author: "Deepu Mohan Puthrote"
 title: "A pattern to use RequireJS config in a separate file"
 date: 2014-12-23T11:48:47+00:00

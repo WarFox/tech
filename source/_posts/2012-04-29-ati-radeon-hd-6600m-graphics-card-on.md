@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "ATI Radeon HD 6600M Graphics card on Ubuntu 12.04 LTS [Solved]"
 date: 2012-04-29T22:05:00+05:30
 categories:

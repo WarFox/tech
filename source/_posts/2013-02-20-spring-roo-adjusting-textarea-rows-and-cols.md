@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Spring Roo :: Adjusting Textarea rows and cols (width and height)"
 date: 2013-02-20T22:18:00+05:30
 categories:

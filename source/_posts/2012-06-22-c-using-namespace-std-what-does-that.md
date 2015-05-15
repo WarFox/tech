@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "c++:: Using namespace std; What does that mean?"
 date: 2012-06-22T19:36:00+05:30
 categories:

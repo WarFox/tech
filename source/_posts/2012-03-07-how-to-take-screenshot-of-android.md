@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "How to take screenshot of Android device (developer edition)"
 date: 2012-03-07T06:44:00+05:30
 categories:

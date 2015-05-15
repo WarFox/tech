@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "js :: Count down timer in vanilla Javascript"
 date: 2012-10-10T04:35:00+05:30
 categories:

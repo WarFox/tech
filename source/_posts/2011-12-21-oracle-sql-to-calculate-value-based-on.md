@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Oracle SQL to calculate value based on previous row value"
 date: 2011-12-21T20:29:00+05:30
 categories:

@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Programming :: When to use Interfaces in your application"
 date: 2013-01-16T04:12:00+05:30
 categories:

@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "How to root your Samsung Galaxy Ace"
 date: 2012-11-05T01:35:00+05:30
 categories:

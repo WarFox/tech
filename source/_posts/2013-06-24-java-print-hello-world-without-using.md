@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Java :: Print \"Hello World\" without using Semicolon (;)"
 date: 2013-06-24T11:34:00+05:30
 categories:

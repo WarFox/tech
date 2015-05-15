@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "JS: Word Count using Javascript"
 date: 2011-12-23T21:07:00+05:30
 ---

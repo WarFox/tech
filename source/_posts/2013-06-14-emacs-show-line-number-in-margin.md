@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "emacs:: Show line numbers in the left margin"
 date: 2013-06-14T11:09:00+05:30
 categories:

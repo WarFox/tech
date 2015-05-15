@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Blog Update :: Bootstrap awesomeness"
 date: 2013-08-31T09:39:00+05:30
 ---

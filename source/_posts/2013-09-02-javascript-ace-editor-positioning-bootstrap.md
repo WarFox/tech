@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Javascript :: Ace Editor Positioning with Bootstrap3"
 date: 2013-09-02T21:54:00+05:30
 categories:

@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Spring Roo :: Adjust text box size/width"
 date: 2013-03-07T12:05:00+05:30
 categories:

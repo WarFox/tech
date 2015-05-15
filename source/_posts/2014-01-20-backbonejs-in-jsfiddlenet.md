@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Backbonejs in jsFiddle.net"
 date: 2014-01-20T12:57:00+05:30
 categories:

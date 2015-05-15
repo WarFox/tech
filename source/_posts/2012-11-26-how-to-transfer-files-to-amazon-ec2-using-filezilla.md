@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "How to transfer files to Amazon EC2 instance using FileZilla"
 date: 2012-11-26T07:19:00+05:30
 categories:

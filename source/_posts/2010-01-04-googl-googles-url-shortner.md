@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Goo.gl - Google's URL Shortner"
 date: 2010-01-04T09:50:00+05:30
 categories:

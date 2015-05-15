@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Youtube Redesign 2012 - More focused on subscriptions"
 date: 2012-12-07T15:10:00+05:30
 categories:

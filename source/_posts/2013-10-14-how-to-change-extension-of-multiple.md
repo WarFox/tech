@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "How to change extension of multiple files (bash script)"
 date: 2013-10-14T17:17:00+05:30
 ---

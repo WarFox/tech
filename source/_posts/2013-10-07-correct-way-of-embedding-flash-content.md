@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Correct way to embed Flash content"
 date: 2013-10-07T11:39:00+05:30
 categories:

@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "How to export Oracle database using windows batch file with auto file name"
 date: 2010-07-17T23:05:00+05:30
 categories:

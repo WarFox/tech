@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Get content from ace editor to a textarea"
 date: 2013-09-08T14:53:00+05:30
 categories:

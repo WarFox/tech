@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Linux :: Port is in use but pid not visible"
 date: 2013-01-25T20:48:00+05:30
 categories:

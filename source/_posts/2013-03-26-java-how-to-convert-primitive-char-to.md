@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Java :: How to convert primitive char to String in Java"
 date: 2013-03-26T14:35:00+05:30
 categories:

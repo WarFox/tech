@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Java:: How to convert Arrays to List and Set (Collection) in Java"
 date: 2012-04-17T18:47:00+05:30
 categories:

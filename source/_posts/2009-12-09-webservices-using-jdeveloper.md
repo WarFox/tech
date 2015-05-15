@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Webservices using JDeveloper"
 date: 2009-12-09T14:30:00+05:30
 categories:

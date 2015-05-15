@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Turn off unlimited trailing whitespace in IntelliJ IDEA"
 date: 2013-05-11T18:23:00+05:30
 categories:

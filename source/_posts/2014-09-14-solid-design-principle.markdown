@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "SOLID design principle"
 date: 2014-09-14T06:07:48+05:30
 comments: true

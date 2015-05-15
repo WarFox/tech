@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Disable dashboard on startup in Spring Tool Suite"
 date: 2012-11-21T00:39:00+05:30
 categories:

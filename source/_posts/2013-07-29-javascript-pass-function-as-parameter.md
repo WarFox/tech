@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Javascript :: Pass function as parameter"
 date: 2013-07-29T23:19:00+05:30
 categories:

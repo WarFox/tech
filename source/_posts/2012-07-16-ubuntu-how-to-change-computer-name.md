@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Ubuntu:: How to Change the Computer Name"
 date: 2012-07-16T09:07:00+05:30
 categories:

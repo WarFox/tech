@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "jQuery :: Populate Select box dynamically (plugin version)"
 date: 2014-01-09T00:03:00+05:30
 categories:

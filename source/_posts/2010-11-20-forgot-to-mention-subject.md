@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "How to set up reminder for Subject line in Microsoft Outlook"
 date: 2010-11-20T00:52:00+05:30
 categories:
