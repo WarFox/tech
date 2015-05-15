@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "JavaMail :: javax.mail.NoSuchProviderException: smtp "
 date: 2013-10-02T11:33:00+05:30
 categories:
