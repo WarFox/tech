@@ -30,12 +30,16 @@ You should get a list of packages like this.
 Next locate <code>linum</code> package using <code>Ctrl-s</code> command.
 You may have to repeatedly use <code>Ctrl-s</code> to get the right package.
 It would say <em>display line numbers in the left margin</em>.
+
 {{site.url}}
 ![](http://1.bp.blogspot.com/-_4b9KgqIPI8/Ubqxfmw1-CI/AAAAAAAAECU/0UogSTSbDvk/s1600/Screen+Shot+2013-06-14+at+11.28.13+AM.png) 
+
 Select and install that using arrow keys and return key.
 You can enable linum-mode right away using `M-x linum-mode` command.
+
 {% img http://1.bp.blogspot.com/-a9FUTdLh8DM/Ubq3O7P_R8I/AAAAAAAAECk/6PU8WgocLVE/s1600/Screen+Shot+2013-06-14+at+11.54.24+AM.png "linum" "linum" %}
-###References:
+
+### References:
 * [EmacsWiki:LineNumbers] [1]
 * [SuperUser:How do I display line numbers in emacs (not in the mode line)?] [2]
 * [ErgoEmacs:How to Set Emacs's User Interface to Modern Conventions] [3]
