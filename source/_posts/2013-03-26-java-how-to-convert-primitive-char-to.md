@@ -7,12 +7,15 @@ categories:
 ---
 `char` is 16 bit unsigned data type in Java, which is used to store characters and `String` value is an immutable array of `char`. In Java we cannot cast a primitive `char` element to `String`.
 
+## tl;dr
+* Use `String.valueOf(char)`
+
+## 6 Ways to do it
 Below I have given <strike>five</strike> 6 methods to convert a `char` to `String`. Also I have included common mistakes that gives compile time errors.
 
 {% include_code java/com/deepumohan/tech/chartostring/CharToString.java %}
 
-
-## EDIT: September 07 2015
+### EDIT: September 07 2015
 
 ## Closer look on what is happening in Java 8
 
@@ -112,6 +115,19 @@ String(char[] value, boolean share) {
 
 To summarise when you use `String.valueOf` or `Charactor.toString` methods, the constructor `public String(char value[])` is being invoked.
 You may as well call it directly and reduce one hop.
+
+## Most Efficient Method
+
+String.valueOf(char value) invokes the following package private constructor.
+
+``` java
+String(char[] value, boolean share) {
+    // assert share : "unshared not supported";
+    this.value = value;
+}
+```
+
+`String.valueOf(char)` seems to be most efficient method for converting `char` to `String`.
 
 ### Side note
 
