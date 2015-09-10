@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Game Of Life"
+title: "Game Of Life (in Scala)"
 date: 2015-07-22 21:29:26 +0100
 comments: true
 categories: scala, algorithms
