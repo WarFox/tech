@@ -1,20 +1,11 @@
-# our build should run within a Ruby box
-box: wercker/ruby
-
+box: nodesource/trusty
 build:
-    steps:
-        # Run a smart version of bundle install
-        # which improves build execution time of
-        # future builds
-        - bundle-install
-
-        # A custom script step
-        # that actually builds the jekyll site
-        - script:
-            name: generate site
-            code: |
-                bundle exec rake install[classic]
-                bundle exec rake generate
+  steps:
+    - npm-install
+    - script:
+        name: Generate static files
+        code: |
+          hexo generate
 
 deploy:
     steps:
