@@ -1,4 +1,5 @@
-box: nodesource/trusty
+box: node
+
 build:
   steps:
     - npm-install
