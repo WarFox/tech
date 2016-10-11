@@ -1,4 +1,5 @@
-box: node:4.2.6-slim
+# The container definition we want to use for developing our app
+box: python:2.7-slim
 
 build:
   steps:
