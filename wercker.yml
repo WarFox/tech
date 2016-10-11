@@ -1,29 +1,26 @@
-# The container definition we want to use for developing our app
-box: python:2.7-slim
-
-build:
+box: node:4.2.6-slim
+dev:
   steps:
     - npm-install
-    - script:
-        name: Generate static files
-        code: |
-          hexo generate
+    - internal/watch:
+        code: node app.js
+        reload: true
 
-deploy:
-    steps:
-        - add-to-known_hosts:
-            hostname: direct.deepumohan.com
-        - mktemp:
-            envvar: PRIVATEKEY_PATH
-        - create-file:
-            name: write key
-            filename: $PRIVATEKEY_PATH
-            content: $PRODUCTION_PRIVATE
-            overwrite: true
-            hide-from-log: true
-        - script:
-            name: transfer files
-            code: |
-                pwd
-                ls -la
-                scp -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=no -P $PORT -v -r public/* warfox@direct.deepumohan.com:~/public_html/deepumohan.com/tech
+# Build definition
+build:
+  # The steps that will be executed on build
+  steps:
+    - script:
+        code: export NODE_ENV='testing'
+    # A step that executes `npm install` command
+    - npm-install
+    # A step that executes `npm test` command
+    - npm-test
+
+    # A custom script step, name value is used in the UI
+    # and the code value contains the command that get executed
+    - script:
+        name: echo nodejs information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
