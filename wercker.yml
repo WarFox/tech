@@ -1,4 +1,4 @@
-box: nodesource/jesse:argon
+box: node:4.2.6-slim
 
 build:
   steps:
