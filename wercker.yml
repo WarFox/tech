@@ -3,7 +3,8 @@
 # If you want Nodesource's container you would reference nodesource/node
 # Read more about containers on our dev center
 # http://devcenter.wercker.com/docs/containers/index.html
-box: node
+# box: node
+box: wercker/ubuntu12.04-nodejs0.10
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
@@ -24,9 +25,7 @@ build:
   steps:
     # A step that executes `npm install` command
     - npm-install
-    # A step that executes `npm test` command
-    - npm-test
-
+    
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
     - script:
@@ -34,3 +33,30 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+    - script:
+        name: Install Hexo
+        code: |
+          sudo npm install -g hexo
+    - script:
+        name: Generate static files
+        code: |
+          hexo generate
+
+deploy:
+    steps:
+        - add-to-known_hosts:
+            hostname: direct.deepumohan.com
+        - mktemp:
+            envvar: PRIVATEKEY_PATH
+        - create-file:
+            name: write key
+            filename: $PRIVATEKEY_PATH
+            content: $PRODUCTION_PRIVATE
+            overwrite: true
+            hide-from-log: true
+        - script:
+            name: transfer files
+            code: |
+                pwd
+                ls -la
+                scp -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=no -P $PORT -v -r public/* warfox@direct.deepumohan.com:~/public_html/deepumohan.com/tech
