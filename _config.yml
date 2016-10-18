@@ -71,5 +71,5 @@ deploy:
   type:
 
 # comments
-disqus_shortname: warfox
+# disqus_shortname: warfox
 
