@@ -1,4 +1,0 @@
-language: ruby
-rvm:
-  - 2.0.0
-script: bundle exec rake install[warfox]; bundle exec rake generate; bundle exec rake setup_github_pages; bundle exec rake deploy

@@ -15,6 +15,7 @@ You need to install linum package and enable <code>linum-mode</code> for this.
 Make sure you have the latest version of <code>emacs</code>, at the time of writing 24.3,
 so that you have emacs package manager ready. Add marmalade and melba to the package
 archive list by adding the following to your <code>~/.emacs.d/init.el</code>.
+
 ```lisp
 (require 'package)
 (add-to-list 'package-archives'
@@ -23,15 +24,17 @@ archive list by adding the following to your <code>~/.emacs.d/init.el</code>.
     ("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)                                                                                      
 ```
+
 Now list the packages using <code>M-x list-packages</code> command.
-{{ 'image-name.gif' | http://3.bp.blogspot.com/-C9vwda5ezn4/UbquDn_xIgI/AAAAAAAAEB8/xJ9Oludx5EA/s1600/Screen+Shot+2013-06-14+at+11.12.30+AM.png | img_tag }}
+![](http://3.bp.blogspot.com/-C9vwda5ezn4/UbquDn_xIgI/AAAAAAAAEB8/xJ9Oludx5EA/s1600/Screen+Shot+2013-06-14+at+11.12.30+AM.png)
+
 You should get a list of packages like this.
-{{ 'image-name.gif' | http://2.bp.blogspot.com/--vuorjxpGOg/UbqupLSrq3I/AAAAAAAAECE/lGaKi8lnvFY/s1600/Screen+Shot+2013-06-14+at+11.16.41+AM.png | img_tag }}
+![](http://2.bp.blogspot.com/--vuorjxpGOg/UbqupLSrq3I/AAAAAAAAECE/lGaKi8lnvFY/s1600/Screen+Shot+2013-06-14+at+11.16.41+AM.png)
+
 Next locate <code>linum</code> package using <code>Ctrl-s</code> command.
 You may have to repeatedly use <code>Ctrl-s</code> to get the right package.
-It would say <em>display line numbers in the left margin</em>.
+It would say <em>display line numbers in the right margin</em>.
 
-{{site.url}}
 ![](http://1.bp.blogspot.com/-_4b9KgqIPI8/Ubqxfmw1-CI/AAAAAAAAECU/0UogSTSbDvk/s1600/Screen+Shot+2013-06-14+at+11.28.13+AM.png) 
 
 Select and install that using arrow keys and return key.
