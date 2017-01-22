@@ -19,19 +19,14 @@ build:
 
 deploy:
     steps:
+        - script:
+            name: install open ssh
+            code: apt-get update && apt-get install -y openssh-client
+        - add-ssh-key:
+            keyname: PRODUCTION
         - add-to-known_hosts:
-            hostname: direct.deepumohan.com
-        - mktemp:
-            envvar: PRIVATEKEY_PATH
-        - create-file:
-            name: write key
-            filename: $PRIVATEKEY_PATH
-            content: $PRODUCTION_PRIVATE
-            overwrite: true
-            hide-from-log: true
+            hostname: $HOST
         - script:
             name: transfer files
             code: |
-                pwd
-                ls -la
-                scp -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=no -P $PORT -v -r public/* warfox@direct.deepumohan.com:~/public_html/deepumohan.com/tech
+                scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=no -P $PORT -v -r public/* $USER@$HOST:$DIRECTORY
