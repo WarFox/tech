@@ -29,6 +29,8 @@ sudo pip install --upgrade pip
 sudo /usr/local/bin/pip install airflow[s3, hive, python]
 ```
 
+<!-- more -->
+
 ## Create User and Group
 
 ```

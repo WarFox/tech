@@ -12,7 +12,7 @@ timezone: Europe/London
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://deepumohan.com/tech
+url: https://deepumohan.com/tech
 root: /tech/
 permalink: :title/
 permalink_defaults:
@@ -26,6 +26,10 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
 
 # Writing
 new_post_name: :year-:month-:day-:title.md #:title.md # File name of new posts

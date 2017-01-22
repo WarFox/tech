@@ -22,6 +22,8 @@ These rules are pretty simple. Once we know the _number of live neighbours_ of a
 
 In Game of Life, we take a seed grid and eventually get another grid as a output, by applying the rules to each cell.
 
+<!-- more -->
+
 ## Game Of Life grid
 Game of Life is played in an infinite two dimensional grid. But for the sake of simplicity let us take a 4x4 grid.
 
