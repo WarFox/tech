@@ -5,14 +5,14 @@
 # Site
 title: Deepu Mohan Puthrote
 subtitle: Programming languages, frameworks and general technology thoughts
-description:
+description: Programming languages, frameworks and general technology thoughts
 author: Deepu Mohan Puthrote
-language: English
-timezone:
+language: en
+timezone: Europe/London
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://deepumohan.com/tech
+url: https://deepumohan.com/tech
 root: /tech/
 permalink: :title/
 permalink_defaults:
@@ -27,12 +27,16 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
 
+# Sitemap
+sitemap:
+  path: sitemap.xml
+
 # Writing
 new_post_name: :year-:month-:day-:title.md #:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
-filename_case: 0
+filename_case: 1
 render_drafts: false
 post_asset_folder: false
 relative_link: false
@@ -63,7 +67,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: bootstrap-blog
+theme: even
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

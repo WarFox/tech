@@ -12,6 +12,8 @@ So I was playing with AWS Lambdas, and wanted to setup SNS notification for that
 aws sns publish --topic-arn arn:aws:sns:eu-west-1:22834709971:my-awesome-sns-topic --subject 'Subject' --message 'Hello, hello!'
 ```
 
+<!-- more -->
+
 However got stuck on the following error - it just says Invalid Parameter
 
 ```

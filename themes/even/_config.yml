@@ -1,0 +1,73 @@
+# ===========================================
+# Site Information Settings
+# ===========================================
+
+# Site creation time
+since: 2009
+
+# Custom your favicon.ico in `site/source`
+favicon: /favicon.ico
+
+# Set feed link (false | default | your feed link)
+# false: disable
+# default: use `atom.xml`, generator for `hexo-generator-feed`
+rss: default
+
+# ===========================================
+# Menu Settings
+# ===========================================
+menu:
+  Home: https://deepumohan.com/
+  Archives: /archives/
+  Tech Blog: /
+  Personal Blog: https://blog.deepumohan.com/
+  Malayalam Blog: https://ithokkethanne.blogspot.com/
+  # Tags: /tags
+  # Categories: /categories
+  # About: /about
+
+# site search option
+search: true
+
+# Fancybox
+fancybox: true
+
+# ===========================================
+# Theme Settings
+# ===========================================
+# theme styling
+# color: Default | Mint Green | Cobalt Blue | Hot Pink | Dark Violet
+theme:
+  color: Default
+
+# ===========================================
+# Social links Settings
+# ===========================================
+social:
+  email: 
+  stack-overflow: http://stackoverflow.com/users/598444/warfox
+  twitter: https://twitter.com/deepumohanp
+  facebook: https://fb.com/deepu.mohan.p
+  github: https://github.com/WarFox
+  weibo: 
+  zhihu: 
+
+# ===========================================
+# Third Party Services Settings
+# ===========================================
+
+# Baidu Analytics
+baidu_analytics: 
+# Google Analytics
+google_analytics: 
+
+# Duoshuo
+duoshuo_shortname: 
+# Disqus
+disqus_shortname: warfox 
+
+
+# ===========================================
+# Version
+# ===========================================
+version: 2.1.x
