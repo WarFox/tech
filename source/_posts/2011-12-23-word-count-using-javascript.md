@@ -2,6 +2,7 @@
 layout: post
 title: "JS: Word Count using Javascript"
 date: 2011-12-23T21:07:00+05:30
+categories: Javascript
 ---
 
 I just made a <a href="http://www.deepumohan.com/projects/word-count/">word counter using Javascript</a>. Started it of as a <a href="http://jsfiddle.net/deepumohanp/jZeKu/">jsfiddle</a> attempt out of boredom. Thought it will help me count the words in assignments. blah.&nbsp;I have also made the source code available in <a href="https://github.com/WarFox/word-count">github</a>.
@@ -39,10 +40,10 @@ The results are set in &lt;span&gt; elements as follows:
 <span id="charCountNoSpace">0</span>
 ```
 
-Now attach the counter function to change, keydown, keypress, keyup, blur and focus events of the textarea, to make sure the function called on every change. 
+Now attach the counter function to change, keydown, keypress, keyup, blur and focus events of the textarea, to make sure the function called on every change.
 
 ``` javascript
-$(document).ready(function() {    
+$(document).ready(function() {
     $('#text').change(counter);
     $('#text').keydown(counter);
     $('#text').keypress(counter);

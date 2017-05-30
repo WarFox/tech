@@ -2,12 +2,13 @@
 layout: post
 title: "Linux :: Port is in use but pid not visible"
 date: 2013-01-25T20:48:00+05:30
-categories:
+categories: linux
+tags:
  - linux
  - centos
  - ubuntu
 ---
-##Problem: 
+##Problem:
 A port is being used by some process but the pid of process is not visible
 ###Reason:
 When the process is started by <code>root</code>, other users not in the root group cannot view the process ids. So when you do:

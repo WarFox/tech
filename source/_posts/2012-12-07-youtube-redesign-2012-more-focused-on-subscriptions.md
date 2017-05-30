@@ -3,6 +3,7 @@ layout: post
 title: "Youtube Redesign 2012 - More focused on subscriptions"
 date: 2012-12-07T15:10:00+05:30
 categories:
+tags:
  - Social Media
  - Youtube Redesign
  - Design
@@ -10,7 +11,7 @@ categories:
 ---
 I don't know how many of you got the new design of Youtube. But I have been getting a new homepage on Youtube on and off for about a month and now it seems to be stable. Sometimes it was only available on Chrome, but now I have tested in both Firefox and Chrome.
 Now it looks so much better. Youtube is making use of most of the unused space, better font, more visible links and features, easily accessible analytics and video manager and most importantly more focus on subscriptions.
-    
+
 Now the recommended videos is called What to watch, which I think is easy to understand even for a toddler. On the homepage you get popular videos and categories like Popular on Youtube, Music, Sport, Gaming, Films, TV Shows and Spot Light. From the order of the categories, it looks like Google is trying to prioritize Music than others. The Spot Light category shows you popular videos in your country.
 The hidden menu on top, which opens up on clicking your name and the Google+ button is also tweaked a little. Space utilisation is better although there is a little unused space.
 All in all Google is trying to propagate its new simple minimalistic design language across Youtube. This time you won't need any time at all to get adjusted to the new design, like the previous redesign.

@@ -4,7 +4,7 @@ author: "Deepu Mohan Puthrote"
 title: "A pattern to use RequireJS config in a separate file"
 date: 2014-12-23T11:48:47+00:00
 comments: true
-categories:
+categories: Programming
 ---
 
 If you have used RequireJS, you most definitely have come across this: Repeatation of requirejs configuration.

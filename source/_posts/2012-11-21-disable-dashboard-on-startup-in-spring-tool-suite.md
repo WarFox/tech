@@ -2,7 +2,8 @@
 layout: post
 title: "Disable dashboard on startup in Spring Tool Suite"
 date: 2012-11-21T00:39:00+05:30
-categories:
+categories: development
+tags:
  - IDE
  - STS
  - Spring Tool Suite
@@ -10,7 +11,7 @@ categories:
 You can increase the startup speed of Spring Tool Suite by disabling the Dashboard which gives you a lot not so important new and updates at the startup. And yeah, if you disable it you don't have to close it every time you open STS.
 Option to disable the dashboard is available in the preferences.
 <div align="center"><iframe width="560" height="315" src="http://www.youtube.com/embed/X9EnotrXdWQ" frameborder="0" allowfullscreen></iframe>
- 
+
 * Close the dashboard if it is already open
 * Goto Window &gt;&gt; Preferences
 * Locate SpringSource &gt;&gt; Dashboard

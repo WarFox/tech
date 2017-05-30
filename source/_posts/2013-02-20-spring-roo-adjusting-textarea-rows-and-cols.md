@@ -2,7 +2,8 @@
 layout: post
 title: "Spring Roo :: Adjusting Textarea rows and cols (width and height)"
 date: 2013-02-20T22:18:00+05:30
-categories:
+categories: Java
+tags:
  - Spring Roo
 ---
 If you have been using Spring Roo for rapid application development, you know how messy things can get when you need UI customization. You could try to override the default standard.css  for most cases. But things like adjusting the rows and columns in Textarea is not that easy.
@@ -28,7 +29,7 @@ Spring.addDecoration(new Spring.ElementDecoration({
 }));
 ```
 I have done modification in <code>textarea.tagx</code> to include <code>cols</code> and <code>rows</code> as attributes. The full <code>textarea.tagx</code> can be found in the following gist.
-<script src="https://gist.github.com/WarFox/4996682.js"></script> 
+<script src="https://gist.github.com/WarFox/4996682.js"></script>
 <em>Please note: The file is given .jsp extension to enable formatting in the gist. You just need textarea.tagx.</em>
 Copy and paste this code to your existing textarea.tagx to enjoy the benefits of <code>cols</code> and <code>rows</code> attributes.
 ##Usage</h2>

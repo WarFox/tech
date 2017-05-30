@@ -3,7 +3,7 @@ layout: post
 title: "SOLID design principle"
 date: 2014-09-14T06:07:48+05:30
 comments: true
-categories:
+categories: Programming
 ---
 When it comes to OO designing, it is a good idea to have a strategy to follow.
 A strategy allows you to think and organize ideas in a particular fashion that is comfortable to you.

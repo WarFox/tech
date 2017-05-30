@@ -1,13 +1,13 @@
 ---
 title: Setting up Apache Airflow on AWS EC2 instance
 date: 2017-01-20 15:53:45
+categories: help
 tags:
  - aws
  - Airflow
-categories: help
 ---
 
-Setting up Airflow on AWS Linux was not direct, because of outdated default packages. For example I had trouble using `setuid` in Upstart config, because AWS Linux AMI came with `0.6.5` version of Upstart. 
+Setting up Airflow on AWS Linux was not direct, because of outdated default packages. For example I had trouble using `setuid` in Upstart config, because AWS Linux AMI came with `0.6.5` version of Upstart.
 
 AMI Version: amzn-ami-hvm-2016.09.1.20161221-x86_64-gp2 (ami-c51e3eb6)
 
@@ -66,7 +66,7 @@ This Amazon Linux AMI comes with Upstart `0.6.5`, which is very sad. So `setuid`
 
 {% include_code /etc/init/airflow-webserver.conf etc/init/airflow-webserver.conf %}
 
-You should be able to view `airflow-webserver` in `initctl list` 
+You should be able to view `airflow-webserver` in `initctl list`
 
 ```
 sudo initctl list
@@ -80,7 +80,7 @@ sudo initctl start airflow-webserver
 
 You can find the process id at `/home/airflow/airflow/airflow-webserver.pid`
 
-## Upstart Config for Airflow Scheduler 
+## Upstart Config for Airflow Scheduler
 
 {% include_code /etc/init/airflow-scheduler.conf etc/init/airflow-scheduler.conf %}
 

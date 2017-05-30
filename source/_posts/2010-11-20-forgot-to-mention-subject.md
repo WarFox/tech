@@ -2,7 +2,8 @@
 layout: post
 title: "How to set up reminder for Subject line in Microsoft Outlook"
 date: 2010-11-20T00:52:00+05:30
-categories:
+categories: Windows
+tags:
  - Outlook
  - Windows XP
 ---
@@ -18,7 +19,7 @@ Dim strSubject As String
 strSubject = Item.Subject
 If Len(Trim(strSubject)) = 0 Then
 Prompt$ = "Subject is Empty. Are you sure you want to send the Mail?"
-If MsgBox(Prompt$, vbYesNo + vbQuestion + vbMsgBoxSetForeground, "Check for Subject") = vbNo 
+If MsgBox(Prompt$, vbYesNo + vbQuestion + vbMsgBoxSetForeground, "Check for Subject") = vbNo
 Then
 Cancel = True
 End If

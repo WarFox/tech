@@ -2,7 +2,8 @@
 layout: post
 title: "Cancel html form submission when using jQuery.submit()"
 date: 2011-08-21T23:50:00+05:30
-categories:
+categories: Javascript
+tags:
  - Javascript
  - jQuery
 ---

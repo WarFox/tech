@@ -1,17 +1,22 @@
 ---
 layout: post
-title: "Java :: Get last date of a month"
+title: "Get last date of a month"
 date: 2013-11-30T23:48:00+05:30
 categories:
  - Java
 ---
-In Java we can use the Calendar class to get <tt>day_of_month</tt>, <tt>day_of_week</tt> etc.
+## Java Calendar ##
+
+In Java, we can use the Calendar class to get <tt>day_of_month</tt>, <tt>day_of_week</tt> etc.
 Last day of a month varies depending on the Month and on leap year we have extra day in February.
 So to figure out the last day of any given month in a year, we write some code which is apparently simple.
 Calendar object allows us to manipulate days, go forward or backward on the Calendar, add days, hours, minutes or seconds to any given time etc.
+
 We will use these capabilities of Calendar class to get our <tt>last_of_month</tt>.
+
 <a name='more'></a>
 The idea here is to get the first day of next month and then reduce one day from it, which gives us the last day of the month relative to input date.
+
 ```java
 /**
  * The trick is to add a month, set the date as 1st and then reduce a date.
@@ -28,7 +33,9 @@ private static void setCalendarToLastDayOfMonth(Calendar calendar) {
     calendar.add(Calendar.DATE, -1);
 }
 ```
+
 But, Java Calendar has a better way of doing this, by using getActualMaximum() method which is far more convenient.
+
 ```java
  private static void setCalendarToLastDayOfMonth(Calendar calendar) {
    int lastDay = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
@@ -39,7 +46,11 @@ But, Java Calendar has a better way of doing this, by using getActualMaximum() m
    calendar.set(Calendar.MILLISECOND, 0);
 }
 ```
+
+## Sample Util class code ##
+
 A sample calendar util class which gives you few convenient methods is given below.
+
 ```java
 /**
  * Copyright (C) 2013 Deepu Mohan Puthrote. All Rights Reserved.
@@ -58,11 +69,12 @@ A sample calendar util class which gives you few convenient methods is given bel
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see http://www.gnu.org/licenses/.
  */
- import java.util.Calendar;
- import java.util.Date;
- import java.text.SimpleDateFormat;
- import java.util.Locale;
- import java.text.ParseException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class CalendarUtil {
     public static void main(String[] args) throws Exception {
         String string = "January 2, 2010";
@@ -102,7 +114,9 @@ public class CalendarUtil {
     }
 }
 ```
-###References
+
+## References
+
 * [http://stackoverflow.com/questions/13624442/getting-last-day-of-the-month-in-given-string-date/](http://stackoverflow.com/questions/13624442/getting-last-day-of-the-month-in-given-string-date/)
 * [http://docs.oracle.com/javase/7/docs/api/java/util/Date.html](http://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
 * [http://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html](http://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html)

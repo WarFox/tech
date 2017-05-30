@@ -2,7 +2,8 @@
 layout: post
 title: "How to set environment variable in Ubuntu "
 date: 2012-12-22T20:52:00+05:30
-categories:
+categories: linux
+tags:
  - linux
  - ubuntu
 ---
@@ -33,7 +34,7 @@ There are two possible options for each of the environment variables - <code>DEF
 
 ```bash
     PATH    DEFAULT=$PATH    OVERRIDE=$PATH:~/bin
-```    
+```
 
 You can read more and view some examples on your system by typing the following command on your terminal.
 
@@ -43,6 +44,6 @@ cat /etc/security/pam_env.conf
 ```
 
 ### Some Ubuntu books you should check out:
-<a href="http://www.amazon.com/gp/product/0133017605/ref=as_li_ss_il?ie=UTF8&tag=thelaccur-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0133017605"><img border="0" src="http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&Format=_SL160_&ASIN=0133017605&MarketPlace=US&ID=AsinImage&WS=1&tag=thelaccur-20&ServiceVersion=20070822" ></a><img src="http://www.assoc-amazon.com/e/ir?t=thelaccur-20&l=as2&o=1&a=0133017605" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> <a href="http://www.amazon.com/gp/product/B004Y1NMDI/ref=as_li_ss_il?ie=UTF8&tag=thelaccur-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=B004Y1NMDI"><img border="0" src="http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&Format=_SL160_&ASIN=B004Y1NMDI&MarketPlace=US&ID=AsinImage&WS=1&tag=thelaccur-20&ServiceVersion=20070822" ></a><img src="http://www.assoc-amazon.com/e/ir?t=thelaccur-20&l=as2&o=1&a=B004Y1NMDI" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> <a href="http://www.amazon.com/gp/product/0672336243/ref=as_li_ss_il?ie=UTF8&tag=thelaccur-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0672336243"><img border="0" src="http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&Format=_SL160_&ASIN=0672336243&MarketPlace=US&ID=AsinImage&WS=1&tag=thelaccur-20&ServiceVersion=20070822" ></a><img src="http://www.assoc-amazon.com/e/ir?t=thelaccur-20&l=as2&o=1&a=0672336243" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> 
+<a href="http://www.amazon.com/gp/product/0133017605/ref=as_li_ss_il?ie=UTF8&tag=thelaccur-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0133017605"><img border="0" src="http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&Format=_SL160_&ASIN=0133017605&MarketPlace=US&ID=AsinImage&WS=1&tag=thelaccur-20&ServiceVersion=20070822" ></a><img src="http://www.assoc-amazon.com/e/ir?t=thelaccur-20&l=as2&o=1&a=0133017605" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> <a href="http://www.amazon.com/gp/product/B004Y1NMDI/ref=as_li_ss_il?ie=UTF8&tag=thelaccur-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=B004Y1NMDI"><img border="0" src="http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&Format=_SL160_&ASIN=B004Y1NMDI&MarketPlace=US&ID=AsinImage&WS=1&tag=thelaccur-20&ServiceVersion=20070822" ></a><img src="http://www.assoc-amazon.com/e/ir?t=thelaccur-20&l=as2&o=1&a=B004Y1NMDI" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> <a href="http://www.amazon.com/gp/product/0672336243/ref=as_li_ss_il?ie=UTF8&tag=thelaccur-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0672336243"><img border="0" src="http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&Format=_SL160_&ASIN=0672336243&MarketPlace=US&ID=AsinImage&WS=1&tag=thelaccur-20&ServiceVersion=20070822" ></a><img src="http://www.assoc-amazon.com/e/ir?t=thelaccur-20&l=as2&o=1&a=0672336243" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
 [1]:https://help.ubuntu.com/community/EnvironmentVariables "Environment variables in Ubuntu"

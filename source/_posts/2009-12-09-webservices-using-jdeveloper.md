@@ -2,8 +2,9 @@
 layout: post
 title: "Webservices using JDeveloper"
 date: 2009-12-09T14:30:00+05:30
-categories:
- - Java
+categories: Java
+tags:
+ - java
 ---
 * WSDL&nbsp; (Web Services Description Language) : XML-based language for defining Web Services
 * SOAP (Simple Object Access Protocol): XML-based language for accessing webservices over HTTP
@@ -18,7 +19,7 @@ categories:
 8. Give a name for your web service and select component to publish. ( Your java application)
 9. Check **Generate annotations into class** and click next
 10. Select your method from **Available Methods list** and click **Finish**.
- 
+
 Now some processing will be done and required files will be generated.
 Next steps:
 1. Open your WSDL document from **WEB-INF\wsdl** (if not already open in the editior).

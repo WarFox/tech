@@ -2,7 +2,8 @@
 layout: post
 title: "Spring Roo :: Adjust text box size/width"
 date: 2013-03-07T12:05:00+05:30
-categories:
+categories: Java
+tags:
  - Spring Roo
 ---
 Spring Roo uses Dojo's <code>dijit.form.ValidationTextbox</code> widget by default. This means only way to adjust textbox size is to adjust the width of widget. And this has to be done with widget attributes using Spring.addDecoration(); available in <code>spring-js</code>.

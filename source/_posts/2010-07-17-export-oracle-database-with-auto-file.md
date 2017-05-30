@@ -2,7 +2,8 @@
 layout: post
 title: "How to export Oracle database using windows batch file with auto file name"
 date: 2010-07-17T23:05:00+05:30
-categories:
+categories: database
+tags:
  - Batch Script
  - Oracle
 ---
@@ -17,9 +18,9 @@ REM Auther: Deepu Mohan P, www.deepumohan.com
 REM Created:  07-Sep-2009
 REM Modified: 30-Sep-2009, 01-Oct-2009
 REM Get user credentials
-set /p schema=Enter username: 
-set /p pwd=Enter password: 
-set /p sid=SID: 
+set /p schema=Enter username:
+set /p pwd=Enter password:
+set /p sid=SID:
 REM Following block is for getting the year, month and day
 REM ======================================================
    FOR /f "tokens=2-4 skip=1 delims=(-)" %%G IN ('echo.^|date') DO (

@@ -2,7 +2,8 @@
 layout: post
 title: "Drive is not accessible The parameters are incorrect"
 date: 2010-11-08T22:54:00+05:30
-categories:
+categories: Windows
+tags:
  - Windows XP
 ---
 ## Problem:

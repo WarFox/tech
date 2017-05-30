@@ -2,7 +2,8 @@
 layout: post
 title: "jQuery:: Getting started with jQuery"
 date: 2012-11-16T21:02:00+05:30
-categories:
+categories: Javascript
+tags:
  - Javascript
  - jQuery
 ---
@@ -61,7 +62,7 @@ We will change the 'Old Text' to 'New Text'
 <script src="https://gist.github.com/3775927.js?file=fiddle.js"></script>
 Fiddle here: <a href="http://jsfiddle.net/gh/gist/library/pure/3775927/">http://jsfiddle.net/gh/gist/library/pure/3775927/</a>
 Now the same stuff in [jQuery][1].
-    
+
 ####Change html text using [jQuery][1]
 <script src="https://gist.github.com/3776540.js?file=fiddle.js"> </script>
 Fiddle here: <a href="http://jsfiddle.net/gh/gist/jquery/1.8/3776540/">http://jsfiddle.net/gh/gist/jquery/1.8/3776540/</a>

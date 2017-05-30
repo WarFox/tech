@@ -4,6 +4,8 @@ title: "js :: Count down timer in vanilla Javascript"
 date: 2012-10-10T04:35:00+05:30
 categories:
  - Javascript
+tags:
+ - Javascript
  - Timer
 ---
 In this article I will take you through creating a Timer object in javascript. We will create a javascript object that can be easily used to create multiple timers on a window.

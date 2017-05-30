@@ -129,7 +129,7 @@ String(char[] value, boolean share) {
 
 `String.valueOf(char)` seems to be most efficient method for converting `char` to `String`.
 
-### Side note
+## Side note
 
 Remember `String` objects are immutable and they can be shared.
 
@@ -149,7 +149,7 @@ is equivalent to:
 
 Java does'nt include `String` constructor that accepts a single `char`, because there already is a constructor that accepts a `char[]`.
 
-###Also see
+## Also see
 * [How to convert Char to String in Java with Example][1]
 * [How to convert a char to a string in Java?][2]
 

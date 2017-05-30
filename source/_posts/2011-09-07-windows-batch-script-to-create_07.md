@@ -2,7 +2,8 @@
 layout: post
 title: "Windows batch script to create directory auto file name DDMONYYYY with the help of javascript"
 date: 2011-09-07T17:54:00+05:30
-categories:
+categories: Windows
+tags:
  - Batch Script
  - Windows XP
 ---

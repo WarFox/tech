@@ -2,7 +2,8 @@
 layout: post
 title: "How to get html color code from an image using MS Paint"
 date: 2011-04-18T22:36:00+05:30
-categories:
+categories: Windows
+tags:
  - Windows
  - How To
 ---

@@ -2,7 +2,8 @@
 layout: post
 title: "Maven:: Invalid CEN (bad signature) Invalid LOC (bad signature)"
 date: 2012-07-27T11:16:00+05:30
-categories:
+categories: Java
+tags:
  - mvn
  - Java
  - maven

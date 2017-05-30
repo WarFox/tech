@@ -1,7 +1,8 @@
 ---
 title: AWS SNS error - Invalid parameter
 date: 2016-05-12 11:31:15
-tags: 
+categories: development
+tags:
  - aws
  - sns
 ---
@@ -34,4 +35,3 @@ region = eu-west-1
 ```
 
 That's it!
-

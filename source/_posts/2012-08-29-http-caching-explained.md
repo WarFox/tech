@@ -3,6 +3,7 @@ layout: post
 title: "HTTP Caching explained"
 date: 2012-08-29T04:28:00+05:30
 categories:
+tags:
  - HTTP
  - Cache
  - Caching
@@ -25,4 +26,4 @@ To avoid sending full responses, cache can check validity of its copy by sending
 
 Web browsers like Firefox and Google Chrome often caches static resources like Cascading Style Sheets and Javascript files. Web developers utilize HTTP caching advantages by delivering content through popular Content Delivery Networks (CDN). For example Google hosts a number of common web development libraries like jQuery, Mootools and Dojo through their <a href="https://developers.google.com/speed/libraries/devguide">CDN</a>. A typical CDN will have multiple copies of resources residing on servers spread across the globe. A request to a resource is served by the nearest server. But that is not caching, I'll explain this in the following section.
 
-Advantages of caching comes when many web sites point to the same CDN. For example if 10 websites use jQuery delivered through Google's CDN, then the browser will send request for the resource file only once, as the identical resource will be already available in the cache in consecutive requests. This is serious network traffic gain when considering millions of websites. If the CDN implements expiry mechanisms, then the browser cache may serve the resource for a month or may be a year! 
+Advantages of caching comes when many web sites point to the same CDN. For example if 10 websites use jQuery delivered through Google's CDN, then the browser will send request for the resource file only once, as the identical resource will be already available in the cache in consecutive requests. This is serious network traffic gain when considering millions of websites. If the CDN implements expiry mechanisms, then the browser cache may serve the resource for a month or may be a year!

@@ -2,6 +2,7 @@
 layout: post
 title: "git :: rename a git branch"
 date: 2012-04-02T17:05:00+05:30
+categories: development
 tags:
  - git
 ---

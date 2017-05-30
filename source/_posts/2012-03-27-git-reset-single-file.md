@@ -2,6 +2,7 @@
 layout: post
 title: "git :: how to undo changes to a single file"
 date: 2012-03-27T20:20:00+05:30
+categories: development
 tags:
  - git
 ---

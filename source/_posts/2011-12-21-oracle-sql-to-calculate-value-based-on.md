@@ -2,7 +2,8 @@
 layout: post
 title: "Oracle SQL to calculate value based on previous row value"
 date: 2011-12-21T20:29:00+05:30
-categories:
+categories: database
+tags:
  - How To
  - Oracle
 ---
@@ -15,8 +16,8 @@ LAG  (value_expression [,offset] [,default]) OVER ([query_partition_clause] orde
 LEAD (value_expression [,offset] [,default]) OVER ([query_partition_clause] order_by_clause)
 
 Description:
-value_expression - Can be a column or a built-in function, except for other analytic functions. 
-offset - The number of rows preceeding/following the current row, from which the data is to be retrieved. The default value is 1. 
+value_expression - Can be a column or a built-in function, except for other analytic functions.
+offset - The number of rows preceeding/following the current row, from which the data is to be retrieved. The default value is 1.
 default - The value returned if the offset is outside the scope of the window. The default value is NULL.
 
 Example:

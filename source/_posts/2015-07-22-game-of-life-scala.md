@@ -3,7 +3,10 @@ layout: post
 title: "Game Of Life (in Scala)"
 date: 2015-07-22 21:29:26 +0100
 comments: true
-categories: scala, algorithms
+categories: Scala
+tags:
+- scala
+- algorithms
 styles: data-table
 ---
 
@@ -146,7 +149,7 @@ Here is a direct implementation of this algorithm in `Scala`.
 
 ``` scala
 def findNeighbours(board: Array[Array[Cell]], point: Point): List[Cell] = {
-  val (row, col) = point unapply  
+  val (row, col) = point unapply
   var cells: List[Cell] = List.empty[Cell]
   val rowLimit = board.length - 1
   val columnLimit = board(0).length - 1
@@ -167,4 +170,3 @@ def findNeighbours(board: Array[Array[Cell]], point: Point): List[Cell] = {
 [guardian-gol]:http://www.theguardian.com/science/alexs-adventures-in-numberland/2014/dec/15/the-game-of-life-a-beginners-guide
 [3]: http://stackoverflow.com/questions/652106/finding-neighbours-in-a-two-dimensional-array
 [Seb]:http://stackoverflow.com/users/76583/seb
-

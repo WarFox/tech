@@ -2,7 +2,8 @@
 layout: post
 title: "How to unlock Samsung Galaxy Ace (for free) from a network"
 date: 2012-11-06T23:34:00+05:30
-categories:
+categories: mobile
+tags:
  - How To
  - Android
 ---

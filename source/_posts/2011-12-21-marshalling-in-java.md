@@ -2,10 +2,11 @@
 layout: post
 title: "Java: Marshalling in Java"
 date: 2011-12-21T19:59:00+05:30
-categories:
- - java
+categories: Java
+tags:
+- java
 ---
-Marshalling is a technique that can be easily understood and utilized efficiently. It is the process of converting a POJO(Plain Old Java Object) in memory into a format that can be written to disk or send via network, usually in text formats like xml or json. The reverse of this technique is called unmarshalling.
+Marshalling is a technique that can be easily understood and utilized efficiently. It is the process of converting a POJO(Plain Old Java Object) in memory into a format that can be written to disk or send via network, usually in text formats like xml or json. The reverse of this technique is called `unmarshalling`.
 
 ## Difference between Marshalling and Serialization:
 Marshalling is similar to Serialization in practice but the difference is that, Marshalling also saves the code of an object in addition to its state.
@@ -16,37 +17,47 @@ In the following example to explain marshalling, standard JAXB(Java Architecture
 ``` java
 package blog.warfox.tutorials.marshalling;
 import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Student class for Marshalling demo example
  * @author warfox
  */
 @XmlRootElement(name="student")
 public class Student {
+
      private String name;
      private int rollNo;
      private double marks;
      private int rank;
+
      public String getName() {
           return this.name;
      }
+
      public void setName(String name) {
           this.name = name;
      }
+
      public int getRollNo() {
           return this.rollNo;
      }
+
      public void setRollNo(int rollNo) {
           this.rollNo = rollNo;
      }
+
      public double getMarks() {
           return this.marks;
      }
+
      public void setMarks(double marks) {
           this.marks = marks;
      }
+
      public int getRank() {
           return this.rank;
      }
+
      public void setRank(int rank) {
           this.rank = rank;
      }
@@ -58,11 +69,14 @@ An instance of student is created and given for marshalling.
 
 ``` java
 package blog.warfox.tutorials.marshalling;
+
 import java.io.StringWriter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+
 public class MyMarshaller {
+
      public static String marshall(Object object) throws JAXBException {
         JAXBContext context = JAXBContext.newInstance(object.getClass());
         Marshaller m = context.createMarshaller();
@@ -71,6 +85,7 @@ public class MyMarshaller {
         m.marshal(object, writer);
         return writer.toString();
     }
+
     public static void main(String[] args) throws JAXBException {
         Student student = new Student();
         student.setName("Name");
@@ -151,4 +166,5 @@ Output:
     <student-rollno>1</student-rollno>
 </student>
 ```
+
 *Share this tutorial if it helped you*
