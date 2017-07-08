@@ -1,8 +1,8 @@
-box: node
+box: node:6.11.0
 build:
   steps:
     - npm-install
-    
+
     - script:
         name: echo nodejs information
         code: |
@@ -11,7 +11,11 @@ build:
     - script:
         name: Install Hexo
         code: |
-          sudo npm install -g hexo
+          sudo npm install -g hexo-cli
+    - script:
+        name: Rebuild node-sass
+        code: |
+          npm rebuild node-sass
     - script:
         name: Generate static files
         code: |
