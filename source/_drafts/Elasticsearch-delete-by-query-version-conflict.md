@@ -1,10 +1,8 @@
 ---
 title: Elasticsearch delete by query version conflict
 tags:
+- elasticsearch
 ---
-
-
-
 
 ```
      "cause": {
@@ -15,7 +13,6 @@ tags:
         "index": "my_index"
       },
 ```
-
 
 If you’d like to count version conflicts rather than cause them to abort then set conflicts=proceed on the url or "conflicts": "proceed" in the request body.
 

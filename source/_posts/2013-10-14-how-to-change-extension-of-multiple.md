@@ -8,7 +8,7 @@ However, I have tested it only in `bash`.
 
 {% include_code Script to change extension for multiple files lang:bash bash/chext %}
 
-Save this file as "chext", make it executable `chmod +x chext` and add to your <code>$PATH</code>.
+Save this file as "chext", make it executable `chmod +x chext` and add to your `$PATH`.
 
 Now you can use it like this:
 

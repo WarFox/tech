@@ -2,8 +2,7 @@
 layout: post
 title: "Java :: Check whether two Strings are equal without using the equality(==) operator or the equals() method."
 date: 2013-03-21T15:40:00+05:30
-categories:
- - Java
+categories: Java
 ---
 
 You can exploit the uniqueness property of `Set Collection` to accomplish this.

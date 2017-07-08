@@ -1,8 +1,5 @@
----
+ --
 layout: post
 title: "Google Alphabet: Snap shot for google Autocomplete from a-z"
 date: 2012-08-29T22:44:00+05:30
 ---
-
-<div class='post'>
-<div dir="ltr" style="text-align: left;" trbidi="on"><br /></div></div>
