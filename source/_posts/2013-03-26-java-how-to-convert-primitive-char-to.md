@@ -2,8 +2,7 @@
 layout: post
 title: "How to convert primitive char to String in Java"
 date: 2013-03-26T14:35:00+05:30
-categories:
- - Java
+categories: Java
 ---
 `char` is 16 bit unsigned data type in Java, which is used to store characters and `String` value is an immutable array of `char`. In Java we cannot cast a primitive `char` element to `String`.
 

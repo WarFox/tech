@@ -3,6 +3,3 @@ layout: post
 title: "Spring Rooo User Authentication SHA 256 and MD5"
 date: 2013-01-01T01:33:00+05:30
 ---
-
-<div class='post'>
-<div dir="ltr" style="text-align: justify;" trbidi="on">  </div></div>

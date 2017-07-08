@@ -1,8 +1,5 @@
----
+--
 layout: post
 title: "Create 'n' objects. Limit 'n' objects for a Class"
 date: 2013-03-06T12:28:00+05:30
 ---
-
-<div class='post'>
-<div dir="ltr" style="text-align: justify;" trbidi="on">  </div></div>
