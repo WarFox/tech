@@ -1,4 +1,4 @@
-menu: 
+menu:
   home: Home
   archives: Archives
   tags: Tags
@@ -16,6 +16,12 @@ posts:
   next_post: Next
   toc: Contents
   readmore: Read more..
+  reward: 'Reward'
+
+copyright:
+  author: 'Author'
+  link: 'Link'
+  license: 'License'
 
 counter:
   archives:

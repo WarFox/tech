@@ -17,7 +17,7 @@ rss: default
 # Menu Settings
 # ===========================================
 menu:
-  Home: https://deepumohan.com/
+  Home: /
   Archives: /archives/
   Tech Blog: /
   Personal Blog: https://blog.deepumohan.com/
@@ -26,12 +26,6 @@ menu:
   # Categories: /categories
   # About: /about
 
-# site search option
-search: true
-
-# Fancybox
-fancybox: true
-
 # ===========================================
 # Theme Settings
 # ===========================================
@@ -39,35 +33,65 @@ fancybox: true
 # color: Default | Mint Green | Cobalt Blue | Hot Pink | Dark Violet
 theme:
   color: Default
+  toc: true
+  fancybox: true
+
+copyright:
+  enable: true
+  # https://creativecommons.org/
+  license: <br/> <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://deepumohan.com/" property="cc:attributionName" rel="cc:attributionURL">Deepu Mohan Puthrote</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+reward:
+  enable: false
+  qrCode:
+    wechat:
+    alipay:
 
 # ===========================================
 # Social links Settings
 # ===========================================
 social:
-  email: 
   stack-overflow: http://stackoverflow.com/users/598444/warfox
   twitter: https://twitter.com/deepumohanp
   facebook: https://fb.com/deepu.mohan.p
+  linkedin: https://linkedin.com/in/deepumohanp
+  google:
   github: https://github.com/WarFox
-  weibo: 
-  zhihu: 
+  weibo:
+  zhihu:
+  douban:
+  pocket:
+  tumblr: https://deepumohan.com/deepumohanp
+  instagram: https://instagram.com/deepumohanp
 
 # ===========================================
 # Third Party Services Settings
 # ===========================================
 
+# LeanCloud
+leancloud:
+  app_id:
+  app_key:
+
 # Baidu Analytics
-baidu_analytics: 
+baidu_analytics:
+# Baidu Verification
+baidu_verification:
+
 # Google Analytics
-google_analytics: 
+google_analytics:
+# Google Verification
+google_verification:
 
-# Duoshuo
-duoshuo_shortname: 
 # Disqus
-disqus_shortname: warfox 
+disqus_shortname: warfox
 
+#Changyan
+changyan:
+  appid:
+  appkey:
 
 # ===========================================
 # Version
 # ===========================================
-version: 2.1.x
+version: 2.6.0

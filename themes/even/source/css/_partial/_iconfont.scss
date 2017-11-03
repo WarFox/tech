@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: 'iconfont';  /* project id 96542 */
-  src: url('//at.alicdn.com/t/font_8gx15cdpiaz41jor.eot');
-  src: url('//at.alicdn.com/t/font_8gx15cdpiaz41jor.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_8gx15cdpiaz41jor.woff') format('woff'),
-  url('//at.alicdn.com/t/font_8gx15cdpiaz41jor.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_8gx15cdpiaz41jor.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_96542_ixz9jngnf1sb57b9.eot');
+  src: url('//at.alicdn.com/t/font_96542_ixz9jngnf1sb57b9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_96542_ixz9jngnf1sb57b9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_96542_ixz9jngnf1sb57b9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_96542_ixz9jngnf1sb57b9.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -20,10 +20,25 @@
   cursor: pointer;
 }
 
+.icon-instagram:before {
+  font-size: .95em;
+  content: "\e611";
+  position:: relative;
+  top: -1px;
+}
+.icon-douban:before {
+  content: "\e610";
+}
+.icon-tumblr:before {
+  content: "\e69f";
+  font-size: .85em;
+  position: relative;
+  top: -4px;
+}
 .icon-linkedin:before {
   content: "\e60d";
   position: relative;
-  top: -2px;
+  top: -4px;
 }
 .icon-twitter:before {
   content: "\e600";
@@ -65,20 +80,22 @@
   position: relative;
   top: -2px;
 }
-.icon-heart:before {
-  content: "\e608"; 
+.icon-pocket:before {
+  content: "\e856";
 }
-.icon-right:before { 
+
+/* Generic Icon */
+.icon-heart:before {
+  content: "\e608";
+}
+.icon-right:before {
   content: "\e60a";
 }
 .icon-left:before {
-  content: "\e60b"; 
+  content: "\e60b";
 }
 .icon-up:before {
   content: "\e60c";
-}
-.icon-search:before {
-  content: "\e60e";
 }
 .icon-close:before {
   content: "\e60f";

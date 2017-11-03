@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="{{ connfig.language }}">
+<html lang="{{ config.language }}">
   <head>
     {% include '_partial/head.swig' %}
     <title>{% block title %}{% endblock %}</title>
   </head>
 
   <body>
-    <div class="container">
+    {%- include '_partial/slideout.swig' %}
+    <div class="container" id="mobile-panel">
       <header id="header" class="header">
         {%- include '_partial/header.swig' %}
       </header>
@@ -17,7 +18,7 @@
             {% block content %}{% endblock %}
           </div>
           {% include '_partial/comments.swig' %}
-        </div>  
+        </div>
       </main>
 
       <footer id="footer" class="footer">
