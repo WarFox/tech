@@ -18,7 +18,7 @@ Base size is the maximum size that a container/image can grow to. By default doc
 
 You can view this information with the following command
 
-```sh
+``` sh
 sudo docker info
 ```
 
@@ -32,7 +32,7 @@ Assuming we have `Systemd` based setup
 
 * First create directory for customising docker service
 
-```
+``` sh Make systemd directory for customising docker
 sudo mkdir /etc/systemd/system/docker.service.d/
 ```
 
@@ -42,7 +42,7 @@ sudo mkdir /etc/systemd/system/docker.service.d/
 sudo vi /etc/systemd/system/docker.service.d/docker.conf
 ```
 
-```
+``` sh /etc/systemd/system/docker.service.d/docker.conf
 [Service]
 ExecStart=
 ExecStart=/usr/bin/dockerd --graph="/mnt/docker-data" --storage-driver=overlay --storage-opt=dm.basesize=30G

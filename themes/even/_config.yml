@@ -17,14 +17,12 @@ rss: default
 # Menu Settings
 # ===========================================
 menu:
-  Home: /
-  Archives: /archives/
-  Tech Blog: /
-  Personal Blog: https://blog.deepumohan.com/
-  Malayalam Blog: https://ithokkethanne.blogspot.com/
+  Tech: /
+  Personal: https://blog.deepumohan.com/
+  മലയാളം: https://ithokkethanne.blogspot.com/
+  About: https://deepumohan.com/
   # Tags: /tags
   # Categories: /categories
-  # About: /about
 
 # ===========================================
 # Theme Settings
@@ -39,7 +37,7 @@ theme:
 copyright:
   enable: true
   # https://creativecommons.org/
-  license: <br/> <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://deepumohan.com/" property="cc:attributionName" rel="cc:attributionURL">Deepu Mohan Puthrote</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+  license: 'This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/StillImage" rel="dct:type">work</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://deepumohan.com/" property="cc:attributionName" rel="cc:attributionURL">Deepu Mohan Puthrote</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>'
 
 reward:
   enable: false
@@ -51,7 +49,7 @@ reward:
 # Social links Settings
 # ===========================================
 social:
-  stack-overflow: http://stackoverflow.com/users/598444/warfox
+  stack-overflow: https://stackoverflow.com/users/598444/warfox
   twitter: https://twitter.com/deepumohanp
   facebook: https://fb.com/deepu.mohan.p
   linkedin: https://linkedin.com/in/deepumohanp
@@ -60,7 +58,7 @@ social:
   weibo:
   zhihu:
   douban:
-  pocket:
+  pocket: https://getpocket.com/@deepumohanp
   tumblr: https://deepumohan.com/deepumohanp
   instagram: https://instagram.com/deepumohanp
 

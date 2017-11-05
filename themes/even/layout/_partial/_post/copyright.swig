@@ -10,9 +10,8 @@
       <a href="{{ page.permalink }}">{{ page.permalink }}</a>
     </p>
     <p class="copyright-item">
-      <span>{{ __('copyright.license') + ': ' }}</span>
-      {% set lincese = page.lincese || theme.copyright.license %}
-      {{ lincese }}
+      {% set license = page.license || theme.copyright.license %}
+      {{ license }}
     </p>
   </div>
 {% endif %}
