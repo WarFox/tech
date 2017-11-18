@@ -36,4 +36,3 @@
 {% if theme.google_verification %}
   <meta name="google-site-verification" content="{{ theme.google_verification }}" />
 {% endif %}
-

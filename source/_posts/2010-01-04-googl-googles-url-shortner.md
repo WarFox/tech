@@ -2,7 +2,8 @@
 layout: post
 title: "Goo.gl - Google's URL Shortner"
 date: 2010-01-04T09:50:00+05:30
-categories: Google
+categories: Tech
+tags: Google
 ---
 Google has launched a new URL shortener service, with which you can shorten long URL's for easy sharing, in blogs, tweets, emails, chats and so on. For using Goo.gl you must be using one of the Google services, like Google wave or Feedburner. There is no front end for using Goo.gl directly like we have in bit.ly and like so services.
 For example if you are using Feedburner--&gt;Publicize--&gt;Socialize service, there is option to add a twitter account to your feeds. The URL's in your feeds will be indirectly shortened by Goo.gl while posting to Twitter account.

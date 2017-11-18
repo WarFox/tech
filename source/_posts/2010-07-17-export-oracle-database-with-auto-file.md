@@ -7,8 +7,15 @@ tags:
  - Batch Script
  - Oracle
 ---
-Hi folks, this tip is for the DBA’s and developers who do the tedious task - Daily back up of database!!! Every day run a script to export oracle database.Each day you would have to modify your export batch file with the current date and to do it. I thought of creating a batch file that accepts the user name and password and then exports the database and creates a dump file with auto filename. You will get a new dump file each day,with the date appended in the file name. No need of manually giving the date.
+Hi folks, this tip is for the DBA’s and developers who do the tedious task - Daily back up of database!!!
+
+Every day run a script to export oracle database. Each day you would have to modify your export batch file with the current date and to do it.
+
+I thought of creating a batch file that accepts the user name and password and then exports the database and creates a dump file with auto filename. You will get a new dump file each day, with the date appended in the file name. No need to manually type the date each time.
+
 Copy paste the below code to create a batch file (*.bat)
+
+``` sh database-backeup.bat
 cls
 @echo off
 REM Export Full database with auto filename for dump and log
@@ -38,4 +45,6 @@ REM =====================================================
 exp %schema%/%pwd%@%sid% FILE=%user%_%dd%_%mm%_%yy%.dmp log=%user%_%dd%_%mm%_%yy%.log
 compress=N rows=Y grants=Y buffer=500000 FULL=Y statistics=NONE
 pause
+```
+
 If there is any issue, suggestion or feedback please put it in comments. Share it if you liked!

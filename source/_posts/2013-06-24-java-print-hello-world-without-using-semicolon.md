@@ -6,4 +6,11 @@ categories: Java
 ---
 
 This Gist shows how to print something in Java, without the use of Semicolon (;). The code is self explanatory.
-<a href="https://gist.github.com/WarFox/5847999">https://gist.github.com/WarFox/5847999</a><br/><script src="https://gist.github.com/WarFox/5847999.js"></script>
+
+This idea is to use `System.out.println()` inside the brackets of an `if()`.
+
+`if()` will evaluate it's expression without the need for semicolon.
+
+https://gist.github.com/WarFox/5847999
+
+{% gist 5847999 PrintWithoutSemiColon.java %}
