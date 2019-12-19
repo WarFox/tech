@@ -1,0 +1,85 @@
+baseURL = "http://deepumohan.com/tech"
+languageCode = "en-uk"
+title = "deepu mohan puthrote"
+theme= "tailwind-journal"
+
+DefaultContentLanguage = "en"
+SectionPagesMenu = "main"
+Paginate = 10
+
+enableRobotsTXT = true
+enableEmoji = true
+enableGitInfo = true
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+CanonifyURLs=true
+
+disqusShortname = "warfox"
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  favicon = ""
+  author = "Deepu Mohan Puthrote"
+  avatar = "https://s.gravatar.com/avatar/f66dfe536cc7c61f0808ace8567d15db?s=256"
+  description = "AWS Certified Solutions Architect and Software Engineer, Programming languages, frameworks and general technology thoughts"
+  tagline = "AWS Certified Solutions Architect and Software Engineer"
+  facebook = "https://fb.com/deepu.mohan.p/"
+  twitter = "https://twitter.com/deepumohanp/"
+  instagram = "https://instagram.com/deepu.mohan.p/"
+  youtube = "https://www.youtube.com/channel/UC1kfyS5UwNM9bU8K3k1PqyQ"
+  github = "https://github.com/WarFox/"
+  gitlab = "https://gitlab.com/WarFox/"
+  linkedin = "https://linkedin.com/in/deepumohanp/"
+  show_reading_time = true
+  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
+  background_color_class = "bg-near-black"
+  # featured_image = "/images/gohugo-default-sample-hero-image.jpg"
+  recent_posts_number = 5
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[permalinks]
+  "" = ":section/:slug"
+  drafts = ":section/:slug"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    style = "monokai"
+    tabWidth = 4
+
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xHTML = false
+
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 1

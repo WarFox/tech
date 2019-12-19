@@ -1,0 +1,49 @@
+
+{{ if .IsNamedParams }}
+
+    {{ $file := .Get "file" }}
+    {{ $fileContent := $file | printf "%s/%s" "/static/code/" | readFile }}
+
+    {{ $lang := .Get "lang" }}
+    {{ $suffix := findRE "(\\.[^.]+)$" $file 1 }}
+    {{ with  $suffix }}
+    {{ $lang = (index . 0 | strings.TrimPrefix ".") }}
+    {{ end }}
+    {{ with .Get "lang" }}{{ $lang = . }}{{ end }}
+
+    {{ $fileSlug := index (last 1 (split $file "/")) 0  }}
+
+    <div class="container mx-auto">
+      {{if isset .Params "title" }}
+        {{ with .Get "title" }}
+        <h4 style="margin-left: -3rem; margin-bottom: -1rem;">{{.}}</h4>
+        {{ end }}
+      {{ else }}
+        <h4 style="margin-left: -3rem; margin-bottom: -1rem;">{{ $fileSlug }}</h4>
+      {{ end}}
+
+      {{ (print "```" $lang "\n" $fileContent "\n```") | markdownify }}
+    </div>
+
+{{ else }}
+
+    {{ $file := .Get 0 }}
+    {{ $fileContent := $file | printf "%s/%s" "/static/code/" | readFile }}
+
+    {{ $lang := "" }}
+    {{ $suffix := findRE "(\\.[^.]+)$" $file 1 }}
+    {{ with  $suffix }}
+    {{ $lang = (index . 0 | strings.TrimPrefix ".") }}
+    {{ end }}
+    {{ with .Get "lang" }}{{ $lang = . }}{{ end }}
+
+    {{ $fileSlug := index (last 1 (split $file "/")) 0  }}
+
+    <div class="container mx-auto">
+        {{ with .Get 1 }}
+          <h4 style="margin-left: -3rem; margin-bottom: -1rem;">{{.}}</h4>
+        {{ end }}
+        {{ (print "```" $lang "\n" $fileContent "\n```") | markdownify }}
+    </div>
+
+{{ end }}

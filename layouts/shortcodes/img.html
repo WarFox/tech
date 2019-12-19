@@ -1,0 +1,10 @@
+{{ $file := .Get 0 }}
+{{ $title := .Get 1 }}
+{{ $alt := .Get 2 }}
+
+<figure>
+    <figcaption>
+        <h4>{{ $title }} </h4>
+    </figcaption>
+    <img src="/images/{{ $file }}" title="{{ $title }}" alt="{{ $alt }}" />
+</figure>
