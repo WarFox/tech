@@ -1,0 +1,49 @@
+#+title: Emacs to Query Athena
+#+date: 2019-03-28T01:58:23Z
+#+categories[]:
+#+tags[]:
+#+keywords[]:
+#+draft: true
+
+
+#+begin_src clojure
+  (defun my/setup-ejc-connections ()
+    (interactive)
+
+    (use-package ejc-sql
+      :commands (ejc-create-connection ejc-connect ejc-set-column-width-limit)
+      :init
+      (setq ejc-set-rows-limit 1000
+            ;; ejc-result-table-impl  'ejc-result-mode
+            ejc-result-table-impl  'orgtbl-mode
+            ejc-use-flx t
+            ejc-flx-threshold 3
+            nrepl-sync-request-timeout 30)
+      (ejc-set-column-width-limit 72)); length of uuid
+
+    (add-hook 'ejc-sql-minor-mode-hook
+              (lambda ()
+                (auto-complete-mode t)
+                (ejc-ac-setup)))
+
+    (message "setup-ejc-connections")
+
+    (plist-put ejc-jdbc-drivers "awsathena" [com.simba.athena/athena-jdbc "2.0.9"])
+    (ejc-create-connection
+     "athena-prod"
+     :dbtype "awsathena"
+     :classpath "~/.m2/repository/com/simba/athena/athena-jdbc/2.0.9/athena-jdbc-2.0.9.jar"
+     :classname "com.simba.athena.jdbc.Driver"
+     ;; :connection-uri (concat "jdbc:awsathena://athena.eu-west-1.amazonaws.com:443/my_database;"
+     ;;                         "User=" (getenv "AWS_ACCESS_KEY_ID") ";"
+     ;;                         "Password=" (getenv "AWS_SECRET_ACCESS_KEY") ";"
+     ;;                         "S3OutputLocation=" "s3://my-athena-bucket/"))
+     :subprotocol "awsathena"
+     :subname "//athena.eu-west-1.amazonaws.com:443/my_database;S3OutputLocation=s3://my-athena-bucket/"
+     :user (getenv "AWS_ACCESS_KEY_ID")
+     :password (getenv "AWS_SECRET_ACCESS_KEY"))
+
+  ;; :AwsCredentialsProviderClass "com.amazonaws.auth.EnvironmentVariableCredentialsProvider")
+
+  (message "ejc-connections setup"))
+#+end_src

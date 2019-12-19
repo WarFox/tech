@@ -1,0 +1,6 @@
+{{ $file := .Get 0 | readFile }}
+{{ $lang := .Get 1 }}
+{{ $title := .Get 2 }}
+
+<span class="title">{{ $title }}</span>
+{{ (print "```" $lang "\n" $file "\n```") | markdownify }}

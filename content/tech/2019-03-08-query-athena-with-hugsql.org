@@ -1,0 +1,59 @@
+---
+title: "Query Athena with HugSQL"
+date: 2019-03-08T01:44:13Z
+draft: true
+---
+
+;; based on https://s3.amazonaws.com/athena-downloads/drivers/JDBC/SimbaAthenaJDBC_2.0.7/docs/Simba+Athena+JDBC+Driver+Install+and+Configuration+Guide.pdf
+
+** Athena JDBC with hugsql
+
+Athena provides a JDBC driver
+
+** dbhost
+
+   #+begin_src  clojure
+     (def athena-db {:dbtype (:database-type  aws-athena-config)
+                     :host "athena.amazonaws.com"
+                     :port 443
+                     :dbname (:aws-athena-database aws-athena-config)
+                     :classname (:athena-jdbc-driver aws-athena-config)
+                     :AwsCredentialsProviderClass "com.amazonaws.auth.EnvironmentVariableCredentialsProvider"
+                     :AWSRegion (:aws-athena-region aws-athena-config)
+                     :S3OutputLocation (:aws-athena-output-bucket aws-athena-config)
+                     :LogLevel 3})
+   #+end_src
+
+** subprotocol
+   #+begin_src  clojure
+
+     (def athena-db {:dbtype (:database-type  aws-athena-config)
+                     :subprotocol (:database-type aws-athena-config)
+                     ;; athena.eu-west-1.amazonaws.com:443/dwh_production
+                     :subname (str "//athena." (:aws-athena-region aws-athena-config) ".amazonaws.com" ":" 443  "/dwh_production;")
+                     :classname (:athena-jdbc-driver aws-athena-config)
+                     :AwsCredentialsProviderClass "com.amazonaws.auth.EnvironmentVariableCredentialsProvider"
+                     ;; :user (:database-user aws-athena-config)
+                     ;; :password (:database-password aws-athena-config)
+                     ;; :region (:aws-athena-region aws-athena-config)
+                     :S3OutputLocation (:aws-athena-output-bucket aws-athena-config)
+                     :LogLevel 4})
+
+;; athena-host (str "athena." aws-region ".amazonaws.com")
+;; athena-uri (str "jdbc:awsathena://" athena-host ":" athena-port)
+   #+end_src
+
+
+* config
+
+  #+begin_src
+           :aws-athena {:database-type                  "awsathena"
+                        :database-host                  "athena.amazonaws.com"
+                        :database-name                  #or [#env AWS_ATHENA_DATABASE "uat-events-raw"]
+                        :athena-region                  #or [#env AWS_ATHENA_REGION "eu-west-1"]
+                        :athena-output-bucket           #or [#env AWS_ATHENA_OUTPUT_BUCKET "s3://my-athena-bucket-eu-west-1/"]
+                        :athena-query-timeout-seconds   #or [#env AWS_ATHENA_QUERY_TIMEOUT_SECONDS "120"]
+                        :aws-credentials-provider-class "com.amazonaws.auth.EnvironmentVariableCredentialsProvider"
+                        :athena-jdbc-driver             "com.simba.athena.jdbc.Driver"
+                        :athena-workgroup               #env ATHENA_WORKGROUP}}
+  #+end_src
