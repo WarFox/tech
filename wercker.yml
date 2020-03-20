@@ -1,26 +1,34 @@
-box: node:8.9.4-stretch
+box: debian
 
 build:
   steps:
-    - npm-install
+    - script:
+        name: install git
+        code: |
+          apt-get update
+          apt-get install git -y
+
+    - add-ssh-key:
+        keyname: KEY_NAME
+        host: github.com
+
+    - add-to-known_hosts:
+        hostname: github.com
+        fingerprint: 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48
 
     - script:
-        name: echo nodejs information
+        name: initialize git submodules
         code: |
-          echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"
+          git submodule update --init --recursive
+
+    - arjen/hugo-build:
+        version: "0.67.1"
+        theme: tailwind-journal
+        flags: --buildDrafts=true
+
     - script:
-        name: Install Hexo
-        code: |
-          npm install -g hexo-cli
-    - script:
-        name: Rebuild node-sass
-        code: |
-          npm rebuild node-sass
-    - script:
-        name: Generate static files
-        code: |
-          hexo generate
+        name: List public
+        code: ls -la public/
 
 deploy:
   steps:
