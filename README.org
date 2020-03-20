@@ -1,5 +1,4 @@
-
-[![wercker status](https://app.wercker.com/status/ee0e7a323acb18b5721d7158483e57cb/m "wercker status")](https://app.wercker.com/project/bykey/ee0e7a323acb18b5721d7158483e57cb)
+[[https://circleci.com/gh/WarFox/tech/tree/master][https://circleci.com/gh/WarFox/tech/tree/master.svg?style=svg&circle-token=efa63588546573f52b02bfa6924604b023d44cb0]]
 
 * My Blog
 
