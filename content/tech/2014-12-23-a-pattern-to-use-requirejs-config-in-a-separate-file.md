@@ -27,16 +27,12 @@ Here we have defined the paths for all the common dependencies.
 
 Now let us use it in two different places.
 
-{{< include_code "/static/code/js/requirejs-common-config/home/main.js" "js" "main.js for home app" >}}
+{{< include_code "/static/code/js/requirejs-common-config/home/main.js" "js" "1. main.js for home app" >}}
 
-{{< include_code "/static/code/js/requirejs-common-config/dashboard/main.js" "js" "main.js for dashboard app" >}}
+{{< include_code "/static/code/js/requirejs-common-config/dashboard/main.js" "js" "2. main.js for dashboard app" >}}
 
 The file-layout here is like the following.
 
 {{< img  "requirejs-common-config/file-layout.png" "Requirejs common config file layout" "Requirejs common config file layout" >}}
-
-{{< figure src="/static/images/requirejs-common-config/file-layout.png" title="Steve Francia" >}}
-
-![Example image](/static/images/requirejs-common-config/file-layout.png)
 
 Hope it helps!
