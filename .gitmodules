@@ -1,0 +1,6 @@
+[submodule "themes/ananke"]
+	path = themes/ananke
+	url = git@github.com:budparr/gohugo-theme-ananke.git
+[submodule "themes/tailwind-journal"]
+	path = themes/tailwind-journal
+	url = git@github.com:ianrodrigues/hugo-tailwind-journal.git
