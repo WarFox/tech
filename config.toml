@@ -1,18 +1,20 @@
 baseURL = "http://deepumohan.com/"
 languageCode = "en-uk"
 title = "deepu mohan puthrote"
-theme= "ananke"
+theme= "tailwind-journal"
 
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
 Paginate = 10
-googleAnalytics = ""
-enableRobotsTXT = true
 
+enableRobotsTXT = true
 enableEmoji = true
 enableGitInfo = true
+pygmentsCodeFences = true
+pygmentsUseClasses = true
 
 disqusShortname = "warfox"
+googleAnalytics = "UA-XXXXXXXXX-X"
 
 [sitemap]
   changefreq = "monthly"
@@ -21,7 +23,10 @@ disqusShortname = "warfox"
 
 [params]
   favicon = ""
-  description = "Deepu Mohan Puthrote"
+  author = "Deepu Mohan Puthrote"
+  avatar = "https://s.gravatar.com/avatar/f66dfe536cc7c61f0808ace8567d15db?s=256"
+  description = "AWS Certified Solutions Architect and Software Engineer"
+  tagline = "AWS Certified Solutions Architect and Software Engineer"
   facebook = "https://fb.com/deepu.mohan.p/"
   twitter = "https://twitter.com/deepumohanp/"
   instagram = "https://instagram.com/deepu.mohan.p/"
@@ -50,6 +55,6 @@ disqusShortname = "warfox"
     lineNoStart = 1
     lineNos = false
     lineNumbersInTable = true
-    noClasses = true
+    noClasses = false
     style = "monokai"
-    tabWidth = 4
+    tabWidth = 2

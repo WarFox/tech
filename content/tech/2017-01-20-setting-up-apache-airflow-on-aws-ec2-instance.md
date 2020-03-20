@@ -13,27 +13,25 @@ AMI Version: amzn-ami-hvm-2016.09.1.20161221-x86_64-gp2 (ami-c51e3eb6)
 
 ## Install gcc, python-devel, and python-setuptools
 
-```
+``` sh
 sudo yum install gcc-c++ python-devel python-setuptools
 ```
 
 ## Upgrade pip
 
-```
+``` sh
 sudo pip install --upgrade pip
 ```
 
 ## Install airflow using pip
 
-```
+``` sh
 sudo /usr/local/bin/pip install airflow[s3, hive, python]
 ```
 
-<!-- more -->
-
 ## Create User and Group
 
-```
+``` sh
 sudo groupadd airflow
 sudo useradd airflow -g airflow
 sudo passwd -d airflow
@@ -43,14 +41,15 @@ This will create a password less user `airflow`
 
 ## Initialize Airflow
 
-```
+``` sh
 su airflow
 cd ~
 airflow initdb
 ```
 
 ## Test run
-```
+
+``` sh
 su airflow
 cd ~
 airflow webserver
@@ -68,13 +67,13 @@ This Amazon Linux AMI comes with Upstart `0.6.5`, which is very sad. So `setuid`
 
 You should be able to view `airflow-webserver` in `initctl list`
 
-```
+``` sh
 sudo initctl list
 ```
 
 ## Start Airflow with upstart
 
-```
+``` sh
 sudo initctl start airflow-webserver
 ```
 
