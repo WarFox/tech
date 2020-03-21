@@ -1,12 +1,30 @@
 version: 2.1
 
 orbs:
+  aws-s3: circleci/aws-s3@1.0.15
   hugo: circleci/hugo@0.3.1
 
+jobs:
+  deploy:
+    docker:
+      - image: 'cimg/python:3.6'
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace/
+      - run: ls -lah /tmp/workspace/
+      - aws-s3/copy:
+          arguments: --recursive
+          from: /tmp/workspace/public/
+          to: 's3://deepumohan.com/tech2/'
+
 workflows:
-  build:
+  build_deploy:
     jobs:
       - hugo/build:
           html-proofer: true
           source: .
           version: '0.67.1'
+      - deploy:
+          context: org-context
+          requires:
+            - hugo/build

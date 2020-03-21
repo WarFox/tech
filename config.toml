@@ -1,4 +1,4 @@
-baseURL = "http://deepumohan.com/"
+baseURL = "http://deepumohan.com/tech2"
 languageCode = "en-uk"
 title = "deepu mohan puthrote"
 theme= "tailwind-journal"
@@ -12,6 +12,8 @@ enableEmoji = true
 enableGitInfo = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
+
+CanonifyURLs=true
 
 disqusShortname = "warfox"
 googleAnalytics = "UA-XXXXXXXXX-X"
