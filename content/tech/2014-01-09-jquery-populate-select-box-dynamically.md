@@ -8,10 +8,10 @@ tags:
  - jQuery
 ---
 
-In my previous [post](/tech/jquery-populate-selet-box-options-dynamically/), I had shown how
-to populate a select box dynamically using jQurey. Here is the same thing as
-jQuery plugin.
+In my previous [post](/tech/populate-select-box-options-dynamically/), I had
+shown how to populate a select box dynamically using jQurey. Here is the same
+thing as jQuery plugin.
 
-<iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/kNQ6s/0/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/kNQ6s/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 [http://jsfiddle.net/deepumohanp/kNQ6s/](http://jsfiddle.net/deepumohanp/kNQ6s/)

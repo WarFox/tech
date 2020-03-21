@@ -25,7 +25,7 @@ You may be already aware that, multiple keys can return same hash value. This is
 
 For example, the Strings "Aa" and "BB" have same hashCode in the default implementation.
 
-```
+``` java
 "Aa".hashCode() = 2112
 
 "BB".hashCode() = 2112
