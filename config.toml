@@ -51,10 +51,34 @@ googleAnalytics = "UA-XXXXXXXXX-X"
 [markup]
   [markup.highlight]
     codeFences = true
+    guessSyntax = false
     hl_Lines = ""
     lineNoStart = 1
     lineNos = false
     lineNumbersInTable = true
     noClasses = false
     style = "monokai"
-    tabWidth = 2
+    tabWidth = 4
+
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = false
+      xHTML = false
+
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 1

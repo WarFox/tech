@@ -57,14 +57,14 @@ IMPORTANT: Make sure there is enough space in /mnt/docker-data
 
 After editing docker service definition for systemd we need to releoad systemd daemon and restart docker, for the new settings to take effect.
 
-```
+``` sh
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
 If you check `sudo docker info`, Storage Driver should be `overlay` and Docker Root Dir should be `/mnt/docker-data`
 
-{% img /downloads/images/hdp-docker-image/docker-info.png 400 500 "Docker info "%}
+{{< img "hdp-docker-image/docker-info.png" "Docker info" >}}
 
 Now we have setup docker to work with Hortonworks Sandbox.
 
@@ -84,21 +84,21 @@ wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutoria
 
 ## Load the sandbox image ##
 
-```
+``` sh
 docker load -i HDP_2_6_1_docker_image_28_07_2017_14_42_40.tar
 ```
 
-![Docker load Hortonworks Sandbox image][3]
+![Docker load Hortonworks Sandbox image](/images/hdp-docker-image/docker-load-hdp-docker-image.png)
 
 This is a heavy task. Go get your coffee now because it will take some time to load the `docker` image.
 
 This step would fail if you did not increase the base device size.
 
-{% img /downloads/images/hdp-docker-image/no-space-left-on-device.png "No space left on the device" %}
+![No space left on the device](/images/hdp-docker-image/no-space-left-on-device.png)
 
 After it is loaded you should see `sandbox-hdp` in your `docker images` list.
 
-{% img img-responsive /downloads/images/hdp-docker-image/docker-images-sandbox-hdp.png "docker images - sandbox-hdp" %}
+![docker images - sandbox-hdp](/images/hdp-docker-image/docker-images-sandbox-hdp.png)
 
 ## Update /etc/hosts file ##
 
@@ -106,7 +106,6 @@ Add the following to `/etc/hosts`
 
 ```sh
 127.0.0.1   localhost   sandbox.hortonworks.com
-
 ```
 
 ## Run the Hortonworks Sandbox startup script ##
@@ -116,7 +115,7 @@ chmod +x ./start-sandbox-hdp.sh
 ./start-sandbox-hdp.sh
 ```
 
-{% img img-responsive /downloads/images/hdp-docker-image/start-sandbox-hdp-2-6-container.png 450 600 "Start Hortonworks Data Platform Sandbox" %}
+{{< img_with_size "/hdp-docker-image/start-sandbox-hdp-2-6-container.png" 450 600 "Start Hortonworks Data Platform Sandbox" >}}
 
 Again this will take some time
 
@@ -132,4 +131,4 @@ This Sandbox comes with a lot of components like Ambari, Ranger, Hive, Spark etc
 
 [1]: https://community.hortonworks.com/content/kbentry/65714/how-to-modify-the-default-docker-configuration-on.html
 [2]: https://hortonworks.com/tutorial/sandbox-deployment-and-install-guide/section/3/
-[3]: /tech/hortonworks-sandbox-mac-using-docker/
+[3]: /tech/setting-up-hortonworks-sandbox-on-mac-using-docker/

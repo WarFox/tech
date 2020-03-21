@@ -3,8 +3,8 @@
 {{ $alt := .Get 2 }}
 
 <figure>
-    <img src="/images/{{ $file }}" title="{{ $title }}" alt="{{ $alt }}" />
     <figcaption>
         <h4>{{ $title }} </h4>
     </figcaption>
+    <img src="/images/{{ $file }}" title="{{ $title }}" alt="{{ $alt }}" />
 </figure>

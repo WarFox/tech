@@ -8,7 +8,8 @@ tags:
  - jQuery
 ---
 
-Here is an example code to populate select box options dynamically using [jQuery](http://jquery.com/)
+Here is an example code to populate select box options dynamically using
+[jQuery](http://jquery.com/)
 
 <iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/8EQjY/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 

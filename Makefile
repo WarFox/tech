@@ -3,3 +3,9 @@ server-dev:
 
 server:
 	hugo server
+
+build:
+	hugo
+
+build-drafts:
+	hugo --buldDrafts=true
