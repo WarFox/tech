@@ -1,4 +1,4 @@
-baseURL = "http://deepumohan.com/tech2"
+baseURL = "http://deepumohan.com/tech"
 languageCode = "en-uk"
 title = "deepu mohan puthrote"
 theme= "tailwind-journal"
@@ -13,6 +13,7 @@ enableGitInfo = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
+RelativeURLs=true
 CanonifyURLs=true
 
 disqusShortname = "warfox"
@@ -47,8 +48,8 @@ googleAnalytics = "UA-XXXXXXXXX-X"
   tag = "tags"
 
 [permalinks]
-  tech  = ":section/:title"
-  drafts  = ":section/:title"
+  posts = ":section/:slug"
+  drafts = ":section/:slug"
 
 [markup]
   [markup.highlight]

@@ -35,9 +35,9 @@ Before proceeding check your phone lock status by dialing *#7465625#. The
 Network Lock should be [ON] now.
 
 First you need [to root your galaxy
-ace](/tech/how-to-root-your-samsung-galaxy-ace). [Procedure for rooting the
-android](/tech/how-to-root-your-samsung-galaxy-ace) device can be found in my
-previous [post](/tech/how-to-root-your-samsung-galaxy-ace).
+ace](/posts/how-to-root-your-samsung-galaxy-ace). [Procedure for rooting the
+android](/posts/how-to-root-your-samsung-galaxy-ace) device can be found in my
+previous [post](/posts/how-to-root-your-samsung-galaxy-ace).
 
 Secondly, you MUST install [BusyBox](http://goo.gl/JOPF8). Otherwise unlock
 codes wont be visible. *Thanks much to Asok and Ratty (commenters) for notifying

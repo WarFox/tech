@@ -1,12 +1,12 @@
 package com.deepumohan.tech.chartostring;
 
 public class CharToString {
-    
+
     public static void main(String[] args) {
         char x = 'x';
-        
+
         // Although this method seems very simple, this is less efficient because the concatenation
-        // expands to new StringBuilder().append(x).append("").toString();                
+        // expands to new StringBuilder().append(x).append("").toString();
         String concatBlankString = 'x' + "";
 
         // use String.valueOf(char) static method
@@ -43,5 +43,5 @@ public class CharToString {
         */
 
     }
-        
+
 }

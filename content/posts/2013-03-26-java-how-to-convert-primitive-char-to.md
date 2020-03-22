@@ -1,18 +1,23 @@
 ---
 layout: post
-title: "How to convert primitive char to String in Java"
+title: How to convert primitive char to String in Java
 date: 2013-03-26T14:35:00+05:30
 categories: Java
 ---
-`char` is 16 bit unsigned data type in Java, which is used to store characters and `String` value is an immutable array of `char`. In Java we cannot cast a primitive `char` element to `String`.
+
+`char` is 16 bit unsigned data type in Java, which is used to store characters
+and `String` value is an immutable array of `char`. In Java we cannot cast a
+primitive `char` element to `String`.
 
 ## tl;dr
 * Use `String.valueOf(char)`
 
 ## 6 Ways to do it
-Below I have given <strike>five</strike> 6 methods to convert a `char` to `String`. Also I have included common mistakes that gives compile time errors.
 
-{% include_code java/com/deepumohan/tech/chartostring/CharToString.java %}
+Below I have given <strike>five</strike> 6 methods to convert a `char` to
+`String`. Also I have included common mistakes that gives compile time errors.
+
+{{< include_code lang="java" file="java/com/deepumohan/tech/chartostring/CharToString.java" >}}
 
 ### EDIT: September 07 2015
 
@@ -112,8 +117,9 @@ String(char[] value, boolean share) {
 
 ```
 
-To summarise when you use `String.valueOf` or `Charactor.toString` methods, the constructor `public String(char value[])` is being invoked.
-You may as well call it directly and reduce one hop.
+To summarise when you use `String.valueOf` or `Charactor.toString` methods, the
+constructor `public String(char value[])` is being invoked. You may as well call
+it directly and reduce one hop.
 
 ## Most Efficient Method
 
@@ -144,9 +150,11 @@ is equivalent to:
      String str = new String(data);
 ```
 
-<strike>I wonder why Java doesn't include `String` constructor that accept a single <code>char</code> as argument.</strike>
+<strike>I wonder why Java doesn't include `String` constructor that accept a
+single `char` as argument.</strike>
 
-Java does'nt include `String` constructor that accepts a single `char`, because there already is a constructor that accepts a `char[]`.
+Java does'nt include `String` constructor that accepts a single `char`, because
+there already is a constructor that accepts a `char[]`.
 
 ## Also see
 * [How to convert Char to String in Java with Example][1]

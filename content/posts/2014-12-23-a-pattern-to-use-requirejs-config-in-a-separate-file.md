@@ -21,15 +21,15 @@ Here is an examlpe on how I use `requirejs.config` method for minimising repeata
 
 First let us define the reusable configuration file. Lets name it `rconfig.js`.
 
-{{< include_code "/static/code/js/requirejs-common-config/common/rconfig.js" "js" >}}
+{{< include_code "js/requirejs-common-config/common/rconfig.js" "js" >}}
 
 Here we have defined the paths for all the common dependencies.
 
 Now let us use it in two different places.
 
-{{< include_code "/static/code/js/requirejs-common-config/home/main.js" "js" "1. main.js for home app" >}}
+{{< include_code "js/requirejs-common-config/home/main.js" "js" "1. main.js for home app" >}}
 
-{{< include_code "/static/code/js/requirejs-common-config/dashboard/main.js" "js" "2. main.js for dashboard app" >}}
+{{< include_code "js/requirejs-common-config/dashboard/main.js" "js" "2. main.js for dashboard app" >}}
 
 The file-layout here is like the following.
 

@@ -7,11 +7,13 @@ tags:
  - java
 ---
 
-Converting a Java array into `Set` or `List` is a very common requirement in most Java projects. Java collections frameworks supports this in the following way.
+Converting a Java array into `Set` or `List` is a very common requirement in
+most Java projects. Java collections frameworks supports this in the following
+way.
 
 ## Required Imports
 
-```java
+``` java
 import java.util.List;
 import java.util.Set;
 import java.util.Arrays;
@@ -19,13 +21,13 @@ import java.util.Arrays;
 
 ## Convert Array to List
 
-```java
+``` java
 List newList = Arrays.asList(yourArray);
 ```
 
-
 ## Convert Array to Set
-```java
+
+``` java
 Set<T> newSet = new HashSet<T>(Arrays.asList(yourArray));
 ```
 <em>Note the use of generics</em>

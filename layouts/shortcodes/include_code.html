@@ -1,6 +1,33 @@
-{{ $file := .Get 0 | readFile }}
-{{ $lang := .Get 1 }}
-{{ $title := .Get 2 }}
+{{ if .IsNamedParams }}
 
-<span class="title">{{ $title }}</span>
-{{ (print "```" $lang "\n" $file "\n```") | markdownify }}
+    {{ $fileName := .Get "file" }}
+    {{ $fileContent := $fileName | printf "%s/%s" "/static/code/" | readFile }}
+    {{ $lang := .Get "lang" }}
+    {{ $fileSlug := index (last 1 (split $fileName "/")) 0  }}
+
+    <div class="container mx-auto">
+      {{if isset .Params "title" }}
+        {{ with .Get "title" }}
+        <h4 style="margin-left: -3rem; margin-bottom: -1rem;">{{.}}</h4>
+        {{ end }}
+      {{ else }}
+        <h4 style="margin-left: -3rem; margin-bottom: -1rem;">{{ $fileSlug }}</h4>
+      {{ end}}
+
+      {{ (print "```" $lang "\n" $fileContent "\n```") | markdownify }}
+    </div>
+
+{{ else }}
+
+    {{ $fileName := .Get 0 }}
+    {{ $fileContent := $fileName | printf "%s/%s" "/static/code/" | readFile }}
+    {{ $lang := .Get 1 }}
+
+    <div class="container mx-auto">
+        {{ with .Get 2 }}
+          <h4 style="margin-left: -3rem; margin-bottom: -1rem;">{{.}}</h4>
+        {{ end }}
+        {{ (print "```" $lang "\n" $fileContent "\n```") | markdownify }}
+    </div>
+
+{{ end }}

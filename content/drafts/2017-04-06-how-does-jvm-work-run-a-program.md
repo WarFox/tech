@@ -15,4 +15,4 @@ draft: true
 *
 * Why java uses stack and heap?
 
-Users/WarFox/Workspace/Personal/tech/source/_drafts/2017-04-06-how-does-jvm-work-run-a-program.md
+Users/WarFox/Workspace/Personal/posts/source/_drafts/2017-04-06-how-does-jvm-work-run-a-program.md

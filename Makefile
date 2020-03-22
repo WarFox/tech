@@ -1,11 +1,17 @@
-server-dev:
-	hugo server -D
-
-server:
-	hugo server
+.PHONY := build
+.DEFAULT_GOAL := build
 
 build:
 	hugo
 
 build-drafts:
-	hugo --buldDrafts=true
+	hugo --buildDrafts=true
+
+clean:
+	rm -rf public
+
+server-dev:
+	hugo server -D
+
+server:
+	hugo server

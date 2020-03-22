@@ -38,6 +38,6 @@ _gaq.push(['_trackPageview', '/downloads/DDMMYYYY']);"> here</a>. You can safely
 download it, it is hosted in safe server of&nbsp;<a
 href="http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=deepumohanp">HostGator</a>.
 
-In the [next post](/tech/windows-batch-script-to-create-directory-auto-file-name-ddmonyyyy-with-the-help-of-javascript/) I will post the batch script for creating directory names with <b>DDMONYYYY</b> format. It will be pretty advanced which uses temporary javascipt and batch file. See the post [here](/tech/windows-batch-script-to-create-directory-auto-file-name-ddmonyyyy-with-the-help-of-javascript/).
+In the [next post](/posts/windows-batch-script-to-create-directory-auto-file-name-ddmonyyyy-with-the-help-of-javascript/) I will post the batch script for creating directory names with <b>DDMONYYYY</b> format. It will be pretty advanced which uses temporary javascipt and batch file. See the post [here](/posts/windows-batch-script-to-create-directory-auto-file-name-ddmonyyyy-with-the-help-of-javascript/).
 
 For those who are new to windows batch files, visit&nbsp;<a href="http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/batch.mspx?mfr=true">this site</a>&nbsp;by&nbsp;<a href="http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/batch.mspx?mfr=true">Microsoft</a>.
