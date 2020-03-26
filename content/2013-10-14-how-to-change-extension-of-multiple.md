@@ -3,10 +3,11 @@ layout: post
 title: "How to change extension of multiple files (bash script)"
 date: 2013-10-14T17:17:00+05:30
 ---
+
 The following is the script I use in Macbook (Mountain Lion). It should work on most /*nix shell like `bash`, `csh`, `ksh` etc.
 However, I have tested it only in `bash`.
 
-{% include_code Script to change extension for multiple files lang:bash bash/chext %}
+{{< include_code file="bash/chext" title="Script to change extension for multiple files" lang="bash" >}}
 
 Save this file as "chext", make it executable `chmod +x chext` and add to your `$PATH`.
 

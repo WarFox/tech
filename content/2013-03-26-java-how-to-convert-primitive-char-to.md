@@ -17,7 +17,7 @@ primitive `char` element to `String`.
 Below I have given <strike>five</strike> 6 methods to convert a `char` to
 `String`. Also I have included common mistakes that gives compile time errors.
 
-{{< include_code lang="java" file="java/com/deepumohan/tech/chartostring/CharToString.java" >}}
+{{< include_code "java/com/deepumohan/tech/chartostring/CharToString.java" >}}
 
 ### EDIT: September 07 2015
 

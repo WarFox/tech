@@ -16,4 +16,4 @@ Peace of mind.
 
 Here is a bonus video of how it is done.
 
-<iframe width="560" height="315" src="http://www.youtube.com/embed/GP5ZIGU6ufo" frameborder="0" allowfullscreen></iframe>
+{{< youtube GP5ZIGU6ufo >}}

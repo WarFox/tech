@@ -63,7 +63,7 @@ Now let's use upstart to manage Airflow process and respawning
 
 This Amazon Linux AMI comes with Upstart `0.6.5`, which is very sad. So `setuid` and `setgid` doesnot work.
 
-{% include_code /etc/init/airflow-webserver.conf etc/init/airflow-webserver.conf %}
+{{< include_code file="/etc/init/airflow-webserver.conf" lang="SYSTEMD" >}}
 
 You should be able to view `airflow-webserver` in `initctl list`
 
@@ -81,7 +81,7 @@ You can find the process id at `/home/airflow/airflow/airflow-webserver.pid`
 
 ## Upstart Config for Airflow Scheduler
 
-{% include_code /etc/init/airflow-scheduler.conf etc/init/airflow-scheduler.conf %}
+{{< include_code file="/etc/init/airflow-scheduler.conf" lang="SYSTEMD" >}}
 
 ## Start Airflow Scheduler with upstart
 

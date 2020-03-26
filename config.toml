@@ -47,7 +47,7 @@ googleAnalytics = "UA-XXXXXXXXX-X"
   tag = "tags"
 
 [permalinks]
-  posts = ":section/:slug"
+  "" = ":section/:slug"
   drafts = ":section/:slug"
 
 [markup]
