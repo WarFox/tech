@@ -13,9 +13,9 @@ jobs:
           at: /tmp/workspace/
       - run: ls -lah /tmp/workspace/
       - aws-s3/copy:
-          arguments: --recursive --dryrun
+          arguments: --recursive
           from: /tmp/workspace/public/
-          to: 's3://deepumohan.com/tech/'
+          to: 's3://deepumohan.com/tech2/'
 
 workflows:
   build_deploy:
