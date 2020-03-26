@@ -7,7 +7,12 @@ tags:
 - elisp
 ---
 
-Today, I was going through my draft files on this blog and many of them where **.html** files exported from Blogger (where I previously hosted this blog). And I wanted to change them to `markdown` files with **.md** extension. I could obviously use my [script to change extension of multiple files](https://deepumohan.com/posts/how-to-change-extension-of-multiple/), but I thought, there should be a way to do this within emacs.
+Today, I was going through my draft files on this blog and many of them where
+**.html** files exported from Blogger (where I previously hosted this blog). And
+I wanted to change them to `markdown` files with **.md** extension. I could
+obviously use my [script to change extension of multiple
+files](/how-to-change-extension-of-multiple/), but I thought, there should be a
+way to do this within emacs.
 
 So I took a deep dive into Emacs documentation and the end result was this function:
 
@@ -26,9 +31,12 @@ So I took a deep dive into Emacs documentation and the end result was this funct
         (message (concat "File renamed to " new-file-name))))
 ```
 
-The above function will ask the user for the new extension, and then rename the file, buffer and also set the visited file name to the filename with new extension.
+The above function will ask the user for the new extension, and then rename the
+file, buffer and also set the visited file name to the filename with new
+extension.
 
-And on my [Spacemacs](http://spacemacs.org), I added this key-binding to that function. "o" is reserved for user defined functions in Spacemacs.
+And on my [Spacemacs](http://spacemacs.org), I added this key-binding to that
+function. "o" is reserved for user defined functions in Spacemacs.
 
 ```
   (spacemacs/set-leader-keys "ofrx" 'my/change-file-extension)

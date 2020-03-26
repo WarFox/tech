@@ -131,4 +131,4 @@ This Sandbox comes with a lot of components like Ambari, Ranger, Hive, Spark etc
 
 [1]: https://community.hortonworks.com/content/kbentry/65714/how-to-modify-the-default-docker-configuration-on.html
 [2]: https://hortonworks.com/tutorial/sandbox-deployment-and-install-guide/section/3/
-[3]: /posts/setting-up-hortonworks-sandbox-on-mac-using-docker/
+[3]: /setting-up-hortonworks-sandbox-on-mac-using-docker/

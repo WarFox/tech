@@ -8,7 +8,7 @@ tags:
  - jQuery
 ---
 
-In my previous [post](/posts/populate-select-box-options-dynamically/), I had
+In my previous [post](/populate-select-box-options-dynamically/), I had
 shown how to populate a select box dynamically using jQurey. Here is the same
 thing as jQuery plugin.
 
