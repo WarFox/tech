@@ -13,7 +13,6 @@ enableGitInfo = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
-RelativeURLs=true
 CanonifyURLs=true
 
 disqusShortname = "warfox"
