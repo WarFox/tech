@@ -15,7 +15,7 @@ pygmentsUseClasses = true
 
 CanonifyURLs=true
 
-disqusShortname = "warfox"
+disqusShortname = "warfox-tech"
 
 [sitemap]
   changefreq = "monthly"
