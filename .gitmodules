@@ -1,0 +1,3 @@
+[submodule "themes/tailwind-journal"]
+	path = themes/tailwind-journal
+	url = git@github.com:ianrodrigues/hugo-tailwind-journal.git

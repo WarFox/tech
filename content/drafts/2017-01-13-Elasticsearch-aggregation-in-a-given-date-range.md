@@ -1,3 +1,12 @@
+---
+title: Elasticsearch aggregation in a given date range
+date: 2017-01-13 10:51:11
+tags:
+draft: true
+---
+
+
+```
 {
     "size": 1,
     "query": {
@@ -22,3 +31,5 @@
         }
     }
 }
+
+```

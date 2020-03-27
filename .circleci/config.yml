@@ -1,0 +1,46 @@
+version: 2.1
+
+orbs:
+  aws-s3: circleci/aws-s3@1.0.15
+  hugo: circleci/hugo@0.3.1
+
+jobs:
+  deploy:
+    parameters:
+      arguments:
+        type: string
+        default: --recursive --dryrun
+    docker:
+      - image: 'cimg/python:3.6'
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace/
+      - run: ls -lah /tmp/workspace/
+      - aws-s3/copy:
+          arguments: <<parameters.arguments>>
+          from: /tmp/workspace/public/
+          to: 's3://deepumohan.com/tech/'
+
+workflows:
+  build_deploy:
+    jobs:
+      - hugo/build:
+          html-proofer: true
+          source: .
+          version: '0.67.1'
+      - deploy: # dryrun for non-master branches
+          context: org-context
+          arguments: --recursive --dryrun
+          requires:
+            - hugo/build
+          filters:
+            branches:
+              ignore: master
+      - deploy: # deploy on master branch
+          context: org-context
+          arguments: --recursive
+          requires:
+            - hugo/build
+          filters:
+            branches:
+              only: master

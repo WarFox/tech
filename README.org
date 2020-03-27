@@ -1,0 +1,11 @@
+[[https://circleci.com/gh/WarFox/tech/tree/master][https://circleci.com/gh/WarFox/tech/tree/master.svg?style=svg&circle-token=efa63588546573f52b02bfa6924604b023d44cb0]]
+
+* My Blog
+
+Started as a [[https://tech.deepumohan.com/][blog]] in [[https://blogger.com/][blogger]], moved to [[https://hexo.io/][hexo]] hosted in AWS S3.
+
+Now built using to [[https://gohugo.io/][hugo]], because it's fast and supports [[https://orgmode.org/][org-mode]].
+
+Works on [[https://hugo.io][Hugo]] and [[https://orgmode.org/][org-mode]]
+
+Theme https://github.com/ianrodrigues/hugo-tailwind-journal

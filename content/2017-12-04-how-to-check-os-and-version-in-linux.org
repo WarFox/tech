@@ -1,0 +1,126 @@
+#+title: How to check OS and version in Linux
+#+date: 2017-12-04 14:19:55
+#+tags[]: linux DevOps
+
+From time to time you end up in a machine running somewhere in the cloud and
+wonder what OS is running there. You know it's a flavour of Linux, but you don't
+know which one. Worry not my friend, this post will help you.
+
+** Kernel Version
+
+If you want kernel version information, use [[https://linux.die.net/man/1/uname][uname(1)]].
+
+#+NAME: On Ubuntu
+#+begin_src sh
+$ uname -a
+Linux localhost 4.4.0-101-generic #124-Ubuntu SMP Fri Nov 10 18:29:59 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+#+end_src
+
+
+#+name: On Fedora
+#+begin_src sh
+$ uname -a
+Linux 10.0.2.15 4.13.15-300.fc27.x86_64 #1 SMP Tue Nov 21 21:10:22 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+#+end_src
+
+** Distribution Information
+
+Information about the distribution varies depending on the distribution. If your
+distribution supports [[https://en.wikipedia.org/wiki/Linux_Standard_Base][Linux Standard Base]], then we can find that information
+using ~lsb_release~. It can also be found from =*-release= files in =/etc/=
+directory.
+
+#+name: Ubuntu
+#+begin_src sh
+  $ lsb_release -a
+  No LSB modules are available.
+  Distributor ID:	Ubuntu
+  Description:	Ubuntu 16.04.3 LTS
+  Release:	16.04
+  Codename:	xenial
+#+end_src
+
+On Fedora you may need to install =lsb_release=.
+
+#+name: Ubuntu
+#+begin_src sh
+  $ sudo yum install lsb_release -a
+  $ lsb_release -a
+  LSB Version:	:core-4.1-amd64:core-4.1-noarch:cxx-4.1-amd64:cxx-4.1-noarch:desktop-4.1-amd64:desktop-4.1-noarch:languages-4.1-amd64:languages-4.1-noarch:printing-4.1-amd64:printing-4.1-noarch
+  Distributor ID:	Fedora
+  Description:	Fedora release 27 (Twenty Seven)
+  Release:	27
+  Codename:	TwentySeven
+#+end_src
+
+** Release files
+
+Ubuntu has two release files =/etc/lsb-release= and =/etc/os-release=
+
+#+name: Ubuntu
+#+begin_src sh
+$ cat /etc/*-release
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.3 LTS"
+NAME="Ubuntu"
+VERSION="16.04.3 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.3 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+#+end_src
+
+Fedoro has =/etc/fedora-release=,  =/etc/os-release=,  =/etc/redhat-release=,  =/etc/system-release=
+
+#+name: Fedora
+#+begin_src sh
+  $ cat /etc/*-release
+   sudo cat /etc/*release
+  Fedora release 27 (Twenty Seven)
+  NAME=Fedora
+  VERSION="27 (Cloud Edition)"
+  ID=fedora
+  VERSION_ID=27
+  PRETTY_NAME="Fedora 27 (Cloud Edition)"
+  ANSI_COLOR="0;34"
+  CPE_NAME="cpe:/o:fedoraproject:fedora:27"
+  HOME_URL="https://fedoraproject.org/"
+  SUPPORT_URL="https://fedoraproject.org/wiki/Communicating_and_getting_help"
+  BUG_REPORT_URL="https://bugzilla.redhat.com/"
+  REDHAT_BUGZILLA_PRODUCT="Fedora"
+  REDHAT_BUGZILLA_PRODUCT_VERSION=27
+  REDHAT_SUPPORT_PRODUCT="Fedora"
+  REDHAT_SUPPORT_PRODUCT_VERSION=27
+  PRIVACY_POLICY_URL="https://fedoraproject.org/wiki/Legal:PrivacyPolicy"
+  VARIANT="Cloud Edition"
+  VARIANT_ID=cloud
+  Fedora release 27 (Twenty Seven)
+  Fedora release 27 (Twenty Seven)
+#+end_src
+
+** Some extra places to look into for Ubuntu
+
+#+name: Ubuntu
+#+begin_src sh
+  $ cat /etc/issue.net
+  Ubuntu 16.04.3 LTS
+#+end_src
+
+#+name: Ubuntu
+#+begin_src sh
+  $ cat /etc/debian_version
+  stretch/sid
+#+end_src
+
+** References:
+- https://unix.stackexchange.com/questions/88644/how-to-check-os-and-version-using-a-linux-command
+- https://forums.fedoraforum.org/showthread.php?220885-lsb_release-don-t-exist
+- https://en.wikipedia.org/wiki/Linux_Standard_Base
+- https://linux.die.net/man/1/uname
