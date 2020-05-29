@@ -29,6 +29,7 @@ workflows:
           source: .
           version: '0.67.1'
       - deploy: # dryrun for non-master branches
+          name: dry-run
           context: org-context
           arguments: --recursive --dryrun
           requires:
