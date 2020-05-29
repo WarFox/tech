@@ -1,0 +1,77 @@
+---
+title: "Python stdin stderr logging"
+date: 2020-05-29T15:52:18+05:30
+---
+
+Logging in Python is quite straight forward, except for by the BasicConfig writes to =stderr= and not to =stdout=
+
+#+begin_src python
+  import logging
+
+  log_format = '%(name)s - %(levelname)s - %(message)s'
+  logging.basicConfig(format=log_format)
+  log = logging.getLogger(__name__)
+  log.warning('I print to stderr by default')
+  log.info('I print to stderr by default')
+  log.error('I print to stderr by default')
+#+end_src
+
+This can cause ~info~ logs to be written to =stderr= and in AWS Glue it ends up in the error logs.
+
+** Setup logs to stdout
+
+#+begin_src python
+  import logging
+  import sys
+
+  root = logging.getLogger()
+  root.setLevel(logging.DEBUG)
+
+  handler = logging.StreamHandler(sys.stdout)
+  handler.setLevel(logging.DEBUG)
+  log_format = '%(name)s - %(levelname)s - %(message)s'
+  formatter = logging.Formatter(log_format)
+  handler.setFormatter(formatter)
+  root.addHandler(handler)
+
+  log =logging.getLogger(__name__)
+  log.info("Writes to stderr by default')
+#+end_src
+
+** Using print()
+
+Clearly using =logging= is a but complicated for some usecases.
+
+=print()= in python writes to =stdout= by default. But we can make it write to =stderr=.
+
+#+begin_src python
+  #!/usr/bin/env python
+  import sys
+  print('this prints to stdout')
+  print("this prints to stderr", file=sys.stderr)
+#+end_src
+
+** AWS Glue Python Shell logs
+
+You can use print statements in your Glue Python Shell job for logging. Glue captures =stdout= and =stderr= by default.
+
+There is no need to setup a logger in Glue Python Shell job.
+
+** Redirecting stderr and stdout
+
+Most shells will show you =stdout= and =stderr= logs in the console. You can redirect error logs and stdout logs into different files.
+
+Use ~1>~ to redirect =stdout= and ~2>~ to redirect =stderr=.
+
+~>>~ can be used to append operation
+
+#+begin_src shell
+  myscript 2> /tmp/error.log 1> /tmp/out.log # overwrite
+  myscript 2>> /tmp/error.log 1>> /tmp/out.log # append
+#+end_src
+
+* References
+- https://stackoverflow.com/questions/5574702/how-to-print-to-stderr-in-python
+- https://docs.python.org/3.0/whatsnew/3.0.html
+- https://stackoverflow.com/questions/7901517/how-to-redirect-stderr-and-stdout-to-different-files-in-the-same-line-in-script
+- https://stackoverflow.com/questions/14058453/making-python-loggers-output-all-messages-to-stdout-in-addition-to-log-file
