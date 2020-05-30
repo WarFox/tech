@@ -27,7 +27,7 @@ workflows:
       - hugo/build:
           html-proofer: true
           source: .
-          version: '0.67.1'
+          version: '0.69.2'
       - deploy: # dryrun for non-master branches
           name: dry-run
           context: org-context
