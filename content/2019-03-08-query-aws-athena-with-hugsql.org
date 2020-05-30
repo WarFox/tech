@@ -1,59 +1,107 @@
----
-title: "Query Athena with HugSQL"
-date: 2019-03-08T01:44:13Z
-draft: true
----
+#+title: Querying AWS Athena with Clojure using HugSQL
+#+date: 2019-03-08T01:44:13Z
+#+categories[]:
+#+tags[]: clojure aws hugsql
+#+keywords[]: clojure aws hugsql
 
-;; based on https://s3.amazonaws.com/athena-downloads/drivers/JDBC/SimbaAthenaJDBC_2.0.7/docs/Simba+Athena+JDBC+Driver+Install+and+Configuration+Guide.pdf
+[[https://www.hugsql.org/][HugSQL]] is handsdown the best experience I've had with relational database
+frameworks.
 
-** Athena JDBC with hugsql
+I've used it with Postgres and AWS Athena. Getting started with HugSQL and
+postgres is simple as it is documented in https://hugsql.org.
 
-Athena provides a JDBC driver
+This blog is about HugSQL configuration to query Athena. Since you are here, I
+assume you already know HugSQL or you are using it.
 
-** dbhost
+** Athena JDBC my Simba
 
-   #+begin_src  clojure
-     (def athena-db {:dbtype (:database-type  aws-athena-config)
+AWS provides a JDBC driver for Athena. Note that this driver is working on top
+of http API's provided by AWS, so we don't have jdbc connection session that is
+open all the time. This has some limitations.
+
+You can read about Athena JDBC driver features in this link https://www.simba.com/drivers/athena-odbc-jdbc/
+
+You can find the jdbc driver documentation [[https://s3.amazonaws.com/athena-downloads/drivers/JDBC/SimbaAthenaJDBC_2.0.9/docs/Simba+Athena+JDBC+Driver+Install+and+Configuration+Guide.pdf][here]].
+
+Below are the two types of configurations that worked for me with hugsql version
+=[com.layerware/hugsql "0.5.1"]=
+
+** Install the drivers
+
+Install Athena JDBC Driver in your local repository
+
+Athena JDBC driver is not directly available from Maven central, although third party one's exist.
+
+The official jar can be downloaded and installed in your local maven repository with following.
+
+  #+begin_src shell
+    # Download official athena jdbc driver
+    wget https://s3.amazonaws.com/athena-downloads/drivers/JDBC/SimbaAthenaJDBC_2.0.9/AthenaJDBC42_2.0.9.jar
+
+    # Install in local maven repository
+    mvn install:install-file \
+    -Dfile=AthenaJDBC42_2.0.9.jar \
+    -DgroupId=com.simba.athena \
+    -DartifactId=athena-jdbc \
+    -Dversion=2.0.9 \
+    -Dpackaging=jar
+  #+end_src
+
+** Configuration
+
+*** Using dbhost
+
+   #+begin_src clojure
+     (def athena-db {:dbtype "awsathena"
                      :host "athena.amazonaws.com"
                      :port 443
-                     :dbname (:aws-athena-database aws-athena-config)
-                     :classname (:athena-jdbc-driver aws-athena-config)
+                     :dbname "my_database"
+                     :classname "com.simba.athena.jdbc.Driver"
                      :AwsCredentialsProviderClass "com.amazonaws.auth.EnvironmentVariableCredentialsProvider"
-                     :AWSRegion (:aws-athena-region aws-athena-config)
-                     :S3OutputLocation (:aws-athena-output-bucket aws-athena-config)
+                     :AWSRegion "eu-west-1"
+                     :S3OutputLocation "s3://athena-query-results-eu-west-1/"
                      :LogLevel 3})
    #+end_src
 
-** subprotocol
-   #+begin_src  clojure
+*** Using subprotocol
 
-     (def athena-db {:dbtype (:database-type  aws-athena-config)
-                     :subprotocol (:database-type aws-athena-config)
-                     ;; athena.eu-west-1.amazonaws.com:443/dwh_production
-                     :subname (str "//athena." (:aws-athena-region aws-athena-config) ".amazonaws.com" ":" 443  "/dwh_production;")
-                     :classname (:athena-jdbc-driver aws-athena-config)
+   #+begin_src clojure
+     (def athena-db {:dbtype "awsathena"
+                     :subprotocol "awsathena"
+                     :subname "//athena.eu-west-1.amazonaws.com:443/my_database;"
+                     :classname "com.simba.athena.jdbc.Driver"
                      :AwsCredentialsProviderClass "com.amazonaws.auth.EnvironmentVariableCredentialsProvider"
-                     ;; :user (:database-user aws-athena-config)
-                     ;; :password (:database-password aws-athena-config)
-                     ;; :region (:aws-athena-region aws-athena-config)
-                     :S3OutputLocation (:aws-athena-output-bucket aws-athena-config)
+                     :S3OutputLocation "s3://athena-query-results-eu-west-1/"
                      :LogLevel 4})
-
-;; athena-host (str "athena." aws-region ".amazonaws.com")
-;; athena-uri (str "jdbc:awsathena://" athena-host ":" athena-port)
    #+end_src
 
+This driver will look for credentials in the =AWS= credentials prodiver chain.
 
-* config
+In my case I have the credentials in environment variables, and I rotate them periodically.
 
-  #+begin_src
-           :aws-athena {:database-type                  "awsathena"
-                        :database-host                  "athena.amazonaws.com"
-                        :database-name                  #or [#env AWS_ATHENA_DATABASE "uat-events-raw"]
-                        :athena-region                  #or [#env AWS_ATHENA_REGION "eu-west-1"]
-                        :athena-output-bucket           #or [#env AWS_ATHENA_OUTPUT_BUCKET "s3://my-athena-bucket-eu-west-1/"]
-                        :athena-query-timeout-seconds   #or [#env AWS_ATHENA_QUERY_TIMEOUT_SECONDS "120"]
-                        :aws-credentials-provider-class "com.amazonaws.auth.EnvironmentVariableCredentialsProvider"
-                        :athena-jdbc-driver             "com.simba.athena.jdbc.Driver"
-                        :athena-workgroup               #env ATHENA_WORKGROUP}}
-  #+end_src
+** Running a query
+
+   #+name: myqueries.sql
+   #+begin_src sql
+     -- :name get-10-items-from-my-table
+     -- :doc Get 10 items for my_table
+     SELECT * FROM
+     my_database.my_table
+     LIMIT 10
+   #+end_src
+
+   #+begin_src clojure
+     (ns query-runner
+       (:require [clojure.string :as str]
+                 [hugsql.core :as hugsql]
+                 [clj-time.jdbc]))
+
+     (def map-of-db-fns (hugsql/map-of-db-fns "myqueries.sql"))
+
+     (when-some [query-fn (get-in map-of-db-fns [:get-10-items-from-my-table :fn])]
+       (query-fn athena-db))
+   #+end_src
+
+That should do!
+
+Let me know if this is useful in comments, thanks.
