@@ -1,49 +1,73 @@
-#+title: Emacs to Query Athena
+#+title: Query AWS Athena with Emacs using jdbc
 #+date: 2019-03-28T01:58:23Z
 #+categories[]:
-#+tags[]:
-#+keywords[]:
-#+draft: true
+#+tags[]: emacs clojure athena
+#+keywords[]: emacs clojure athena jdbc
 
+If you haven't checked out [[https://github.com/kostafey/ejc-sql][ejc-sql]], you should now.
 
-#+begin_src clojure
-  (defun my/setup-ejc-connections ()
-    (interactive)
+Official JDBC connection setup using jdbc drivers is available here -
+https://github.com/kostafey/ejc-sql#create-connections-manualy
 
+It has support for
+
+- MySQL
+- MariaDB
+- MS SQL Server
+- Oracle
+- H2
+- SQLite
+- PostgreSQL
+- Informix
+- Presto
+
+And also allows you to add custom jdbc drivers using =ejc-jdbc-drivers=
+
+#+begin_quote
+You can customize artifacts and their versions used as JDBC drivers for each
+database type in Leiningen format in ejc-jdbc-drivers custom variable.
+#+end_quote
+
+Here is how I setup it up
+
+#+begin_src emacs-lisp
+    ;; setup with use-package
     (use-package ejc-sql
-      :commands (ejc-create-connection ejc-connect ejc-set-column-width-limit)
+      :commands
+      (ejc-create-connection ejc-connect ejc-set-column-width-limit)
       :init
       (setq ejc-set-rows-limit 1000
-            ;; ejc-result-table-impl  'ejc-result-mode
-            ejc-result-table-impl  'orgtbl-mode
+            ejc-result-table-impl 'orgtbl-mode ;; 'ejc-result-mode
             ejc-use-flx t
             ejc-flx-threshold 3
             nrepl-sync-request-timeout 30)
-      (ejc-set-column-width-limit 72)); length of uuid
+      ;; enable auto complete
+      (add-hook 'ejc-sql-minor-mode-hook
+                (lambda ()
+                  (auto-complete-mode t)
+                  (ejc-ac-setup))))
 
-    (add-hook 'ejc-sql-minor-mode-hook
-              (lambda ()
-                (auto-complete-mode t)
-                (ejc-ac-setup)))
-
-    (message "setup-ejc-connections")
-
-    (plist-put ejc-jdbc-drivers "awsathena" [com.simba.athena/athena-jdbc "2.0.9"])
-    (ejc-create-connection
-     "athena-prod"
-     :dbtype "awsathena"
-     :classpath "~/.m2/repository/com/simba/athena/athena-jdbc/2.0.9/athena-jdbc-2.0.9.jar"
-     :classname "com.simba.athena.jdbc.Driver"
-     ;; :connection-uri (concat "jdbc:awsathena://athena.eu-west-1.amazonaws.com:443/my_database;"
-     ;;                         "User=" (getenv "AWS_ACCESS_KEY_ID") ";"
-     ;;                         "Password=" (getenv "AWS_SECRET_ACCESS_KEY") ";"
-     ;;                         "S3OutputLocation=" "s3://my-athena-bucket/"))
-     :subprotocol "awsathena"
-     :subname "//athena.eu-west-1.amazonaws.com:443/my_database;S3OutputLocation=s3://my-athena-bucket/"
-     :user (getenv "AWS_ACCESS_KEY_ID")
-     :password (getenv "AWS_SECRET_ACCESS_KEY"))
-
-  ;; :AwsCredentialsProviderClass "com.amazonaws.auth.EnvironmentVariableCredentialsProvider")
-
-  (message "ejc-connections setup"))
+    ;; custome interactive function to create connection
+    (defun my/setup-ejc-connections ()
+      (interactive)
+      (ejc-set-column-width-limit 72)
+      ;; add athena jdbc driver to the `ejc-jdbc-drivers`
+      (plist-put ejc-jdbc-drivers
+                "awsathena"
+                [com.simba.athena/athena-jdbc "2.0.9"])
+      (ejc-create-connection "athena-prod"
+                            :dbtype "awsathena"
+                            :classpath "~/.m2/repository/com/simba/athena/athena-jdbc/2.0.9/athena-jdbc-2.0.9.jar"
+                            :classname "com.simba.athena.jdbc.Driver"
+                            :subprotocol "awsathena"
+                            :subname "//athena.eu-west-1.amazonaws.com:443/my_database;S3OutputLocation=s3://my-athena-bucket/"
+                            :user (getenv "AWS_ACCESS_KEY_ID")
+                            :password (getenv "AWS_SECRET_ACCESS_KEY")))
+      ;; You can also use connectin-uri like below
+      ;; :connection-uri (concat "jdbc:awsathena://athena.eu-west-1.amazonaws.com:443/my_database;"
+      ;;                         "User=" (getenv "AWS_ACCESS_KEY_ID") ";"
+      ;;                         "Password=" (getenv "AWS_SECRET_ACCESS_KEY") ";"
+      ;;                         "S3OutputLocation=" "s3://my-athena-bucket/"))
 #+end_src
+
+I mostly use this in =org-mode= buffer so that I can analyse data and make notes about it.
