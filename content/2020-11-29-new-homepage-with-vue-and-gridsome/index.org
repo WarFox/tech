@@ -1,0 +1,39 @@
+#+title: New homepage with Vue and Gridsome
+#+date: 2020-11-29T05:13:31Z
+#+categories[]:
+#+tags[]:
+#+keywords[]: gridsome vue
+
+It's been so long after I've rewrote my homepage.
+
+This was written using plain html, custom css, bootstrap, fontawesome, and google font.
+
+#+begin_src html
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/fontawesome/4.3.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic|Bitter:400&subset=latin,latin-ext" media="all" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+end_src
+
+That's a a lot for a simple homepage (although hopefully fontawesome, bootstrap,
+and google fonts are already cached is most browsers!)
+
+
+{{< figure src="previous-homepage-2020-11-29-05.08.04.png" alt="Previous homepage" >}}
+
+Here I had to write everything with pure html and is hard to maintain.
+
+Things like privacy-policy and terms of use were very difficult to maintain as
+html files.
+
+** New and shiny
+
+The new homepage is built using [[https://gridsome.org][gridsome]] which is built on top of [[https://vuejs.org][vue.js]]. CSS in
+the new homepae is handled by tailwindcss.
+
+{{< figure src="./new-home-page-with-gridsome-2020-11-29.png" alt="New homepage" >}}
+
+Now the content is written in markdown and gridsome does the heavy lifting of
+creating static html and optimized javascript. Tailwind and Purgecss creates
+optimizd css files.
