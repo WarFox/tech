@@ -34,7 +34,7 @@ Here is how I setup it up
     ;; setup with use-package
     (use-package ejc-sql
       :commands
-      (ejc-create-connection ejc-connect ejc-set-column-width-limit)
+      (ejc-create-connection ejc-connect ejc-set-column-width-limit ejc-set-max-rows)
       :init
       (setq ejc-set-rows-limit 1000
             ejc-result-table-impl 'orgtbl-mode ;; 'ejc-result-mode
@@ -71,3 +71,18 @@ Here is how I setup it up
 #+end_src
 
 I mostly use this in =org-mode= buffer so that I can analyse data and make notes about it.
+
+** EDIT 08/04/2021
+
+You may also simplify connection configuration using =Profile= attribute in =:connection-uri= with the latest Athena JDBC driver.
+
+This also helps if you are using AWS STS temporary tokens for authenticating with AWS.
+
+#+begin_src emacs-lisp
+  (ejc-create-connection
+   "athena-prod"
+   :dbtype "awsathena"
+   :classpath "~/.m2/repository/com/simba/athena/athena-jdbc/2.0.16.1000/athena-jdbc-2.0.16.1000.jar"
+   :classname "com.simba.athena.jdbc.Driver"
+   :connection-uri "jdbc:awsathena://AwsRegion=eu-west-1;Profile=MyProfile;S3OutputLocation=s3://aws-athena-query-results-xxxxxx-eu-west-1/")
+#+end_src
