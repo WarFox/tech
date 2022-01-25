@@ -1,0 +1,18 @@
+#+title: Migrated homepage from Gridsome to NuxtJS
+#+date: 2021-10-15T22:29:32Z
+#+categories[]:
+#+tags[]: javascript nuxtjs vue
+#+keywords[]: nuxtjs vue homepage
+
+Moving my homepage to [[https://gridsome.org/][Gridsome]] and Vue was great choice because of the
+simplicity of VueJS. I'm happy with the choice of Vue.
+
+However, [[https://gridsome.org/][Gridsome]] has been [[https://github.com/gridsome/gridsome/issues/1289][lagging]] lagging behind on the new advances available
+in Vue3. Also I realise I'm not using any advanced features from [[https://gridsome.org/][Gridsome]] for
+my homepage.
+
+I've been looking at [[https://nuxtjs.org/][NuxtJS]] for sometime now and it looks really good choice.
+[[https://nuxtjs.org/][NuxtJS]] seems a lot simpler than [[https://gridsome.org/][Gridsome]]. I also wanted to start using [[https://www.typescriptlang.org/][TypeScript]].
+
+The migration was simple enough as seen in this [[https://github.com/WarFox/deepumohan.com/pull/9/][pr]]. I also a wrote a new
+Component in TypeScript that mimics a typewriter behaviour.
