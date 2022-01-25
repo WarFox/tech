@@ -4,9 +4,12 @@
 #+tags[]:
 #+keywords[]: gridsome vue
 
-It's been so long after I've rewrote my homepage.
+It's been so long since I've re-written my homepage.
 
-This was written using plain html, custom css, bootstrap, fontawesome, and google font.
+It started orginially as a plain html file, custom css, bootstrap, fontawesome,
+and google font.
+
+This is how the =<head></head>= looked like.
 
 #+begin_src html
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/fontawesome/4.3.0/css/font-awesome.min.css" />
@@ -16,13 +19,13 @@ This was written using plain html, custom css, bootstrap, fontawesome, and googl
   <link rel="stylesheet" type="text/css" href="css/style.css" />
 #+end_src
 
-That's a a lot for a simple homepage (although hopefully fontawesome, bootstrap,
-and google fonts are already cached is most browsers!)
-
+As you can imagine, that's a a lot of static assets to download for a simple
+homepage. Although hopefully fontawesome, bootstrap, and google fonts are
+already cached is most browsers!.
 
 {{< figure src="previous-homepage-2020-11-29-05.08.04.png" alt="Previous homepage" >}}
 
-Here I had to write everything with pure html and is hard to maintain.
+Here I had to write the content in pure html and was hard to maintain.
 
 Things like privacy-policy and terms of use were very difficult to maintain as
 html files.
