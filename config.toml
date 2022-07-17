@@ -2,6 +2,7 @@ baseURL = "http://deepumohan.com/tech"
 languageCode = "en-uk"
 title = "(deepu mohan puthrote)"
 theme= "tailwind-journal"
+# theme = "ananke"
 
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"

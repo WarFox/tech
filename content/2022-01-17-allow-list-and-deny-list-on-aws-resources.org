@@ -1,0 +1,30 @@
+#+title: Allow List and Deny List on AWS Resources
+#+date: 2022-01-17T22:42:16Z
+#+categories[]:
+#+tags[]:
+#+keywords[]:
+#+draft: true
+
+TLDR;
+
+Allow list can be created by using double negation in IAM policies.
+
+Let us start by defining
+
+** Allow list
+
+** Deny list
+
+AWS IAM is very powerull and allows you to control access to your resouces in
+AWS cloud at a granular level. It's rich [[https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html][grammer]] and =Allow= action only
+
+#+begin_src json
+{
+Effect: "Allow"
+}
+#+end_src
+
+
+* References
+
+https://thomasstep.com/blog/creating-a-whitelist-for-secrets-manager-secret
