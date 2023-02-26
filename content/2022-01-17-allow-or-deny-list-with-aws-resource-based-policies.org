@@ -1,0 +1,510 @@
+#+title: Allow or Deny list with AWS resources-based policies
+#+date: 2022-01-17T22:42:16Z
+#+categories[]:
+#+tags[]: AWS
+#+keywords[]: AWS permissions policy allow deny resource-based
+
+This post discusses how to create a Resource based IAM policy that =Allow= or
+=Deny= actions for a list of Principals. Here I will show some examples that are
+recommended and also some examples that are not recommended. We also talk about
+AWS IAM Policy Simulator a little bit.
+
+As you know AWS IAM (Identity and Access Management) policies define and manage
+permissions for resources in AWS. They allow you to specify which actions a
+user, group, or role can perform on a particular resource or set of resources.
+IAM Policies are usually attached to a Principal like user, group or role for
+managing the permission.
+
+** Resource based IAM Policies
+
+Resource-based policies are a type of IAM policy that are attached to AWS
+resources, such as an S3 bucket, instead of an IAM identity like a user or role.
+These policies define the permissions that other AWS identities have on the
+resource they are attached to.
+
+Resource-based policies are particularly useful when you want to grant
+cross-account access to AWS resources. By attaching a resource-based policy to a
+resource, you can specify which AWS accounts, IAM roles/users/groups are allowed
+to access that resource, and what actions they are allowed to perform.
+
+AWS resources that support resource-based policies include S3 buckets, Lambda
+functions, API Gateway APIs, and SQS queues, among others. You can find the full
+list of resources that support resource-based polices [[https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html][here]].
+
+Resource-based policies can be used to grant fine-grained access control to your
+AWS resources, while also maintaining security and compliance.
+
+** Allow list and Deny list
+
+By allow list we mean a list of Principals that can exclusively allowed to
+perform actions on certain resources. And by Deny list we mean a list of
+Principals that are exclusively denied permission on certain resources.
+
+Let us see how this can be done.
+
+To add an allow or deny list of principals to a resource-based policy, you can
+use the =Principal= element in the policy document.
+
+Here's an example of how to allow a specific AWS account ID to access an S3
+bucket using a resource-based policy:
+
+#+begin_src json
+  {
+    "Version": "2012-10-17",
+    "Statement": [{
+      "Sid": "AllowAccountAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::123456789012:root"
+      },
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::my-bucket/*"
+    }]
+  }
+#+end_src
+
+In this example, the =Principal= element specifies the AWS account ID that is
+allowed to access the S3 bucket. The =Effect= element is set to =Allow= to
+indicate that access is permitted, and the =Action= element specifies the
+actions that are allowed on the S3 bucket. This policy must be attached to the
+=my-bucket= and it allows for cross account access from the account
+=123456789012=.
+
+To add a deny list of principals, you can add a second statement to the policy
+with the =Effect= element set to =Deny=.
+
+Here's an example of how to deny access to a specific IAM user:
+
+#+begin_src json
+  {
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Sid": "AllowAccountAccess",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "arn:aws:iam::123456789012:root"
+        },
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      },
+      {
+        "Sid": "DenyUserAccess",
+        "Effect": "Deny",
+        "Principal": {
+          "AWS": "arn:aws:iam::123456789012:user/example-user"
+        },
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      }
+    ]
+  }
+#+end_src
+
+The above policy allows all Principals in account =123456789012= except
+=example-user= to perform actions on =my-bucket=.
+
+Note that an explicit =Deny= in a policy overrides any =Allow=. This =Deny= also
+takes precedence even if the Principal's policy explicitly allows actions on the
+S3 bucket. Read about IAM policy evaluation [[https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html][here]].
+
+** Double negation (not recommended)
+
+Using double negation in a resource-based policy allows you to create an allow
+list of AWS principals that are explicitly allowed to access a resource, while
+denying access to all other principals.
+
+But it is confusing and harder to maintain.
+
+Here's an example of how to use double negation to create an allow list of AWS
+account IDs:
+
+#+begin_src json
+  {
+    "Version": "2012-10-17",
+    "Statement": [{
+      "Sid": "AllowAccountAccess",
+      "Effect": "Deny",
+      "NotPrincipal": {
+        "AWS": [
+          "arn:aws:iam::123456789012:root",
+          "arn:aws:iam::987654321098:root"
+        ]
+      },
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::my-bucket/*"
+    }]
+  }
+#+end_src
+
+In this example, the =NotPrincipal= element is used to specify a list of AWS
+account IDs that are explicitly denied access to the S3 bucket. Here the =Deny=
+=Effect= in the statement, denies access is to all other AWS principals,
+effectively creating an allow list of the specified AWS account IDs.
+
+As you see double negation policies can be more complex to read and maintain, so
+it's important to test and validate the policy to ensure it's working as
+intended.
+
+It is very important to keep the policy up to date as AWS principals and
+resource access requirements change over time. Next example shows better way.
+
+** Using Condition
+
+Here's an example of how to use a condition to allow a specific AWS account ID
+to access an S3 bucket, while denying access to all other Principals.
+
+#+begin_src json
+  {
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Sid": "AllowAccountAccess",
+        "Effect": "Allow",
+        "Principal": "*",
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*",
+        "Condition": {
+          "StringEquals": {
+            "aws:PrincipalAccount": "123456789012"
+          }
+        }
+      },
+      {
+        "Sid": "DenyAllOtherAccess",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      }
+    ]
+  }
+#+end_src
+
+In this example, the =Condition= element is used to specify that the policy
+should only apply to the AWS account with the ID of =123456789012=.
+
+Note that this approach may require updating the policy if additional AWS
+principals need access to the resource in the future, as the =StringEquals=
+element does not allow lists. However, it can be a simpler way to manage an
+allow list that only includes one or a few AWS principals, rather than using
+double negation in a resource-based policy.
+
+** List of users or roles
+
+The =AWS= element in the =Principal= block can accept a list instead a single
+item. We can use this to create a resource-based policy that allows access only
+for a specific list of users or roles as principals.
+
+Here's an example of a resource-based policy that allows access only to a
+specific list of IAM users and roles:
+
+#+begin_src  json
+  {
+    "Version": "2012-10-17",
+    "Statement": [{
+      "Sid": "AllowSpecificUsersAndRoles",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::123456789012:user/user1",
+          "arn:aws:iam::123456789012:role/role1",
+          "arn:aws:iam::123456789012:user/user2"
+        ]
+      },
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::my-bucket/*"
+    }]
+  }
+#+end_src
+
+If you want to deny access to all other AWS principals, you can add a second
+statement with =Effect= set to =Deny=, as follows:
+
+#+begin_src json
+  {
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Sid": "AllowSpecificUsersAndRoles",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": [
+            "arn:aws:iam::123456789012:user/user1",
+            "arn:aws:iam::123456789012:role/role1",
+            "arn:aws:iam::123456789012:user/user2"
+          ]
+        },
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      },
+      {
+        "Sid": "DenyAllOtherAccess",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      }
+    ]
+  }
+#+end_src
+
+In this case, the second statement denies access to all other AWS principals,
+thus creating an exclusive allow list of Principals that have access to this S3
+bucket.
+
+The above policy is a great way for having explicit security policy for
+compliance purposes.
+
+** Double negation for exclusivity (not recommended)
+
+To make the double negation policy equivalent to the previous resource-based
+policy, you can modify it to explicitly deny access for the specified list of
+IAM users and roles, as follows:
+
+#+begin_src json
+  {
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Sid": "AllowSpecificUsersAndRoles",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": [
+            "arn:aws:iam::123456789012:user/user1",
+            "arn:aws:iam::123456789012:role/role1",
+            "arn:aws:iam::123456789012:user/user2"
+          ]
+        },
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      },
+      {
+        "Sid": "DenyAllOtherAccess",
+        "Effect": "Deny",
+        "NotPrincipal": {
+          "AWS": [
+            "arn:aws:iam::123456789012:user/user1",
+            "arn:aws:iam::123456789012:role/role1",
+            "arn:aws:iam::123456789012:user/user2"
+          ]
+        },
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      }
+    ]
+  }
+#+end_src
+
+In this modified policy, the first statement explicitly allows access for the
+specified list of IAM users and roles, and the second statement denies access
+for all other AWS principals.
+
+This is completely unnecessary, lengthy and confusing, so it is not recommended.
+The previous example with wildcard(*) deny for all does the same and is much
+cleaner.
+
+** One more example that is not recommended
+
+What do you think the following policy will do?
+
+#+BEGIN_SRC json
+  {
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Sid": "DoNotDenyPrincipals",
+        "Effect": "Deny",
+        "NotPrincipal": {
+          "AWS": [
+            "arn:aws:iam::123456789012:user/user1",
+            "arn:aws:iam::123456789012:role/role1",
+            "arn:aws:iam::123456789012:user/user2"
+          ]
+        },
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      },
+      {
+        "Sid": "AllowAllOtherAccess",
+        "Effect": "Allow",
+        "Principal": "*",
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      }
+    ]
+  }
+#+END_SRC
+
+In this policy, the first statement denies access to all AWS principals that are
+not in the list of IAM users and roles specified in the policy. However, it does
+not explicitly allow access for the specific list of IAM users and roles, as the
+previous resource-based policy does.
+
+The second statement allows access for all other AWS principals, including those
+that are not in the specified list of IAM users and roles. This is not what we
+want because it allows access for all other AWS principals, not just those
+explicitly specified in the policy.
+
+To make this policy equivalent to the previous resource-based policy that
+explicitly allows access to a specific list of IAM users and roles, we can
+modify it as follows:
+
+#+begin_src json
+  {
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Sid": "AllowSpecificUsersAndRoles",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": [
+            "arn:aws:iam::123456789012:user/user1",
+            "arn:aws:iam::123456789012:role/role1",
+            "arn:aws:iam::123456789012:user/user2"
+          ]
+        },
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      },
+      {
+        "Sid": "DenyAllOtherAccess",
+        "Effect": "Deny",
+        "NotPrincipal": {
+          "AWS": [
+            "arn:aws:iam::123456789012:user/user1",
+            "arn:aws:iam::123456789012:role/role1",
+            "arn:aws:iam::123456789012:user/user2"
+          ]
+        },
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      }
+    ]
+  }
+#+end_src
+
+In this modified policy, the first statement explicitly allows access for the
+specified list of IAM users and roles, and the second statement denies access
+for all other AWS principals.
+
+Although this policy will work as expected, I wouldn't recommend using this in
+production due to the double negation in it.
+
+** How can we confirm if this works?
+
+To confirm that the policy works as intended, you can test it with different IAM
+users and roles that are either in or not in the list of specified IAM users and
+roles.
+
+You will need to sign in as the user or assume the role that is listed in the
+policy and perform actions on =my-bucket= to test it manually. The action should
+be allowed this time.
+
+You should also test the opposite with a user or role that is not listed in the
+policy for making sure exclusivity is in place as expected.
+
+You can also use the [[https://policysim.aws.amazon.com/][AWS Policy Simulator]] to test the policy with different
+scenarios and confirm that it works as intended. The simulator can help you
+identify any issues or errors in your policy.
+
+To use the Policy Simulator, you can select a policy you want to test, specify a
+set of actions, resources, and conditions, and then run the simulation. The
+simulator will then show you the results of the simulation, indicating whether
+the policy allows or denies the specified actions.
+
+You can also use the simulator to test policies with different roles or users,
+and to see how policy evaluation works in different scenarios. This can be a
+useful way to identify any unintended consequences of your policy, or to
+identify areas where you need to refine or improve your policy.
+
+Overall, the Policy Simulator is a powerful tool that can help you create and
+test effective IAM policies, and ensure that your AWS resources are properly
+secured.
+
+Here is nice blog that shows how to test resource-based policy using the policy
+simulator: [[https://www.qualimente.com/2019/03/11/testing-an-s3-policy-using-the-aws-iam-simulator/][Testing an S3 policy using the AWS IAM Simulator]]
+
+** Which style is better for writing and maintaining this kind of policy?
+
+The style vastly depends on your preferences and the requirements of your
+specific use case.
+
+That being said, it is recommended to use the most straightforward and clear
+approach that achieves the desired result. In this case, the approach that
+explicitly lists the allowed principals and uses a deny statement to block all
+other access is the most clear and simple to understand.
+
+Using double negation is complex and harder to read and understand for someone
+who is not familiar with the policy.
+
+The most important thing is to choose an approach that is clear, concise, and
+meets the security requirements of your use case. You should also consider the
+long-term maintainability of the policy, and choose an approach that will be
+easy to update and modify as your requirements change over time.
+
+** Summary
+
+- Explicitly list the allowed principals and use a wildard(*) deny statement to block all others:
+
+#+begin_src json
+  {
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Sid": "AllowSpecificUsersAndRoles",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": [
+            "arn:aws:iam::123456789012:user/user1",
+            "arn:aws:iam::123456789012:role/role1",
+            "arn:aws:iam::123456789012:user/user2"
+          ]
+        },
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      },
+      {
+        "Sid": "DenyAllOtherAccess",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      }
+    ]
+  }
+#+end_src
+
+- Explicitly list the denied principals and use a wildcard (*) allow statement to allowed all others:
+
+#+begin_src json
+  {
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Sid": "AllowAllAccess",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "*"
+        },
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      },
+      {
+        "Sid": "AllowAccountAccess",
+        "Effect": "Deny",
+        "Principal": {
+          "AWS": [
+            "arn:aws:iam::123456789012:user/user3"
+          ]
+        },
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::my-bucket/*"
+      }
+    ]
+  }
+#+end_src
+
+Hope this information is helpful!
+
+** References
+- [[https://thomasstep.com/blog/creating-a-whitelist-for-secrets-manager-secret][Creating a Whitelist for a Secrets Manager Secret]]
+- [[https://www.qualimente.com/2019/03/11/testing-an-s3-policy-using-the-aws-iam-simulator/][Testing an S3 policy using the AWS IAM Simulator]]
+- [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html][Policies and permissions in IAM]]
+- [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_controlling.html][Controlling access to AWS resources using policies]]
+- [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html][Identity-based policies and resource-based policies]]
+- [[https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html][IAM JSON policy elements: Condition]]
+- [[https://aws.amazon.com/blogs/security/how-to-restrict-amazon-s3-bucket-access-to-a-specific-iam-role/][How to Restrict Amazon S3 Bucket Access to a Specific IAM Role]]
+- [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html][Testing IAM policies with the IAM policy simulator]]
