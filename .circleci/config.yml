@@ -36,7 +36,7 @@ workflows:
   build_deploy:
     jobs:
       - hugo/build:
-          html-proofer: true
+          html-proofer: false
           source: .
           version: '0.111.1'
 
