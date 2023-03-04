@@ -1,45 +1,61 @@
 version: 2.1
 
 orbs:
-  aws-s3: circleci/aws-s3@1.0.15
+  aws-cli: circleci/aws-cli@3.1.4
+  aws-s3: circleci/aws-s3@3.1.1
   hugo: circleci/hugo@0.3.1
 
+# jobs are orchestrated using workflows
 jobs:
   deploy:
     parameters:
-      arguments:
+      role-arn:
         type: string
-        default: --recursive --dryrun
+      s3-location:
+        type: string
     docker:
       - image: 'cimg/python:3.6'
     steps:
       - attach_workspace:
           at: /tmp/workspace/
       - run: ls -lah /tmp/workspace/
+      - aws-cli/setup:
+          profile-name: default
+      - aws-cli/role-arn-setup:
+          profile-name: deploy
+          role-arn: <<parameters.role-arn>>
+          source-profile: default
       - aws-s3/copy:
-          arguments: <<parameters.arguments>>
+          arguments: --recursive
           from: /tmp/workspace/public/
-          to: 's3://deepumohan.com/tech/'
+          to: <<parameters.s3-location>>
+          profile-name: deploy # need to explicitly provide profile-name
 
+# Build workflows using jobs and orbs
 workflows:
   build_deploy:
     jobs:
       - hugo/build:
           html-proofer: true
           source: .
-          version: '0.69.2'
-      - deploy: # dryrun for non-master branches
-          name: dry-run
+          version: '0.110.0'
+
+      - deploy: # deploy to staging from feature branches
+          name: deploy-to-staging
           context: org-context
-          arguments: --recursive --dryrun
+          role-arn: arn:aws:iam::106172881994:role/DeployStagingDeepumohanCom
+          s3-location: 's3://staging.deepumohan.com/tech/'
           requires:
             - hugo/build
           filters:
             branches:
               ignore: master
+
       - deploy: # deploy on master branch
+          name: deploy-to-production
           context: org-context
-          arguments: --recursive
+          role-arn: arn:aws:iam::106172881994:role/DeployDeepumohanCom
+          s3-location: 's3://deepumohan.com/tech/'
           requires:
             - hugo/build
           filters:
