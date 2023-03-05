@@ -31,6 +31,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 # Author config
 [author]
   name = "Deepu Mohan Puthrote"
+  email = ""
   link = "https://deepumohan.com/"
 
 # Menu config
@@ -312,9 +313,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # Disqus comment config
       [params.page.comment.disqus]
         #
-        enable = false
+        enable = true
         # Disqus shortname to use Disqus in posts
-        shortname = ""
+        shortname = "warfox-tech"
       # Gitalk comment config
       [params.page.comment.gitalk]
         #
