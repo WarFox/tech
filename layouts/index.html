@@ -10,7 +10,6 @@
     </div>
 
     <div class="page archive">
-      {{- partial "home/profile.html" . -}}
         {{- /* Paginate */ -}}
         {{- if .Pages -}}
             {{- $pages := .Site.RegularPages.GroupByDate "2006" -}}
