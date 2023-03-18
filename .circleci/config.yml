@@ -38,7 +38,7 @@ workflows:
       - hugo/build:
           html-proofer: true
           source: .
-          version: '0.111.1'
+          version: '0.111.3'
 
       - deploy: # deploy to staging from feature branches
           name: deploy-to-staging
