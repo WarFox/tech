@@ -1,62 +1,95 @@
-baseURL = "http://deepumohan.com/tech"
-languageCode = "en-uk"
-title = "(deepu mohan puthrote)"
-theme= "tailwind-journal"
+baseURL = "https://deepumohan.com/tech/"
+title = "Deepu Mohan Puthrote"
 
-DefaultContentLanguage = "en"
-SectionPagesMenu = "main"
-Paginate = 10
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.62.0"
+  [[module.imports]]
+    path = 'github.com/dillonzq/LoveIt'
 
+languageCode = "en-gb"
+languageName = "English"
+
+# whether to include Chinese/Japanese/Korean
+hasCJKLanguage = false
+
+# default amount of posts in each pages
+paginate = 12
+# google analytics code [UA-XXXXXXXX-X]
+googleAnalytics = ""
+# copyright description used only for seo schema
+copyright = "Deepu Mohan Puthrote"
+
+# whether to use robots.txt
 enableRobotsTXT = true
-enableEmoji = true
+# whether to use git commit log
 enableGitInfo = true
-pygmentsCodeFences = true
-pygmentsUseClasses = true
+# whether to use emoji code
+enableEmoji = true
 
-CanonifyURLs = true
+# ignore some build errors
+ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
-disqusShortname = "warfox-tech"
+# Author config
+[author]
+  name = "Deepu Mohan Puthrote"
+  email = ""
+  link = "https://deepumohan.com/"
 
-[sitemap]
-  changefreq = "monthly"
-  priority = 0.5
-  filename = "sitemap.xml"
+# Menu config
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = "Blog"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Blog"
+    url = "/"
+    # title will be shown when you hover on this menu link
+    title = ""
+  [[menu.main]]
+    weight = 2
+    identifier = "Posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Posts"
+    url = "/posts"
+    # title will be shown when you hover on this menu link
+    title = ""
+  [[menu.main]]
+    weight = 3
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+  [[menu.main]]
+    weight = 4
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
 
-[params]
-  favicon = ""
-  author = "Deepu Mohan Puthrote"
-  avatar = "https://s.gravatar.com/avatar/f66dfe536cc7c61f0808ace8567d15db?s=256"
-  description = "AWS Certified Solutions Architect and Software Engineer, Programming languages, frameworks and general technology thoughts"
-  tagline = "Software Engineer, Leader, Mentor, Pragmatist, Learner"
-  facebook = "https://fb.com/deepu.mohan.p/"
-  twitter = "https://twitter.com/deepumohanp/"
-  instagram = "https://instagram.com/deepu.mohan.p/"
-  youtube = "https://www.youtube.com/channel/UC1kfyS5UwNM9bU8K3k1PqyQ"
-  github = "https://github.com/WarFox/"
-  gitlab = "https://gitlab.com/WarFox/"
-  linkedin = "https://linkedin.com/in/deepumohanp/"
-
-[taxonomies]
-  category = "categories"
-  tag = "tags"
-
-[permalinks]
-  "" = ":section/:slug"
-  posts = ":slug"
-  drafts = ":section/:slug"
-
+# Markup related config in Hugo
 [markup]
+  # Syntax Highlighting
   [markup.highlight]
     codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineNoStart = 1
-    lineNos = false
+    guessSyntax = true
+    lineNos = true
     lineNumbersInTable = true
+    # false is a necessary configuration
+    # (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
-    style = "monokai"
-    tabWidth = 4
-
+  # Goldmark is from Hugo 0.60 the default library used for Markdown
   [markup.goldmark]
     [markup.goldmark.extensions]
       definitionList = true
@@ -66,16 +99,294 @@ disqusShortname = "warfox-tech"
       table = true
       taskList = true
       typographer = true
-    [markup.goldmark.parser]
-      attribute = true
-      autoHeadingID = true
-      autoHeadingIDType = "github"
     [markup.goldmark.renderer]
-      hardWraps = false
+      # whether to use HTML tags directly in the document
       unsafe = true
-      xHTML = false
-
+  # Table Of Contents settings
   [markup.tableOfContents]
-    endLevel = 3
-    ordered = false
-    startLevel = 1
+    startLevel = 2
+    endLevel = 6
+
+# Sitemap config
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# Permalinks config
+[Permalinks]
+  posts = ":slug"
+
+# Privacy config
+[privacy]
+  #  privacy of the Google Analytics (replaced by params.analytics.google)
+  [privacy.googleAnalytics]
+    # ...
+  [privacy.twitter]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true
+
+# Options to make output .md files
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = ["md"]
+
+# Options to make output .md files
+[outputFormats.MarkDown]
+  mediaType = "text/plain"
+  isPlainText = true
+  isHTML = false
+
+# Options to make hugo output files
+[outputs]
+  #
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "MarkDown"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]
+
+# LoveIt Theme Params
+[params]
+  # site default theme ["auto", "light", "dark"]
+  defaultTheme = "light"
+  # public git repo url only then enableGitInfo is true
+  gitRepo = "https://github.com/WarFox/tech"
+  #  which hash function used for SRI, when empty, no SRI is used
+  # ["sha256", "sha384", "sha512", "md5"]
+  fingerprint = "sha512"
+  #  date format
+  dateFormat = "2006-01-02"
+  # website title for Open Graph and Twitter Cards
+  title = "Deepu Mohan Puthrote"
+  # website description for RSS, SEO, Open Graph and Twitter Cards
+  description = "Technology Blog of Deepu Mohan Puthrote"
+  # website images for Open Graph and Twitter Cards
+  images = ["https://s.gravatar.com/avatar/f66dfe536cc7c61f0808ace8567d15db?s=256"]
+
+  # Header config
+  [params.header]
+    # desktop header mode ["fixed", "normal", "auto"]
+    desktopMode = "fixed"
+    # mobile header mode ["fixed", "normal", "auto"]
+    mobileMode = "auto"
+    #  Header title config
+    [params.header.title]
+      # URL of the LOGO
+      logo = ""
+      # title name
+      name = "Deepu Mohan Puthrote"
+      # you can add extra information before the name (HTML format is supported), such as icons
+      pre = ""
+      # you can add extra information after the name (HTML format is supported), such as icons
+      post = ""
+      #  whether to use typeit animation for title name
+      typeit = false
+
+  # Footer config
+  [params.footer]
+    enable = true
+    #  Custom content (HTML format is supported)
+    custom = ''
+    #  whether to show Hugo and theme info
+    hugo = true
+    #  whether to show copyright info
+    copyright = true
+    #  whether to show the author
+    author = true
+    # Site creation time
+    since = 2008
+    # ICP info only in China (HTML format is supported)
+    icp = ""
+    # license info (HTML format is supported)
+    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" title="License CC BY-SA 4.0 (where not otherwise specified)."><i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i> <i class="fab fa-creative-commons-sa"></i></a>'
+
+  #  Section (all posts) page config
+  [params.section]
+    # special amount of posts in each section page
+    paginate = 20
+    # date format (month and day)
+    dateFormat = "01-02"
+    # amount of RSS pages
+    rss = 10
+
+  #  List (category or tag) page config
+  [params.list]
+    # special amount of posts in each list page
+    paginate = 20
+    # date format (month and day)
+    dateFormat = "01-02"
+    # amount of RSS pages
+    rss = 10
+
+  #  App icon config
+  [params.app]
+    # optional site title override for the app when added to an iOS home screen or Android launcher
+    title = "Deepu Mohan Puthrote"
+    # whether to omit favicon resource links
+    noFavicon = false
+    # modern SVG favicon to use in place of older style .png and .ico files
+    svgFavicon = ""
+    # Android browser theme color
+    themeColor = "#ffffff"
+    # Safari mask icon color
+    iconColor = "#5bbad5"
+    # Windows v8-10 tile color
+    tileColor = "#da532c"
+
+  #  Search config
+  [params.search]
+    enable = true
+    # type of search engine ["lunr", "algolia"]
+    type = "lunr"
+    # max index length of the chunked content
+    contentLength = 4000
+    # placeholder of the search bar
+    placeholder = ""
+    #  max number of results length
+    maxResultLength = 10
+    #  snippet length of the result
+    snippetLength = 30
+    #  HTML tag name of the highlight part in results
+    highlightTag = "em"
+    #  whether to use the absolute URL based on the baseURL in search index
+    absoluteURL = false
+    [params.search.algolia]
+      index = ""
+      appID = ""
+      searchKey = ""
+
+  # Home page config
+  [params.home]
+    #  amount of RSS pages
+    rss = 10
+    # Home page profile
+    [params.home.profile]
+      enable = true
+      # Gravatar Email for preferred avatar in home page
+      gravatarEmail = "deepumohanp@gmail.com"
+      # URL of avatar shown in home page
+      # avatarURL = "https://s.gravatar.com/avatar/f66dfe536cc7c61f0808ace8567d15db?s=256"
+      #  title shown in home page (HTML format is supported)
+      title = ""
+      # subtitle shown in home page (HTML format is supported)
+      subtitle = "Software Engineer, Pragmatist, Learner"
+      # whether to use typeit animation for subtitle
+      typeit = false
+      # whether to show social links
+      social = true
+      #  disclaimer (HTML format is supported)
+      disclaimer = ""
+    # Home page posts
+    [params.home.posts]
+      enable = true
+      # special amount of posts in each home posts page
+      paginate = 4
+      #  replaced with hiddenFromHomePage in params.page
+      # default behavior when you don't set "hiddenFromHomePage" in front matter
+      defaultHiddenFromHomePage = false
+
+  # Social config about the author
+  [params.social]
+    GitHub = "WarFox"
+    Linkedin = "deepumohanp"
+    Twitter = "deepumohanp"
+    Instagram = "deepu.mohan.p"
+    Medium = "deepumohanp"
+    Gitlab = "WarFox"
+    Tumblr = "deepumohanp"
+    Keybase = "warfox"
+    Reddit = "deepumohanp"
+    Codepen = "WarFox"
+    FreeCodeCamp = "WarFox"
+    Stackoverflow = "598444"
+    RSS = true
+
+  #  Page global config
+  [params.page]
+    # whether to hide a page from home page
+    hiddenFromHomePage = false
+    # whether to hide a page from search results
+    hiddenFromSearch = false
+    # whether to enable twemoji
+    twemoji = false
+    # whether to enable lightgallery
+    lightgallery = false
+    # whether to enable the ruby extended syntax
+    ruby = true
+    # whether to enable the fraction extended syntax
+    fraction = true
+    # whether to enable the fontawesome extended syntax
+    fontawesome = true
+    # whether to show link to Raw Markdown content of the content
+    linkToMarkdown = true
+    # whether to show the full text content in RSS
+    rssFullText = false
+    # Table of the contents config
+    [params.page.toc]
+      #  whether to keep the static table of the contents in front of the post
+      keepStatic = false
+      # whether to make the table of the contents in the sidebar automatically collapsed
+      auto = true
+    #  Code config
+    [params.page.code]
+      # whether to show the copy button of the code block
+      copy = true
+      # the maximum number of lines of displayed code by default
+      maxShownLines = 50
+    [params.page.share]
+      enable = true
+      Baidu = false
+      Evernote = true
+      Facebook = true
+      HackerNews = true
+      Instapaper = true
+      Line = false
+      Linkedin = true
+      Pocket = true
+      Reddit = true
+      Tumblr = true
+      Twitter = true
+      Weibo = false
+      Whatsapp = true
+    #  Comment config
+    [params.page.comment]
+      enable = false
+      # Disqus comment config
+      [params.page.comment.disqus]
+        enable = true
+        # Disqus shortname to use Disqus in posts
+        shortname = "warfox-tech"
+
+  #  Site SEO config
+  [params.seo]
+    # image URL
+    image = ""
+    # thumbnail URL
+    thumbnailUrl = ""
+
+  #  Analytics config
+  [params.analytics]
+    enable = false
+    # Google Analytics
+    [params.analytics.google]
+      id = ""
+      # whether to anonymize IP
+      anonymizeIP = true
+
+  #  Cookie consent config
+  [params.cookieconsent]
+    enable = true
+    # text strings used for Cookie consent banner
+    [params.cookieconsent.content]
+      message = ""
+      dismiss = ""
+      link = ""
+
+  #  Compatibility config
+  [params.compatibility]
+    # whether to use Polyfill.io to be compatible with older browsers
+    polyfill = true
+    # whether to use object-fit-images to be compatible with older browsers
+    objectFit = true
