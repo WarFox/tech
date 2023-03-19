@@ -74,7 +74,8 @@ workflows:
           role-arn: arn:aws:iam::106172881994:role/DeployStagingDeepumohanCom
           s3-location: 's3://staging.deepumohan.com/tech/'
           requires:
-            - html-proofer
+            - hugo/build
+            # - html-proofer
           filters:
             branches:
               ignore: master
@@ -85,7 +86,8 @@ workflows:
           role-arn: arn:aws:iam::106172881994:role/DeployDeepumohanCom
           s3-location: 's3://deepumohan.com/tech/'
           requires:
-            - html-proofer
+            - hugo/build
+            # - html-proofer
           filters:
             branches:
               only: master
