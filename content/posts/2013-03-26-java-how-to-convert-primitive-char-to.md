@@ -161,6 +161,6 @@ there already is a constructor that accepts a `char[]`.
 * [How to convert Char to String in Java with Example][1]
 * [How to convert a char to a string in Java?][2]
 
-[1]:http://goo.gl/E3aKf "How to convert Char to String in Java with Example"
-[2]:http://goo.gl/BI05v "How to convert a char to a string in Java?"
-[open-jdk-8u40-b25]:http://goo.gl/Vz7Zbk "GC: openjdk-8u40-b25.jar - GrepCode Java Project Source"
+[1]:https://goo.gl/E3aKf "How to convert Char to String in Java with Example"
+[2]:https://goo.gl/BI05v "How to convert a char to a string in Java?"
+[open-jdk-8u40-b25]:https://goo.gl/Vz7Zbk "GC: openjdk-8u40-b25.jar - GrepCode Java Project Source"

@@ -36,7 +36,7 @@ The above function will ask the user for the new extension, and then rename the
 file, buffer and also set the visited file name to the filename with new
 extension.
 
-And on my [Spacemacs](http://spacemacs.org), I added this key-binding to that
+And on my [Spacemacs](https://spacemacs.org), I added this key-binding to that
 function. "o" is reserved for user defined functions in Spacemacs.
 
 ```

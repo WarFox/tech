@@ -28,4 +28,4 @@ If you are not using Maven or any other dependency management tool, you may try 
 
 This error may also come up when [checking out from repository][1].
 
-[1]:http://stackoverflow.com/questions/3831217/cvs-checkout-on-windows-ant-build-invalid-cen-header-bad-signature
+[1]:https://stackoverflow.com/questions/3831217/cvs-checkout-on-windows-ant-build-invalid-cen-header-bad-signature

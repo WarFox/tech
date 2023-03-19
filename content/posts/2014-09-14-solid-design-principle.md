@@ -11,7 +11,7 @@ A strategy allows you to think and organize ideas in a particular fashion that i
 I've found SOLID principle easy enough for beginners and experts to understand and practice.
 This  was originally put forward by [Rober C. Martin][robert wiki], who is a pioneer in agile software development and extreme programming.
 
-Checkout [Cleancoders](http://cleancoders.com/) to know more.
+Checkout [Cleancoders](https://cleancoders.com/) to know more.
 
 Chances are, you may be already using SOLID principle, just without giving it a name.
 ## tl;dr
@@ -40,7 +40,7 @@ It is good to keep in mind that, there can be some exceptions to this. For examp
 ## O - Open/Closed Principle (OCP)
 >Software entities should be open for extension, but closed for modification.
 The idea is that once a class is implemented completely, it should not be modified for including new features. Bugs and error correction must be done as and when required. Adding a new feature will require new specification and release of newer version.
-http://en.wikipedia.org/wiki/Open/closed_principle
+https://en.wikipedia.org/wiki/Open/closed_principle
 
 ## L - Liskov Substitution Principle (LSP)
 >Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program. See also [design by contract].
@@ -66,13 +66,13 @@ dog.makeNoise();
 @Inject
 Animal animal; // can be replaced by Dog
 ```
-http://en.wikipedia.org/wiki/Liskov_substitution_principle
+https://en.wikipedia.org/wiki/Liskov_substitution_principle
 
 ## I - Interface Segregation Principle (ISP)
 >Many client-specific interfaces are better than one general-purpose interface.
 Interfaces provide abstraction no implementation. When developing client interfaces, it should be kept at minimum and should only expose those methods which are essential for that client.
 
-http://en.wikipedia.org/wiki/Interface_segregation_principle
+https://en.wikipedia.org/wiki/Interface_segregation_principle
 
 ```java
 interface Jumbable {
@@ -115,7 +115,7 @@ public class JumpingServiceImpl implements JumpingService {
 }
 ```
 
-http://en.wikipedia.org/wiki/Dependency_inversion_principle
+https://en.wikipedia.org/wiki/Dependency_inversion_principle
 
-[robert wiki]: http://en.wikipedia.org/wiki/Robert_C._Martin
-[design by contract]: http://en.wikipedia.org/wiki/Design_by_contract
+[robert wiki]: https://en.wikipedia.org/wiki/Robert_C._Martin
+[design by contract]: https://en.wikipedia.org/wiki/Design_by_contract

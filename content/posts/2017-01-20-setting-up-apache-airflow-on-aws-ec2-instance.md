@@ -95,7 +95,7 @@ This should keep Airflow Scheduler running in the background and respawn it in c
 ## References
 
 - https://github.com/apache/incubator-airflow/tree/master/scripts/upstart
-- http://upstart.ubuntu.com/cookbook/
+- https://upstart.ubuntu.com/cookbook/
 - https://airflow.incubator.apache.org/
 - https://superuser.com/questions/213416/running-upstart-jobs-as-unprivileged-users
 - https://serverfault.com/questions/357060/how-should-i-use-sudo-from-an-upstart-script

@@ -9,4 +9,4 @@ Registering a site with Google to Fix Errors: This site has not been registered 
 
 https://www.google.com/accounts/ManageDomains
 
-http://www.visionwind.com/blog/google-analyticator-for-wordpress-errors-this-site-has-not-been-registered-and-target-url-path-prefix/
+https://www.visionwind.com/blog/google-analyticator-for-wordpress-errors-this-site-has-not-been-registered-and-target-url-path-prefix/

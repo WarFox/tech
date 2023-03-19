@@ -6,8 +6,8 @@ categories:
  - Curation
 ---
 
-This <a href="http://alistapart.com/">A List Apart</a> <a href="http://alistapart.com/article/flashsatay/">article</a> discusses, a correct way of embedding Flash content in HTML, while following W3C standards.
+This <a href="https://alistapart.com/">A List Apart</a> <a href="https://alistapart.com/article/flashsatay/">article</a> discusses, a correct way of embedding Flash content in HTML, while following W3C standards.
 
-If you need <a href="http://validator.w3.org/docs/help.html">valid</a> HTML content, that passes <a href="http://validator.w3.org/">http://validator.w3.org/</a>, you must use <code>&lt;object&gt;</code> tag, instead of <code>&lt;embed&gt;</code> tag.
+If you need <a href="https://validator.w3.org/docs/help.html">valid</a> HTML content, that passes <a href="https://validator.w3.org/">https://validator.w3.org/</a>, you must use <code>&lt;object&gt;</code> tag, instead of <code>&lt;embed&gt;</code> tag.
 
-Link: <a href="http://alistapart.com/article/flashsatay/">http://alistapart.com/article/flashsatay/</a>
+Link: <a href="https://alistapart.com/article/flashsatay/">https://alistapart.com/article/flashsatay/</a>

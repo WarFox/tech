@@ -26,4 +26,4 @@ Next steps:
 3. Deploy the web service to OC4J application server you started by right clicking the **WebServices.deploy** file under **Resources** in the Application Navigation
 4. Paste the url taken from WSDL document to a web browser address bar.
 5. Testing screen for your application will appear
-Detailed description is available in this location: [Deploy WebService in OC4J using JDeveloper 10.1.3](http://www.oracle.com/technology/obe/obe1013jdev/ws/wsandascontrol.htm)
+Detailed description is available in this location: [Deploy WebService in OC4J using JDeveloper 10.1.3](https://www.oracle.com/technology/obe/obe1013jdev/ws/wsandascontrol.htm)

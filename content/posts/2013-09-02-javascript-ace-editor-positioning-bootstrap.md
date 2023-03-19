@@ -6,13 +6,13 @@ categories:
  - Javascript
 ---
 
-[Ace editor](http://ace.c9.io/) is a fantastic option for live source code
+[Ace editor](https://ace.c9.io/) is a fantastic option for live source code
 editor on the web. One problem you come across when using Ace Editor is with the
 default <tt>absolute</tt> positioning. Also [it doesn't fit inside a container
 div](https://github.com/ajaxorg/ace/issues/75) by default. Here is how I
 overcame these issues.
 
-The [example](http://ace.c9.io/#nav=embedding) from ace website uses absolute
+The [example](https://ace.c9.io/#nav=embedding) from ace website uses absolute
 positioning by default, as show below. But luckily, ace can work perfectly with
 <tt>relative</tt> positioning
 
@@ -73,13 +73,13 @@ showing the editor.
 
 <script src="https://gist.github.com/WarFox/6473534.js"></script>
 
-Full Screen Result is available [here](http://jsfiddle.net/deepumohanp/U5JtP/embedded/result/). http://jsfiddle.net/deepumohanp/U5JtP/embedded/result/
+Full Screen Result is available [here](https://jsfiddle.net/deepumohanp/U5JtP/embedded/result/). https://jsfiddle.net/deepumohanp/U5JtP/embedded/result/
 
-Fiddle here: http://jsfiddle.net/deepumohanp/U5JtP/
+Fiddle here: https://jsfiddle.net/deepumohanp/U5JtP/
 
- <iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/U5JtP/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+ <iframe width="100%" height="300" src="https://jsfiddle.net/deepumohanp/U5JtP/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 ### References
 
-- [How do I make a textarea an ace editor?](http://stackoverflow.com/questions/6440439/how-do-i-make-a-textarea-an-ace-editor/)
+- [How do I make a textarea an ace editor?](https://stackoverflow.com/questions/6440439/how-do-i-make-a-textarea-an-ace-editor/)
 - [Ace doesn't fit inside a container div](https://github.com/ajaxorg/ace/issues/75/)

@@ -88,4 +88,4 @@ Host remote_to_local
 * [SSH Tunnel - Local and remote port forwarding explained with example][2]
 
 [1]: https://www.digitalocean.com/community/tutorials/how-to-configure-custom-connection-options-for-your-ssh-client
-[2]: http://blog.trackets.com/2014/05/17/ssh-tunnel-local-and-remote-port-forwarding-explained-with-examples.html
+[2]: https://blog.trackets.com/2014/05/17/ssh-tunnel-local-and-remote-port-forwarding-explained-with-examples.html

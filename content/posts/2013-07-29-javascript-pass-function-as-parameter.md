@@ -135,20 +135,20 @@ We also need to make sure our little function works perfectly even if the second
 ```
 Now that should work.
 
-The complete example is available in the following jsFiddle. <a href="http://jsfiddle.net/deepumohanp/s2DBJ/">http://jsfiddle.net/deepumohanp/s2DBJ/</a>
-<iframe width="100%" height="876px" src="http://jsfiddle.net/deepumohanp/s2DBJ/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+The complete example is available in the following jsFiddle. <a href="https://jsfiddle.net/deepumohanp/s2DBJ/">https://jsfiddle.net/deepumohanp/s2DBJ/</a>
+<iframe width="100%" height="876px" src="https://jsfiddle.net/deepumohanp/s2DBJ/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 ### References
 1. I got the example inspiration from Dr. Venkat Subramaniam's talk an Scala.
-    * [http://www.youtube.com/watch?v=LH75sJAR0hc][1]
+    * [https://www.youtube.com/watch?v=LH75sJAR0hc][1]
     * [https://vimeo.com/57988159][2]
 
-2. [http://www.joelonsoftware.com/items/2006/08/01.html][3]
+2. [https://www.joelonsoftware.com/items/2006/08/01.html][3]
 3. [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope][4]
 4. [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function][5]
 
-[1]:http://www.youtube.com/watch?v=LH75sJAR0hc
+[1]:https://www.youtube.com/watch?v=LH75sJAR0hc
 [2]:https://vimeo.com/57988159
-[3]:http://www.joelonsoftware.com/items/2006/08/01.html
+[3]:https://www.joelonsoftware.com/items/2006/08/01.html
 [4]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope
 [5]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function

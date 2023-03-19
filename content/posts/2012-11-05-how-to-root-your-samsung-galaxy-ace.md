@@ -25,7 +25,7 @@ After rooting I also [unlocked my phone from the network][4].
 
 {{< youtube jIK7pAu4ddE >}}
 
-[1]: http://androidforums.com/ace-all-things-root/560469-how-root-your-galaxy-ace.html "How to root your galaxy ace"
-[2]: http://goo.gl/JOPF8 "Busy Box"
-[3]: http://goo.gl/ok3kq "Root checker basic"
+[1]: https://androidforums.com/ace-all-things-root/560469-how-root-your-galaxy-ace.html "How to root your galaxy ace"
+[2]: https://goo.gl/JOPF8 "Busy Box"
+[3]: https://goo.gl/ok3kq "Root checker basic"
 [4]: /how-to-unlock-samsung-galaxy-ace-for-free-from-a-network/ "Unlock your phone from network for free"

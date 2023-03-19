@@ -40,12 +40,12 @@ ace](/how-to-root-your-samsung-galaxy-ace). [Procedure for rooting the
 android](/how-to-root-your-samsung-galaxy-ace) device can be found in my
 previous [post](/how-to-root-your-samsung-galaxy-ace).
 
-Secondly, you MUST install [BusyBox](http://goo.gl/JOPF8). Otherwise unlock
+Secondly, you MUST install [BusyBox](https://goo.gl/JOPF8). Otherwise unlock
 codes wont be visible. *Thanks much to Asok and Ratty (commenters) for notifying
 this.*
 
-Then download and install [Galaxy Ace Unlock](http://goo.gl/lT2Yz) by
-[Helroz](http://goo.gl/D5Cg4)
+Then download and install [Galaxy Ace Unlock](https://goo.gl/lT2Yz) by
+[Helroz](https://goo.gl/D5Cg4)
 
 https://play.google.com/store/apps/details?id=com.helroz.galaxyaceunlock
 
@@ -56,15 +56,15 @@ phone unlock code
 1. Run the app
 2. Touch on the option given. **Unlock. See your sim unlock code**
 
-![Unlock: See your sim unlock code](http://1.bp.blogspot.com/-WQ-bNPQ-ezI/UJlN9OcFnnI/AAAAAAAADxc/MUTiLahTtb8/s1600/SC20121106-174547.png "See your sim unlock code")
+![Unlock: See your sim unlock code](https://1.bp.blogspot.com/-WQ-bNPQ-ezI/UJlN9OcFnnI/AAAAAAAADxc/MUTiLahTtb8/s1600/SC20121106-174547.png "See your sim unlock code")
 
 * Confirm your choice by selecting *Yes* on the next screen.
 
-![Confirm your choice](http://1.bp.blogspot.com/-2uNbRETZnMs/UJlOEZtscsI/AAAAAAAADxo/-1gmRBihI-4/s1600/SC20121106-174600.png "Select Yes")
+![Confirm your choice](https://1.bp.blogspot.com/-2uNbRETZnMs/UJlOEZtscsI/AAAAAAAADxo/-1gmRBihI-4/s1600/SC20121106-174600.png "Select Yes")
 
 * Wait till the app shows the unlock codes.
 
-![Wait till the app shows the unlock codes](http://3.bp.blogspot.com/-jNFJf8ZiyqU/UJbK4pgwrjI/AAAAAAAADw8/qM4ws_1XMGE/s1600/SC20121013-235211.png "Wait till the app shows  the unlock codes")
+![Wait till the app shows the unlock codes](https://3.bp.blogspot.com/-jNFJf8ZiyqU/UJbK4pgwrjI/AAAAAAAADw8/qM4ws_1XMGE/s1600/SC20121013-235211.png "Wait till the app shows  the unlock codes")
 
 The app extracts the network unlock code from the phone and shows it for you. It
 may give upto 4 different unlock codes. In my case all the four unlock codes
@@ -78,7 +78,7 @@ have worked. If the unlock is successful it will display this message.
 
 Now if you dial *#7465625#, the Network Lock will be [OFF].
 
-![Network lock off](http://1.bp.blogspot.com/-M6SxKa3Qa1Q/UJlNtvxnUoI/AAAAAAAADxQ/hv9O0fyrzjU/s1600/SC20121106-174519.png "Network lock off")
+![Network lock off](https://1.bp.blogspot.com/-M6SxKa3Qa1Q/UJlNtvxnUoI/AAAAAAAADxQ/hv9O0fyrzjU/s1600/SC20121106-174519.png "Network lock off")
 
 That confirms you have successfully unlocked your phone from the network, well done!
 

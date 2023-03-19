@@ -37,5 +37,5 @@ List is an ordered sequence of elements whereas Set is a distinct list of elemen
 
 Read more here:
 
-* [List](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html)
-* [Set](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Set.html)
+* [List](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html)
+* [Set](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/Set.html)

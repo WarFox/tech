@@ -126,7 +126,7 @@ Are you kidding me? :smile:
 - https://clojure.org/guides/destructuring
 - https://www.braveclojure.com/do-things/#Destructuring
 - https://gist.github.com/john2x/e1dca953548bfdfb9844
-- http://blog.brunobonacci.com/2014/11/16/clojure-complete-guide-to-destructuring/
+- https://blog.brunobonacci.com/2014/11/16/clojure-complete-guide-to-destructuring/
 - https://alvinalexander.com/scala/how-to-use-lists-nil-cons-scala-match-case-expressions
-- http://tony.pitluga.com/2011/08/08/destructuring-with-ruby.html
-- http://blog.fogus.me/2011/01/12/pattern-matching-vs-destructuring-to-the-death/
+- https://tony.pitluga.com/2011/08/08/destructuring-with-ruby.html
+- https://blog.fogus.me/2011/01/12/pattern-matching-vs-destructuring-to-the-death/

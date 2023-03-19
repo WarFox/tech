@@ -11,8 +11,8 @@ draft: true
 
 message interpolation  custom
 
-* http://stackoverflow.com/questions/4258314/using-a-custom-resourcebundle-with-hibernate-validator
+* https://stackoverflow.com/questions/4258314/using-a-custom-resourcebundle-with-hibernate-validator
 
-* http://stackoverflow.com/questions/4186556/hibernate-validator-custom-resourcebundlelocator-and-spring
+* https://stackoverflow.com/questions/4186556/hibernate-validator-custom-resourcebundlelocator-and-spring
 
-* http://docs.jboss.org/hibernate/validator/4.0.1/reference/en/html/validator-usingvalidator.html#section-message-interpolation
+* https://docs.jboss.org/hibernate/validator/4.0.1/reference/en/html/validator-usingvalidator.html#section-message-interpolation

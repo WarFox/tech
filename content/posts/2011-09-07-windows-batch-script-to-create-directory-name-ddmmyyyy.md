@@ -16,7 +16,7 @@ directory of name format <b>DDMMYYYY</b>&nbsp;in the current path.
 :: Auto directory date batch (MMDDYYYY format)
 :: First parses month, day, and year into mm , dd, yyyy formats and then combines to be DDMMYYYY
 :: Setups %date% variable
-:: @author Deepu Mohan Puthrote http://deepumohan.com
+:: @author Deepu Mohan Puthrote https://deepumohan.com
 @echo off
 FOR /F "TOKENS=1* DELIMS= " %%A IN ('DATE/T') DO SET CDATE=%%B
 FOR /F "TOKENS=1,2 eol=/ DELIMS=/ " %%A IN ('DATE/T') DO SET mm=%%B
@@ -32,10 +32,10 @@ into a path where you want to create the directory. Double click on the batch
 file to create the current day's directory.
 
 You can also download the batch file from <a
-href="http://files.deepumohan.com/winbatch/DDMMYYYY.bat" onClick="javascript:
+href="https://files.deepumohan.com/winbatch/DDMMYYYY.bat" onClick="javascript:
 _gaq.push(['_trackPageview', '/downloads/DDMMYYYY']);"> here</a>. You can safely
 download it, it is hosted in safe server of&nbsp;<a
-href="http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=deepumohanp">HostGator</a>.
+href="https://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=deepumohanp">HostGator</a>.
 
 In the [next post][next-post] I will post the batch script for creating
 directory names with <b>DDMONYYYY</b> format. It will be pretty advanced which
@@ -45,4 +45,4 @@ For those who are new to windows batch files, [visit][ms-resource] [this
 site][ms-resource] by [Microsoft][ms-resource].
 
 [next-post]:/windows-batch-script-to-create-directory-auto-file-name-ddmonyyyy-with-the-help-of-javascript/
-[ms-resource]:http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/batch.mspx?mfr=true
+[ms-resource]:https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/batch.mspx?mfr=true

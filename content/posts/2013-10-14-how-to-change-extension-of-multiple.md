@@ -23,6 +23,6 @@ chext JPG jpg
 
 ### Reference:
 
-* [http://forums.appleinsider.com/t/106498/how-to-change-the-file-extension-of-multiple-files/](http://forums.appleinsider.com/t/106498/how-to-change-the-file-extension-of-multiple-files/)
-* [http://stackoverflow.com/questions/15829702/how-to-change-the-extension-of-multiple-files-using-bash-script/](http://stackoverflow.com/questions/15829702/how-to-change-the-extension-of-multiple-files-using-bash-script)
-* [http://kb.iu.edu/data/abec.html](http://kb.iu.edu/data/abec.html)
+* [https://forums.appleinsider.com/t/106498/how-to-change-the-file-extension-of-multiple-files/](https://forums.appleinsider.com/t/106498/how-to-change-the-file-extension-of-multiple-files/)
+* [https://stackoverflow.com/questions/15829702/how-to-change-the-extension-of-multiple-files-using-bash-script/](https://stackoverflow.com/questions/15829702/how-to-change-the-extension-of-multiple-files-using-bash-script)
+* [https://kb.iu.edu/data/abec.html](https://kb.iu.edu/data/abec.html)

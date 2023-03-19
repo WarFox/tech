@@ -6,4 +6,4 @@ draft: true
 ---
 
 <div class='post'>
-<div dir="ltr" style="text-align: justify;" trbidi="on"><br /> Talk about geolocation API  http://www.developerdrive.com/2012/01/using-html5-to-determine-user-location/  http://jsfiddle.net/deepumohanp/a4g2J/  http://html5demos.com/geo  http://html5doctor.com/finding-your-position-with-geolocation/  http://diveintohtml5.info/geolocation.html  http://dev.w3.org/geo/api/spec-source.html  </div></div>
+<div dir="ltr" style="text-align: justify;" trbidi="on"><br /> Talk about geolocation API  https://www.developerdrive.com/2012/01/using-html5-to-determine-user-location/  https://jsfiddle.net/deepumohanp/a4g2J/  https://html5demos.com/geo  https://html5doctor.com/finding-your-position-with-geolocation/  https://diveintohtml5.info/geolocation.html  https://dev.w3.org/geo/api/spec-source.html  </div></div>

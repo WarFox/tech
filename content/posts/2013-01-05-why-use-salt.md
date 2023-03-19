@@ -7,4 +7,4 @@ draft: true
 
 https://www.owasp.org/index.php/Hashing_Java#Why_add_salt_.3F
 
-http://en.wikipedia.org/wiki/Salt_(cryptography)
+https://en.wikipedia.org/wiki/Salt_(cryptography)

@@ -5,4 +5,4 @@ tags:
 draft: true
 ---
 
-http://www.java67.com/2012/11/difference-between-transient-vs-volatile-modifier-variable-java.html
+https://www.java67.com/2012/11/difference-between-transient-vs-volatile-modifier-variable-java.html

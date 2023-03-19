@@ -64,4 +64,4 @@ public class MyClass {
 
 Here is a good read about `AtomicInteger vs static int`: [Java - using AtomicInteger vs Static int] [1]
 
-[1]: http://goo.gl/zSwHk "Java - using AtomicInteger vs Static int"
+[1]: https://goo.gl/zSwHk "Java - using AtomicInteger vs Static int"

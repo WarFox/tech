@@ -68,7 +68,7 @@ Again this will take some time... ⏲
 
 ## Access Hortonworks Sandbox ##
 
-Go to http://sandbox.hortonworks.com:8888/
+Go to https://sandbox.hortonworks.com:8888/
 
 This Sandbox comes with a lot of components like Ambari, Ranger, Hive, Spark etc. installed and configured.
 

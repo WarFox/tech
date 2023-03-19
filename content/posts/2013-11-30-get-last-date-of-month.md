@@ -67,7 +67,7 @@ A sample calendar util class which gives you few convenient methods is given bel
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see http://www.gnu.org/licenses/.
+ * along with this program.  If not, see https://www.gnu.org/licenses/.
  */
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -117,8 +117,8 @@ public class CalendarUtil {
 
 ## References
 
-* [http://stackoverflow.com/questions/13624442/getting-last-day-of-the-month-in-given-string-date/](http://stackoverflow.com/questions/13624442/getting-last-day-of-the-month-in-given-string-date/)
-* [http://docs.oracle.com/javase/7/docs/api/java/util/Date.html](http://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
-* [http://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html](http://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html)
-* [http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html](http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
-* [http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html](http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html)
+* [https://stackoverflow.com/questions/13624442/getting-last-day-of-the-month-in-given-string-date/](https://stackoverflow.com/questions/13624442/getting-last-day-of-the-month-in-given-string-date/)
+* [https://docs.oracle.com/javase/7/docs/api/java/util/Date.html](https://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
+* [https://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html](https://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html)
+* [https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+* [https://docs.oracle.com/javase/7/docs/api/java/util/Locale.html](https://docs.oracle.com/javase/7/docs/api/java/util/Locale.html)

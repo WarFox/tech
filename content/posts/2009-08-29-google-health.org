@@ -33,4 +33,4 @@ Users can import any data stored in this service until **January 1, 2013**.
 
 All data will be deleted forever from the servers starting **January 2, 2013**.
 
-Facility is provided for importing all data to [[http://www.microsoft.com/en-us/healthvault/][Microsoft HealthVault]].
+Facility is provided for importing all data to [[https://www.microsoft.com/en-us/healthvault/][Microsoft HealthVault]].

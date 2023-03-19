@@ -6,5 +6,5 @@ categories:
  - Javascript
 ---
 
-<a href="http://jsfiddle.net/">jsFiddle</a> does not provide <a href="http://backbonejs.org/">backbonejs</a> library through its Frameworks & Extensions dropdown. Thankfully, it allows you to add any external resources via External Resources option. I have made this blank template for you guys to start playing with Backbonejs in jsFiddle. Feel free to use it directly or fork it.
- <iframe width="100%" height="300" src="http://jsfiddle.net/deepumohanp/6fLw6/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> <ul><li><a href="http://jsfiddle.net/deepumohanp/6fLw6/">Backbonejs Playground</a></li></ul>
+<a href="https://jsfiddle.net/">jsFiddle</a> does not provide <a href="https://backbonejs.org/">backbonejs</a> library through its Frameworks & Extensions dropdown. Thankfully, it allows you to add any external resources via External Resources option. I have made this blank template for you guys to start playing with Backbonejs in jsFiddle. Feel free to use it directly or fork it.
+ <iframe width="100%" height="300" src="https://jsfiddle.net/deepumohanp/6fLw6/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> <ul><li><a href="https://jsfiddle.net/deepumohanp/6fLw6/">Backbonejs Playground</a></li></ul>

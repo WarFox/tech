@@ -128,7 +128,7 @@ def findNeighbours(board: Array[Array[Cell]], point(x:Int, y:Int)):List[Cell] = 
 ### Algorithm
 Here is an algorithm, I found on StackOverflow, by [Seb][Seb]
 
-http://stackoverflow.com/questions/652106/finding-neighbours-in-a-two-dimensional-array
+https://stackoverflow.com/questions/652106/finding-neighbours-in-a-two-dimensional-array
 
 ```
 row_limit = count(array);
@@ -165,7 +165,7 @@ def findNeighbours(board: Array[Array[Cell]], point: Point): List[Cell] = {
 ```
 
 [1]:https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
-[2]:http://pmav.eu/stuff/javascript-game-of-life-v3.1.1/
-[guardian-gol]:http://www.theguardian.com/science/alexs-adventures-in-numberland/2014/dec/15/the-game-of-life-a-beginners-guide
-[3]: http://stackoverflow.com/questions/652106/finding-neighbours-in-a-two-dimensional-array
-[Seb]:http://stackoverflow.com/users/76583/seb
+[2]:https://pmav.eu/stuff/javascript-game-of-life-v3.1.1/
+[guardian-gol]:https://www.theguardian.com/science/alexs-adventures-in-numberland/2014/dec/15/the-game-of-life-a-beginners-guide
+[3]: https://stackoverflow.com/questions/652106/finding-neighbours-in-a-two-dimensional-array
+[Seb]:https://stackoverflow.com/users/76583/seb

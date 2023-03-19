@@ -14,7 +14,7 @@ There are several advantages in utilizing the features of Interfaces in Object O
 
 In general when one writes a simple program, one may not think about the need of using an `Interface`. But when you are building a larger system or a library which keeps evolving, it is a good idea to use `Interface`. A particular advantage of using interface in Java is that it allows multiple inheritance.
 
-The full power of `Interface` is utilized when dependency injection techniques is used to inject required implementation on run time. Using references to interfaces instead of their concrete implementation classes helps in minimizing [ripple effects](http://www.javapractices.com/topic/Topic123.cjp), as the user of an interface reference doesn't have to worry about the changes in the underlying concrete implementation.
+The full power of `Interface` is utilized when dependency injection techniques is used to inject required implementation on run time. Using references to interfaces instead of their concrete implementation classes helps in minimizing [ripple effects](https://www.javapractices.com/topic/Topic123.cjp), as the user of an interface reference doesn't have to worry about the changes in the underlying concrete implementation.
 
 To give an example consider our application has a layered architecture with Controller layer on top then Service layer, Repository layer and domain layer in that order. Here controller layer interacts with service layer and service layer interacts with repository layer. Each layer is aware of the services provided by the layer below it. We expose this information using Interface and hide the concrete implementation.
 
@@ -86,7 +86,7 @@ public class UserRegistraionServiceRelDbImpl implements UserRegistrationService 
 }
 ```
 
-Here we can choose any of these two implementation on run time using dependency injection. One may use `@Inject` or `@Resource` annotation to mark an implementation is to be injected. If using <a href="http://goo.gl/g4PVl">Spring</a>, one may also use Xml bean definitions.
+Here we can choose any of these two implementation on run time using dependency injection. One may use `@Inject` or `@Resource` annotation to mark an implementation is to be injected. If using <a href="https://goo.gl/g4PVl">Spring</a>, one may also use Xml bean definitions.
 
 ``` java
 //Controller becomes much simpler when using Interfaces in the service layer
@@ -105,7 +105,7 @@ public class UserRegistrationController {
 }
 ```
 
-Now when we need to add the additional functionality of saving to Json, we just add another implementation and select that implementation to be injected. (You may use an IOC{<a href="http://goo.gl/2YknD">Inversion Of Control</a>} container like <a href="http://goo.gl/g4PVl">Spring</a> to achieve this seamlessly.)
+Now when we need to add the additional functionality of saving to Json, we just add another implementation and select that implementation to be injected. (You may use an IOC{<a href="https://goo.gl/2YknD">Inversion Of Control</a>} container like <a href="https://goo.gl/g4PVl">Spring</a> to achieve this seamlessly.)
 
 ``` java
 public class UserRegistraionServiceJsonImpl implements UserRegistrationService {

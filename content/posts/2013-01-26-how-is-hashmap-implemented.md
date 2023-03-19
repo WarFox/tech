@@ -56,9 +56,9 @@ Thus, we say that our hash function has the following properties
 - [https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html][1]
 - [https://www.cs.cmu.edu/~adamchik/15-121/lectures/Hashing/hashing.html][2]
 - [https://www.geeksforgeeks.org/internal-working-of-hashmap-java/][3]
-- [http://hg.openjdk.java.net/jdk8/jdk8/jdk/file/687fd7c7986d/src/share/classes/java/util/HashMap.java][4]
+- [https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/687fd7c7986d/src/share/classes/java/util/HashMap.java][4]
 
 [1]: https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html "HashMap (Java Platform SE 8 )"
 [2]: https://www.cs.cmu.edu/~adamchik/15-121/lectures/Hashing/hashing.html "Concept Of Hashing"
 [3]: https://www.geeksforgeeks.org/internal-working-of-hashmap-java/ "Internal Working of HashMap in Java"
-[4]: http://hg.openjdk.java.net/jdk8/jdk8/jdk/file/687fd7c7986d/src/share/classes/java/util/HashMap.java "HashMap source code from Java 8"
+[4]: https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/687fd7c7986d/src/share/classes/java/util/HashMap.java "HashMap source code from Java 8"

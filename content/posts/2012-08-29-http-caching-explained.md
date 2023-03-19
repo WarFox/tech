@@ -13,7 +13,7 @@ Proper use of caching mechanisms can bring in serious performance gains. Caching
 
 Both client and server can control what is being cached and when to enable caching and on what conditions to update the available cache. Caching becomes really effective in large organizations since users typically access common web addresses.
 
-<i>The goal of caching in HTTP/1.1 is to eliminate the need to send requests in many cases, and to eliminate the need to send full responses in many other cases</i><sup><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13">1</a></sup>.
+<i>The goal of caching in HTTP/1.1 is to eliminate the need to send requests in many cases, and to eliminate the need to send full responses in many other cases</i><sup><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13">1</a></sup>.
 
 Caches serves as an intermediary between clients and server, by holding a copy of resources belonging to server. When a cache receives a request from a client, it can reply back directly without needing to contact the server. As the cache is "nearer" to the client than the server, client receives the response much faster. However, the before replying to the client, cache must be able to guarantee that server would provide identical response for that request. Cache must be able to check whether its copy of resource is valid or not.
 
