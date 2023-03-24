@@ -12,7 +12,7 @@ Today, I was going through my draft files on this blog and many of them where
 **.html** files exported from Blogger (where I previously hosted this blog). And
 I wanted to change them to `markdown` files with **.md** extension. I could
 obviously use my [script to change extension of multiple
-files](/how-to-change-extension-of-multiple/), but I thought, there should be a
+files]({{< ref "/posts/2013-10-14-how-to-change-extension-of-multiple" >}}), but I thought, there should be a
 way to do this within emacs.
 
 So I took a deep dive into Emacs documentation and the end result was this function:

@@ -3,9 +3,8 @@ layout: post
 title: "How to unlock Samsung Galaxy Ace (for free) from a network"
 date: 2012-11-06T23:34:00+05:30
 categories:
- - mobile
-tags:
  - How To
+tags:
  - Android
 ---
 My phone was locked to 3 network here in UK and I badly needed to unlock it
@@ -35,10 +34,9 @@ this method.
 Before proceeding check your phone lock status by dialing *#7465625#. The
 Network Lock should be [ON] now.
 
-First you need [to root your galaxy
-ace](/how-to-root-your-samsung-galaxy-ace). [Procedure for rooting the
-android](/how-to-root-your-samsung-galaxy-ace) device can be found in my
-previous [post](/how-to-root-your-samsung-galaxy-ace).
+First you need [to root your galaxy ace][root-galaxy-ace]. [Procedure for
+rooting the android][root-galaxy-ace] device can be found in my previous
+[post][root-galaxy-ace].
 
 Secondly, you MUST install [BusyBox](https://goo.gl/JOPF8). Otherwise unlock
 codes wont be visible. *Thanks much to Asok and Ratty (commenters) for notifying
@@ -85,3 +83,5 @@ That confirms you have successfully unlocked your phone from the network, well d
 ## Here is a video for those who are too lazy to read
 
 {{< youtube o_J4mSBojCc >}}
+
+[root-galaxy-ace]:{{< ref "2012-11-05-how-to-root-your-samsung-galaxy-ace" >}}

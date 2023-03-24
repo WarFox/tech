@@ -39,13 +39,13 @@ wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutoria
 docker load -i HDP_2_6_1_docker_image_28_07_2017_14_42_40.tar
 ```
 
-![Docker load Hortonworks Sandbox image](/images/hdp-docker-image/docker-load-hdp-docker-image.png "Docker Load Hortonworks Sandbox")
+![Docker load Hortonworks Sandbox image](/tech/images/hdp-docker-image/docker-load-hdp-docker-image.png "Docker Load Hortonworks Sandbox")
 
 This is a heavy task. Go get your coffee now because it will take some time to load the `docker` image.
 
 After it is loaded you should see `sandbox-hdp` in your `docker images` list.
 
-![docker images - sandbox-hdp ](/images/hdp-docker-image/docker-images-sandbox-hdp.png "docker images - sandbox-hdp")
+![docker images - sandbox-hdp ](/tech/images/hdp-docker-image/docker-images-sandbox-hdp.png "docker images - sandbox-hdp")
 
 ## Update /etc/hosts file ##
 

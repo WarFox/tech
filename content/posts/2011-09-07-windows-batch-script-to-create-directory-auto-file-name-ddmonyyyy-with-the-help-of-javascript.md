@@ -7,7 +7,7 @@ tags:
  - Windows XP
 ---
 
-In the [previous](/windows-batch-script-to-create-directory-name-ddmmyyyy)
+In the [previous]({{< ref "/posts/2011-09-07-windows-batch-script-to-create-directory-name-ddmmyyyy" >}})
 I had shown a windows batch script for creating directories with name of format
 **DDMMYYYY**. In this post I will show you how to create directories of format
 **DDMONYYYY**. I did a lot of research on web to figure this out. Here is the

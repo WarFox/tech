@@ -10,6 +10,7 @@ tags:
  - Design
  - Youtube
 ---
+
 I don't know how many of you got the new design of Youtube. But I have been getting a new homepage on Youtube on and off for about a month and now it seems to be stable. Sometimes it was only available on Chrome, but now I have tested in both Firefox and Chrome.
 Now it looks so much better. Youtube is making use of most of the unused space, better font, more visible links and features, easily accessible analytics and video manager and most importantly more focus on subscriptions.
 
@@ -21,20 +22,40 @@ All in all Google is trying to propagate its new simple minimalistic design lang
 Checkout the screen shots, if you haven't already got the new design.
 
 ## New Youtube Homepage
-<a href="https://1.bp.blogspot.com/-XcprTyROFQI/UMGxX4IKc7I/AAAAAAAAD0M/6nXj7FwUe2A/s1600/youtube4.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="225" width="400" src="https://1.bp.blogspot.com/-XcprTyROFQI/UMGxX4IKc7I/AAAAAAAAD0M/6nXj7FwUe2A/s400/youtube4.png" /></a>
+<a
+href="https://1.bp.blogspot.com/-XcprTyROFQI/UMGxX4IKc7I/AAAAAAAAD0M/6nXj7FwUe2A/s1600/youtube4.png"
+imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0"
+height="225" width="400"
+src="https://1.bp.blogspot.com/-XcprTyROFQI/UMGxX4IKc7I/AAAAAAAAD0M/6nXj7FwUe2A/s400/youtube4.png"
+alt="New Homepage"/></a>
 Now with more videos and easily accessible links on the left hand side.
 
 ## Redesigned Hompage after signing in
-<a href="https://3.bp.blogspot.com/-ZmSNYfScwgk/UMGwKHSP8wI/AAAAAAAADzo/b-jOeea183U/s1600/Youtube1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="226" width="400" src="https://3.bp.blogspot.com/-ZmSNYfScwgk/UMGwKHSP8wI/AAAAAAAADzo/b-jOeea183U/s400/Youtube1.png" /></a>
+<a
+href="https://3.bp.blogspot.com/-ZmSNYfScwgk/UMGwKHSP8wI/AAAAAAAADzo/b-jOeea183U/s1600/Youtube1.png"
+imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0"
+height="226" width="400"
+src="https://3.bp.blogspot.com/-ZmSNYfScwgk/UMGwKHSP8wI/AAAAAAAADzo/b-jOeea183U/s400/Youtube1.png"
+alt="After signing in"/></a>
 Here we get the recommended videos and social updates. And again all other options are easily accessible at the left hand side menu. We also have popular channels and recommended channels on the right hand side.
 
 ## Analytics and video manager
-<a href="https://1.bp.blogspot.com/-LfXUcLqhJiA/UMGwObg4RLI/AAAAAAAADz0/BZEiVYSqr10/s1600/Youtube2.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="226" width="400" src="https://1.bp.blogspot.com/-LfXUcLqhJiA/UMGwObg4RLI/AAAAAAAADz0/BZEiVYSqr10/s400/Youtube2.png" /></a>
+<a
+href="https://1.bp.blogspot.com/-LfXUcLqhJiA/UMGwObg4RLI/AAAAAAAADz0/BZEiVYSqr10/s1600/Youtube2.png"
+imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0"
+height="226" width="400"
+src="https://1.bp.blogspot.com/-LfXUcLqhJiA/UMGwObg4RLI/AAAAAAAADz0/BZEiVYSqr10/s400/Youtube2.png"
+alt="Video manager"/></a>
 
 This is handy for a Youtuber. Both Youtube analytics and video manager can be now reached with just one click.
 
 ## Redesigned video screen
-<a href="https://2.bp.blogspot.com/-UcuPt_5IxEk/UMGwTZshJ8I/AAAAAAAAD0A/n3uNUZYSLmg/s1600/Youtube3.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="226" width="400" src="https://2.bp.blogspot.com/-UcuPt_5IxEk/UMGwTZshJ8I/AAAAAAAAD0A/n3uNUZYSLmg/s400/Youtube3.png" /></a>
+<a
+href="https://2.bp.blogspot.com/-UcuPt_5IxEk/UMGwTZshJ8I/AAAAAAAAD0A/n3uNUZYSLmg/s1600/Youtube3.png"
+imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0"
+height="226" width="400"
+src="https://2.bp.blogspot.com/-UcuPt_5IxEk/UMGwTZshJ8I/AAAAAAAAD0A/n3uNUZYSLmg/s400/Youtube3.png"
+alt="Video screen"/></a>
 
 Have a look at the new like button and meta informations. The comment section seems to be now more focused on the comment text rather than on likes.
 

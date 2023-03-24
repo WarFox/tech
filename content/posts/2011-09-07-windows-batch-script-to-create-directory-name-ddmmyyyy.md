@@ -44,5 +44,5 @@ uses temporary javascipt and batch file. See the post [here][next-post].
 For those who are new to windows batch files, [visit][ms-resource] [this
 site][ms-resource] by [Microsoft][ms-resource].
 
-[next-post]:/windows-batch-script-to-create-directory-auto-file-name-ddmonyyyy-with-the-help-of-javascript/
+[next-post]:{{< ref "/posts/2011-09-07-windows-batch-script-to-create-directory-auto-file-name-ddmonyyyy-with-the-help-of-javascript" >}}
 [ms-resource]:https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/batch.mspx?mfr=true

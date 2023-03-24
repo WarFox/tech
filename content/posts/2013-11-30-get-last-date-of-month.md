@@ -14,7 +14,6 @@ Calendar object allows us to manipulate days, go forward or backward on the Cale
 
 We will use these capabilities of Calendar class to get our <tt>last_of_month</tt>.
 
-<a name='more'></a>
 The idea here is to get the first day of next month and then reduce one day from it, which gives us the last day of the month relative to input date.
 
 ```java
