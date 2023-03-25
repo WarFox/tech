@@ -34,6 +34,6 @@ Now let us use it in two different places.
 
 The file-layout here is like the following.
 
-{{< img  "requirejs-common-config/file-layout.png" "Requirejs common config file layout" "Requirejs common config file layout" >}}
+{{< figure src="/tech/images/requirejs-common-config/file-layout.png" alt="Requirejs common config file layout" title="Requirejs common config file layout" >}}
 
 Hope it helps!
