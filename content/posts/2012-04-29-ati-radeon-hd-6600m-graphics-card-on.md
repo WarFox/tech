@@ -1,17 +1,20 @@
 ---
-layout: post
 title: "ATI Radeon HD 6600M Graphics card on Ubuntu 12.04 LTS [Solved]"
 date: 2012-04-29T22:05:00+05:30
-categories:
- - linux
 tags:
  - linux
  - ubuntu
+toc:
+ enable: false
 ---
 
 I had a very bad time with my Dell Vostro laptop with ATI Radeon HD 6600M Graphics card on Fedora 16 - couldn't install graphics card driver at all. I tried installing both <i>kmod</i> and <i>akmod</i> drivers on my machine and both didn't work. Even thought of changing my Graphics card because of this. But continued with the same as I had several projects running and din't wanted to waste time configuring Graphics card.
 
-<a href="https://4.bp.blogspot.com/-lK0GZvxCS8U/T51vVwcRSTI/AAAAAAAADOY/oQ-ToxwfwpI/s1600/ati-radeon-hd-3800.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="100" src="https://4.bp.blogspot.com/-lK0GZvxCS8U/T51vVwcRSTI/AAAAAAAADOY/oQ-ToxwfwpI/s400/ati-radeon-hd-3800.jpg" width="108" /></a>  <a href="https://1.bp.blogspot.com/-I8YW50FNYNY/T51uH-lyEUI/AAAAAAAADOM/Zv_ZCYZ_rSE/s1600/ubuntu.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="100" src="https://1.bp.blogspot.com/-I8YW50FNYNY/T51uH-lyEUI/AAAAAAAADOM/Zv_ZCYZ_rSE/s400/ubuntu.png" width="103" /></a>I just formatted the whole Fedora and installed Ubuntu. After several failed attempts, I have installed FGLRX drivers with help from Terry at <a href="https://linuxclicks.blogspot.co.uk/2011/10/dual-monitor-display-with-ubuntuxubuntu.html">https://linuxclicks.blogspot.co.uk/2011/10/dual-monitor-display-with-ubuntuxubuntu.html</a>
+![](https://4.bp.blogspot.com/-lK0GZvxCS8U/T51vVwcRSTI/AAAAAAAADOY/oQ-ToxwfwpI/s1600/ati-radeon-hd-3800.jpg)
+![](https://1.bp.blogspot.com/-I8YW50FNYNY/T51uH-lyEUI/AAAAAAAADOM/Zv_ZCYZ_rSE/s400/ubuntu.png)
+
+I just formatted the whole Fedora and installed Ubuntu. After several failed attempts, I have installed FGLRX drivers with help from Terry at <a href="https://linuxclicks.blogspot.co.uk/2011/10/dual-monitor-display-with-ubuntuxubuntu.html">https://linuxclicks.blogspot.co.uk/2011/10/dual-monitor-display-with-ubuntuxubuntu.html</a>
+
 I had installed the drivers suggested by <strong>jockey-gtk</strong> so I had to uninstall them first using <code>jockey-gtk</code>. And restart the machine.
 
 These are the step by step procedures
@@ -24,7 +27,8 @@ These are the step by step procedures
 
 2. Now install the drivers using this command
 ```
-sudo apt-get install fglrx-updates fglrx-amdcccle-updates```
+sudo apt-get install fglrx-updates fglrx-amdcccle-updates
+```
 
 3. Initialise aticonfiguration
 ```sh
@@ -72,4 +76,4 @@ Additionally I installed Compiz and enabled cube and wobbly windows!! I'm loving
 
 I have decided to stick to Ubuntu although I have been using Fedora for a long long time. But Fedora had its vices like the infamous SELINUX, which always caused troubles. I am loving the Ubuntu Software Centre and Ubuntu One storage too :).
 
-<div class="my-amazon-links"><h3>Books you might like:</h3><a href="https://www.amazon.com/gp/product/B004Y1NMDI/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B004Y1NMDI&amp;linkCode=as2&amp;tag=thelaccur-20"><img border="0" src="https://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&amp;ASIN=B004Y1NMDI&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=thelaccur-20" /></a><img alt="" border="0" height="1" src="https://www.assoc-amazon.com/e/ir?t=thelaccur-20&amp;l=as2&amp;o=1&amp;a=B004Y1NMDI" style="border: none !important; margin: 0px !important;" width="1" />  <a href="https://www.amazon.com/gp/product/B004RYVI0Q/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B004RYVI0Q&amp;linkCode=as2&amp;tag=thelaccur-20"><img border="0" src="https://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&amp;ASIN=B004RYVI0Q&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=thelaccur-20" /></a><img alt="" border="0" height="1" src="https://www.assoc-amazon.com/e/ir?t=thelaccur-20&amp;l=as2&amp;o=1&amp;a=B004RYVI0Q" style="border: none !important; margin: 0px !important;" width="1" />  <a href="https://www.amazon.com/gp/product/0596804849/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0596804849&amp;linkCode=as2&amp;tag=thelaccur-20"><img border="0" src="https://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&amp;ASIN=0596804849&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=thelaccur-20" /></a><img alt="" border="0" height="1" src="https://www.assoc-amazon.com/e/ir?t=thelaccur-20&amp;l=as2&amp;o=1&amp;a=0596804849" style="border: none !important; margin: 0px !important;" width="1" /> <a href="https://www.amazon.com/gp/product/B00817OWS0/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B00817OWS0&amp;linkCode=as2&amp;tag=thelaccur-20"><img border="0" src="https://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&amp;ASIN=B00817OWS0&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=thelaccur-20" /></a><img alt="" border="0" height="1" src="https://www.assoc-amazon.com/e/ir?t=thelaccur-20&amp;l=as2&amp;o=1&amp;a=B00817OWS0" style="border: none !important; margin: 0px !important;" width="1" /> <a href="https://www.amazon.com/gp/product/0133017605/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0133017605&amp;linkCode=as2&amp;tag=thelaccur-20"><img border="0" src="https://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&amp;ASIN=0133017605&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=thelaccur-20" /></a><img alt="" border="0" height="1" src="https://www.assoc-amazon.com/e/ir?t=thelaccur-20&amp;l=as2&amp;o=1&amp;a=0133017605" style="border: none !important; margin: 0px !important;" width="1" />
+

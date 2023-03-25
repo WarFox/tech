@@ -17,7 +17,7 @@ They recommend at least 8GB of RAM.
 Open Docker preferences and select the Advanced tab. Increase the dedicated
 memory to at least 8GB of RAM or more.
 
-{{< img_with_size "/hdp-docker-image/docker-increase-memory-mac.png" 300 600 "Configure Docker Memory" >}}
+{{< figure src="/tech/images/hdp-docker-image/docker-increase-memory-mac.png" width=300 height=600 alt="Increase Docker Memory on Mac" title="Configure Docker Memory" >}}
 
 ## Download the Hortonworks Sandbox Docker image ##
 
@@ -39,13 +39,13 @@ wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutoria
 docker load -i HDP_2_6_1_docker_image_28_07_2017_14_42_40.tar
 ```
 
-![Docker load Hortonworks Sandbox image](/images/hdp-docker-image/docker-load-hdp-docker-image.png "Docker Load Hortonworks Sandbox")
+![Docker load Hortonworks Sandbox image](/tech/images/hdp-docker-image/docker-load-hdp-docker-image.png "Docker Load Hortonworks Sandbox")
 
 This is a heavy task. Go get your coffee now because it will take some time to load the `docker` image.
 
 After it is loaded you should see `sandbox-hdp` in your `docker images` list.
 
-![docker images - sandbox-hdp ](/images/hdp-docker-image/docker-images-sandbox-hdp.png "docker images - sandbox-hdp")
+![docker images - sandbox-hdp ](/tech/images/hdp-docker-image/docker-images-sandbox-hdp.png "docker images - sandbox-hdp")
 
 ## Update /etc/hosts file ##
 
@@ -62,7 +62,7 @@ chmod +x ./start-sandbox-hdp.sh
 ./start-sandbox-hdp.sh
 ```
 
-{{< img_with_size  "/hdp-docker-image/start-sandbox-hdp-2-6-container.png" 450 600 "Start Hortonworks Data Platform Sandbox" >}}
+{{< figure src="/tech/images/hdp-docker-image/start-sandbox-hdp-2-6-container.png" width="450" height="600" alt="Start Hortonworks Data Platform Sandbox" >}}
 
 Again this will take some time... ⏲
 

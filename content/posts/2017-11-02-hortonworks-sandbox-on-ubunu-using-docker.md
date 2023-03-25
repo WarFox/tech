@@ -64,7 +64,7 @@ sudo systemctl restart docker
 
 If you check `sudo docker info`, Storage Driver should be `overlay` and Docker Root Dir should be `/mnt/docker-data`
 
-{{< img "hdp-docker-image/docker-info.png" "Docker info" >}}
+![Docker Info](/tech/images/hdp-docker-image/docker-info.png)
 
 Now we have setup docker to work with Hortonworks Sandbox.
 
@@ -88,17 +88,17 @@ wget https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutoria
 docker load -i HDP_2_6_1_docker_image_28_07_2017_14_42_40.tar
 ```
 
-![Docker load Hortonworks Sandbox image](/images/hdp-docker-image/docker-load-hdp-docker-image.png)
+![Docker load Hortonworks Sandbox image](/tech/images/hdp-docker-image/docker-load-hdp-docker-image.png)
 
 This is a heavy task. Go get your coffee now because it will take some time to load the `docker` image.
 
 This step would fail if you did not increase the base device size.
 
-![No space left on the device](/images/hdp-docker-image/no-space-left-on-device.png)
+![No space left on the device](/tech/images/hdp-docker-image/no-space-left-on-device.png)
 
 After it is loaded you should see `sandbox-hdp` in your `docker images` list.
 
-![docker images - sandbox-hdp](/images/hdp-docker-image/docker-images-sandbox-hdp.png)
+![docker images - sandbox-hdp](/tech/images/hdp-docker-image/docker-images-sandbox-hdp.png)
 
 ## Update /etc/hosts file ##
 
@@ -115,9 +115,9 @@ chmod +x ./start-sandbox-hdp.sh
 ./start-sandbox-hdp.sh
 ```
 
-{{< img_with_size "/hdp-docker-image/start-sandbox-hdp-2-6-container.png" 450 600 "Start Hortonworks Data Platform Sandbox" >}}
+![Start Hortonworks Data Platform Sandbox](/tech/images/hdp-docker-image/start-sandbox-hdp-2-6-container.png)
 
-Again this will take some time
+Again this will take some time. Once the script completes you should be able to access the sandbox.
 
 ## Access Hortonworks Sandbox ##
 
@@ -131,4 +131,4 @@ This Sandbox comes with a lot of components like Ambari, Ranger, Hive, Spark etc
 
 [1]: https://community.hortonworks.com/content/kbentry/65714/how-to-modify-the-default-docker-configuration-on.html
 [2]: https://hortonworks.com/tutorial/sandbox-deployment-and-install-guide/section/3/
-[3]: /setting-up-hortonworks-sandbox-on-mac-using-docker/
+[3]: {{< ref "2017-10-26-setting-up-hortonworks-sandbox-mac-using-docker" >}}
