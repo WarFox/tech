@@ -390,3 +390,28 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     polyfill = true
     # whether to use object-fit-images to be compatible with older browsers
     objectFit = true
+
+[deployment]
+
+[[deployment.targets]]
+name = "staging"
+URL = 's3://staging.deepumohan.com/tech/?region=eu-west-1'
+
+[[deployment.targets]]
+name = "production"
+URL = 's3://deepumohan.com/tech/?region=eu-west-1'
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = false
+
+[[deployment.matchers]]
+# Set custom content type for /sitemap.xml
+pattern = "^sitemap\\.xml$"
+contentType = "application/xml"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(html|xml|json)$"
+gzip = true
