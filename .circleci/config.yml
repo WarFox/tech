@@ -2,7 +2,6 @@ version: 2.1
 
 orbs:
   aws-cli: circleci/aws-cli@3.1.4
-  aws-s3: circleci/aws-s3@3.1.1
   hugo: circleci/hugo@1.3.0
 
 # jobs are orchestrated using workflows
@@ -35,25 +34,29 @@ jobs:
     parameters:
       role-arn:
         type: string
-      s3-location:
+      environment:
         type: string
     docker:
-      - image: 'cimg/python:3.6'
+      - image: 'cibuilds/hugo:0.111.3'
     steps:
+      - checkout
       - attach_workspace:
           at: /tmp/workspace/
-      - run: ls -lah /tmp/workspace/
+      - run:
+          commands: |
+            ls -lah
+            ls -lah /tmp/workspace/
       - aws-cli/setup:
-          profile-name: default
+          profile-name: setup
       - aws-cli/role-arn-setup:
-          profile-name: deploy
+          profile-name: default
           role-arn: <<parameters.role-arn>>
-          source-profile: default
-      - aws-s3/copy:
-          arguments: --recursive
-          from: /tmp/workspace/public/
-          to: <<parameters.s3-location>>
-          profile-name: deploy # need to explicitly provide profile-name
+          source-profile: setup
+      - run:
+          name: hugo deploy
+          command: |
+            pwd
+            hugo deploy --config ~/.config.toml --source /tmp/workspace/public --target <<parameters.environment>> --dryRun
 
 # Build workflows using jobs and orbs
 workflows:
@@ -72,7 +75,7 @@ workflows:
           name: deploy-to-staging
           context: org-context
           role-arn: arn:aws:iam::106172881994:role/DeployStagingDeepumohanCom
-          s3-location: 's3://staging.deepumohan.com/tech/'
+          environment: staging
           requires:
             - html-proofer
           filters:
@@ -83,7 +86,7 @@ workflows:
           name: deploy-to-production
           context: org-context
           role-arn: arn:aws:iam::106172881994:role/DeployDeepumohanCom
-          s3-location: 's3://deepumohan.com/tech/'
+          environment: production
           requires:
             - html-proofer
           filters:
