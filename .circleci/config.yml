@@ -55,6 +55,7 @@ jobs:
       - run:
           name: hugo deploy
           command: |
+            hugo 
             hugo deploy --config ~/project/config.toml --source /tmp/workspace/public --target <<parameters.environment>> --dryRun
 
 # Build workflows using jobs and orbs
