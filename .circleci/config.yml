@@ -45,6 +45,7 @@ jobs:
       - run: pwd
       - run: ls -lah
       - run: ls -lah /tmp/workspace/
+      - run: ls -lah ~/project
       - aws-cli/setup:
           profile-name: setup
       - aws-cli/role-arn-setup:
@@ -54,8 +55,7 @@ jobs:
       - run:
           name: hugo deploy
           command: |
-            pwd
-            hugo deploy --config .config.toml --source /tmp/workspace/public --target <<parameters.environment>> --dryRun
+            hugo deploy --config ~/project/config.toml --source /tmp/workspace/public --target <<parameters.environment>> --dryRun
 
 # Build workflows using jobs and orbs
 workflows:
