@@ -68,24 +68,21 @@ workflows:
           requires:
             - hugo/build
 
-      - deploy: # deploy to staging from feature branches
-          name: deploy-to-staging
+      - deploy: # deploy to staging
+          name: deploy-staging
           context: org-context
           role-arn: arn:aws:iam::106172881994:role/DeployStagingDeepumohanCom
           s3-location: 's3://staging.deepumohan.com/tech/'
           requires:
             - html-proofer
-          filters:
-            branches:
-              ignore: master
 
       - deploy: # deploy on master branch
-          name: deploy-to-production
+          name: deploy-production
           context: org-context
           role-arn: arn:aws:iam::106172881994:role/DeployDeepumohanCom
           s3-location: 's3://deepumohan.com/tech/'
           requires:
-            - html-proofer
+            - deploy-staging
           filters:
             branches:
               only: master
