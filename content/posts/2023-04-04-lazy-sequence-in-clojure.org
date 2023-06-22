@@ -1,0 +1,197 @@
+#+title: Lazy Sequence in Clojure
+#+date: 2023-04-04T12:38:58+01:00
+#+categories[]:
+#+tags[]: clojure
+#+keywords[]: clojure, lazy-seq
+
+* Introduction
+
+A lazy sequence is a sequence that is not realized (or computed) until it is
+needed. This can be useful for handling potentially infinite sequences or for
+avoiding unnecessary computation when dealing with large sequences. You benefit
+by avoiding computations until they are absolutely needed and on demand.
+
+Lazy sequences are available in many programming languages like
+Haskell ([[https://wiki.haskell.org/Lazy_evaluation][LazyEvaluation]]),Swift ([[https://developer.apple.com/documentation/swift/lazysequence][LazySequence]]), directly and via libraries
+in some languages like Rust ([[https://docs.rs/lazy-seq/latest/lazy_seq/][lazy_seq]]), Go ([[https://pkg.go.dev/jsouthworth.net/go/seq][seq]]). We will look into
+=lazy-seq= available in =clojure.core=.
+
+To create a lazy sequence, in Clojure you can use the =lazy-seq= function. Here's
+an example of how to create a lazy sequence of integers:
+
+#+begin_src clojure
+  (defn number-sequence
+    ([] (number-sequence 1))
+    ([n]
+     (cons n
+          (lazy-seq
+            (map inc (number-sequence n))))))
+
+    (take 5 (number-sequence)) ;; (1 2 3 4 5)
+    (take 5 (number-sequence 10)) ;; (10 12 13 14)
+#+end_src
+
+In the above example, =number-sequence= is defined as a function that returns a
+lazy sequence of integers starting at =n=. The =lazy-seq= function creates the
+lazy sequence, and the =cons= function is used to add the first element (1) to
+the sequence. The map function is used to generate the remaining elements of the
+sequence by adding 1 to each element of the previous sequence.
+
+When we call =(number-sequence)=, we get back a lazy sequence object. When we
+call =take= to get the first 5 elements of the sequence, Clojure will realize
+(or compute) only the first 5 elements of the sequence, rather than computing
+the entire sequence up front. This can be useful for avoiding unnecessary
+computation when dealing with large or potentially infinite sequences.
+
+Before going to more detailed explanations, here are two more examples of how to
+use =lazy-seq= in Clojure:
+
+** Example 1: Generating an infinite sequence of Fibonacci numbers
+
+#+begin_src clojure
+  (def fib-seq
+    (cons 1
+          (lazy-seq (cons 1 (map + fib-seq (rest fib-seq))))))
+
+  (take 10 fib-seq)
+#+end_src
+
+In this example, =fib-seq= is defined as a lazy sequence of Fibonacci numbers.
+The =cons= function is used to add the first two elements (1 and 1) to the
+sequence. The =map= function is used to generate the remaining elements of the
+sequence by adding each element to its predecessor. Because fib-seq is defined
+recursively in terms of itself, it creates an infinite sequence of Fibonacci
+numbers.
+
+When we call =(take 10 fib-seq)=, Clojure will realize only the first 10
+elements of the sequence. Because the sequence is defined lazily, we can
+generate an infinite sequence of Fibonacci numbers without running into issues
+with stack overflow or memory usage.
+
+Here is another way to create infinite fibonacci sequence in Clojure using
+=lazy-seq=
+
+#+begin_src  clojure
+  (defn fib
+    ([]
+     (fib 1 1))
+    ([n m]
+     (cons n (lazy-seq (fib m (+ n m))))))
+
+  (take 10 (fib))
+#+end_src
+
+** Example 2: Implementing the Sieve of Eratosthenes algorithm
+
+#+begin_src clojure
+  (defn sieve [s]
+    (lazy-seq
+      (let [p (first s)]
+        (cons p
+              (sieve (filter #(not= 0 (mod % p)) (rest s)))))))
+
+  (def primes
+    (cons 2 (sieve (iterate #(+ 2 %) 3))))
+
+  (take 20 primes)
+#+end_src
+
+In this example, =sieve= is defined as a function that implements the Sieve of
+Eratosthenes algorithm, which generates a sequence of prime numbers. The
+=lazy-seq= function is used to create the sequence of prime numbers. The =let=
+expression is used to bind the first element of the input sequence =s= to the
+variable =p=. The =cons= function is used to add =p= to the output sequence. The
+=filter= function is used to remove all elements from =s= that are divisible by
+=p=. The resulting sequence is passed recursively to sieve.
+
+When we call =(take 20 (sieve (iterate inc 2)))=, we get back a lazy sequence of
+the first 20 prime numbers. Because the Sieve of Eratosthenes algorithm can be
+used to generate an infinite sequence of prime numbers, we can use =lazy-seq= to
+generate prime numbers on-the-fly as we need them, without having to compute the
+entire sequence up front.
+
+* How does lazy-seq work internally?
+
+Let us get deeper in it.
+
+When you call =(lazy-seq <body>)=, Clojure returns a lazy sequence object that
+wraps the body of the function. The body of the function is wrapped in a
+function object that can be called later to compute the next element of the
+sequence.
+
+When you later call a sequence function like =first=, =rest=, =map= , or
+=filter= on the lazy sequence object, Clojure will call the function object
+generated by =lazy-seq= to compute the next element of the sequence. This will
+cause the body of the =lazy-seq= function to be executed, if it has not already
+been executed, and one or more elements of the sequence to be realized.
+
+Once an element of the sequence has been realized, it is cached, so that
+subsequent calls to sequence functions like =first=, =rest=, =map=, or =filter=
+can return the same value without recomputing it. This caching feature is
+important and can be useful for avoiding unnecessary computation when dealing
+with large or potentially infinite sequences.
+
+One important thing to note is that lazy sequences are realized incrementally,
+one element at a time. This means that if you call a sequence function that
+requires the entire sequence to be realized, like count or reduce, then Clojure
+will need to realize the entire sequence before it can return a value. This can
+cause performance issues or out-of-memory errors if you try to realize an
+infinite or very large sequence in this way. Clojure also has some optimisations
+that will compute =32= items of lazy-seq at once.
+
+* Alternatives to lazy-seq in Clojure
+
+You don't need to use =lazy-seq= directly to work with lazy sequences in
+Clojure. There are alternatives to =lazy-seq= in Clojure, each with its own
+advantages and limitations. Here are some of the most commonly used
+alternatives:
+
+1. =iterate=: iterate is a built-in function that returns a lazy sequence of values generated by applying a function to an initial value repeatedly. For example, =(iterate inc 0)= generates an infinite sequence of natural numbers.
+
+2. =repeatedly=: repeatedly is a built-in function that returns a lazy sequence of values generated by calling a function repeatedly. For example, =(repeatedly 10 #(rand-int 10))= generates a sequence of 10 random integers between 0 and 9.
+
+3. =range=: range is a built-in function that returns a lazy sequence of numbers in a specified range. For example, =(range 1 10)= generates a sequence of integers from 1 to 9.
+
+4. =mapcat=: mapcat is a higher-order function that applies a function to each element of a sequence and concatenates the results into a single sequence. For example, =(mapcat #(range 1 %) [2 3 4])= generates a sequence of integers from 1 to 2, then from 1 to 3, and finally from 1 to 4.
+
+5. =concat=: concat is a function that concatenates two or more sequences into a single sequence. For example, =(concat [1 2 3] [4 5 6])= generates a sequence of integers from 1 to 6.
+
+Each of these alternatives has its own use cases and trade-offs. For example,
+=iterate= and =repeatedly= are good for generating sequences of values based on
+a function, while =range= is good for generating sequences of consecutive
+numbers. =mapcat= and =concat= are good for combining multiple sequences into a
+single sequence. However, none of these alternatives can match the flexibility
+and power of =lazy-seq= for generating complex and potentially infinite
+sequences of values.
+
+Also read about Stuart Sierra's advice [[https://stuartsierra.com/2015/04/26/clojure-donts-concat][Clojure Dont's: Concat]]
+
+* Summary
+
+Lazy evaluation is a technique used in functional programming languages to delay
+the evaluation of expressions until their values are actually needed. In
+Clojure, lazy evaluation can be implemented using lazy sequences.
+
+You can use the =lazy-seq= macro to create a lazy sequence in Clojure. It takes
+a body of code that generates the next element of the sequence and returns a new
+lazy sequence that evaluates the body of code only when necessary.
+
+Lazy evaluation is useful for
+
+- Efficient processing of potentially infinite sequences of values
+- Dealing with large data sets
+- Performing complex computations on streams of data.
+
+Two important features of lazy sequences in Clojure are
+
+- Delayed computation until in is actually needed
+- Caching of computed values
+
+*Important note about =lazy-seq=, it does 32 at a time not just one as an
+optimisation.*
+
+* References
+
+- https://clojuredocs.org/clojure.core/lazy-seq
+- https://otee.dev/2022/01/17/lazy-clojure.html
+- https://cuddly-octo-palm-tree.com/posts/2021-11-07-clj-primes/
