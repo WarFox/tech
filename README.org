@@ -1,4 +1,4 @@
-[[https://circleci.com/gh/WarFox/tech/tree/master][https://circleci.com/gh/WarFox/tech/tree/master.svg?style=svg&circle-token=efa63588546573f52b02bfa6924604b023d44cb0]]
+[[https://dl.circleci.com/status-badge/redirect/gh/WarFox/tech/tree/master][file:https://dl.circleci.com/status-badge/img/gh/WarFox/tech/tree/master.svg?style=svg]]
 [[https://spacemacs.org][file:https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg]]
 
 * My Blog
