@@ -76,7 +76,7 @@ workflows:
           requires:
             - html-proofer
 
-      - deploy: # deploy on master branch
+      - deploy: # deploy on main branch
           name: deploy-production
           context: org-context
           role-arn: arn:aws:iam::106172881994:role/DeployDeepumohanCom
@@ -85,4 +85,4 @@ workflows:
             - deploy-staging
           filters:
             branches:
-              only: master
+              only: main
