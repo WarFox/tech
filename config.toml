@@ -6,7 +6,7 @@ title = "Deepu Mohan Puthrote"
     extended = true
     min = "0.62.0"
   [[module.imports]]
-    path = 'github.com/dillonzq/LoveIt'
+    path = "github.com/nunocoracao/blowfish/v2"
 
 languageCode = "en-gb"
 languageName = "English"
