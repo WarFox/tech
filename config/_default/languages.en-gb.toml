@@ -1,0 +1,66 @@
+languageCode = "en-gb"
+languageName = "English"
+weight = 1
+title = "Deepu Mohan Puthrote"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  # logo = "img/logo.png"
+  # secondaryLogo = "img/secondary-logo.png"
+  description = "Technology blog of Deepu Mohan Puthrote"
+  copyright = "Copy, _right?_ :thinking_face:"
+
+[author]
+  name = "Deepu Mohan Puthrote"
+  # image = "img/blowfish_logo.png"
+  image = "https://s.gravatar.com/avatar/f66dfe536cc7c61f0808ace8567d15db?s=256"
+  headline = ""
+  bio = ""
+  links = [
+    { github = "https://github.com/WarFox" },
+    { gitlab = "https://gitlab.com/WarFox" },
+    { keybase = "https://keybase.io/warfox" },
+    { medium = "https://medium.com/@deepumohanp" },
+    { dev = "https://dev.to/warfox" },
+    { linkedin = "https://linkedin.com/in/deepumohanp" },
+    { reddit = "https://reddit.com/user/deepumohanp" },
+    { stack-overflow = "https://stackoverflow.com/users/598444/warfox" },
+    { twitter = "https://twitter.com/deepumohanp" },
+    { tumblr = "https://deepumohanp.tumblr.com" },
+
+
+    # { facebook = "https://facebook.com/deepu.mohan.p" },
+    # { instagram = "https://instagram.com/deepu.mohan.p" },
+    # { link = "https://link-to-some-website.com/" },
+    # { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
+    # { apple = "https://www.apple.com" },
+    # { blogger = "https://username.blogspot.com/" },
+    # { codepen = "https://codepen.io/warfox" },
+    # { discord = "https://discord.gg/warfox" },
+    # { dribbble = "https://dribbble.com/username" },
+    # { flickr = "https://www.flickr.com/photos/deepumohanp/" },
+    # { foursquare = "https://foursquare.com/username" },
+    # { google = "https://www.google.com/" },
+    # { hashnode = "https://username.hashnode.dev" },
+    # { kickstarter = "https://www.kickstarter.com/profile/username" },
+    # { lastfm = "https://lastfm.com/user/username" },
+    # { mastodon = "https://mastodon.instance/@username" },
+    # { microsoft = "https://www.microsoft.com/" },
+    # { orcid = "https://orcid.org/userid" },
+    # { patreon = "https://www.patreon.com/username" },
+    # { pinterest = "https://pinterest.com/username" },
+    # { researchgate = "https://www.researchgate.net/profile/username" },
+    # { slack = "https://workspace.url/team/userid" },
+    # { snapchat = "https://snapchat.com/add/username" },
+    # { soundcloud = "https://soundcloud.com/username" },
+    # { steam = "https://steamcommunity.com/profiles/userid" },
+    # { telegram = "https://t.me/username" },
+    # { tiktok = "https://tiktok.com/@username" },
+    # { twitch = "https://twitch.tv/username" },
+    # { whatsapp = "https://wa.me/phone-number" },
+    # { youtube = "https://youtube.com/username" },
+    # { ko-fi = "https://ko-fi.com/username" },
+  ]
