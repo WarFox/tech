@@ -40,7 +40,6 @@ buildFuture = false
   home = ["HTML", "RSS", "JSON"]
   page = ["HTML"]
   section = ["HTML", "RSS"]
-  taxonomy = ["HTML", "RSS"]
 
 [related]
   threshold = 0
