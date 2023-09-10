@@ -11,7 +11,7 @@ title = "Deepu Mohan Puthrote"
   # logo = "img/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
   description = "Technology blog of Deepu Mohan Puthrote"
-  copyright = "Copy, _right?_ :thinking_face:"
+  copyright = "Copyright ©, 2008 Deepu Mohan Puthrote"
 
 [author]
   name = "Deepu Mohan Puthrote"
@@ -30,7 +30,6 @@ title = "Deepu Mohan Puthrote"
     { stack-overflow = "https://stackoverflow.com/users/598444/warfox" },
     { twitter = "https://twitter.com/deepumohanp" },
     { tumblr = "https://deepumohanp.tumblr.com" },
-
 
     # { facebook = "https://facebook.com/deepu.mohan.p" },
     # { instagram = "https://instagram.com/deepu.mohan.p" },
