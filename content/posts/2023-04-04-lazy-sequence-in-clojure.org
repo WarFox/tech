@@ -11,10 +11,10 @@ needed. This can be useful for handling potentially infinite sequences or for
 avoiding unnecessary computation when dealing with large sequences. You benefit
 by avoiding computations until they are absolutely needed and on demand.
 
-Lazy sequences are available in many programming languages like
-Haskell ([[https://wiki.haskell.org/Lazy_evaluation][LazyEvaluation]]),Swift ([[https://developer.apple.com/documentation/swift/lazysequence][LazySequence]]), directly and via libraries
-in some languages like Rust ([[https://docs.rs/lazy-seq/latest/lazy_seq/][lazy_seq]]), Go ([[https://pkg.go.dev/jsouthworth.net/go/seq][seq]]). We will look into
-=lazy-seq= available in =clojure.core=.
+Lazy sequences are available directly in many functional programming languages
+like Haskell ([[https://wiki.haskell.org/Lazy_evaluation][LazyEvaluation]]),Swift ([[https://developer.apple.com/documentation/swift/lazysequence][LazySequence]]) and via libraries in other
+languages like Rust ([[https://docs.rs/lazy-seq/latest/lazy_seq/][lazy_seq]]), Go ([[https://pkg.go.dev/jsouthworth.net/go/seq][seq]]). We will look into =lazy-seq= available
+in =clojure.core=.
 
 To create a lazy sequence, in Clojure you can use the =lazy-seq= function. Here's
 an example of how to create a lazy sequence of integers:

@@ -1,0 +1,75 @@
+#+title: Clojure CDK
+#+date: 2023-09-09T22:44:52+01:00
+#+categories[]:
+#+tags[]: clojure, aws, cdk
+#+keywords[]:
+
+I have be been wondering how to do intrastructure as code in Clojure. So I made
+an example for it using AWS CDK.
+
+You can find the example in this repo https://github.com/WarFox/clojure-cdk-example
+
+The example can deploy an SNS Topic, SQS Queue and subscription. There is also a
+basic test setup in the example. One of the benefits of using CDK is that we get
+define tests for our infrastructure in the chosen language.
+
+The hardest part in using CDK with Clojure is defining the dependency betweeen
+the app, stacks and resources. In Java it naturally managed by class inheritance
+and composition; an app is composed by stacks and stacks are composed by
+resources.
+
+In Clojure with Java Interop, we can manage such dependency using something like
+Integrant. Integrant lets you define dependency between componets of your system
+using a simlpe data structure.
+
+The following is the integrant configuration used in the example app.
+
+#+BEGIN_SRC clojure
+  (def config
+    {:app/instance {}
+     :topic/stack  {:app (ig/ref :app/instance)
+                    :id  "TopicStack"}
+     :app/synth    {:app    (ig/ref :app/instance)
+                    :stacks [(ig/ref :topic/stack)]}})
+#+END_SRC
+
+Integrant will take care of initiating the components based on the configuration
+pass the components for =synth=.
+
+To make the setup work with =CDK=, we also need to configure it in =cdk.json= file
+
+#+BEGIN_SRC json
+  {
+    "app": "clojure -M:synth",
+    ...
+  }
+#+END_SRC
+
+I also have the following alias is =deps.edn= to make it work.
+
+#+BEGIN_SRC clojure
+  :aliases
+  {;; clojure -M:synth
+   :synth
+   {:main-opts ["-m" "core"]}
+    ...
+  }
+#+END_SRC
+
+Checkout the example here and give it a star if you like
+https://github.com/WarFox/clojure-cdk-example.
+
+You can run =cdk synth= and =cdk deploy= after checkout.
+
+I am not stongly recommending you to use Clojure with CDK. Probably =Typescript=
+is the best language natively supported by the CDK team. However, if you like to
+leverage Clojure's simplicity in CDK then go ahead give it a try.
+
+There are several other ways to manage infrastructure using Clojure.
+MarketSplash has a good article about [[https://marketsplash.com/tutorials/clojure/clojure-for-devops/][Clojure's role in devops]]. This has many
+examples for using Clojure for your infrastructure needs.
+
+Here is another article about using Clojure with CDK
+https://matthewdowney.github.io/aws-cdk-clojure-cloudformation.html
+
+Hope this example gives a reference for your next CDK project!
