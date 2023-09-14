@@ -26,11 +26,15 @@ The following is the integrant configuration used in the example app.
 
 #+BEGIN_SRC clojure
   (def config
-    {:app/instance {}
-     :topic/stack  {:app (ig/ref :app/instance)
-                    :id  "TopicStack"}
-     :app/synth    {:app    (ig/ref :app/instance)
-                    :stacks [(ig/ref :topic/stack)]}})
+    {:app/instance   {}
+     :stacks/topic   {:app      (ig/ref :app/instance)
+                      :stack-id "TopicStack"}
+     :stacks/storage {:app      (ig/ref :app/instance)
+                      :stack-id "StorageStack"}
+     ;; make sure to add all stacks to :stacks key
+     :app/synth      {:app    (ig/ref :app/instance)
+                      :stacks [(ig/ref :stacks/topic)
+                               (ig/ref :stacks/storage)]}})
 #+END_SRC
 
 Integrant will take care of initiating the components based on the configuration
