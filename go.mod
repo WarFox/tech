@@ -1,4 +1,4 @@
-module github/WarFox/tech
+module github.com/WarFox/tech
 
 go 1.20
 
