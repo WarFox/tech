@@ -7,6 +7,4 @@ Started as a [[https://tech.deepumohan.com/][blog]] in [[https://blogger.com/][b
 
 Now built using to [[https://gohugo.io/][hugo]], because it's fast and supports [[https://orgmode.org/][org-mode]].
 
-Works on [[https://hugo.io][Hugo]] and [[https://orgmode.org/][org-mode]]
-
-Theme https://github.com/ianrodrigues/hugo-tailwind-journal
+Theme https://blowfish.page/
