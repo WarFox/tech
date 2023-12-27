@@ -8,18 +8,22 @@ orbs:
 # jobs are orchestrated using workflows
 jobs:
   html-proofer:
+    parameters:
+      html_proofer_version:
+        type: string
+        default: 5.0.8
     docker:
-      - image: cimg/ruby:3.2.1
+      - image: cimg/ruby:3.2.2
     steps:
       - attach_workspace:
           at: /tmp/workspace/
       - restore_cache:
           keys:
-            - gem-cache-5.0.6
+            - gem-cache-<<parameters.html_proofer_version>>
             - gem-cache
-      - run: gem install html-proofer -v 5.0.6
+      - run: gem install html-proofer -v <<parameters.html_proofer_version>>
       - save_cache:
-          key: gem-cache-5.0.6
+          key: gem-cache-<<parameters.html_proofer_version>>
           paths:
             - ~/.rubygems
       - run: mv /tmp/workspace/public /tmp/workspace/tech
