@@ -1,25 +1,29 @@
 version: 2.1
 
 orbs:
-  aws-cli: circleci/aws-cli@3.1.4
-  aws-s3: circleci/aws-s3@3.1.1
-  hugo: circleci/hugo@1.3.0
+  aws-cli: circleci/aws-cli@4.1.2
+  aws-s3: circleci/aws-s3@4.0.0
+  hugo: circleci/hugo@1.3.1
 
 # jobs are orchestrated using workflows
 jobs:
   html-proofer:
+    parameters:
+      html_proofer_version:
+        type: string
+        default: 5.0.8
     docker:
-      - image: cimg/ruby:3.2.1
+      - image: cimg/ruby:3.2.2
     steps:
       - attach_workspace:
           at: /tmp/workspace/
       - restore_cache:
           keys:
-            - gem-cache-5.0.6
+            - gem-cache-<<parameters.html_proofer_version>>
             - gem-cache
-      - run: gem install html-proofer -v 5.0.6
+      - run: gem install html-proofer -v <<parameters.html_proofer_version>>
       - save_cache:
-          key: gem-cache-5.0.6
+          key: gem-cache-<<parameters.html_proofer_version>>
           paths:
             - ~/.rubygems
       - run: mv /tmp/workspace/public /tmp/workspace/tech
@@ -33,27 +37,26 @@ jobs:
 
   deploy:
     parameters:
-      role-arn:
+      role_arn:
         type: string
-      s3-location:
+      s3_location:
         type: string
-    docker:
-      - image: 'cimg/python:3.6'
+    executor: aws-cli/default
     steps:
       - attach_workspace:
           at: /tmp/workspace/
       - run: ls -lah /tmp/workspace/
       - aws-cli/setup:
-          profile-name: default
-      - aws-cli/role-arn-setup:
-          profile-name: deploy
-          role-arn: <<parameters.role-arn>>
-          source-profile: default
+          profile_name: default
+      - aws-cli/role_arn_setup:
+          profile_name: deploy
+          role_arn: <<parameters.role_arn>>
+          source_profile: default
       - aws-s3/copy:
           arguments: --recursive
           from: /tmp/workspace/public/
-          to: <<parameters.s3-location>>
-          profile-name: deploy # need to explicitly provide profile-name
+          to: <<parameters.s3_location>>
+          profile_name: deploy # need to explicitly provide profile_name
 
 # Build workflows using jobs and orbs
 workflows:
@@ -62,7 +65,7 @@ workflows:
       - hugo/build:
           html-proofer: false
           source: .
-          version: '0.118.2'
+          version: '0.121.1'
 
       - html-proofer:
           requires:
@@ -71,16 +74,16 @@ workflows:
       - deploy: # deploy to staging
           name: deploy-staging
           context: org-context
-          role-arn: arn:aws:iam::106172881994:role/DeployStagingDeepumohanCom
-          s3-location: 's3://staging.deepumohan.com/tech/'
+          role_arn: arn:aws:iam::106172881994:role/DeployStagingDeepumohanCom
+          s3_location: 's3://staging.deepumohan.com/tech/'
           requires:
             - html-proofer
 
       - deploy: # deploy on main branch
           name: deploy-production
           context: org-context
-          role-arn: arn:aws:iam::106172881994:role/DeployDeepumohanCom
-          s3-location: 's3://deepumohan.com/tech/'
+          role_arn: arn:aws:iam::106172881994:role/DeployDeepumohanCom
+          s3_location: 's3://deepumohan.com/tech/'
           requires:
             - deploy-staging
           filters:
