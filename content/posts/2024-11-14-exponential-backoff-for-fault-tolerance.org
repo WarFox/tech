@@ -1,0 +1,58 @@
+---
+title: "Exponential backoff for fault tolerance"
+_build:
+  render: never
+  list: never
+  publishResources: false
+---
+
+Exponential backoff is a technique useful for networked applications to cope
+with temporary service unavailability.
+
+* Kafka
+
+* Microservice
+
+* Front end applications
+
+* Airflow
+
+We are missing =max_retry_delay= in that configuration,
+https://airflow.apache.org/docs/apache-airflow/1.10.9/_api/airflow/operators/index.html
+
+=max_retry_delay= sets an upper limit on the delay between retries. It is
+essential to set =max_retry_delay= when =retry_exponential_backoff= set to =True=
+otherwise the delays between retries can grow to several hours.
+
+For example with the following configuration
+
+#+begin_src yaml
+retries: 6
+retry_delay: 1 minute (initial delay)
+retry_exponential_backoff: True
+max_retry_delay: timedelta(minutes=10)
+#+end_src
+
+#+begin_src
+  1st retry: 1 minute, total = 1 minute
+  2nd retry: 2 minutes (1 minute * 2), total = 3 minutes
+  3rd retry: 4 minutes (2 minutes * 2), total = 7 minutes
+  4th retry: 8 minutes (4 minutes * 2), total = 15 minutes
+  5th retry: 10 minutes (capped by max_retry_delay, otherwise it would be 8*2=16 minutes ), total = 25 / 31 minutes
+  6th retry: 10 minutes (capped by max_retry_delay, otherwise it would be 16*2=32 minutes ), total = 35 / 63 minutes
+#+end_src
+
+Without =exponential_backoff=, retries will be done at constant interval of =retry_delay= like the following
+
+#+begin_src
+  1st retry: 1 minute, total = 1 minute
+  2nd retry: 1 minute, total = 2 minutes
+  3rd retry: 1 minute, total = 3 minutes
+  4th retry: 1 minute, total = 4 minutes
+  5th retry: 1 minute, total = 5 minutes
+  6th retry: 1 minutes, total = 6 minutes
+#+end_src
+
+Carefully configured exponential backoff prevents network congestion, reduce
+load on strained services, handle transient faults that is taking longer that
+expected etc.

@@ -8,3 +8,25 @@ Started as a [[https://tech.deepumohan.com/][blog]] in [[https://blogger.com/][b
 Now built using to [[https://gohugo.io/][hugo]], because it's fast and supports [[https://orgmode.org/][org-mode]].
 
 Theme https://blowfish.page/
+
+* Getting started
+
+** Make sure you have Go and Hugo installed
+
+** Clone Repo
+
+#+begin_src sh
+ git clone git@github.com:WarFox/tech.git ~/Workspace/github.com/WarFox/tech/
+#+end_src
+
+** Change directory
+
+#+begin_src sh
+ cd ~/Workspace/github.com/WarFox/tech/
+#+end_src
+
+** Start server
+
+#+begin_src sh
+  make server
+#+end_src
